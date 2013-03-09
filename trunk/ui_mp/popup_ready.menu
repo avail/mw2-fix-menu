@@ -1,0 +1,34 @@
+{
+	menuDef
+	{
+		name popup_ready
+		fullscreen 0
+		rect 0 0 640 480
+		style 1
+		border 1
+		ownerdraw 0
+		ownerdrawFlag 0
+		borderSize 0
+		foreColor 1 1 1 1
+		backColor 0 0 0 0
+		borderColor 0 0 0 0
+		outlineColor 0 0 0 0
+		fadeCycle 0
+		fadeClamp 0
+		fadeAmount 0
+		fadeInAmount 0
+		blurWorld 0
+		onOpen
+		{
+			exec "xpartyready 1";
+		}
+		onESC
+		{
+			play "mouse_click";
+//			exec "xpartyready 0";
+			close "popup_ready";
+		}
+		focusColor 1 1 1 1
+		popup 1
+	}
+}
