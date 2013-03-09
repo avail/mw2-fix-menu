@@ -767,7 +767,6 @@
 				}
 				setItemColor self "backcolor" 0 0 0 1;
 				setLocalVarBool ui_popupAButton 1;
-				setLocalVarString ui_hint_text ( "@MENU_IWNET_CHANGE_PASSWORD" );
 			}
 			leaveFocus
 			{
