@@ -310,7 +310,6 @@
 			textFont 0
 			feeder 0
 			visible 1
-			visible when ( !localvarint( "ui_centerPopup" )  )
 		}
 		itemDef
 		{
@@ -337,7 +336,6 @@
 			textFont 0
 			feeder 0
 			visible 1
-			visible when ( !localvarint( "ui_centerPopup" )  )
 		}
 		itemDef
 		{
@@ -364,7 +362,6 @@
 			textFont 0
 			feeder 0
 			visible 1
-			visible when ( !localvarint( "ui_centerPopup" )  )
 		}
 		itemDef
 		{
@@ -391,7 +388,6 @@
 			textFont 0
 			feeder 0
 			visible 1
-			visible when ( !localvarint( "ui_centerPopup" )  )
 			exp rect h ( ( 24 + ( 7 ) * 20 )  )
 		}
 		itemDef
@@ -419,7 +415,6 @@
 			textFont 0
 			feeder 0
 			visible 1
-			visible when ( !localvarint( "ui_centerPopup" )  )
 			exp rect y ( ( 0 - 0 ) + ( ( 24 + ( 7 ) * 20 ) )  )
 		}
 		itemDef
@@ -447,7 +442,6 @@
 			textFont 0
 			feeder 0
 			visible 1
-			visible when ( !localvarint( "ui_centerPopup" )  )
 			exp rect y ( ( 0 - 0 ) + ( ( 24 + ( 7 ) * 20 ) )  )
 		}
 		itemDef
@@ -475,7 +469,6 @@
 			textFont 0
 			feeder 0
 			visible 1
-			visible when ( !localvarint( "ui_centerPopup" )  )
 			exp rect y ( ( 0 - 0 ) + ( ( 24 + ( 7 ) * 20 ) )  )
 		}
 		itemDef
@@ -503,7 +496,6 @@
 			textFont 0
 			feeder 0
 			visible 1
-			visible when ( !localvarint( "ui_centerPopup" )  )
 			exp rect h ( ( 24 + ( 7 ) * 20 )  )
 		}
 		itemDef
