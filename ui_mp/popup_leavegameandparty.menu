@@ -410,8 +410,7 @@
 			textFont 0
 			feeder 0
 			visible 1
-			visible when ( 1  )
-			exp rect y ( ( 0 - 0 ) + ( ( 24 + 3 * 20 ) )  )
+			exp rect y ( ( - 10 + 74 ) + ( ( 24 + 3 * 20 ) )  )
 		}
 		itemDef
 		{
@@ -439,7 +438,7 @@
 			feeder 0
 			visible 1
 			visible when ( 1  )
-			exp rect y ( ( 0 - 0 ) + ( ( 24 + 3 * 20 ) )  )
+			exp rect y ( ( - 10 + 75 ) + ( ( 24 + 3 * 20 ) )  )
 		}
 		itemDef
 		{
@@ -467,7 +466,7 @@
 			feeder 0
 			visible 1
 			visible when ( 1  )
-			exp rect y ( ( 0 - 0 ) + ( ( 24 + 3 * 20 ) )  )
+			exp rect y ( ( - 10 + 74 ) + ( ( 24 + 3 * 20 ) )  )
 		}
 		itemDef
 		{

@@ -387,7 +387,7 @@
 		}
 		itemDef
 		{
-			rect 150 -144 64 64 2 2
+			rect 150 -84 64 64 2 2
 			style 3
 			border 0
 			ownerdraw 0
@@ -410,12 +410,11 @@
 			textFont 0
 			feeder 0
 			visible 1
-			visible when ( 1  )
-			exp rect y ( ( 0 - 0 ) + ( ( 24 + 6 * 20 ) )  )
+			exp rect y ( ( - 10 + 74 ) + ( ( 24 + 3 * 20 ) )  )
 		}
 		itemDef
 		{
-			rect -150 -144 300 64 2 2
+			rect -150 -84 300 64 2 2
 			style 3
 			border 0
 			ownerdraw 0
@@ -439,11 +438,11 @@
 			feeder 0
 			visible 1
 			visible when ( 1  )
-			exp rect y ( ( 0 - 0 ) + ( ( 24 + 6 * 20 ) )  )
+			exp rect y ( ( - 10 + 75 ) + ( ( 24 + 3 * 20 ) )  )
 		}
 		itemDef
 		{
-			rect -214 -144 64 64 2 2
+			rect -214 -84 64 64 2 2
 			style 3
 			border 0
 			ownerdraw 0
@@ -467,7 +466,7 @@
 			feeder 0
 			visible 1
 			visible when ( 1  )
-			exp rect y ( ( 0 - 0 ) + ( ( 24 + 6 * 20 ) )  )
+			exp rect y ( ( - 10 + 74 ) + ( ( 24 + 3 * 20 ) )  )
 		}
 		itemDef
 		{

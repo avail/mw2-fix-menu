@@ -18,7 +18,7 @@
 		fadeClamp 0
 		fadeAmount 0
 		fadeInAmount 0
-		visible when ( dvarbool(static)( 3 ) == 1 || dvarbool(static)( 1 ) == 1  )
+//		visible when ( dvarbool(static)( 3 ) == 1 || dvarbool(static)( 1 ) == 1  )
 		blurWorld 0
 		onOpen
 		{
@@ -329,7 +329,6 @@
 			textFont 0
 			feeder 0
 			visible 1
-			visible when ( 1  )
 		}
 		itemDef
 		{
@@ -356,7 +355,6 @@
 			textFont 0
 			feeder 0
 			visible 1
-			visible when ( 1  )
 		}
 		itemDef
 		{
@@ -383,7 +381,6 @@
 			textFont 0
 			feeder 0
 			visible 1
-			visible when ( 1  )
 			exp rect h ( ( 24 + 3 * 20 )  )
 		}
 		itemDef
@@ -411,8 +408,7 @@
 			textFont 0
 			feeder 0
 			visible 1
-			visible when ( 1  )
-			exp rect y ( ( 0 - 0 ) + ( ( 24 + 3 * 20 ) )  )
+			exp rect y ( ( - 10 + 74 ) + ( ( 24 + 3 * 20 ) )  )
 		}
 		itemDef
 		{
@@ -440,7 +436,7 @@
 			feeder 0
 			visible 1
 			visible when ( 1  )
-			exp rect y ( ( 0 - 0 ) + ( ( 24 + 3 * 20 ) )  )
+			exp rect y ( ( - 10 + 75 ) + ( ( 24 + 3 * 20 ) )  )
 		}
 		itemDef
 		{
@@ -468,7 +464,7 @@
 			feeder 0
 			visible 1
 			visible when ( 1  )
-			exp rect y ( ( 0 - 0 ) + ( ( 24 + 3 * 20 ) )  )
+			exp rect y ( ( - 10 + 74 ) + ( ( 24 + 3 * 20 ) )  )
 		}
 		itemDef
 		{
@@ -495,7 +491,6 @@
 			textFont 0
 			feeder 0
 			visible 1
-			visible when ( 1  )
 			exp rect h ( ( 24 + 3 * 20 )  )
 		}
 		itemDef
