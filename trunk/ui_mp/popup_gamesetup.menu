@@ -1,0 +1,834 @@
+{
+	menuDef
+	{
+		name popup_gamesetup
+		fullscreen 0
+//		rect -64 0 280 0 1 1
+		style 1
+		border 0
+		ownerdraw 0
+		ownerdrawFlag 0
+		borderSize 0
+		foreColor 1 1 1 1
+		backColor 1 1 1 1
+		borderColor 0 0 0 0
+		outlineColor 0 0 0 0
+		background white
+		exp rect Y ( localvarfloat( "ui_popup_gamesetup_ypos" )  )
+		exp rect W ( 24 + ( 4 ) * 20  )
+		fadeCycle 0
+		fadeClamp 0
+		fadeAmount 0
+		fadeInAmount 0
+		blurWorld 0
+		onOpen
+		{
+			setLocalVarFloat ui_popup_gamesetup_ypos 0.000000;
+			setLocalVarInt ui_leftPopup 1;
+/*			if ( dvarbool(static)( 30 )  )
+			{
+				exec "set ui_useonlinestats_button_name @PLATFORM_USEONLINESTATS_TRUE";
+			}
+			else
+			{
+				exec "set ui_useonlinestats_button_name @PLATFORM_USEONLINESTATS_FALSE";
+			}
+			if ( dvarbool(static)( 30 )  )			if ( dvarint(static)( 31 ) == dvarint(static)( 28 )  )
+			{
+				exec "set ui_jip_button_name @MPUI_JOININPROGRESS_NOT_ALLOWED";
+			}
+			else
+			{
+				exec "set ui_jip_button_name @MPUI_JOININPROGRESS_ALLOWED";
+			}
+			if ( dvarint(static)( 31 ) == dvarint(static)( 28 )  )*/		
+		}
+		onClose
+		{
+			setLocalVarInt ui_leftPopup 1;
+		}
+		onESC
+		{
+			close self;
+		}
+		focusColor 1 1 1 1
+		popup 1
+//		outOfBoundsClick 
+		visible 1
+//		allowedBinding +talk
+		itemDef
+		{
+			rect -918 -480 1708 960 1 1
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0.35
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			////origin -854 -480
+			background white
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( !localvarint( "ui_centerPopup" )  )
+		}
+		itemDef
+		{
+			rect -918 -480 1708 960 1 1
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 1 1 1 1
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			////origin -854 -480
+			background xpbar_stencilbase
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+		}
+		itemDef
+		{
+			rect -64 0 280 0 1 1
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0.5 0.5 0.5 1
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			////origin 0 0
+			background white
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp rect h ( 24 + ( 4 ) * 20  )
+		}
+		itemDef
+		{
+			rect -64 0 1708 480 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.75
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			////origin 0 0
+			background mw2_popup_bg_fogstencil
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp rect x ( 0 - ( ( float( milliseconds( ) % 60000 ) / 60000 ) * ( 854 ) )  )
+		}
+		itemDef
+		{
+			rect -64 0 -1708 -480 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.85 0.85 0.85 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			////origin 0 0
+			background mw2_popup_bg_fogscroll
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp rect x ( 0 - ( ( float( milliseconds( ) % 60000 ) / 60000 ) * ( 854 ) )  )
+		}
+		itemDef
+		{
+			rect -64 0 280 0 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			////origin 0 0
+			background mockup_popup_bg_stencilfill
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp rect h ( ( 24 + ( 4 ) * 20 )  )
+		}
+		itemDef
+		{
+			rect -64 0 -1708 -480 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.75
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			////origin 0 0
+			background mw2_popup_bg_fogstencil
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp rect x ( ( - 854 ) + ( ( float( milliseconds( ) % 50000 ) / 50000 ) * ( 854 ) )  )
+		}
+		itemDef
+		{
+			rect -64 0 -1708 -480 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.85 0.85 0.85 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			////origin 0 0
+			background mw2_popup_bg_fogscroll
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp rect x ( ( - 854 ) + ( ( float( milliseconds( ) % 50000 ) / 50000 ) * ( 854 ) )  )
+		}
+		itemDef
+		{
+			rect -64 0 280 0 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			////origin 0 0
+			background small_box_lightfx
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp rect h ( ( 24 + ( 4 ) * 20 )  )
+		}
+		itemDef
+		{
+			rect -96 -32 32 32 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0 0 0 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			////origin -32 -32
+			background drop_shadow_tl
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1  )
+		}
+		itemDef
+		{
+			rect -64 -32 280 32 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0 0 0 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			////origin 0 -32
+			background drop_shadow_t
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1  )
+		}
+		itemDef
+		{
+			rect 216 -32 32 32 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0 0 0 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			////origin 280 -32
+			background drop_shadow_tr
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1  )
+		}
+		itemDef
+		{
+			rect 216 0 32 0 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0 0 0 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			////origin 280 0
+			background drop_shadow_r
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1  )
+			exp rect h ( ( 24 + ( 4 ) * 20 )  )
+		}
+		itemDef
+		{
+			rect 216 0 32 32 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0 0 0 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			////origin 280 0
+			background drop_shadow_br
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1  )
+			exp rect y ( ( 0 - 0 ) + ( ( 24 + ( 4 ) * 20 ) )  )
+		}
+		itemDef
+		{
+			rect -64 0 280 32 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0 0 0 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			////origin 0 0
+			background drop_shadow_b
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1  )
+			exp rect y ( ( 0 - 0 ) + ( ( 24 + ( 4 ) * 20 ) )  )
+		}
+		itemDef
+		{
+			rect -96 0 32 32 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0 0 0 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			////origin -32 0
+			background drop_shadow_bl
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1  )
+			exp rect y ( ( 0 - 0 ) + ( ( 24 + ( 4 ) * 20 ) )  )
+		}
+		itemDef
+		{
+			rect -96 0 32 0 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0 0 0 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			////origin -32 0
+			background drop_shadow_l
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1  )
+			exp rect h ( ( 24 + ( 4 ) * 20 )  )
+		}
+		itemDef
+		{
+			rect 216 0 -256 0 1 1
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0.35 0.35 0.35 1
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			////origin 280 0
+			background gradient_slow_fadein
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp rect h ( 24 + ( 4 ) * 20  )
+		}
+		itemDef
+		{
+			rect -64 0 280 22 1 1
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 1 1 1 0.25
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			////origin 0 0
+			background gradient_fadein
+			decoration 
+			type 0
+			align 0
+			textAlign 6
+			textAlignX -4
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 9
+			feeder 0
+			text "@MENU_GAME_SETUP_CAPS"
+			visible 1
+		}
+		itemDef
+		{
+			name settings_change_map
+			rect -64 24 336 20 1 1
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			////origin 0 24
+			background menu_button_selection_bar
+			group mw2_popup_button
+			type 1
+			align 0
+			textAlign 6
+			textAlignX -60
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			text "@MENU_CHANGE_MAP_CAPS"
+			visible 1
+			onFocus
+			{
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp"  )
+				{
+					setItemColor mw2_popup_button "backcolor" 0 0 0 0;
+				}
+				setItemColor self "backcolor" 0 0 0 1;
+				setLocalVarBool ui_popupAButton 1;
+			}
+			leaveFocus
+			{
+				setItemColor self "backcolor" 1 1 1 0;
+				setLocalVarBool ui_popupAButton 1;
+			}
+			action
+			{
+				play "mouse_click";
+				open "settings_map";
+			}
+		}
+		itemDef
+		{
+			name settings_change_gamemode
+			rect -64 44 336 20 1 1
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			////origin 0 44
+			background menu_button_selection_bar
+			group mw2_popup_button
+			type 1
+			align 0
+			textAlign 6
+			textAlignX -60
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			text "@MENU_CHANGE_GAME_MODE_CAPS"
+			visible 1
+			onFocus
+			{
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp"  )
+				{
+					setItemColor mw2_popup_button "backcolor" 0 0 0 0;
+				}
+				setItemColor self "backcolor" 0 0 0 1;
+				setLocalVarBool ui_popupAButton 1;
+			}
+			leaveFocus
+			{
+				setItemColor self "backcolor" 1 1 1 0;
+				setLocalVarBool ui_popupAButton 1;
+			}
+			action
+			{
+				play "mouse_click";
+				open "settings_gametype";
+			}
+		}
+		itemDef
+		{
+			name settings_change_gamerules
+			rect -64 64 336 20 1 1
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			////origin 0 64
+			background menu_button_selection_bar
+			group mw2_popup_button
+			type 1
+			align 0
+			textAlign 6
+			textAlignX -60
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			text "@MENU_CHANGE_GAME_RULES_CAPS"
+			visible 1
+			onFocus
+			{
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp"  )
+				{
+					setItemColor mw2_popup_button "backcolor" 0 0 0 0;
+				}
+				setItemColor self "backcolor" 0 0 0 1;
+				setLocalVarBool ui_popupAButton 1;
+			}
+			leaveFocus
+			{
+				setItemColor self "backcolor" 1 1 1 0;
+				setLocalVarBool ui_popupAButton 1;
+			}
+			action
+			{
+				play "mouse_click";
+				
+// Stock Gametypes - you know them :>
+				uiScript openMenuOnDvar ui_gametype war "settings_quick_war";
+				uiScript openMenuOnDvar ui_gametype sd "settings_quick_sd";
+				uiScript openMenuOnDvar ui_gametype sab "settings_quick_sab";
+				uiScript openMenuOnDvar ui_gametype dm "settings_quick_dm";
+				uiScript openMenuOnDvar ui_gametype dom "settings_quick_dom";
+				uiScript openMenuOnDvar ui_gametype dd "settings_quick_dd";						
+				uiScript openMenuOnDvar ui_gametype ctf "settings_quick_ctf";
+				uiScript openMenuOnDvar ui_gametype koth "settings_quick_koth";					
+// Scrapped Gametypes - oneflag menufile don't exist :<
+				uiScript openMenuOnDvar ui_gametype arena "settings_quick_arena";				
+				uiScript openMenuOnDvar ui_gametype gtnw "settings_quick_gtnw";
+				uiScript openMenuOnDvar ui_gametype vip "settings_quick_vip";				
+				uiScript openMenuOnDvar ui_gametype oneflag "settings_quick_oneflag";				
+			}
+		}
+		itemDef
+		{
+			name settings_setpassword
+			rect -64 84 336 20 1 1
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			////origin 0 84
+			background menu_button_selection_bar
+			group mw2_popup_button
+			type 1
+			align 0
+			textAlign 6
+			textAlignX -60
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			text "@MENU_IWNET_CHANGE_PASSWORD"
+			visible 1
+			onFocus
+			{
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp"  )
+				{
+					setItemColor mw2_popup_button "backcolor" 0 0 0 0;
+				}
+				setItemColor self "backcolor" 0 0 0 1;
+				setLocalVarBool ui_popupAButton 1;
+				setLocalVarString ui_hint_text ( "@MENU_IWNET_CHANGE_PASSWORD" );
+			}
+			leaveFocus
+			{
+				setItemColor self "backcolor" 1 1 1 0;
+				setLocalVarBool ui_popupAButton 1;
+				setLocalVarString ui_hint_text ( "@NULL_EMPTY" );				
+			}
+			action
+			{
+				play "mouse_click";
+				open "popup_serverpassword";
+			}
+//			visible when ( !privatepartyhost()  )
+//			disabled when ( !inlobby()  )
+        }
+		itemDef
+		{
+			rect 0 25 345 20 1 1
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.65
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background menu_button_selection_bar
+			decoration 
+			autoWrapped 
+			group mw2_popup_button
+			type 1
+			align 0
+			textAlign 6
+			textAlignX -4
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			visible 1
+			onFocus
+			{
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp"  )
+				{
+					setItemColor mw2_popup_button "backcolor" 0 0 0 0;
+				}
+				setItemColor self "backcolor" 0 0 0 1;
+				setLocalVarBool ui_popupAButton 1;
+			}
+			leaveFocus
+			{
+				setItemColor self "backcolor" 1 1 1 0;
+				setLocalVarBool ui_popupAButton 1;
+			}
+			action
+			{
+				play "mouse_click";
+			}
+			exp text ( localvarstring( "ui_hint_text" )  )
+		}
+	}
+}
