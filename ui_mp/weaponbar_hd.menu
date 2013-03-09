@@ -1,0 +1,459 @@
+{
+	menuDef
+	{
+		name weaponbar_hd
+		fullscreen 0
+		rect 0 0 3 3
+		style 0
+		border 0
+		ownerdraw 0
+		ownerdrawFlag 0
+		borderSize 0
+		foreColor 1 1 1 1
+		backColor 0 0 0 0
+		borderColor 0 0 0 0
+		outlineColor 0 0 0 0
+		fadeCycle 0
+		fadeClamp 0
+		fadeAmount 0
+		fadeInAmount 0
+		visible	when( !inkillcam() && dvarBool( ammoCounterHide ) == 0 && !flashbanged() && !ui_active() && dvarint( ui_hud_hardcore ) == 0 && NOT_SPECTATING );
+		blurWorld 0
+		focusColor 0 0 0 0
+		visible 1
+		itemDef
+		{
+			rect -349.333 -76 349.333 56 10 10
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.65
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background hud_weaponbar
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+		}
+		itemDef
+		{
+			rect -136 -32.6667 37.3333 0.666667 10 10
+			style 0
+			border 0
+			ownerdraw 119
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 8
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.5833
+			textStyle 6
+			textFont 9
+			feeder 0
+			visible 1
+//			visible when ( ( < 100  )
+		}
+		itemDef
+		{
+			name offhandFragIcon
+			rect -108 -31.3333 18.6667 18.6667 10 10
+			style 0
+			border 0
+			ownerdraw 103
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 8
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+//			visible when ( ( > 1  )
+		}
+		itemDef
+		{
+			name offhandFragAmmo
+			rect -90 -12 18.6667 18.6667 10 10
+			style 0
+			border 0
+			ownerdraw 105
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 8
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.3
+            textstyle 6
+            textfont 0
+			feeder 0
+			visible 1
+//			visible when ( ( > 1  )
+		}		
+		itemDef
+		{
+			name offhandSmokeIcon
+			rect -133.333 -32 18.6667 18.6667 10 10
+			style 0
+			border 0
+			ownerdraw 104
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 8
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+		}
+		itemDef
+		{
+			name offhandSmokeAmmo
+			rect -140.333 -12 18.6667 18.6667 10 10
+			style 0
+			border 0
+			ownerdraw 106
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 8
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.3
+            textstyle 6
+            textfont 0
+			feeder 0
+			visible 1
+		}		
+		itemDef
+		{
+			name clipGraphic
+			rect -130 -42.6667 0 0 10 10
+			style 0
+			border 0
+			ownerdraw 117
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.65
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 8
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+		}
+		itemDef
+		{
+			name clipGraphic
+			rect -130 -25.3333 0 0 10 10
+			style 0
+			border 0
+			ownerdraw 121
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.65
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 8
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+		}
+		itemDef
+		{
+			rect -102.667 -52.6667 37.3333 0.666667 10 10
+			style 0
+			border 0
+			ownerdraw 83
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 8
+			align 0
+			textAlign 2
+			textAlignX 0
+			textAlignY 0
+			textScale 0.3333
+			textStyle 3
+			textFont 10
+			feeder 0
+			visible 1
+//			visible when ( inkillcam( ) || spectatingclient( )  )
+		}
+		itemDef
+		{
+			rect -102.667 -52.6667 37.3333 0.666667 10 10
+			style 0
+			border 0
+			ownerdraw 81
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 8
+			align 0
+			textAlign 2
+			textAlignX 0
+			textAlignY 0
+			textScale 0.3333
+			textStyle 3
+			textFont 10
+			feeder 0
+			visible 1
+//			visible when ( ( && &&  )
+		}
+		itemDef
+		{
+			name lowammowarning
+			rect -50 -20 100 100 2 2
+			style 0
+			border 0
+			ownerdraw 120
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.65
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 8
+			align 0
+			textAlign 9
+			textAlignX 0
+			textAlignY 0
+			textScale 0.3333
+			textStyle 3
+			textFont 9
+			feeder 0
+			visible 1
+//			visible when ( ( && &&  )
+		}
+		itemDef
+		{
+			name Shadow_Pass1
+			rect -108 -97 126 126 10 10
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background hud_compass_alpha
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+		}
+		itemDef
+		{
+			name Shadow_Pass2
+			rect -108 -97 126 126 10 10
+			style 0
+			border 0
+			ownerdraw 166
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.75
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background hud_compass_letters_shadow_step2
+			decoration 
+			type 8
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+		}
+		itemDef
+		{
+			name Shadow_Pass3
+			rect -108 -97 126 126 10 10
+			style 0
+			border 0
+			ownerdraw 166
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background hud_compass_letters_shadow_step3
+			decoration 
+			type 8
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+		}
+		itemDef
+		{
+			name Pass1
+			rect -109 -98 126 126 10 10
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background hud_compass_alpha
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+		}
+		itemDef
+		{
+			name Pass2
+			rect -109 -98 126 126 10 10
+			style 0
+			border 0
+			ownerdraw 166
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.75
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background hud_compass_letters_step2
+			decoration 
+			type 8
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+		}
+		itemDef
+		{
+			name Pass3
+			rect -109 -98 126 126 10 10
+			style 0
+			border 0
+			ownerdraw 166
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background hud_compass_letters_step3
+			decoration 
+			type 8
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+		}
+	}
+}

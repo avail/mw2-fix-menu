@@ -1,0 +1,2798 @@
+#include "ui/menudef.h"
+#include "ui/choices_setup_common.menu"
+// THIS IS AREV MENU I BORROWED IT, ANYWAYS THANKS AREV TEAM :>
+#include "ui_mp/choices_setup_teams.menu" 
+{
+	menuDef
+	{
+		name changeclass
+		fullscreen 0
+		rect 0 0 640 480
+		style 0
+		border 0
+		ownerdraw 0
+		ownerdrawFlag 0
+		borderSize 0
+		foreColor 1 1 1 1
+		backColor 0 0 0 0
+		borderColor 0 0 0 0
+		outlineColor 0 0 0 0
+		fadeCycle 0
+		fadeClamp 0
+		fadeAmount 0
+		fadeInAmount 0
+		blurWorld 7
+		onOpen
+		{
+			focusFirst;
+		}
+		onESC
+		{
+			scriptMenuResponse "back";
+		}
+		focusColor 1 1 1 1
+		
+		itemDef
+		{
+			rect 0 0 640 480 4 4
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0 0 0 0.4
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background white
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+		}
+		itemDef
+		{
+			rect 0 0 640 480 4 4
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background mockup_bg_glow
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp forecolor a ( ( ( sin milliseconds( ) / 1500 ) + 1 ) * 0.250000 ) + 0.250000  )
+		}
+		itemDef
+		{
+			rect 0 0 640 480 4 4
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background mockup_bg_glow
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp forecolor a ( ( ( sin milliseconds( ) / 480 ) + 1 ) * 0.250000 ) + 0.250000  )
+		}
+		itemDef
+		{
+			rect -64 0 280 480 1 0
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0 0 0 0.25
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background gradient_fadein_fadebottom
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+		}
+		itemDef
+		{
+			rect 0 0 272 28 1 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 6
+			textAlignX -60
+			textAlignY 0
+			textScale 0.5
+			textStyle 0
+			textFont 9
+			feeder 0
+			text "@MPUI_CHOOSE_CLASS_CAP"
+			visible 1
+		}
+		itemDef
+		{
+			rect 10 58 128 128 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.275
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( dvarstring( "g_TeamIcon_Allies" )  )
+			visible when ( localvarstring( "ui_team" ) == "marines"  )
+		}
+		itemDef
+		{
+			rect 10 58 128 128 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.275
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( dvarstring( "g_TeamIcon_Axis" )  )
+			visible when ( localvarstring( "ui_team" ) == "opfor"  )
+		}
+		itemDef
+		{
+			rect 10 58 128 128 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.275
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( dvarstring( "g_TeamIcon_Allies" )  )
+			visible when ( team( "name" ) == "TEAM_FREE" && localvarstring( "ui_team" ) == "marines"  )
+		}
+		itemDef
+		{
+			rect 10 58 128 128 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.275
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( dvarstring( "g_TeamIcon_Axis" )  )
+			visible when ( team( "name" ) == "TEAM_FREE" && localvarstring( "ui_team" ) == "opfor"  )
+		}
+		itemDef
+		{
+			rect 10 196 128 128 1 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.2
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.4583
+			textStyle 6
+			textFont 6
+			feeder 0
+			visible 1
+			exp text ( "@" + dvarstring( "g_TeamName_Allies" )  )
+			visible when ( team( "name" ) == "TEAM_ALLIES"  )
+		}
+		itemDef
+		{
+			rect 10 196 128 128 1 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.2
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.4583
+			textStyle 6
+			textFont 6
+			feeder 0
+			visible 1
+			exp text ( "@" + dvarstring( "g_TeamName_Allies" )  )
+			visible when ( team( "name" ) == "TEAM_FREE" && localvarstring( "ui_team" ) == "marines"  )
+		}
+		itemDef
+		{
+			rect 10 196 128 128 1 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.2
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.4583
+			textStyle 6
+			textFont 6
+			feeder 0
+			visible 1
+			exp text ( "@" + dvarstring( "g_TeamName_Axis" )  )
+			visible when ( team( "name" ) == "TEAM_AXIS"  )
+		}
+		itemDef
+		{
+			rect 10 196 128 128 1 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.2
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.4583
+			textStyle 6
+			textFont 6
+			feeder 0
+			visible 1
+			exp text ( "@" + dvarstring( "g_TeamName_Axis" )  )
+			visible when ( team( "name" ) == "TEAM_FREE" && localvarstring( "ui_team" ) == "opfor"  )
+		}
+		itemDef
+		{
+			name class_choose_1
+			rect -64 28 336 20 1 1
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background menu_button_selection_bar
+			group mw2_button
+			type 1
+			align 0
+			textAlign 6
+			textAlignX -60
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			text "@CLASS_CLASS1"
+			visible 1
+			onFocus
+			{
+				play "mouse_over";
+				setItemColor mw2_button "backcolor" 0 0 0 0;
+				setItemColor self "backcolor" 0 0 0 1;
+				setLocalVarBool ui_menuAButton 1;
+				setLocalVarFloat ui_popupYPos 0.000000;
+				setLocalVarString loadoutPrimary ( tablelookup( "mp/classTable.csv" , 0 , "loadoutPrimary" , 0 + 1 )  );
+				setLocalVarString loadoutPrimaryAttachment ( tablelookup( "mp/classTable.csv" , 0 , "loadoutPrimaryAttachment" , 0 + 1 )  );
+				setLocalVarString loadoutPrimaryAttachment2 ( tablelookup( "mp/classTable.csv" , 0 , "loadoutPrimaryAttachment2" , 0 + 1 )  );
+				setLocalVarString loadoutPrimaryCamo ( tablelookup( "mp/classTable.csv" , 0 , "loadoutPrimaryCamo" , 0 + 1 )  );
+				
+				setLocalVarString loadoutSecondary ( tablelookup( "mp/classTable.csv" , 0 , "loadoutSecondary" , 0 + 1 )  );
+				setLocalVarString loadoutSecondaryAttachment ( tablelookup( "mp/classTable.csv" , 0 , "loadoutSecondaryAttachment" , 0 + 1 )  );
+				setLocalVarString loadoutSecondaryAttachment2 ( tablelookup( "mp/classTable.csv" , 0 , "loadoutSecondaryAttachment2" , 0 + 1 )  );
+				setLocalVarString loadoutSecondaryCamo ( tablelookup( "mp/classTable.csv" , 0 , "loadoutSecondaryCamo" , 0 + 1 )  );
+				
+				setLocalVarString loadoutEquipment ( tablelookup( "mp/classTable.csv" , 0 , "loadoutEquipment" , 0 + 1 )  );
+				
+				setLocalVarString loadoutPerk1 ( tablelookup( "mp/classTable.csv" , 0 , "loadoutPerk1" , 0 + 1 )  );
+				setLocalVarString loadoutPerk2 ( tablelookup( "mp/classTable.csv" , 0 , "loadoutPerk2" , 0 + 1 )  );
+				setLocalVarString loadoutPerk3 ( tablelookup( "mp/classTable.csv" , 0 , "loadoutPerk3" , 0 + 1 )  );
+				
+				setLocalVarString loadoutStreak1 ( tablelookup( "mp/classTable.csv" , 0 , "loadoutStreak1" , 0 + 1 )  );
+				setLocalVarString loadoutStreak2 ( tablelookup( "mp/classTable.csv" , 0 , "loadoutStreak2" , 0 + 1 )  );
+				setLocalVarString loadoutStreak3 ( tablelookup( "mp/classTable.csv" , 0 , "loadoutStreak3" , 0 + 1 )  );
+				
+				setLocalVarString loadoutDeathStreak ( tablelookup( "mp/classTable.csv" , 0 , "loadoutDeathStreak" , 0 + 1 )  );
+				setLocalVarString loadoutOffhandSecondary ( tablelookup( "mp/classTable.csv" , 0 , "loadoutOffhand" , 0 + 1 )  );
+				setLocalVarString loadoutClassName "@" + ( tablelookup( "mp/classTable.csv" , 0 , "loadoutName" , 0 + 1 )  );
+			}
+			leaveFocus
+			{
+				setItemColor self "backcolor" 0 0 0 "0.0";
+				setLocalVarString ui_hint_text "@NULL_EMPTY"  );
+				setLocalVarBool ui_menuAButton 1;
+			}
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse "class0";
+				close "self";
+			}
+		}
+		itemDef
+		{
+			name class_choose_2
+			rect -64 48 336 20 1 1
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background menu_button_selection_bar
+			group mw2_button
+			type 1
+			align 0
+			textAlign 6
+			textAlignX -60
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			text "@CLASS_CLASS2"
+			visible 1
+			onFocus
+			{
+				play "mouse_over";
+				setItemColor mw2_button "backcolor" 0 0 0 0;
+				setItemColor self "backcolor" 0 0 0 1;
+				setLocalVarBool ui_menuAButton 1;
+				setLocalVarFloat ui_popupYPos 0.000000;
+				setLocalVarString loadoutPrimary ( tablelookup( "mp/classTable.csv" , 0 , "loadoutPrimary" , 1 + 1 )  );
+				setLocalVarString loadoutPrimaryAttachment ( tablelookup( "mp/classTable.csv" , 0 , "loadoutPrimaryAttachment" , 1 + 1 )  );
+				setLocalVarString loadoutPrimaryAttachment2 ( tablelookup( "mp/classTable.csv" , 0 , "loadoutPrimaryAttachment2" , 1 + 1 )  );
+
+				setLocalVarString loadoutPrimaryCamo ( tablelookup( "mp/classTable.csv" , 0 , "loadoutPrimaryCamo" , 1 + 1 )  );
+				setLocalVarString loadoutSecondary ( tablelookup( "mp/classTable.csv" , 0 , "loadoutSecondary" , 1 + 1 )  );
+				setLocalVarString loadoutSecondaryAttachment ( tablelookup( "mp/classTable.csv" , 0 , "loadoutSecondaryAttachment" , 1 + 1 )  );
+				setLocalVarString loadoutSecondaryAttachment2 ( tablelookup( "mp/classTable.csv" , 0 , "loadoutSecondaryAttachment2" , 1 + 1 )  );
+				setLocalVarString loadoutSecondaryCamo ( tablelookup( "mp/classTable.csv" , 0 , "loadoutSecondaryCamo" , 1 + 1 )  );
+				
+				setLocalVarString loadoutEquipment ( tablelookup( "mp/classTable.csv" , 0 , "loadoutEquipment" , 1 + 1 )  );
+				
+				setLocalVarString loadoutPerk1 ( tablelookup( "mp/classTable.csv" , 0 , "loadoutPerk1" , 1 + 1 )  );
+				setLocalVarString loadoutPerk2 ( tablelookup( "mp/classTable.csv" , 0 , "loadoutPerk2" , 1 + 1 )  );
+				setLocalVarString loadoutPerk3 ( tablelookup( "mp/classTable.csv" , 0 , "loadoutPerk3" , 1 + 1 )  );
+				
+				setLocalVarString loadoutStreak1 ( tablelookup( "mp/classTable.csv" , 0 , "loadoutStreak1" , 1 + 1 )  );
+				setLocalVarString loadoutStreak2 ( tablelookup( "mp/classTable.csv" , 0 , "loadoutStreak2" , 1 + 1 )  );
+				setLocalVarString loadoutStreak3 ( tablelookup( "mp/classTable.csv" , 0 , "loadoutStreak3" , 1 + 1 )  );
+				
+				setLocalVarString loadoutDeathStreak ( tablelookup( "mp/classTable.csv" , 0 , "loadoutDeathStreak" , 1 + 1 )  );
+				setLocalVarString loadoutOffhandSecondary ( tablelookup( "mp/classTable.csv" , 0 , "loadoutOffhand" , 1 + 1 )  );
+				setLocalVarString loadoutClassName "@" + ( tablelookup( "mp/classTable.csv" , 0 , "loadoutName" , 1 + 1 )  );
+			}
+			leaveFocus
+			{
+				setItemColor self "backcolor" 0 0 0 "0.0";
+				setLocalVarString ui_hint_text "@NULL_EMPTY"  );
+				setLocalVarBool ui_menuAButton 1;
+			}
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse "class1";
+				close "self";
+			}
+		}
+		itemDef
+		{
+			name class_choose_3
+			rect -64 68 336 20 1 1
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background menu_button_selection_bar
+			group mw2_button
+			type 1
+			align 0
+			textAlign 6
+			textAlignX -60
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			text "@CLASS_CLASS3"
+			visible 1
+			onFocus
+			{
+				play "mouse_over";
+				setItemColor mw2_button "backcolor" 0 0 0 0;
+				setItemColor self "backcolor" 0 0 0 1;
+				setLocalVarBool ui_menuAButton 1;
+				setLocalVarFloat ui_popupYPos 0.000000;
+				setLocalVarString loadoutPrimary ( tablelookup( "mp/classTable.csv" , 0 , "loadoutPrimary" , 2 + 1 )  );
+				setLocalVarString loadoutPrimaryAttachment ( tablelookup( "mp/classTable.csv" , 0 , "loadoutPrimaryAttachment" , 2 + 1 )  );
+				setLocalVarString loadoutPrimaryAttachment2 ( tablelookup( "mp/classTable.csv" , 0 , "loadoutPrimaryAttachment2" , 2 + 1 )  );
+				setLocalVarString loadoutPrimaryCamo ( tablelookup( "mp/classTable.csv" , 0 , "loadoutPrimaryCamo" , 2 + 1 )  );
+				
+				setLocalVarString loadoutSecondary ( tablelookup( "mp/classTable.csv" , 0 , "loadoutSecondary" , 2 + 1 )  );
+				setLocalVarString loadoutSecondaryAttachment ( tablelookup( "mp/classTable.csv" , 0 , "loadoutSecondaryAttachment" , 2 + 1 )  );
+				setLocalVarString loadoutSecondaryAttachment2 ( tablelookup( "mp/classTable.csv" , 0 , "loadoutSecondaryAttachment2" , 2 + 1 )  );
+				setLocalVarString loadoutSecondaryCamo ( tablelookup( "mp/classTable.csv" , 0 , "loadoutSecondaryCamo" , 2 + 1 )  );
+				
+				setLocalVarString loadoutEquipment ( tablelookup( "mp/classTable.csv" , 0 , "loadoutEquipment" , 2 + 1 )  );
+				
+				setLocalVarString loadoutPerk1 ( tablelookup( "mp/classTable.csv" , 0 , "loadoutPerk1" , 2 + 1 )  );
+				setLocalVarString loadoutPerk2 ( tablelookup( "mp/classTable.csv" , 0 , "loadoutPerk2" , 2 + 1 )  );
+				setLocalVarString loadoutPerk3 ( tablelookup( "mp/classTable.csv" , 0 , "loadoutPerk3" , 2 + 1 )  );
+				
+				setLocalVarString loadoutStreak1 ( tablelookup( "mp/classTable.csv" , 0 , "loadoutStreak1" , 2 + 1 )  );
+				setLocalVarString loadoutStreak2 ( tablelookup( "mp/classTable.csv" , 0 , "loadoutStreak2" , 2 + 1 )  );
+				setLocalVarString loadoutStreak3 ( tablelookup( "mp/classTable.csv" , 0 , "loadoutStreak3" , 2 + 1 )  );
+				
+				setLocalVarString loadoutDeathStreak ( tablelookup( "mp/classTable.csv" , 0 , "loadoutDeathStreak" , 2 + 1 )  );
+				setLocalVarString loadoutOffhandSecondary ( tablelookup( "mp/classTable.csv" , 0 , "loadoutOffhand" , 2 + 1 )  );
+				setLocalVarString loadoutClassName "@" + ( tablelookup( "mp/classTable.csv" , 0 , "loadoutName" , 2 + 1 )  );
+			}
+			leaveFocus
+			{
+				setItemColor self "backcolor" 0 0 0 "0.0";
+				setLocalVarString ui_hint_text "@NULL_EMPTY"  );
+				setLocalVarBool ui_menuAButton 1;
+			}
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse "class2";
+				close "self";
+			}
+		}
+		itemDef
+		{
+			name class_choose_4
+			rect -64 88 336 20 1 1
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background menu_button_selection_bar
+			group mw2_button
+			type 1
+			align 0
+			textAlign 6
+			textAlignX -60
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			text "@CLASS_CLASS4"
+			visible 1
+			onFocus
+			{
+				play "mouse_over";
+				setItemColor mw2_button "backcolor" 0 0 0 0;
+				setItemColor self "backcolor" 0 0 0 1;
+				setLocalVarBool ui_menuAButton 1;
+				setLocalVarFloat ui_popupYPos 0.000000;
+
+				setLocalVarString loadoutPrimary ( tablelookup( "mp/classTable.csv" , 0 , "loadoutPrimary" , 3 + 1 )  );
+				setLocalVarString loadoutPrimaryAttachment ( tablelookup( "mp/classTable.csv" , 0 , "loadoutPrimaryAttachment" , 3 + 1 )  );
+				setLocalVarString loadoutPrimaryAttachment2 ( tablelookup( "mp/classTable.csv" , 0 , "loadoutPrimaryAttachment2" , 3 + 1 )  );
+				setLocalVarString loadoutPrimaryCamo ( tablelookup( "mp/classTable.csv" , 0 , "loadoutPrimaryCamo" , 3 + 1 )  );
+				
+				setLocalVarString loadoutSecondary ( tablelookup( "mp/classTable.csv" , 0 , "loadoutSecondary" , 3 + 1 )  );
+				setLocalVarString loadoutSecondaryAttachment ( tablelookup( "mp/classTable.csv" , 0 , "loadoutSecondaryAttachment" , 3 + 1 )  );
+				setLocalVarString loadoutSecondaryAttachment2 ( tablelookup( "mp/classTable.csv" , 0 , "loadoutSecondaryAttachment2" , 3 + 1 )  );
+				setLocalVarString loadoutSecondaryCamo ( tablelookup( "mp/classTable.csv" , 0 , "loadoutSecondaryCamo" , 3 + 1 )  );
+				
+				setLocalVarString loadoutEquipment ( tablelookup( "mp/classTable.csv" , 0 , "loadoutEquipment" , 3 + 1 )  );
+				
+				setLocalVarString loadoutPerk1 ( tablelookup( "mp/classTable.csv" , 0 , "loadoutPerk1" , 3 + 1 )  );
+				setLocalVarString loadoutPerk2 ( tablelookup( "mp/classTable.csv" , 0 , "loadoutPerk2" , 3 + 1 )  );
+				setLocalVarString loadoutPerk3 ( tablelookup( "mp/classTable.csv" , 0 , "loadoutPerk3" , 3 + 1 )  );
+				
+				setLocalVarString loadoutStreak1 ( tablelookup( "mp/classTable.csv" , 0 , "loadoutStreak1" , 3 + 1 )  );
+				setLocalVarString loadoutStreak2 ( tablelookup( "mp/classTable.csv" , 0 , "loadoutStreak2" , 3 + 1 )  );
+				setLocalVarString loadoutStreak3 ( tablelookup( "mp/classTable.csv" , 0 , "loadoutStreak3" , 3 + 1 )  );
+				
+				setLocalVarString loadoutDeathStreak ( tablelookup( "mp/classTable.csv" , 0 , "loadoutDeathStreak" , 3 + 1 )  );
+				setLocalVarString loadoutOffhandSecondary ( tablelookup( "mp/classTable.csv" , 0 , "loadoutOffhand" , 3 + 1 )  );
+				setLocalVarString loadoutClassName "@" + ( tablelookup( "mp/classTable.csv" , 0 , "loadoutName" , 3 + 1 )  );
+			}
+			leaveFocus
+			{
+				setItemColor self "backcolor" 0 0 0 "0.0";
+				setLocalVarString ui_hint_text "@NULL_EMPTY"  );
+				setLocalVarBool ui_menuAButton 1;
+			}
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse "class3";
+				close "self";
+			}
+		}
+		itemDef
+		{
+			name class_choose_5
+			rect -64 108 336 20 1 1
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background menu_button_selection_bar
+			group mw2_button
+			type 1
+			align 0
+			textAlign 6
+			textAlignX -60
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			text "@CLASS_CLASS5"
+			visible 1
+			onFocus
+			{
+				play "mouse_over";
+				setItemColor mw2_button "backcolor" 0 0 0 0;
+				setItemColor self "backcolor" 0 0 0 1;
+				setLocalVarBool ui_menuAButton 1;
+				setLocalVarFloat ui_popupYPos 0.000000;
+
+				setLocalVarString loadoutPrimary ( tablelookup( "mp/classTable.csv" , 0 , "loadoutPrimary" , 4 + 1 )  );
+				setLocalVarString loadoutPrimaryAttachment ( tablelookup( "mp/classTable.csv" , 0 , "loadoutPrimaryAttachment" , 4 + 1 )  );
+				setLocalVarString loadoutPrimaryAttachment2 ( tablelookup( "mp/classTable.csv" , 0 , "loadoutPrimaryAttachment2" , 4 + 1 )  );
+				setLocalVarString loadoutPrimaryCamo ( tablelookup( "mp/classTable.csv" , 0 , "loadoutPrimaryCamo" , 4 + 1 )  );
+				
+				setLocalVarString loadoutSecondary ( tablelookup( "mp/classTable.csv" , 0 , "loadoutSecondary" , 4 + 1 )  );
+				setLocalVarString loadoutSecondaryAttachment ( tablelookup( "mp/classTable.csv" , 0 , "loadoutSecondaryAttachment" , 4 + 1 )  );
+				setLocalVarString loadoutSecondaryAttachment2 ( tablelookup( "mp/classTable.csv" , 0 , "loadoutSecondaryAttachment2" , 4 + 1 )  );
+				setLocalVarString loadoutSecondaryCamo ( tablelookup( "mp/classTable.csv" , 0 , "loadoutSecondaryCamo" , 4 + 1 )  );
+				
+				setLocalVarString loadoutEquipment ( tablelookup( "mp/classTable.csv" , 0 , "loadoutEquipment" , 4 + 1 )  );
+				
+				setLocalVarString loadoutPerk1 ( tablelookup( "mp/classTable.csv" , 0 , "loadoutPerk1" , 4 + 1 )  );
+				setLocalVarString loadoutPerk2 ( tablelookup( "mp/classTable.csv" , 0 , "loadoutPerk2" , 4 + 1 )  );
+				setLocalVarString loadoutPerk3 ( tablelookup( "mp/classTable.csv" , 0 , "loadoutPerk3" , 4 + 1 )  );
+				
+				setLocalVarString loadoutStreak1 ( tablelookup( "mp/classTable.csv" , 0 , "loadoutStreak1" , 4 + 1 )  );
+				setLocalVarString loadoutStreak2 ( tablelookup( "mp/classTable.csv" , 0 , "loadoutStreak2" , 4 + 1 )  );
+				setLocalVarString loadoutStreak3 ( tablelookup( "mp/classTable.csv" , 0 , "loadoutStreak3" , 4 + 1 )  );
+				
+				setLocalVarString loadoutDeathStreak ( tablelookup( "mp/classTable.csv" , 0 , "loadoutDeathStreak" , 4 + 1 )  );
+				setLocalVarString loadoutOffhandSecondary ( tablelookup( "mp/classTable.csv" , 0 , "loadoutOffhand" , 4 + 1 )  );
+				setLocalVarString loadoutClassName "@" + ( tablelookup( "mp/classTable.csv" , 0 , "loadoutName" , 4 + 1 )  );
+			}
+			leaveFocus
+			{
+				"setItemColor" "self" "backcolor" 0 0 0 "0.0";
+				setLocalVarString ui_hint_text "@NULL_EMPTY"  );
+				setLocalVarBool ui_menuAButton 1;
+			}
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse "class4";
+				close "self";
+			}
+		}
+		itemDef
+		{
+			rect 0 128 216 1 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.65
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background gradient_fadein
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+		}
+		itemDef
+		{
+			name class_custom_1
+			rect -64 128 336 20 1 1
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background menu_button_selection_bar
+			group mw2_button
+			type 1
+			align 0
+			textAlign 6
+			textAlignX -60
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			visible 1
+			onFocus
+			{
+				play "mouse_over";
+				setItemColor mw2_button "backcolor" 0 0 0 0;
+				setItemColor self "backcolor" 0 0 0 1;
+				setLocalVarBool ui_menuAButton 1;
+				setLocalVarFloat ui_popupYPos 0.000000;
+				
+				setLocalVarInt classIndex 0;
+				
+				setLocalVarString loadoutPrimary ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 0 , "weapon" )  );
+				setLocalVarString loadoutPrimaryAttachment ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 0 , "attachment" , 0 )  );
+				setLocalVarString loadoutPrimaryAttachment2 ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 0 , "attachment" , 1 )  );
+            	setLocalVarString loadoutPrimaryCamo ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 0 , "camo" )  );
+				
+				setLocalVarString loadoutSecondary ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 1 , "weapon" )  );
+				setLocalVarString loadoutSecondaryAttachment ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 1 , "attachment" , 0 )  );
+				setLocalVarString loadoutSecondaryAttachment2 ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 1 , "attachment" , 1 )  );
+				setLocalVarString loadoutSecondaryCamo ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 1 , "camo" )  );
+				
+				setLocalVarString loadoutEquipment ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "perks" , 0 )  );
+				
+				setLocalVarString loadoutPerk1 ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "perks" , 1 )  );
+				setLocalVarString loadoutPerk2 ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "perks" , 2 )  );
+				setLocalVarString loadoutPerk3 ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "perks" , 3 )  );
+				
+				setLocalVarString loadoutStreak1 ( getplayerdata( "killstreaks" , 0 )  );
+				setLocalVarString loadoutStreak2 ( getplayerdata( "killstreaks" , 1 )  );
+				setLocalVarString loadoutStreak3 ( getplayerdata( "killstreaks" , 2 )  );
+				
+				setLocalVarString loadoutDeathStreak ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "perks" , 4 ) ( )  );
+				setLocalVarString loadoutOffhandSecondary ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "specialGrenade" ) ( )  );
+				setLocalVarString loadoutClassName ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "name" ) ( )  );
+			}
+			leaveFocus
+			{
+				setItemColor self "backcolor" 0 0 0 "0.0";
+				setLocalVarString ui_hint_text "@NULL_EMPTY"  );
+				setLocalVarBool ui_menuAButton 1;
+			}
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse "custom1";
+				close "self";
+			}
+			exp text ( getplayerdata( customClasses , 0 , name )  )
+		}
+		itemDef
+		{
+			name class_custom_2
+			rect -64 148 336 20 1 1
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background menu_button_selection_bar
+			group mw2_button
+			type 1
+			align 0
+			textAlign 6
+			textAlignX -60
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			visible 1
+			onFocus
+			{
+				play "mouse_over";
+				setItemColor mw2_button "backcolor" 0 0 0 0;
+				setItemColor self "backcolor" 0 0 0 1;
+				setLocalVarBool ui_menuAButton 1;
+				setLocalVarFloat ui_popupYPos 0.000000;
+				setLocalVarInt classIndex 1;
+				setLocalVarString loadoutPrimary ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 0 , "weapon" )  );
+				setLocalVarString loadoutPrimaryAttachment ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 0 , "attachment" , 0 )  );
+				setLocalVarString loadoutPrimaryAttachment2 ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 0 , "attachment" , 1 )  );
+				setLocalVarString loadoutPrimaryCamo ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 0 , "camo" )  );
+				
+				setLocalVarString loadoutSecondary ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 1 , "weapon" )  );
+				setLocalVarString loadoutSecondaryAttachment ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 1 , "attachment" , 0 )  );
+				setLocalVarString loadoutSecondaryAttachment2 ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 1 , "attachment" , 1 )  );
+				setLocalVarString loadoutSecondaryCamo ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 1 , "camo" )  );
+				
+				setLocalVarString loadoutEquipment ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "perks" , 0 )  );
+				
+				setLocalVarString loadoutPerk1 ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "perks" , 1 )  );
+				setLocalVarString loadoutPerk2 ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "perks" , 2 )  );
+				setLocalVarString loadoutPerk3 ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "perks" , 3 )  );
+				
+				setLocalVarString loadoutStreak1 ( getplayerdata( "killstreaks" , 0 )  );
+				setLocalVarString loadoutStreak2 ( getplayerdata( "killstreaks" , 1 )  );
+				setLocalVarString loadoutStreak3 ( getplayerdata( "killstreaks" , 2 )  );
+				
+				setLocalVarString loadoutDeathStreak ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "perks" , 4 ) ( )  );
+				setLocalVarString loadoutOffhandSecondary ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "specialGrenade" ) ( )  );
+				setLocalVarString loadoutClassName ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "name" ) ( )  );
+			}
+			leaveFocus
+			{
+				setItemColor self "backcolor" 0 0 0 "0.0";
+				setLocalVarString ui_hint_text "@NULL_EMPTY"  );
+				setLocalVarBool ui_menuAButton 1;
+			}
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse "custom2";
+				close "self";
+			}
+			exp text ( getplayerdata( "customClasses" , 1 , "name" )  )
+		}
+		itemDef
+		{
+			name class_custom_3
+			rect -64 168 336 20 1 1
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background menu_button_selection_bar
+			group mw2_button
+			type 1
+			align 0
+			textAlign 6
+			textAlignX -60
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			visible 1
+			onFocus
+			{
+				play "mouse_over";
+				setItemColor mw2_button "backcolor" 0 0 0 0;
+				setItemColor self "backcolor" 0 0 0 1;
+				setLocalVarBool ui_menuAButton 1;
+				setLocalVarFloat ui_popupYPos 0.000000;
+				
+				setLocalVarInt classIndex 2;
+				setLocalVarString loadoutPrimary ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 0 , "weapon" )  );
+				setLocalVarString loadoutPrimaryAttachment ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 0 , "attachment" , 0 )  );
+				setLocalVarString loadoutPrimaryAttachment2 ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 0 , "attachment" , 1 )  );
+				setLocalVarString loadoutPrimaryCamo ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 0 , "camo" )  );
+				
+				setLocalVarString loadoutSecondary ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 1 , "weapon" )  );
+				setLocalVarString loadoutSecondaryAttachment ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 1 , "attachment" , 0 )  );
+				setLocalVarString loadoutSecondaryAttachment2 ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 1 , "attachment" , 1 )  );
+				setLocalVarString loadoutSecondaryCamo ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 1 , "camo" )  );
+				
+				setLocalVarString loadoutEquipment ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "perks" , 0 )  );
+				
+				setLocalVarString loadoutPerk1 ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "perks" , 1 )  );
+				setLocalVarString loadoutPerk2 ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "perks" , 2 )  );
+				setLocalVarString loadoutPerk3 ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "perks" , 3 )  );
+				
+				setLocalVarString loadoutStreak1 ( getplayerdata( "killstreaks" , 0 )  );
+				setLocalVarString loadoutStreak2 ( getplayerdata( "killstreaks" , 1 )  );
+				setLocalVarString loadoutStreak3 ( getplayerdata( "killstreaks" , 2 )  );
+				
+				setLocalVarString loadoutDeathStreak ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "perks" , 4 ) ( )  );
+				setLocalVarString loadoutOffhandSecondary ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "specialGrenade" ) ( )  );
+				setLocalVarString loadoutClassName ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "name" ) ( )  );
+			}
+			leaveFocus
+			{
+				setItemColor self "backcolor" 0 0 0 "0.0";
+				setLocalVarString ui_hint_text "@NULL_EMPTY"  );
+				setLocalVarBool ui_menuAButton 1;
+			}
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse "custom3";
+				close "self";
+			}
+			exp text ( getplayerdata( "customClasses" , 2 , "name" )  )
+		}
+		itemDef
+		{
+			name class_custom_4
+			rect -64 188 336 20 1 1
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background menu_button_selection_bar
+			group mw2_button
+			type 1
+			align 0
+			textAlign 6
+			textAlignX -60
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			visible 1
+			onFocus
+			{
+				play "mouse_over";
+				setItemColor mw2_button "backcolor" 0 0 0 0;
+				setItemColor self "backcolor" 0 0 0 1;
+				setLocalVarBool ui_menuAButton 1;
+				setLocalVarFloat ui_popupYPos 0.000000;
+				
+				setLocalVarInt classIndex 3;
+				setLocalVarString loadoutPrimary ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 0 , "weapon" )  );
+				setLocalVarString loadoutPrimaryAttachment ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 0 , "attachment" , 0 )  );
+				setLocalVarString loadoutPrimaryAttachment2 ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 0 , "attachment" , 1 )  );
+				setLocalVarString loadoutPrimaryCamo ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 0 , "camo" )  );
+				
+				setLocalVarString loadoutSecondary ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 1 , "weapon" )  );
+				setLocalVarString loadoutSecondaryAttachment ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 1 , "attachment" , 0 )  );
+				setLocalVarString loadoutSecondaryAttachment2 ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 1 , "attachment" , 1 )  );
+				setLocalVarString loadoutSecondaryCamo ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 1 , "camo" )  );
+				
+				setLocalVarString loadoutEquipment ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "perks" , 0 )  );
+				
+				setLocalVarString loadoutPerk1 ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "perks" , 1 )  );
+				setLocalVarString loadoutPerk2 ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "perks" , 2 )  );
+				setLocalVarString loadoutPerk3 ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "perks" , 3 )  );
+				
+				setLocalVarString loadoutStreak1 ( getplayerdata( "killstreaks" , 0 )  );
+				setLocalVarString loadoutStreak2 ( getplayerdata( "killstreaks" , 1 )  );
+				setLocalVarString loadoutStreak3 ( getplayerdata( "killstreaks" , 2 )  );
+				
+				setLocalVarString loadoutDeathStreak ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "perks" , 4 ) ( )  );
+				setLocalVarString loadoutOffhandSecondary ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "specialGrenade" ) ( )  );
+				setLocalVarString loadoutClassName ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "name" ) ( )  );
+			}
+			leaveFocus
+			{
+				setItemColor self "backcolor" 0 0 0 "0.0";
+				setLocalVarString ui_hint_text "@NULL_EMPTY"  );
+				setLocalVarBool ui_menuAButton 1;
+			}
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse "custom4";
+				close "self";
+			}
+			exp text ( getplayerdata( "customClasses" , 3 , "name" )  )
+		}
+		itemDef
+		{
+			name class_custom_5
+			rect -64 208 336 20 1 1
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background menu_button_selection_bar
+			group mw2_button
+			type 1
+			align 0
+			textAlign 6
+			textAlignX -60
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			visible 1
+			onFocus
+			{
+				play "mouse_over";
+				setItemColor mw2_button "backcolor" 0 0 0 0;
+				setItemColor self "backcolor" 0 0 0 1;
+				setLocalVarBool ui_menuAButton 1;
+				setLocalVarFloat ui_popupYPos 0.000000;
+				
+				setLocalVarInt classIndex 4;
+				setLocalVarString loadoutPrimary ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 0 , "weapon" )  );
+				setLocalVarString loadoutPrimaryAttachment ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 0 , "attachment" , 0 )  );
+				setLocalVarString loadoutPrimaryAttachment2 ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 0 , "attachment" , 1 )  );
+				setLocalVarString loadoutPrimaryCamo ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 0 , "camo" )  );
+				
+				setLocalVarString loadoutSecondary ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 1 , "weapon" )  );
+				setLocalVarString loadoutSecondaryAttachment ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 1 , "attachment" , 0 )  );
+				setLocalVarString loadoutSecondaryAttachment2 ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 1 , "attachment" , 1 )  );
+				setLocalVarString loadoutSecondaryCamo ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 1 , "camo" )  );
+				
+				setLocalVarString loadoutEquipment ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "perks" , 0 )  );
+				
+				setLocalVarString loadoutPerk1 ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "perks" , 1 )  );
+				setLocalVarString loadoutPerk2 ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "perks" , 2 )  );
+				setLocalVarString loadoutPerk3 ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "perks" , 3 )  );
+				
+				setLocalVarString loadoutStreak1 ( getplayerdata( "killstreaks" , 0 )  );
+				setLocalVarString loadoutStreak2 ( getplayerdata( "killstreaks" , 1 )  );
+				setLocalVarString loadoutStreak3 ( getplayerdata( "killstreaks" , 2 )  );
+				
+				setLocalVarString loadoutDeathStreak ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "perks" , 4 ) ( )  );
+				setLocalVarString loadoutOffhandSecondary ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "specialGrenade" ) ( )  );
+				setLocalVarString loadoutClassName ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "name" ) ( )  );
+			}
+			leaveFocus
+			{
+				setItemColor self "backcolor" 0 0 0 "0.0";
+				setLocalVarString ui_hint_text "@NULL_EMPTY"  );
+				setLocalVarBool ui_menuAButton 1;
+			}
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse "custom5";
+				close "self";
+			}
+			exp text ( getplayerdata( "customClasses" , 4 , "name" )  )
+		}
+		itemDef
+		{
+			name class_custom_6
+			rect -64 228 336 20 1 1
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background menu_button_selection_bar
+			group mw2_button
+			type 1
+			align 0
+			textAlign 6
+			textAlignX -60
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			visible 1
+			onFocus
+			{
+				play "mouse_over";
+				setItemColor mw2_button "backcolor" 0 0 0 0;
+				setItemColor self "backcolor" 0 0 0 1;
+				setLocalVarBool ui_menuAButton 1;
+				setLocalVarFloat ui_popupYPos 0.000000;
+				
+				setLocalVarInt classIndex 5;
+				setLocalVarString loadoutPrimary ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 0 , "weapon" )  );
+				setLocalVarString loadoutPrimaryAttachment ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 0 , "attachment" , 0 )  );
+				setLocalVarString loadoutPrimaryAttachment2 ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 0 , "attachment" , 1 )  );
+				setLocalVarString loadoutPrimaryCamo ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 0 , "camo" )  );
+				
+				setLocalVarString loadoutSecondary ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 1 , "weapon" )  );
+				setLocalVarString loadoutSecondaryAttachment ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 1 , "attachment" , 0 )  );
+				setLocalVarString loadoutSecondaryAttachment2 ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 1 , "attachment" , 1 )  );
+				setLocalVarString loadoutSecondaryCamo ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 1 , "camo" )  );
+				
+				setLocalVarString loadoutEquipment ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "perks" , 0 )  );
+				
+				setLocalVarString loadoutPerk1 ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "perks" , 1 )  );
+				setLocalVarString loadoutPerk2 ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "perks" , 2 )  );
+				setLocalVarString loadoutPerk3 ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "perks" , 3 )  );
+				
+				setLocalVarString loadoutStreak1 ( getplayerdata( "killstreaks" , 0 )  );
+				setLocalVarString loadoutStreak2 ( getplayerdata( "killstreaks" , 1 )  );
+				setLocalVarString loadoutStreak3 ( getplayerdata( "killstreaks" , 2 )  );
+				
+				setLocalVarString loadoutDeathStreak ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "perks" , 4 ) ( )  );
+				setLocalVarString loadoutOffhandSecondary ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "specialGrenade" ) ( )  );
+				setLocalVarString loadoutClassName ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "name" ) ( )  );
+			}
+			leaveFocus
+			{
+				setItemColor self "backcolor" 0 0 0 "0.0";
+				setLocalVarString ui_hint_text "@NULL_EMPTY"  );
+				setLocalVarBool ui_menuAButton 1;
+			}
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse "custom6";
+				close "self";
+			}
+			exp text ( getplayerdata( "customClasses" , 5 , "name" )  )
+			visible when ( getplayerdata( "customClasses" , 5 , "inUse" )  )
+		}
+		itemDef
+		{
+			name class_custom_7
+			rect -64 248 336 20 1 1
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background menu_button_selection_bar
+			group mw2_button
+			type 1
+			align 0
+			textAlign 6
+			textAlignX -60
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			visible 1
+			onFocus
+			{
+				play "mouse_over";
+				setItemColor mw2_button "backcolor" 0 0 0 0;
+				setItemColor self "backcolor" 0 0 0 1;
+				setLocalVarBool ui_menuAButton 1;
+				setLocalVarFloat ui_popupYPos 0.000000;
+				
+				setLocalVarInt classIndex 6;
+				setLocalVarString loadoutPrimary ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 0 , "weapon" )  );
+				setLocalVarString loadoutPrimaryAttachment ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 0 , "attachment" , 0 )  );
+				setLocalVarString loadoutPrimaryAttachment2 ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 0 , "attachment" , 1 )  );
+				setLocalVarString loadoutPrimaryCamo ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 0 , "camo" )  );
+				
+				setLocalVarString loadoutSecondary ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 1 , "weapon" )  );
+				setLocalVarString loadoutSecondaryAttachment ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 1 , "attachment" , 0 )  );
+				setLocalVarString loadoutSecondaryAttachment2 ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 1 , "attachment" , 1 )  );
+				setLocalVarString loadoutSecondaryCamo ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 1 , "camo" )  );
+				
+				setLocalVarString loadoutEquipment ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "perks" , 0 )  );
+				
+				setLocalVarString loadoutPerk1 ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "perks" , 1 )  );
+				setLocalVarString loadoutPerk2 ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "perks" , 2 )  );
+				setLocalVarString loadoutPerk3 ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "perks" , 3 )  );
+				
+				setLocalVarString loadoutStreak1 ( getplayerdata( "killstreaks" , 0 )  );
+				setLocalVarString loadoutStreak2 ( getplayerdata( "killstreaks" , 1 )  );
+				setLocalVarString loadoutStreak3 ( getplayerdata( "killstreaks" , 2 )  );
+				
+				setLocalVarString loadoutDeathStreak ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "perks" , 4 ) ( )  );
+				setLocalVarString loadoutOffhandSecondary ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "specialGrenade" ) ( )  );
+				setLocalVarString loadoutClassName ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "name" ) ( )  );
+			}
+			leaveFocus
+			{
+				setItemColor self "backcolor" 0 0 0 "0.0";
+				setLocalVarString ui_hint_text "@NULL_EMPTY"  );
+				setLocalVarBool ui_menuAButton 1;
+			}
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse "custom7";
+				close "self";
+			}
+			exp text ( getplayerdata( "customClasses" , 6 , "name" )  )
+		}
+		itemDef
+		{
+			name class_custom_8
+			rect -64 268 336 20 1 1
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background menu_button_selection_bar
+			group mw2_button
+			type 1
+			align 0
+			textAlign 6
+			textAlignX -60
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			visible 1
+			onFocus
+			{
+				play "mouse_over";
+				setItemColor mw2_button "backcolor" 0 0 0 0;
+				setItemColor self "backcolor" 0 0 0 1;
+				setLocalVarBool ui_menuAButton 1;
+				setLocalVarFloat ui_popupYPos 0.000000;
+				
+				setLocalVarInt classIndex 7;
+				setLocalVarString loadoutPrimary ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 0 , "weapon" )  );
+				setLocalVarString loadoutPrimaryAttachment ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 0 , "attachment" , 0 )  );
+				setLocalVarString loadoutPrimaryAttachment2 ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 0 , "attachment" , 1 )  );
+				setLocalVarString loadoutPrimaryCamo ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 0 , "camo" )  );
+				
+				setLocalVarString loadoutSecondary ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 1 , "weapon" )  );
+				setLocalVarString loadoutSecondaryAttachment ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 1 , "attachment" , 0 )  );
+				setLocalVarString loadoutSecondaryAttachment2 ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 1 , "attachment" , 1 )  );
+				setLocalVarString loadoutSecondaryCamo ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 1 , "camo" )  );
+				
+				setLocalVarString loadoutEquipment ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "perks" , 0 )  );
+				
+				setLocalVarString loadoutPerk1 ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "perks" , 1 )  );
+				setLocalVarString loadoutPerk2 ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "perks" , 2 )  );
+				setLocalVarString loadoutPerk3 ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "perks" , 3 )  );
+				
+				setLocalVarString loadoutStreak1 ( getplayerdata( "killstreaks" , 0 )  );
+				setLocalVarString loadoutStreak2 ( getplayerdata( "killstreaks" , 1 )  );
+				setLocalVarString loadoutStreak3 ( getplayerdata( "killstreaks" , 2 )  );
+				
+				setLocalVarString loadoutDeathStreak ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "perks" , 4 ) ( )  );
+				setLocalVarString loadoutOffhandSecondary ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "specialGrenade" ) ( )  );
+				setLocalVarString loadoutClassName ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "name" ) ( )  );
+			}
+			leaveFocus
+			{
+				setItemColor self "backcolor" 0 0 0 "0.0";
+				setLocalVarString ui_hint_text "@NULL_EMPTY"  );
+				setLocalVarBool ui_menuAButton 1;
+			}
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse "custom8";
+				close "self";
+			}
+			exp text ( getplayerdata( "customClasses" , 7 , "name" )  )
+		}
+		itemDef
+		{
+			name class_custom_9
+			rect -64 288 336 20 1 1
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background menu_button_selection_bar
+			group mw2_button
+			type 1
+			align 0
+			textAlign 6
+			textAlignX -60
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			visible 1
+			onFocus
+			{
+				play "mouse_over";
+				setItemColor mw2_button "backcolor" 0 0 0 0;
+				setItemColor self "backcolor" 0 0 0 1;
+				setLocalVarBool ui_menuAButton 1;
+				setLocalVarFloat ui_popupYPos 0.000000;
+				
+				setLocalVarInt classIndex 8;
+				setLocalVarString loadoutPrimary ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 0 , "weapon" )  );
+				setLocalVarString loadoutPrimaryAttachment ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 0 , "attachment" , 0 )  );
+				setLocalVarString loadoutPrimaryAttachment2 ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 0 , "attachment" , 1 )  );
+				setLocalVarString loadoutPrimaryCamo ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 0 , "camo" )  );
+				
+				setLocalVarString loadoutSecondary ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 1 , "weapon" )  );
+				setLocalVarString loadoutSecondaryAttachment ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 1 , "attachment" , 0 )  );
+				setLocalVarString loadoutSecondaryAttachment2 ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 1 , "attachment" , 1 )  );
+				setLocalVarString loadoutSecondaryCamo ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 1 , "camo" )  );
+				
+				setLocalVarString loadoutEquipment ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "perks" , 0 )  );
+				
+				setLocalVarString loadoutPerk1 ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "perks" , 1 )  );
+				setLocalVarString loadoutPerk2 ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "perks" , 2 )  );
+				setLocalVarString loadoutPerk3 ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "perks" , 3 )  );
+				
+				setLocalVarString loadoutStreak1 ( getplayerdata( "killstreaks" , 0 )  );
+				setLocalVarString loadoutStreak2 ( getplayerdata( "killstreaks" , 1 )  );
+				setLocalVarString loadoutStreak3 ( getplayerdata( "killstreaks" , 2 )  );
+				
+				setLocalVarString loadoutDeathStreak ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "perks" , 4 ) ( )  );
+				setLocalVarString loadoutOffhandSecondary ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "specialGrenade" ) ( )  );
+				setLocalVarString loadoutClassName ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "name" ) ( )  );
+			}
+			leaveFocus
+			{
+				setItemColor self "backcolor" 0 0 0 "0.0";
+				setLocalVarString ui_hint_text "@NULL_EMPTY"  );
+				setLocalVarBool ui_menuAButton 1;
+			}
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse "custom9";
+				close "self";
+			}
+			exp text ( getplayerdata( "customClasses" , 8 , "name" )  )
+		}
+		itemDef
+		{
+			name class_custom_10
+			rect -64 308 336 20 1 1
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background menu_button_selection_bar
+			group mw2_button
+			type 1
+			align 0
+			textAlign 6
+			textAlignX -60
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			visible 1
+			onFocus
+			{
+				play "mouse_over";
+				setItemColor mw2_button "backcolor" 0 0 0 0;
+				setItemColor self "backcolor" 0 0 0 1;
+				setLocalVarBool ui_menuAButton 1;
+				setLocalVarFloat ui_popupYPos 0.000000;
+				
+				setLocalVarInt classIndex 9;
+				setLocalVarString loadoutPrimary ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 0 , "weapon" )  );
+				setLocalVarString loadoutPrimaryAttachment ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 0 , "attachment" , 0 )  );
+				setLocalVarString loadoutPrimaryAttachment2 ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 0 , "attachment" , 1 )  );
+				setLocalVarString loadoutPrimaryCamo ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 0 , "camo" )  );
+				
+				setLocalVarString loadoutSecondary ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 1 , "weapon" )  );
+				setLocalVarString loadoutSecondaryAttachment ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 1 , "attachment" , 0 )  );
+				setLocalVarString loadoutSecondaryAttachment2 ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 1 , "attachment" , 1 )  );
+				setLocalVarString loadoutSecondaryCamo ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 1 , "camo" )  );
+				
+				setLocalVarString loadoutEquipment ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "perks" , 0 )  );
+				
+				setLocalVarString loadoutPerk1 ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "perks" , 1 )  );
+				setLocalVarString loadoutPerk2 ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "perks" , 2 )  );
+				setLocalVarString loadoutPerk3 ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "perks" , 3 )  );
+				
+				setLocalVarString loadoutStreak1 ( getplayerdata( "killstreaks" , 0 )  );
+				setLocalVarString loadoutStreak2 ( getplayerdata( "killstreaks" , 1 )  );
+				setLocalVarString loadoutStreak3 ( getplayerdata( "killstreaks" , 2 )  );
+				
+				setLocalVarString loadoutDeathStreak ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "perks" , 4 ) ( )  );
+				setLocalVarString loadoutOffhandSecondary ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "specialGrenade" ) ( )  );
+				setLocalVarString loadoutClassName ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "name" ) ( )  );
+			}
+			leaveFocus
+			{
+				setItemColor self "backcolor" 0 0 0 "0.0";
+				setLocalVarString ui_hint_text "@NULL_EMPTY"  );
+				setLocalVarBool ui_menuAButton 1;
+			}
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse "custom10";
+				close "self";
+			}
+			exp text ( getplayerdata( "customClasses" , 9 , "name" )  )
+		}
+		itemDef
+		{
+			rect -272 0 272 408 3 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0 0 0 0
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background white
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+		}
+		itemDef
+		{
+			rect -272 28 -272 20 3 1
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 1 1 1 0.25
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background gradient_fadein
+			decoration 
+			type 0
+			align 0
+			textAlign 4
+			textAlignX 4
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 9
+			feeder 0
+			visible 1
+			exp text ( localvarstring( "loadoutClassName" )  )
+		}
+		itemDef
+		{
+			rect -272 268 -272 4 3 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background gradient_fadein
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+		}
+		itemDef
+		{
+			rect -272 48 -272 100 3 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background gradient_fadein
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+		}
+		itemDef
+		{
+			rect -272 48 272 100 3 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.5
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( tablelookup( "mp/camoTable.csv" , 1 , localvarstring( "loadoutPrimaryCamo" ) , 4 )  )
+			visible when ( localvarstring( "loadoutPrimaryCamo" ) != "none"  )
+		}
+		itemDef
+		{
+			rect -272 48 272 18 3 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0 0 0 0.25
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( tablelookup( "mp/camoTable.csv" , 1 , localvarstring( "loadoutPrimaryCamo" ) , 4 )  )
+			visible when ( localvarstring( "loadoutPrimaryCamo" ) != "none"  )
+		}
+		itemDef // stock primary weapon name
+		{
+			rect -272 48 -272 18 3 1
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0.35
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background gradient_fadein
+			decoration 
+			type 0
+			align 0
+			textAlign 4
+			textAlignX 4
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 9
+			feeder 0
+			visible 1
+			exp text ( "@" + tablelookup( "mp/statsTable.csv" , 4 , localvarstring( "loadoutPrimary" ) , 3 )  )
+		}
+		itemDef
+		{
+			rect -200 48 200 101.333 3 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( tablelookup( "mp/statsTable.csv" , 4 , localvarstring( "loadoutPrimary" ) , 6 )  )
+		}
+		itemDef
+		{
+			rect -268 66 40 40 3 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( tablelookup( "mp/attachmentTable.csv" , 4 , localvarstring( "loadoutPrimaryAttachment2" ) , 6 )  )
+		}
+		itemDef
+		{
+			rect -268 106 40 40 3 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( tablelookup( "mp/attachmentTable.csv" , 4 , localvarstring( "loadoutPrimaryAttachment" ) , 6 )  )
+		}
+		itemDef
+		{
+			rect -224 106 40 40 3 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( tablelookup( "mp/attachmentTable.csv" , 4 , localvarstring( "loadoutPrimaryAttachment2" ) , 6 )  )
+		}
+		itemDef
+		{
+			rect -272 48 272 100 3 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 12
+			textAlignX 4
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			visible 1
+			exp text ( locstring( "@MENU_PLUS" , "@" + tablelookup( "mp/attachmentTable.csv" , 4 , localvarstring( "loadoutPrimaryAttachment" ) , 3 ) )  )
+			visible when ( localvarstring( "loadoutPrimaryAttachment" ) != "none" || ( localvarstring( "loadoutPerk1" ) == "specialty_bling" && ( tablelookup( "mp/statsTable.csv" , 4 , localvarstring( "loadoutPrimary" ) , 11 ) != "" ) )  )
+		}
+		itemDef
+		{
+			rect -272 48 272 100 3 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 12
+			textAlignX 4
+			textAlignY -40
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			visible 1
+			exp text ( locstring( "@MENU_PLUS" , "@" + tablelookup( "mp/attachmentTable.csv" , 4 , localvarstring( "loadoutPrimaryAttachment2" ) , 3 ) )  )
+			visible when ( ( isitemunlocked( "specialty_secondarybling" ) || 0 == 0 ) && localvarstring( "loadoutPrimaryAttachment2" ) != "none" || ( localvarstring( "loadoutPerk1" ) == "specialty_bling" && ( tablelookup( "mp/statsTable.csv" , 4 , localvarstring( "loadoutPrimary" ) , ( 11 + 1 ) ) != "" ) )  )
+		}
+		itemDef
+		{
+			rect -272 148 -272 100 3 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background gradient_fadein
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+		}
+		itemDef
+		{
+			rect -272 148 272 100 3 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.5
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( tablelookup( "mp/camoTable.csv" , 1 , localvarstring( "loadoutSecondaryCamo" ) , 4 )  )
+			visible when ( localvarstring( "loadoutSecondaryCamo" ) != "none"  )
+		}
+		itemDef
+		{
+			rect -272 148 272 18 3 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0 0 0 0.25
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( tablelookup( "mp/camoTable.csv" , 1 , localvarstring( "loadoutSecondaryCamo" ) , 4 )  )
+			visible when ( localvarstring( "loadoutSecondaryCamo" ) != "none"  )
+		}
+		itemDef // stock secondary weapon name
+		{
+			rect -272 148 -272 18 3 1
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0.35
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background gradient_fadein
+			decoration 
+			type 0
+			align 0
+			textAlign 4
+			textAlignX 4
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 9
+			feeder 0
+			visible 1
+			exp text ( "@" + tablelookup( "mp/statsTable.csv" , 4 , localvarstring( "loadoutSecondary" ) , 3 )  )
+		}
+		itemDef
+		{
+			rect -200 148 200 101.333 3 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( tablelookup( "mp/statsTable.csv" , 4 , localvarstring( "loadoutSecondary" ) , 6 )  )
+		}
+		itemDef
+		{
+			rect -268 166 40 40 3 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( tablelookup( "mp/attachmentTable.csv" , 4 , localvarstring( "loadoutSecondaryAttachment2" ) , 6 )  )
+		}
+		itemDef
+		{
+			rect -268 206 40 40 3 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( tablelookup( "mp/attachmentTable.csv" , 4 , localvarstring( "loadoutSecondaryAttachment" ) , 6 )  )
+		}
+		itemDef
+		{
+			rect -224 206 40 40 3 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( tablelookup( "mp/attachmentTable.csv" , 4 , localvarstring( "loadoutSecondaryAttachment2" ) , 6 )  )
+		}
+		itemDef
+		{
+			rect -272 148 272 100 3 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 12
+			textAlignX 4
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			visible 1
+			exp text ( locstring( "@MENU_PLUS" , "@" + tablelookup( "mp/attachmentTable.csv" , 4 , localvarstring( "loadoutSecondaryAttachment" ) , 3 ) )  )
+		}
+		itemDef
+		{
+			rect -272 148 272 100 3 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 12
+			textAlignX 4
+			textAlignY -40
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			visible 1
+			exp text ( locstring( "@MENU_PLUS" , "@" + tablelookup( "mp/attachmentTable.csv" , 4 , localvarstring( "loadoutSecondaryAttachment2" ) , 3 ) )  )
+		}
+		itemDef
+		{
+			rect -272 268 -272 36 3 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background gradient_fadein
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+		}
+		itemDef
+		{
+			rect -268 268 36 36 3 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( tablelookup( "mp/perkTable.csv" , 1 , localvarstring( "loadoutPerk1" ) , 3 )  )
+		}
+		itemDef
+		{
+			rect -268 268 36 36 3 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( tablelookup( "mp/perkTable.csv" , 1 , localvarstring( "loadoutPerk1" ) , 3 ) + "_upgrade"  )
+		}
+		itemDef // perk 1 text
+		{
+			rect -232 268 272 36 3 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 4
+			textAlignX 4
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			visible 1
+			exp text ( "@" + tablelookup( "mp/perkTable.csv" , 1 , localvarstring( "loadoutPerk1" ) , int 2 + ( isitemunlocked( tablelookup( "mp/perkTable.csv" , 1 , localvarstring( "loadoutPerk1" ) , 8 ) ) * ( 9 - 2 ) ) ) )  )
+		}
+		itemDef // perk 1 text
+		{
+			rect -228 284 228 18 3 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.65
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			autoWrapped 
+			type 21
+			align 0
+			textAlign 4
+			textAlignX 0
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			visible 1
+			exp text ( "@" + tablelookup( "mp/perkTable.csv" , 1 , localvarstring( "loadoutPerk1" ) , 4 )  )
+		}
+		itemDef
+		{
+			rect -272 304 -272 36 3 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background gradient_fadein
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+		}
+		itemDef
+		{
+			rect -268 304 36 36 3 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( tablelookup( "mp/perkTable.csv" , 1 , localvarstring( "loadoutPerk2" ) , 3 )  )
+		}
+		itemDef
+		{
+			rect -268 304 36 36 3 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( tablelookup( "mp/perkTable.csv" , 1 , localvarstring( "loadoutPerk2" ) , 3 ) + "_upgrade"  )
+		}
+		itemDef
+		{
+			rect -232 304 272 36 3 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 4
+			textAlignX 4
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			visible 1
+			exp text ( "@" + tablelookup( "mp/perkTable.csv" , 1 , localvarstring( "loadoutPerk2" ) , int 2 + ( isitemunlocked( tablelookup( "mp/perkTable.csv" , 1 , localvarstring( "loadoutPerk2" ) , 8 ) ) * ( 9 - 2 ) ) ) )  )
+		}
+		itemDef // perk 2 text
+		{
+			rect -228 320 228 18 3 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.65
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			autoWrapped 
+			type 21
+			align 0
+			textAlign 4
+			textAlignX 0
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			visible 1
+			exp text ( "@" + tablelookup( "mp/perkTable.csv" , 1 , localvarstring( "loadoutPerk2" ) , 4 )  )
+		}
+		itemDef
+		{
+			rect -272 340 -272 36 3 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background gradient_fadein
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+		}
+		itemDef // perk 3 text
+		{
+			rect -268 340 36 36 3 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( tablelookup( "mp/perkTable.csv" , 1 , localvarstring( "loadoutPerk3" ) , 3 )  )
+		}
+		itemDef // perk 3 text 
+		{
+			rect -268 340 36 36 3 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( tablelookup( "mp/perkTable.csv" , 1 , localvarstring( "loadoutPerk3" ) , 3 ) + "_upgrade"  )
+		}
+		itemDef
+		{
+			rect -232 340 272 36 3 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 4
+			textAlignX 4
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			visible 1
+			exp text ( "@" + tablelookup( "mp/perkTable.csv" , 1 , localvarstring( "loadoutPerk3" ) , int 2 + ( isitemunlocked( tablelookup( "mp/perkTable.csv" , 1 , localvarstring( "loadoutPerk3" ) , 8 ) ) * ( 9 - 2 ) ) ) )  )
+		}
+		itemDef // perk 3 text
+		{
+			rect -228 356 228 18 3 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.65
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			autoWrapped 
+			type 21
+			align 0
+			textAlign 4
+			textAlignX 0
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			visible 1
+			exp text ( "@" + tablelookup( "mp/perkTable.csv" , 1 , localvarstring( "loadoutPerk3" ) , 4 )  )
+		}
+		itemDef
+		{
+			rect -272 376 -272 36 3 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background gradient_fadein
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+		}
+		itemDef // death streak text
+		{
+			rect -268 376 36 36 3 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( tablelookup( "mp/perkTable.csv" , 1 , localvarstring( "loadoutDeathStreak" ) , 3 )  )
+		}
+		itemDef // death streak text
+		{
+			rect -232 376 272 36 3 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 4
+			textAlignX 4
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			visible 1
+			exp text ( "@" + tablelookup( "mp/perkTable.csv" , 1 , localvarstring( "loadoutDeathStreak" ) , 2 )  )
+		}
+		itemDef
+		{
+			rect -272 376 -272 1 3 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0 0 0 0.5
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background gradient_fadein
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+		}
+		itemDef
+		{
+			rect -272 248 -272 20 3 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background gradient_fadein
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+		}
+		itemDef
+		{
+			rect -272 248 -272 20 3 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0 0 0 0.35
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background gradient_fadein
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+		}
+		itemDef // equipment text
+		{
+			rect -268 248 20 20 3 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( tablelookup( "mp/perkTable.csv" , 1 , localvarstring( "loadoutEquipment" ) , 3 )  )
+		}
+		itemDef // equipment text
+		{
+			rect -248 248 272 20 3 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 4
+			textAlignX 4
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			visible 1
+			exp text ( "@" + tablelookup( "mp/perkTable.csv" , 1 , localvarstring( "loadoutEquipment" ) , 2 )  )
+		}
+		itemDef // offhand text
+		{
+			rect -136 248 20 20 3 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( tablelookup( "mp/statsTable.csv" , 4 , localvarstring( "loadoutOffhandSecondary" ) , 6 )  )
+		}
+		itemDef // offhand text
+		{
+			rect -116 248 272 20 3 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 4
+			textAlignX 4
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			visible 1
+			exp text ( locstring( "@MPUI_N_XN" , "@" + tablelookup( "mp/statsTable.csv" , 4 , localvarstring( "loadoutOffhandSecondary" ) , 3 ) , int tablelookup( "mp/statsTable.csv" , 4 , localvarstring( "loadoutOffhandSecondary" ) , 5 ) ) )  )
+		}
+		itemDef
+		{
+			rect -272 268 -272 1 3 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0 0 0 0.5
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background gradient_fadein
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+		}
+		itemDef
+		{
+			rect -64 -20 336 20 1 3
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background menu_button_selection_bar
+			group mw2_button
+			type 1
+			align 0
+			textAlign 6
+			textAlignX -60
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			text "@PLATFORM_BACK_CAPS"
+			visible 1
+			onFocus
+			{
+				play "mouse_over";
+				setItemColor mw2_button "backcolor" 0 0 0 0;
+				setItemColor self "backcolor" 0 0 0 1;
+				setLocalVarBool ui_menuAButton 1;
+			}
+			leaveFocus
+			{
+				setItemColor self "backcolor" 0 0 0 "0.0";
+				setLocalVarString ui_hint_text "@NULL_EMPTY"  );
+				setLocalVarBool ui_menuAButton 1;
+			}
+			action
+			{
+				play "mouse_click";
+				play "mouse_click";
+				escape "self";
+			}
+			visible when ( "@PLATFORM_BACK_CAPS" == "@PLATFORM_BACK_CAPS"  )
+		}
+		itemDef
+		{
+			rect -64 -20 336 20 1 3
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background menu_button_selection_bar
+			group mw2_button
+			type 1
+			align 0
+			textAlign 6
+			textAlignX -60
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			text "@PLATFORM_BACK_CAPS"
+			visible 1
+			onFocus
+			{
+				play "mouse_over";
+				setItemColor mw2_button "backcolor" 0 0 0 0;
+				setItemColor self "backcolor" 0 0 0 1;
+				setLocalVarBool ui_menuAButton 1;
+			}
+			leaveFocus
+			{
+				setItemColor self "backcolor" 0 0 0 "0.0";
+				setLocalVarString ui_hint_text "@NULL_EMPTY"  );
+				setLocalVarBool ui_menuAButton 1;
+			}
+			action
+			{
+				play "mouse_click";
+				play "mouse_click";
+				open "popup_summary";
+			}
+			visible when ( "@PLATFORM_BACK_CAPS" == "@PLATFORM_GAME_SUMMARY_CAPS"  )
+		}
+	}
+}
