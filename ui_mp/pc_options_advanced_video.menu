@@ -1,22 +1,40 @@
 {
 	menuDef
 	{
-		name pc_options_look
+		name pc_options_advanced_video
 		fullscreen 0
 		rect 0 0 640 480
+		style 0
+		border 0
+		ownerdraw 0
+		ownerdrawFlag 0
+		borderSize 0
 		focusColor 1 1 1 1		
 		foreColor 1 1 1 1
+		backColor 0 0 0 0
+		borderColor 0 0 0 0
+		outlineColor 0 0 0 0
+		fadeCycle 0
+		fadeClamp 0
+		fadeAmount 0
+		fadeInAmount 0
+		blurWorld 0
 		onOpen
 		{
-			setLocalVarBool ui_hideBack 1;
+			ExecNow "profile_menuDvarsSetup; resetViewport";
+			setLocalVarBool ui_hideBack ( 1 );
 		}
 		onClose
 		{
-			setLocalVarBool ui_hideBack 0;
+			ExecNow "profile_menuDvarsFinish;resetViewport";
+			setLocalVarBool ui_hideBack ( 0 );
+			execondvarintvalue "r_lodScaleRigid" 2 "set r_lodScaleSkinned 4; set r_lodBiasSkinned -200; et r_lodBiasRigid -100";
+			execondvarintvalue "r_lodScaleRigid" 1 "set r_lodScaleSkinned 1; set r_lodBiasSkinned 0; set r_lodBiasRigid 0";
+			open "pc_options_video";
 		}
 		onESC
 		{
-			close "self";
+			close self;
 		}
 		itemDef
 		{
@@ -27,7 +45,6 @@
 			decoration 
 			textScale 0.55
 			visible 1
-			visible when ( 1  )
 		}
 		itemDef
 		{
@@ -49,30 +66,7 @@
 			decoration 
 			textScale 0.55
 			visible 1
-			visible when ( 1  )
 			exp rect x ( ( - 107 + 854 ) + ( ( float( milliseconds( ) % 50000 ) / 50000 ) * ( 854 ) )  )
-		}
-		itemDef
-		{
-			rect -427 -240 854 480 2 2
-			style 3
-			foreColor 1 1 1 1
-			background mw2_main_sp_image
-			decoration 
-			textScale 0.55
-			visible 1
-			visible when ( dvarstring( "gameMode" )) == "sp"  )
-		}
-		itemDef
-		{
-			rect -427 -240 854 480 2 2
-			style 3
-			foreColor 1 1 1 1
-			background mw2_main_co_image
-			decoration 
-			textScale 0.55
-			visible 1
-			visible when ( dvarstring( "gameMode" )) == "so"  )
 		}
 		itemDef
 		{
@@ -83,7 +77,7 @@
 			decoration 
 			textScale 0.55
 			visible 1
-			visible when ( dvarstring( "gameMode" ) == "mp"  )
+			visible when ( dvarstring( "gameMode" ) == "mp" )
 		}
 		itemDef
 		{
@@ -94,7 +88,6 @@
 			decoration 
 			textScale 0.55
 			visible 1
-			visible when ( ( dvarInt( cl_ingame ) != 1 );  )
 			exp forecolor a ( ( ( sin milliseconds( ) / 1500 ) + 1 ) * 0.250000 ) + 0.250000  )
 		}
 		itemDef
@@ -106,7 +99,6 @@
 			decoration 
 			textScale 0.55
 			visible 1
-			visible when ( ( dvarInt( cl_ingame ) != 1 );  )
 			exp forecolor a ( ( ( sin milliseconds( ) / 480 ) + 1 ) * 0.250000 ) + 0.250000  )
 		}
 		itemDef
@@ -131,13 +123,13 @@
 			textStyle 0
 			textFont 9
 			feeder 0
-			text "@MENU_LOOK"
+			text "@MENU_ADVANCED_VIDEO"
 			visible 1
 		}
 		itemDef
 		{
-			rect 412 31 344 20 1 1
-			style 0
+			rect 232 28 344 20 1 1
+			style 1
 			border 0
 			ownerdraw 0
 			ownerdrawFlag 0
@@ -146,24 +138,33 @@
 			backColor 0 0 0 0
 			borderColor 0 0 0 0
 			outlineColor 0 0 0 0
-			type 10
+			background menu_setting_selection_bar
+			type 12
 			align 0
-			textAlign 0
-			textAlignX 0
+			textAlign 4
+			textAlignX 180
 			textAlignY 0
-			textScale 0.55
+			textScale 0.375
 			textStyle 0
-			textFont 0
+			textFont 3
 			feeder 0
 			visible 1
 			onFocus
 			{
-				play "mouse_over";
+				setItemColor self "backcolor" 0 0 0 1 play "mouse_over";
+			}
+			leaveFocus
+			{
+				setItemColor self "backcolor" 0 0 0 0;
 			}
 			action
 			{
+				play "mouse_click";
+				setLocalVarBool ui_showApply 1;
 			}
-			dvarFloat "sensitivity" 0.01 5 100
+			dvar "ui_r_aspectratio" 
+			dvarStrList { "@MENU_AUTO"; "auto"; "@MENU_STANDARD_4_3"; "standard"; "@MENU_WIDE_16_10"; "wide 16:10"; "@MENU_WIDE_16_9"; "wide 16:9" }
+
 		}
 		itemDef
 		{
@@ -187,7 +188,7 @@
 			textStyle 0
 			textFont 3
 			feeder 0
-			text "@MENU_MOUSE_SENSITIVITY"
+			text "@MENU_ASPECT_RATIO"
 			visible 1
 		}
 		itemDef
@@ -203,7 +204,7 @@
 			borderColor 0 0 0 0
 			outlineColor 0 0 0 0
 			background menu_setting_selection_bar
-			type 11
+			type 12
 			align 0
 			textAlign 4
 			textAlignX 180
@@ -215,20 +216,19 @@
 			visible 1
 			onFocus
 			{
-			    play "mouse_over";
-				setItemColor self "backcolor" 0 0 0 1;
-				show "keyBindStatus";
+				setItemColor self "backcolor" 0 0 0 1 play "mouse_over";
 			}
 			leaveFocus
 			{
 				setItemColor self "backcolor" 0 0 0 0;
-				hide "keyBindStatus";
 			}
 			action
 			{
 				play "mouse_click";
+				setLocalVarBool ui_showApply 1;
 			}
-			dvar "ui_mousePitch"
+			dvar "ui_r_aasamples"
+			dvarStrList { "@MENU_OFF" 1 "@MENU_2X" 2 "@MENU_4X" 4 }
 		}
 		itemDef
 		{
@@ -252,12 +252,139 @@
 			textStyle 0
 			textFont 3
 			feeder 0
-			text "@MENU_INVERT_MOUSE"
+			text "@MENU_ANTIALIASING"
 			visible 1
 		}
 		itemDef
 		{
-			rect 216 88 -292 1 1 1
+			rect 232 68 344 20 1 1
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background menu_setting_selection_bar
+			type 13
+			align 0
+			textAlign 4
+			textAlignX 180
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			visible 1
+			onFocus
+			{
+				setItemColor self "backcolor" 0 0 0 1 play "mouse_over";
+			}
+			leaveFocus
+			{
+				setItemColor self "backcolor" 0 0 0 0;
+			}
+			action
+			{
+				play "mouse_click";
+				setLocalVarBool ui_showApply 1;
+			}
+			dvar "ui_r_displayRefresh"
+			dvarEnumList "r_displayRefresh"
+		}
+		itemDef
+		{
+			rect 232 68 344 20 1 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 6
+			textAlignX -180
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			text "@MENU_SCREEN_REFRESH_RATE"
+			visible 1
+		}
+		itemDef
+		{
+			rect 232 88 344 20 1 1
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background menu_setting_selection_bar
+			type 11
+			align 0
+			textAlign 4
+			textAlignX 180
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			visible 1
+			onFocus
+			{
+				setItemColor self "backcolor" 0 0 0 1 play "mouse_over";
+			}
+			leaveFocus
+			{
+				setItemColor self "backcolor" 0 0 0 0;
+			}
+			action
+			{
+				play "mouse_click";
+				setLocalVarBool ui_showApply 1;
+			}
+			dvar "ui_r_vsync"
+		}
+		itemDef
+		{
+			rect 232 88 344 20 1 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 6
+			textAlignX -180
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			text "@MENU_SYNC_EVERY_FRAME"
+			visible 1
+		}
+		itemDef
+		{
+			rect 216 108 -292 1 1 1
 			style 3
 			border 0
 			ownerdraw 0
@@ -282,71 +409,6 @@
 		}
 		itemDef
 		{
-			rect 232 88 344 20 1 1
-			style 1
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background menu_setting_selection_bar
-			type 11
-			align 0
-			textAlign 4
-			textAlignX 180
-			textAlignY 0
-			textScale 0.375
-			textStyle 0
-			textFont 3
-			feeder 0
-			visible 1
-			onFocus
-			{
-			    play "mouse_over";
-				setItemColor self "backcolor" 0 0 0 1;
-				show "keyBindStatus";
-			}
-			leaveFocus
-			{
-				setItemColor self "backcolor" 0 0 0 0;
-				hide "keyBindStatus";
-			}
-			action
-			{
-				play "mouse_click";
-			}
-			dvar "m_filter"
-		}
-		itemDef
-		{
-			rect 232 88 344 20 1 1
-			style 0
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			decoration 
-			type 0
-			align 0
-			textAlign 6
-			textAlignX -180
-			textAlignY 0
-			textScale 0.375
-			textStyle 0
-			textFont 3
-			feeder 0
-			text "@MENU_SMOOTH_MOUSE"
-			visible 1
-		}
-		itemDef
-		{
 			rect 232 108 344 20 1 1
 			style 1
 			border 0
@@ -370,20 +432,17 @@
 			visible 1
 			onFocus
 			{
-			    play "mouse_over";
-				setItemColor self "backcolor" 0 0 0 1;
-				show "keyBindStatus";
+				setItemColor self "backcolor" 0 0 0 1 play "mouse_over";
 			}
 			leaveFocus
 			{
 				setItemColor self "backcolor" 0 0 0 0;
-				hide "keyBindStatus";
 			}
 			action
 			{
 				play "mouse_click";
 			}
-			dvar "cl_freelook"
+			dvar "sm_enable"
 		}
 		itemDef
 		{
@@ -407,7 +466,7 @@
 			textStyle 0
 			textFont 3
 			feeder 0
-			text "@MENU_FREE_LOOK"
+			text "@MENU_SHADOWS"
 			visible 1
 		}
 		itemDef
@@ -423,7 +482,7 @@
 			borderColor 0 0 0 0
 			outlineColor 0 0 0 0
 			background menu_setting_selection_bar
-			type 14
+			type 11
 			align 0
 			textAlign 4
 			textAlignX 180
@@ -435,20 +494,17 @@
 			visible 1
 			onFocus
 			{
-			    play "mouse_over";
-				setItemColor self "backcolor" 0 0 0 1;
-				show "keyBindStatus";
+				setItemColor self "backcolor" 0 0 0 1 play "mouse_over";
 			}
 			leaveFocus
 			{
 				setItemColor self "backcolor" 0 0 0 0;
-				hide "keyBindStatus";
 			}
 			action
 			{
 				play "mouse_click";
 			}
-			dvar "+lookup"
+			dvar "r_specular"
 		}
 		itemDef
 		{
@@ -472,7 +528,7 @@
 			textStyle 0
 			textFont 3
 			feeder 0
-			text "@MENU_LOOK_UP"
+			text "@MENU_SPECULAR_MAP"
 			visible 1
 		}
 		itemDef
@@ -488,7 +544,7 @@
 			borderColor 0 0 0 0
 			outlineColor 0 0 0 0
 			background menu_setting_selection_bar
-			type 14
+			type 11
 			align 0
 			textAlign 4
 			textAlignX 180
@@ -500,20 +556,17 @@
 			visible 1
 			onFocus
 			{
-			    play "mouse_over";
-				setItemColor self "backcolor" 0 0 0 1;
-				show "keyBindStatus";
+				setItemColor self "backcolor" 0 0 0 1 play "mouse_over";
 			}
 			leaveFocus
 			{
 				setItemColor self "backcolor" 0 0 0 0;
-				hide "keyBindStatus";
 			}
 			action
 			{
 				play "mouse_click";
 			}
-			dvar "+lookdown"
+			dvar "r_dof_enable"
 		}
 		itemDef
 		{
@@ -537,7 +590,32 @@
 			textStyle 0
 			textFont 3
 			feeder 0
-			text "@MENU_LOOK_DOWN"
+			text "@MENU_DOF"
+			visible 1
+		}
+		itemDef
+		{
+			rect 216 168 -292 1 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.65
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background line_horizontal
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
 			visible 1
 		}
 		itemDef
@@ -553,7 +631,7 @@
 			borderColor 0 0 0 0
 			outlineColor 0 0 0 0
 			background menu_setting_selection_bar
-			type 14
+			type 11
 			align 0
 			textAlign 4
 			textAlignX 180
@@ -565,20 +643,17 @@
 			visible 1
 			onFocus
 			{
-			    play "mouse_over";
-				setItemColor self "backcolor" 0 0 0 1;
-				show "keyBindStatus";
+				setItemColor self "backcolor" 0 0 0 1 play "mouse_over";
 			}
 			leaveFocus
 			{
 				setItemColor self "backcolor" 0 0 0 0;
-				hide "keyBindStatus";
 			}
 			action
 			{
 				play "mouse_click";
 			}
-			dvar "+mlook"
+			dvar "r_zfeather"
 		}
 		itemDef
 		{
@@ -602,8 +677,9 @@
 			textStyle 0
 			textFont 3
 			feeder 0
-			text "@MENU_HOLD_MOUSE_LOOK"
+			text "@MENU_ZFEATHER_SMOKE"
 			visible 1
+			visible when ( 1  )
 		}
 		itemDef
 		{
@@ -618,7 +694,7 @@
 			borderColor 0 0 0 0
 			outlineColor 0 0 0 0
 			background menu_setting_selection_bar
-			type 14
+			type 11
 			align 0
 			textAlign 4
 			textAlignX 180
@@ -630,20 +706,17 @@
 			visible 1
 			onFocus
 			{
-			    play "mouse_over";
-				setItemColor self "backcolor" 0 0 0 1;
-				show "keyBindStatus";
+				setItemColor self "backcolor" 0 0 0 1 play "mouse_over";
 			}
 			leaveFocus
 			{
 				setItemColor self "backcolor" 0 0 0 0;
-				hide "keyBindStatus";
 			}
 			action
 			{
 				play "mouse_click";
 			}
-			dvar "centerview"
+			dvar "ragdoll_enable"
 		}
 		itemDef
 		{
@@ -667,8 +740,357 @@
 			textStyle 0
 			textFont 3
 			feeder 0
-			text "@MENU_CENTER_VIEW"
+			text "@MENU_RAGDOLL"
 			visible 1
+		}
+		itemDef
+		{
+			rect 232 208 344 20 1 1
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background menu_setting_selection_bar
+			type 11
+			align 0
+			textAlign 4
+			textAlignX 180
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			visible 1
+			onFocus
+			{
+				setItemColor self "backcolor" 0 0 0 1 play "mouse_over";
+			}
+			leaveFocus
+			{
+				setItemColor self "backcolor" 0 0 0 0;
+			}
+			action
+			{
+				play "mouse_click";
+			}
+			dvar "fx_marks"
+		}
+		itemDef
+		{
+			rect 232 208 344 20 1 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 6
+			textAlignX -180
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			text "@MENU_BULLET_IMPACTS"
+			visible 1
+		}
+		itemDef
+		{
+			rect 216 228 -292 1 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.65
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background line_horizontal
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+		}
+		itemDef
+		{
+			rect 232 228 344 20 1 1
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background menu_setting_selection_bar
+			type 12
+			align 0
+			textAlign 4
+			textAlignX 180
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			visible 1
+			onFocus
+			{
+				setItemColor self "backcolor" 0 0 0 1 play "mouse_over";
+			}
+			leaveFocus
+			{
+				setItemColor self "backcolor" 0 0 0 0;
+			}
+			action
+			{
+				play "mouse_click";
+				setLocalVarBool ui_showPicApply 1;
+			}
+			dvar "ui_r_picmip_manual"
+			dvarStrList { "@MENU_AUTOMATIC" 0 "@MENU_MANUAL" 1 }			
+		}
+		itemDef
+		{
+			rect 232 228 344 20 1 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 6
+			textAlignX -180
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			text "@MENU_TEXTURE_QUALITY"
+			visible 1
+		}
+		itemDef
+		{
+			rect 232 248 344 20 1 1
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background menu_setting_selection_bar
+			type 12
+			align 0
+			textAlign 4
+			textAlignX 180
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			visible 1
+			onFocus
+			{
+				setItemColor self "backcolor" 0 0 0 1 play "mouse_over";
+			}
+			leaveFocus
+			{
+				setItemColor self "backcolor" 0 0 0 0;
+			}
+			action
+			{
+				play "mouse_click";
+				setLocalVarBool ui_showPicApply 1;
+			}
+			dvar "ui_r_picmip"
+			dvarStrList { "@MENU_LOW" 3 "@MENU_NORMAL" 2 "@MENU_HIGH" 1 "@MENU_EXTRA" 0 }			
+			visible when ( dvarint( "ui_r_picmip_manual" )  )
+		}
+		itemDef
+		{
+			rect 232 248 344 20 1 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 6
+			textAlignX -180
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			text "@MENU_TEXTURE_RESOLUTION"
+			visible 1
+			visible when ( dvarint( "ui_r_picmip_manual" )  )
+		}
+		itemDef
+		{
+			rect 232 268 344 20 1 1
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background menu_setting_selection_bar
+			type 12
+			align 0
+			textAlign 4
+			textAlignX 180
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			visible 1
+			onFocus
+			{
+				setItemColor self "backcolor" 0 0 0 1 play "mouse_over";
+			}
+			leaveFocus
+			{
+				setItemColor self "backcolor" 0 0 0 0;
+			}
+			action
+			{
+				play "mouse_click";
+				setLocalVarBool ui_showPicApply 1;
+			}
+			dvar "ui_r_picmip_bump"
+			dvarStrList { "@MENU_LOW" 3 "@MENU_NORMAL" 2 "@MENU_HIGH" 1 "@MENU_EXTRA" 0 }			
+			visible when ( dvarint( "ui_r_picmip_manual" )  )
+		}
+		itemDef
+		{
+			rect 232 268 344 20 1 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 6
+			textAlignX -180
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			text "@MENU_NORMAL_MAP_RESOLUTION"
+			visible 1
+			visible when ( dvarint( "ui_r_picmip_manual" )  )
+		}
+		itemDef
+		{
+			rect 232 288 344 20 1 1
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background menu_setting_selection_bar
+			type 12
+			align 0
+			textAlign 4
+			textAlignX 180
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			visible 1
+			onFocus
+			{
+				setItemColor self "backcolor" 0 0 0 1 play "mouse_over";
+			}
+			leaveFocus
+			{
+				setItemColor self "backcolor" 0 0 0 0;
+			}
+			action
+			{
+				play "mouse_click";
+				setLocalVarBool ui_showPicApply 1;
+			}
+			dvar "ui_r_picmip_spec"
+			dvarStrList { "@MENU_LOW" 3 "@MENU_NORMAL" 2 "@MENU_HIGH" 1 "@MENU_EXTRA" 0 }			
+			visible when ( dvarint( "ui_r_picmip_manual" )  )
+		}
+		itemDef
+		{
+			rect 232 288 344 20 1 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 6
+			textAlignX -180
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			text "@MENU_SPECULAR_MAP_RESOLUTION"
+			visible 1
+			visible when ( dvarint( "ui_r_picmip_manual" )  )
 		}
 		itemDef
 		{
@@ -700,7 +1122,7 @@
 				play "mouse_over";
 				if ( dvarstring( "gameMode" ) != "mp"  )
 				{
-					setItemColor mw2_button "backcolor" 0 0 0 0;
+					setItemColor "mw2_button" "backcolor" 0 0 0 0;
 				}
 				setItemColor self "backcolor" 0 0 0 1;
 				setLocalVarBool ui_menuAButton 1;
@@ -749,7 +1171,7 @@
 				play "mouse_over";
 				if ( dvarstring( "gameMode" ) != "mp"  )
 				{
-					setItemColor mw2_button "backcolor" 0 0 0 0;
+					setItemColor "mw2_button" "backcolor" 0 0 0 0;
 				}
 				setItemColor self "backcolor" 0 0 0 1;
 				setLocalVarBool ui_menuAButton 1;
@@ -767,31 +1189,6 @@
 				open "popup_summary";
 			}
 			visible when ( "@PLATFORM_BACK_CAPS" == "@PLATFORM_GAME_SUMMARY_CAPS"  )
-		}
-		itemDef
-		{
-			name keyBindStatus
-			rect 10 20 500 240 2 3
-			style 1
-			border 0
-			ownerdraw 250
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 0.65 0.65 0.65 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			decoration 
-			autoWrapped 
-			type 8
-			align 0
-			textAlign 1
-			textAlignX 0
-			textAlignY 0
-			textScale 0.375
-			textStyle 0
-			textFont 0
-			feeder 0
 		}
 	}
 }

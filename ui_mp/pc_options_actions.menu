@@ -1,59 +1,32 @@
+#define "!!" INGAME
 {
 	menuDef
 	{
 		name pc_options_actions
 		fullscreen 0
 		rect 0 0 640 480
-		style 0
-		border 0
-		ownerdraw 0
-		ownerdrawFlag 0
-		borderSize 0
+		focusColor 1 1 1 1		
 		foreColor 1 1 1 1
-		backColor 0 0 0 0
-		borderColor 0 0 0 0
-		outlineColor 0 0 0 0
-		fadeCycle 0
-		fadeClamp 0
-		fadeAmount 0
-		fadeInAmount 0
-		blurWorld 0
 		onOpen
 		{
 			setLocalVarBool ui_hideBack 1;
 		}
 		onClose
 		{
-			setLocalVarBool ui_hideBack 1;
+			setLocalVarBool ui_hideBack 0;
 		}
 		onESC
 		{
 			close "self";
 		}
-		focusColor 1 1 1 1
 		itemDef
 		{
 			rect 0 0 640 480 4 4
 			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
 			foreColor 0 0 0 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
 			background black
 			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
 			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
 			visible 1
 			visible when ( 1  )
 		}
@@ -61,52 +34,21 @@
 		{
 			rect 0 0 1708 480
 			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
 			foreColor 1 1 1 0.5
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
 			background mw2_main_cloud_overlay
 			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
 			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
 			visible 1
-			visible when ( 1  )
 			exp rect x ( ( 0 - 107 ) - ( ( float( milliseconds( ) % 60000 ) / 60000 ) * ( 854 ) )  )
 		}
 		itemDef
 		{
 			rect 0 0 -1708 -480
 			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
 			foreColor 1 1 1 0.5
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
 			background mw2_main_cloud_overlay
 			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
 			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
 			visible 1
 			visible when ( 1  )
 			exp rect x ( ( - 107 + 854 ) + ( ( float( milliseconds( ) % 50000 ) / 50000 ) * ( 854 ) )  )
@@ -115,77 +57,32 @@
 		{
 			rect -427 -240 854 480 2 2
 			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
 			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
 			background mw2_main_sp_image
 			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
 			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
 			visible 1
-			visible when ( dvarstring( "gameMode" ) == "sp"  )
+			visible when ( dvarstring( "gameMode" )) == "sp"  )
 		}
 		itemDef
 		{
 			rect -427 -240 854 480 2 2
 			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
 			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
 			background mw2_main_co_image
 			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
 			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
 			visible 1
-			visible when ( dvarstring( "gameMode" ) == "so"  )
+			visible when ( dvarstring( "gameMode" )) == "so"  )
 		}
 		itemDef
 		{
 			rect -427 -240 854 480 2 2
 			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
 			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
 			background mw2_main_mp_image
 			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
 			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
 			visible 1
 			visible when ( dvarstring( "gameMode" ) == "mp"  )
 		}
@@ -193,54 +90,24 @@
 		{
 			rect 0 0 640 480 4 4
 			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
 			foreColor 1 1 1 0
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
 			background mockup_bg_glow
 			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
 			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
 			visible 1
-//			visible when ( !!  )
+			visible when ( !ui_active  )
 			exp forecolor a ( ( ( sin milliseconds( ) / 1500 ) + 1 ) * 0.250000 ) + 0.250000  )
 		}
 		itemDef
 		{
 			rect 0 0 640 480 4 4
 			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
 			foreColor 1 1 1 0
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
 			background mockup_bg_glow
 			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
 			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
 			visible 1
-//			visible when ( !!  )
+			visible when ( !ui_active  )
 			exp forecolor a ( ( ( sin milliseconds( ) / 480 ) + 1 ) * 0.250000 ) + 0.250000  )
 		}
 		itemDef
@@ -293,7 +160,8 @@
 			visible 1
 			onFocus
 			{
-				setItemColor self "backcolor" 0 0 0 1 play "mouse_over";
+			    play "mouse_over";
+				setItemColor self "backcolor" 0 0 0 1;
 				show "keyBindStatus";
 			}
 			leaveFocus
@@ -306,7 +174,6 @@
 				play "mouse_click";
 			}
 			dvar "+attack"
-			visible when ( 1  )
 		}
 		itemDef
 		{
@@ -332,7 +199,6 @@
 			feeder 0
 			text "@MENU_FIRE_WEAPON"
 			visible 1
-			visible when ( 1  )
 		}
 		itemDef
 		{
@@ -359,7 +225,8 @@
 			visible 1
 			onFocus
 			{
-				setItemColor self "backcolor" 0 0 0 1 play "mouse_over";
+			    play "mouse_over";
+				setItemColor self "backcolor" 0 0 0 1;
 				show "keyBindStatus";
 			}
 			leaveFocus
@@ -372,7 +239,6 @@
 				play "mouse_click";
 			}
 			dvar "+toggleads_throw"
-			visible when ( 1  )
 		}
 		itemDef
 		{
@@ -398,7 +264,6 @@
 			feeder 0
 			text "@MENU_AIM_DOWN_THE_SIGHT"
 			visible 1
-			visible when ( 1  )
 		}
 		itemDef
 		{
@@ -425,7 +290,8 @@
 			visible 1
 			onFocus
 			{
-				setItemColor self "backcolor" 0 0 0 1 play "mouse_over";
+			    play "mouse_over";
+				setItemColor self "backcolor" 0 0 0 1;
 				show "keyBindStatus";
 			}
 			leaveFocus
@@ -438,7 +304,6 @@
 				play "mouse_click";
 			}
 			dvar "+speed_throw"
-			visible when ( 1  )
 		}
 		itemDef
 		{
@@ -464,7 +329,6 @@
 			feeder 0
 			text "@MENU_HOLD_AIM_DOWN_SIGHT"
 			visible 1
-			visible when ( 1  )
 		}
 		itemDef
 		{
@@ -491,7 +355,8 @@
 			visible 1
 			onFocus
 			{
-				setItemColor self "backcolor" 0 0 0 1 play "mouse_over";
+			    play "mouse_over";
+				setItemColor self "backcolor" 0 0 0 1;
 				show "keyBindStatus";
 			}
 			leaveFocus
@@ -504,7 +369,6 @@
 				play "mouse_click";
 			}
 			dvar "+reload"
-			visible when ( 1  )
 		}
 		itemDef
 		{
@@ -530,7 +394,6 @@
 			feeder 0
 			text "@MENU_RELOAD_WEAPON"
 			visible 1
-			visible when ( 1  )
 		}
 		itemDef
 		{
@@ -557,7 +420,8 @@
 			visible 1
 			onFocus
 			{
-				setItemColor self "backcolor" 0 0 0 1 play "mouse_over";
+			    play "mouse_over";
+				setItemColor self "backcolor" 0 0 0 1;
 				show "keyBindStatus";
 			}
 			leaveFocus
@@ -570,7 +434,6 @@
 				play "mouse_click";
 			}
 			dvar "weapnext"
-			visible when ( 1  )
 		}
 		itemDef
 		{
@@ -596,7 +459,6 @@
 			feeder 0
 			text "@MENU_SWITCH_WEAPON"
 			visible 1
-			visible when ( 1  )
 		}
 		itemDef
 		{
@@ -623,7 +485,8 @@
 			visible 1
 			onFocus
 			{
-				setItemColor self "backcolor" 0 0 0 1 play "mouse_over";
+			    play "mouse_over";
+				setItemColor self "backcolor" 0 0 0 1;
 				show "keyBindStatus";
 			}
 			leaveFocus
@@ -636,7 +499,6 @@
 				play "mouse_click";
 			}
 			dvar "+melee"
-			visible when ( 1  )
 		}
 		itemDef
 		{
@@ -662,7 +524,6 @@
 			feeder 0
 			text "@MENU_MELEE_ATTACK"
 			visible 1
-			visible when ( 1  )
 		}
 		itemDef
 		{
@@ -689,7 +550,8 @@
 			visible 1
 			onFocus
 			{
-				setItemColor self "backcolor" 0 0 0 1 play "mouse_over";
+			    play "mouse_over";
+				setItemColor self "backcolor" 0 0 0 1;
 				show "keyBindStatus";
 			}
 			leaveFocus
@@ -702,7 +564,6 @@
 				play "mouse_click";
 			}
 			dvar "+activate"
-			visible when ( 1  )
 		}
 		itemDef
 		{
@@ -728,7 +589,6 @@
 			feeder 0
 			text "@MENU_USE"
 			visible 1
-			visible when ( 1  )
 		}
 		itemDef
 		{
@@ -755,7 +615,8 @@
 			visible 1
 			onFocus
 			{
-				setItemColor self "backcolor" 0 0 0 1 play "mouse_over";
+			    play "mouse_over";
+				setItemColor self "backcolor" 0 0 0 1;
 				show "keyBindStatus";
 			}
 			leaveFocus
@@ -768,7 +629,6 @@
 				play "mouse_click";
 			}
 			dvar "+frag"
-			visible when ( 1  )
 		}
 		itemDef
 		{
@@ -794,7 +654,6 @@
 			feeder 0
 			text "@MENU_FRAG_EQUIPMENT"
 			visible 1
-			visible when ( 1  )
 		}
 		itemDef
 		{
@@ -821,7 +680,8 @@
 			visible 1
 			onFocus
 			{
-				setItemColor self "backcolor" 0 0 0 1 play "mouse_over";
+			    play "mouse_over";
+				setItemColor self "backcolor" 0 0 0 1;
 				show "keyBindStatus";
 			}
 			leaveFocus
@@ -834,7 +694,6 @@
 				play "mouse_click";
 			}
 			dvar "+smoke"
-			visible when ( 1  )
 		}
 		itemDef
 		{
@@ -860,7 +719,6 @@
 			feeder 0
 			text "@MENU_THROW_SPECIAL_GRENADE"
 			visible 1
-			visible when ( 1  )
 		}
 		itemDef
 		{
@@ -887,7 +745,8 @@
 			visible 1
 			onFocus
 			{
-				setItemColor self "backcolor" 0 0 0 1 play "mouse_over";
+			    play "mouse_over";
+				setItemColor self "backcolor" 0 0 0 1;
 				show "keyBindStatus";
 			}
 			leaveFocus
@@ -900,7 +759,6 @@
 				play "mouse_click";
 			}
 			dvar "+actionslot 3"
-			visible when ( 1  )
 		}
 		itemDef
 		{
@@ -926,7 +784,6 @@
 			feeder 0
 			text "@MENU_WEAPON_ATTACHMENT"
 			visible 1
-			visible when ( 1  )
 		}
 		itemDef
 		{
@@ -953,7 +810,8 @@
 			visible 1
 			onFocus
 			{
-				setItemColor self "backcolor" 0 0 0 1 play "mouse_over";
+			    play "mouse_over";
+				setItemColor self "backcolor" 0 0 0 1;
 				show "keyBindStatus";
 			}
 			leaveFocus
@@ -966,7 +824,6 @@
 				play "mouse_click";
 			}
 			dvar "+actionslot 4"
-			visible when ( 1  )
 		}
 		itemDef
 		{
@@ -992,7 +849,6 @@
 			feeder 0
 			text "@MENU_INVENTORY_KILLSTREAK"
 			visible 1
-			visible when ( 1  )
 		}
 		itemDef
 		{
@@ -1019,7 +875,8 @@
 			visible 1
 			onFocus
 			{
-				setItemColor self "backcolor" 0 0 0 1 play "mouse_over";
+			    play "mouse_over";
+				setItemColor self "backcolor" 0 0 0 1;
 				show "keyBindStatus";
 			}
 			leaveFocus
@@ -1032,7 +889,6 @@
 				play "mouse_click";
 			}
 			dvar "+actionslot 2"
-			visible when ( 1  )
 		}
 		itemDef
 		{
@@ -1058,7 +914,6 @@
 			feeder 0
 			text "@MENU_SECONDARY_INVENTORY"
 			visible 1
-			visible when ( 1  )
 		}
 		itemDef
 		{
@@ -1085,7 +940,8 @@
 			visible 1
 			onFocus
 			{
-				setItemColor self "backcolor" 0 0 0 1 play "mouse_over";
+			    play "mouse_over";
+				setItemColor self "backcolor" 0 0 0 1;
 				show "keyBindStatus";
 			}
 			leaveFocus
@@ -1098,7 +954,6 @@
 				play "mouse_click";
 			}
 			dvar "+actionslot 1"
-			visible when ( 1  )
 		}
 		itemDef
 		{
@@ -1124,7 +979,6 @@
 			feeder 0
 			text "@MENU_NVG_WATCH"
 			visible 1
-			visible when ( 1  )
 		}
 		itemDef
 		{
@@ -1150,7 +1004,6 @@
 			textFont 0
 			feeder 0
 			visible 1
-			visible when ( 1  )
 		}
 		itemDef
 		{
@@ -1177,7 +1030,8 @@
 			visible 1
 			onFocus
 			{
-				setItemColor self "backcolor" 0 0 0 1 play "mouse_over";
+			    play "mouse_over";
+				setItemColor self "backcolor" 0 0 0 1;
 				show "keyBindStatus";
 			}
 			leaveFocus
@@ -1190,7 +1044,6 @@
 				play "mouse_click";
 			}
 			dvar "+scores"
-			visible when ( 1  )
 		}
 		itemDef
 		{
@@ -1216,7 +1069,6 @@
 			feeder 0
 			text "@MENU_SHOW_OBJECTIVES_SCORES"
 			visible 1
-			visible when ( 1  )
 		}
 		itemDef
 		{
@@ -1312,7 +1164,7 @@
 			{
 				play "mouse_click";
 				play "mouse_click";
-				"open" "popup_summary";
+				open "popup_summary";
 			}
 			visible when ( "@PLATFORM_BACK_CAPS" == "@PLATFORM_GAME_SUMMARY_CAPS"  )
 		}
