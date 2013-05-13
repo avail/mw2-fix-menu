@@ -1,7 +1,7 @@
 {
 	menuDef
 	{
-		name pc_options_controls
+		name pc_options_audio
 		fullscreen 0
 		rect 0 0 640 480
 		focusColor 1 1 1 1		
@@ -10,6 +10,12 @@
 		onOpen
 		{
 			setLocalVarBool ui_hideBack ( 1 );
+			if ( !localvarint( "ui_showAudioApply" )  )
+			{
+				exec "setfromdvar ui_snd_khz		snd_khz";
+				exec "setfromdvar ui_snd_enableEq	snd_enableEq";
+				exec "setfromdvar ui_outputConfig	snd_outputConfiguration";
+			}
 			ExecNow "profile_menuDvarsSetup; resetViewport";
 		}
 		onClose
@@ -32,7 +38,7 @@
 			{
 				open "all_restart_popmenu";
 			}
-			ExecNow "profile_menuDvarsFinish;resetViewport";
+			ExecNow "profile_menuDvarsFinish; resetViewport";
 		}
 		itemDef
 		{
@@ -608,14 +614,14 @@
 					setItemColor mw2_button "backcolor" 0 0 0 0;
 				}
 				setItemColor self "backcolor" 0 0 0 1;
-				setLocalVarBool ui_menuAButton 1;
+				setLocalVarBool ui_menuAButton ( 1 );
 				setLocalVarFloat ui_popupYPos 0.000000;
 			}
 			leaveFocus
 			{
 				setItemColor self "backcolor" 0 0 0 "0.0";
 				setLocalVarString ui_hint_text "@NULL_EMPTY"  );
-				setLocalVarBool ui_menuAButton 1;
+				setLocalVarBool ui_menuAButton ( 0 );
 			}
 			action
 			{
@@ -630,8 +636,8 @@
 						execnow "setfromdvar r_picmip_bump ui_r_picmip_bump";
 						execnow "setfromdvar r_picmip_spec ui_r_picmip_spec";
 						execnow "setfromdvar r_picmip_manual ui_r_picmip_manual";
-						exec "wait; r_applyPicmip";
-						setLocalVarBool ui_showPicApply 1;
+						exec "wait;wait;r_applyPicmip";
+						setLocalVarBool ui_showPicApply ( 0 );
 					}
 					if ( localvarbool( "ui_showApply" ) || localvarbool( "ui_showAudioApply" )  )
 					{
@@ -662,13 +668,13 @@
 			textStyle 0
 			textFont 9
 			feeder 0
-			text "@MENU_CONTROLS"
+			text "@MENU_SOUND"
 			visible 1
 		}
 		itemDef
 		{
-			rect 232 28 225 20 1 1
-			style 1
+			rect 232 28 344 20 1 1
+			style 0
 			border 0
 			ownerdraw 0
 			ownerdrawFlag 0
@@ -677,165 +683,32 @@
 			backColor 0 0 0 0
 			borderColor 0 0 0 0
 			outlineColor 0 0 0 0
-			background menu_setting_selection_bar
-			type 1
-			align 0
-			textAlign 6
-			textAlignX -60
-			textAlignY 0
-			textScale 0.375
-			textStyle 0
-			textFont 3
-			feeder 0
-			text "@MENU_MOVEMENT"
-			visible 1
-			onFocus
-			{
-			    play "mouse_over";
-				setItemColor self "backcolor" 0 0 0 1;
-			}
-			leaveFocus
-			{
-				setItemColor self "backcolor" 0 0 0 0;
-			}
-			action
-			{
-				play "mouse_click";
-				open "pc_options_movement";
-			}
-		}
-		itemDef
-		{
-			rect 232 48 225 20 1 1
-			style 1
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background menu_setting_selection_bar
-			type 1
-			align 0
-			textAlign 6
-			textAlignX -60
-			textAlignY 0
-			textScale 0.375
-			textStyle 0
-			textFont 3
-			feeder 0
-			text "@MENU_ACTIONS"
-			visible 1
-			onFocus
-			{
-			    play "mouse_over";
-				setItemColor self "backcolor" 0 0 0 1;
-			}
-			leaveFocus
-			{
-				setItemColor self "backcolor" 0 0 0 0;
-			}
-			action
-			{
-				play "mouse_click";
-				open "pc_options_actions";
-			}
-		}
-		itemDef
-		{
-			rect 232 68 225 20 1 1
-			style 1
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background menu_setting_selection_bar
-			type 1
-			align 0
-			textAlign 6
-			textAlignX -60
-			textAlignY 0
-			textScale 0.375
-			textStyle 0
-			textFont 3
-			feeder 0
-			text "@MENU_LOOK"
-			visible 1
-			onFocus
-			{
-			    play "mouse_over";
-				setItemColor self "backcolor" 0 0 0 1;
-			}
-			leaveFocus
-			{
-				setItemColor self "backcolor" 0 0 0 0;
-			}
-			action
-			{
-				play "mouse_click";
-				open "pc_options_look";
-			}
-		}
-		itemDef
-		{
-			rect 232 88 225 20 1 1
-			style 1
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background menu_setting_selection_bar
-			type 1
-			align 0
-			textAlign 6
-			textAlignX -60
-			textAlignY 0
-			textScale 0.375
-			textStyle 0
-			textFont 3
-			feeder 0
-			text "@MENU_CHAT"
-			visible 1
-			onFocus
-			{
-			    play "mouse_over";
-				setItemColor self "backcolor" 0 0 0 1;
-			}
-			leaveFocus
-			{
-				setItemColor self "backcolor" 0 0 0 0;
-			}
-			action
-			{
-				play "mouse_click";
-				open "controls_multi";
-			}
-		}
-		itemDef
-		{
-			rect 216 108 -292 1 1 1
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 0.65
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background line_horizontal
 			decoration 
 			type 0
+			align 0
+			textAlign 6
+			textAlignX -180
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			text "@MENU_MASTER_VOLUME"
+			visible 1
+		}		
+		itemDef
+		{
+			rect 412 31 344 20 1 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			type 10
 			align 0
 			textAlign 0
 			textAlignX 0
@@ -845,10 +718,44 @@
 			textFont 0
 			feeder 0
 			visible 1
+			onFocus
+			{
+				play "mouse_over";
+			}
+			action
+			{
+				ExecNow "profile_menuDvarsFinish";
+			}
+			dvarFloat "profileMenuOption_volume" 0.8 0.0 1.0
 		}
 		itemDef
 		{
-			rect 232 108 225 20 1 1
+			rect 232 48 344 20 1 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 6
+			textAlignX -180
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			text "@MENU_SPEAKER_CONFIG"
+			visible 1
+		}
+		itemDef
+		{
+			rect 232 48 344 20 1 1
 			style 1
 			border 0
 			ownerdraw 0
@@ -859,16 +766,15 @@
 			borderColor 0 0 0 0
 			outlineColor 0 0 0 0
 			background menu_setting_selection_bar
-			type 1
+			type 12
 			align 0
-			textAlign 6
-			textAlignX -60
+			textAlign 4
+			textAlignX 180
 			textAlignY 0
 			textScale 0.375
 			textStyle 0
 			textFont 3
 			feeder 0
-			text "@MENU_RESTORE_DEFAULT_CONTROLS"
 			visible 1
 			onFocus
 			{
@@ -882,8 +788,10 @@
 			action
 			{
 				play "mouse_click";
-				open "options_control_defaults";
+				setLocalVarBool "ui_showAudioApply" ( 1 );
 			}
+			dvar "ui_outputConfig" 
+			dvarStrList { "Windows default" 0 "Mono" 1 "Stereo" 2 "4 Speakers" 3 "5.1 Speakers" 4 }
 		}
 	}
-}
+}	
