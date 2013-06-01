@@ -1,1263 +1,627 @@
-#define FSM_VISIBILITY (selecting_location() && NOT_SPECTATING)
 {
 	menuDef
 	{
-		name class
-		fullscreen 0
-		rect 0 0 640 480
-		style 0
-		border 0
-		ownerdraw 0
-		ownerdrawFlag 0
-		borderSize 0
+		name "class"
+		rect 0 0 640 480 0 0
 		foreColor 1 1 1 1
-		backColor 0 0 0 0
-		borderColor 0 0 0 0
-		outlineColor 0 0 0 0
-		fadeCycle 0
-		fadeClamp 0
-		fadeAmount 0
-		fadeInAmount 0
+		focusColor 1 1 1 1
 		blurWorld 7
 		onOpen
 		{
 			focusFirst;
 		}
-		onESC
+		onEsc
 		{
 			scriptMenuResponse "back";
 		}
-		focusColor 1 1 1 1
-		visible 1
-		
 		itemDef
 		{
 			rect 0 0 640 480 4 4
 			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
+			decoration
+			visible 1
 			foreColor 0 0 0 0.4
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background white
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
+			background "white"
 			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
-			visible 1
 		}
 		itemDef
 		{
 			rect 0 0 640 480 4 4
 			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 0
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background mockup_bg_glow
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
+			decoration
 			visible 1
-			exp forecolor a ( ( ( sin milliseconds( ) / 1500 ) + 1 ) * 0.250000 ) + 0.250000  )
+			foreColor 1 1 1 0
+			background "mockup_bg_glow"
+			textScale 0.55
+			exp foreColor a ( ( ( sin( milliseconds( ) / 1500 ) + 1 ) * 0.25 ) + 0.25 )
 		}
 		itemDef
 		{
 			rect 0 0 640 480 4 4
 			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 0
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background mockup_bg_glow
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
+			decoration
 			visible 1
-			exp forecolor a ( ( ( sin milliseconds( ) / 480 ) + 1 ) * 0.250000 ) + 0.250000  )
+			foreColor 1 1 1 0
+			background "mockup_bg_glow"
+			textScale 0.55
+			exp foreColor a ( ( ( sin( milliseconds( ) / 480 ) + 1 ) * 0.25 ) + 0.25 )
 		}
 		itemDef
 		{
 			rect -64 0 280 480 1 0
 			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
+			decoration
+			visible 1
 			foreColor 0 0 0 0.25
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background gradient_fadein_fadebottom
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
+			background "gradient_fadein_fadebottom"
 			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
-			visible 1
 		}
-		itemDef
-		{
-			name fullmap_border
-			rect -260 135 240 240 3 1
-			style 0
-			border 1
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0.666667
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 1 1 1 0.35
-			outlineColor 0 0 0 0
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
-			visible 1
-//			visible when ( (  )
-		}
-		itemDef
-		{
-			rect -260 135 240 240 3 1
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 0.89 0.98 0.95 0.05
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background minimap_scanlines
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
-			visible 1
-//			visible when ( (  )
-		}
-		itemDef
-		{
-			name fullmap_map
-			rect -260 135 240 240 3 1
-			style 0
-			border 0
-			ownerdraw 181
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background compass_map_default
-			decoration 
-			type 8
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
-			visible 1
-//			visible when ( (  )
-		}
-		itemDef
-		{
-			name fullmap_friendlies
-			rect -260 135 240 240 3 1
-			style 0
-			border 0
-			ownerdraw 185
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			decoration 
-			type 8
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
-			visible 1
-//			visible when( FSM_VISIBILITY );
-//			exp forecolor a ( 1 - radarjamintensity( )  )
-		}
-		itemDef
-		{
-			name fullmap_enemies
-			rect -260 135 240 240 3 1
-			style 0
-			border 0
-			ownerdraw 188
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			decoration 
-			type 8
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
-			visible 1
-//   		visible when( FSM_VISIBILITY );
-//			exp forecolor a ( 1 - radarjamintensity( )  )
-		}
-		itemDef
-		{
-			name fullmap_objectives
-			rect -260 135 240 240 3 1
-			style 0
-			border 0
-			ownerdraw 182
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background objective_line
-			decoration 
-			type 8
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
-			visible 1
-//			visible when ( (  )
-		}
-		itemDef
-		{
-			name fullmap_sentries
-			rect -260 135 240 240 3 1
-			style 0
-			border 0
-			ownerdraw 189
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			decoration 
-			type 8
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
-			visible 1
-//			visible when( FSM_VISIBILITY );
-//			exp forecolor a ( 1 - radarjamintensity( )  )
-		}
-		itemDef
-		{
-			name fullmap_player
-			rect -260 135 240 240 3 1
-			style 0
-			border 0
-			ownerdraw 183
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background compassping_player
-			decoration 
-			type 8
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
-			visible 1
-//			visible when( FSM_VISIBILITY );
-//			exp forecolor a ( 1 - radarjamintensity( )  )
-		}
-		itemDef // RADAR JAM CRAP
-		{
-			rect -260 135 240 240 3 1
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 0.64 0.74 0.71 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background white
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
-			visible 0
-//			visible when ( radarisjammed( ) )
-//			exp forecolor a ( radarjamintensity( )  )
-		}
-		itemDef
-		{
-			rect -260 135 240 240 3 1
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 0.89 0.98 0.95 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background ac130_overlay_grain
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
-			visible 0
-//			visible when ( radarisjammed( ) )
-//			exp forecolor a ( radarjamintensity( )  )
-		}
-		itemDef
-		{
-			rect -260 135 240 240 3 1
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background stencil_base
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
-			visible 1
-//			visible when ( (  )
-		}
-		itemDef
-		{
-			rect -260 135 240 240 3 1
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background scanlines_stencil
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
-			visible 1
-//			visible when ( (  )
-//			exp rect y ( ( 135 - 240 ) + ( ( 240 * 2 ) * * )  )
-		}
-		itemDef
-		{
-			rect -260 135 240 240 3 1
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 0.89 0.98 0.95 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background stencil_fill
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
-			visible 1
-//			visible when ( (  )
-		}		
 		itemDef
 		{
 			rect 0 0 272 28 1 1
-			style 0
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			decoration 
-			type 0
-			align 0
-			textAlign 6
-			textAlignX -60
-			textAlignY 0
-			textScale 0.5
-			textStyle 0
-			textFont 9
-			feeder 0
-			text "@MENU_OPTIONS_UPPER_CASE"
+			decoration
 			visible 1
-        }
+			foreColor 1 1 1 1
+			textFont 9
+			textAlign 6
+			textAlignx -60
+			textScale 0.5
+			text "@MENU_OPTIONS_UPPER_CASE"
+		}
+		itemDef
+		{
+			name "fullmap_border"
+			rect -260 135 240 240 3 1
+			border 1
+			bordersize 0.666667
+			decoration
+			visible 1
+			foreColor 1 1 1 1
+			bordercolor 1 1 1 0.35
+			textScale 0.55
+			visible when ( ( !isempjammed( ) ) )
+		}
+		itemDef
+		{
+			rect -260 135 240 240 3 1
+			style 3
+			decoration
+			visible 1
+			foreColor 0.89 0.98 0.95 0.05
+			background "minimap_scanlines"
+			textScale 0.55
+			visible when ( ( !isempjammed( ) ) )
+		}
+		itemDef
+		{
+			name "fullmap_map"
+			rect -260 135 240 240 3 1
+			ownerdraw 181
+			decoration
+			visible 1
+			foreColor 1 1 1 1
+			background "compass_map_default"
+			type 8
+			textScale 0.55
+			visible when ( ( !isempjammed( ) ) )
+		}
+		itemDef
+		{
+			name "fullmap_friendlies"
+			rect -260 135 240 240 3 1
+			ownerdraw 185
+			decoration
+			visible 1
+			foreColor 1 1 1 1
+			type 8
+			textScale 0.55
+			exp foreColor a ( 1 - radarjamintensity( ) )
+			visible when ( ( !isempjammed( ) ) )
+		}
+		itemDef
+		{
+			name "fullmap_enemies"
+			rect -260 135 240 240 3 1
+			ownerdraw 188
+			decoration
+			visible 1
+			foreColor 1 1 1 1
+			type 8
+			textScale 0.55
+			exp foreColor a ( 1 - radarjamintensity( ) )
+			visible when ( ( !isempjammed( ) ) )
+		}
+		itemDef
+		{
+			name "fullmap_objectives"
+			rect -260 135 240 240 3 1
+			ownerdraw 182
+			decoration
+			visible 1
+			foreColor 1 1 1 1
+			background "objective_line"
+			type 8
+			textScale 0.55
+			visible when ( ( !isempjammed( ) ) )
+		}
+		itemDef
+		{
+			name "fullmap_sentries"
+			rect -260 135 240 240 3 1
+			ownerdraw 189
+			decoration
+			visible 1
+			foreColor 1 1 1 1
+			type 8
+			textScale 0.55
+			exp foreColor a ( 1 - radarjamintensity( ) )
+			visible when ( ( !isempjammed( ) ) )
+		}
+		itemDef
+		{
+			name "fullmap_player"
+			rect -260 135 240 240 3 1
+			ownerdraw 183
+			decoration
+			visible 1
+			foreColor 1 1 1 1
+			background "compassping_player"
+			type 8
+			textScale 0.55
+			exp foreColor a ( 1 - radarjamintensity( ) )
+			visible when ( ( !isempjammed( ) ) )
+		}
+		itemDef
+		{
+			rect -260 135 240 240 3 1
+			style 3
+			decoration
+			visible 1
+			foreColor 0.64 0.74 0.71 1
+			background "white"
+			textScale 0.55
+			exp foreColor a ( radarjamintensity( ) )
+			visible when ( radarisjammed( ) && ( !isempjammed( ) ) )
+		}
+		itemDef
+		{
+			rect -260 135 240 240 3 1
+			style 3
+			decoration
+			visible 1
+			foreColor 0.89 0.98 0.95 1
+			background "ac130_overlay_grain"
+			textScale 0.55
+			exp foreColor a ( radarjamintensity( ) )
+			visible when ( radarisjammed( ) && ( !isempjammed( ) ) )
+		}
+		itemDef
+		{
+			rect -260 135 240 240 3 1
+			style 3
+			decoration
+			visible 1
+			foreColor 1 1 1 1
+			background "stencil_base"
+			textScale 0.55
+			visible when ( ( !isempjammed( ) ) )
+		}
+		itemDef
+		{
+			rect -260 135 240 240 3 1
+			style 3
+			decoration
+			visible 1
+			foreColor 1 1 1 1
+			background "scanlines_stencil"
+			textScale 0.55
+			exp rect y ( ( 135 - 240 ) + ( ( 240 * 2 ) * ( 1 - ( ( milliseconds( ) % 4000 ) / 4000 ) ) ) )
+			visible when ( ( !isempjammed( ) ) )
+		}
+		itemDef
+		{
+			rect -260 135 240 240 3 1
+			style 3
+			decoration
+			visible 1
+			foreColor 0.89 0.98 0.95 1
+			background "stencil_fill"
+			textScale 0.55
+			visible when ( ( !isempjammed( ) ) )
+		}
 		itemDef
 		{
 			rect -260 115 -136 20 3 1
 			style 1
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
+			decoration
+			visible 1
 			foreColor 1 1 1 1
 			backColor 0 0 0 0.35
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background gradient_fadein
-			decoration 
-			type 0
-			align 0
-			textAlign 4
-			textAlignX 4
-			textAlignY 0
-			textScale 0.375
-			textStyle 0
+			background "gradient_fadein"
 			textFont 9
-			feeder 0
-			visible 1
-			exp text ( getmapname( )  )
-//			visible when ( (  )
+			textAlign 4
+			textAlignx 4
+			textScale 0.375
+			visible when ( ( !isempjammed( ) ) )
+			exp text ( getmapname( ) )
 		}
 		itemDef
 		{
 			rect -272 0 272 28 3 1
-			style 0
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			decoration 
-			type 0
-			align 0
-			textAlign 4
-			textAlignX 4
-			textAlignY 0
-			textScale 0.35
-			textStyle 0
-			textFont 9
-			feeder 0
+			decoration
 			visible 1
-			exp text ( gametypename( )  )
+			foreColor 1 1 1 1
+			textFont 9
+			textAlign 4
+			textAlignx 4
+			textScale 0.35
+			exp text ( gametypename( ) )
 		}
 		itemDef
 		{
 			rect -272 28 272 60 3 1
-			style 0
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
+			decoration
+			autowrapped
+			visible 1
 			foreColor 1 1 1 0.75
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			decoration 
-			autoWrapped 
-			type 0
-			align 0
 			textAlign 4
-			textAlignX 4
-			textAlignY 0
+			textAlignx 4
 			textScale 0.375
-			textStyle 3
-			textFont 0
-			feeder 0
-			visible 1
-			exp text ( gametypedescription( )  )
-		}	
-		itemDef
-		{
-			rect 10 58 128 128 1 1
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 0.275
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
-			visible 1
-			exp material ( dvarstring( "g_TeamIcon_Allies" )  )
-			visible when ( localvarstring( "ui_team" ) == "marines"  )
+			textstyle 3
+			exp text ( gametypedescription( ) )
 		}
 		itemDef
 		{
 			rect 10 58 128 128 1 1
 			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 0.275
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
+			decoration
 			visible 1
-			exp material ( dvarstring( "g_TeamIcon_Axis" )  )
-			visible when ( localvarstring( "ui_team" ) == "opfor"  )
+			foreColor 1 1 1 0.275
+			textScale 0.55
+			visible when ( localvarstring( "ui_team" ) == "marines" )
+			exp material ( dvarstring( "g_TeamIcon_Allies" ) )
 		}
 		itemDef
 		{
 			rect 10 58 128 128 1 1
 			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 0.275
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
+			decoration
 			visible 1
-			exp material ( dvarstring( "g_TeamIcon_Allies" )  )
-			visible when ( team( "name" ) == "TEAM_FREE" && localvarstring( "ui_team" ) == "marines"  )
+			foreColor 1 1 1 0.275
+			textScale 0.55
+			visible when ( localvarstring( "ui_team" ) == "opfor" )
+			exp material ( dvarstring( "g_TeamIcon_Axis" ) )
 		}
 		itemDef
 		{
 			rect 10 58 128 128 1 1
 			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
+			decoration
+			visible 1
 			foreColor 1 1 1 0.275
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
 			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
+			visible when ( team( "name" ) == "TEAM_FREE" && localvarstring( "ui_team" ) == "marines" )
+			exp material ( dvarstring( "g_TeamIcon_Allies" ) )
+		}
+		itemDef
+		{
+			rect 10 58 128 128 1 1
+			style 3
+			decoration
 			visible 1
-			exp material ( dvarstring( "g_TeamIcon_Axis" )  )
-			visible when ( team( "name" ) == "TEAM_FREE" && localvarstring( "ui_team" ) == "opfor"  )
+			foreColor 1 1 1 0.275
+			textScale 0.55
+			visible when ( team( "name" ) == "TEAM_FREE" && localvarstring( "ui_team" ) == "opfor" )
+			exp material ( dvarstring( "g_TeamIcon_Axis" ) )
 		}
 		itemDef
 		{
 			rect 10 196 128 128 1 1
-			style 0
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 0.2
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.4583
-			textStyle 6
-			textFont 6
-			feeder 0
+			decoration
 			visible 1
-			exp text ( "@" + dvarstring( "g_TeamName_Allies" )  )
-			visible when ( team( "name" ) == "TEAM_ALLIES"  )
+			foreColor 1 1 1 0.2
+			textFont 6
+			textScale 0.4583
+			textstyle 6
+			visible when ( team( "name" ) == "TEAM_ALLIES" )
+			exp text ( "@" + dvarstring( "g_TeamName_Allies" ) )
 		}
 		itemDef
 		{
 			rect 10 196 128 128 1 1
-			style 0
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 0.2
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.4583
-			textStyle 6
-			textFont 6
-			feeder 0
+			decoration
 			visible 1
-			exp text ( "@" + dvarstring( "g_TeamName_Allies" )  )
-			visible when ( team( "name" ) == "TEAM_FREE" && localvarstring( "ui_team" ) == "marines"  )
+			foreColor 1 1 1 0.2
+			textFont 6
+			textScale 0.4583
+			textstyle 6
+			visible when ( team( "name" ) == "TEAM_FREE" && localvarstring( "ui_team" ) == "marines" )
+			exp text ( "@" + dvarstring( "g_TeamName_Allies" ) )
 		}
 		itemDef
 		{
 			rect 10 196 128 128 1 1
-			style 0
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 0.2
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.4583
-			textStyle 6
-			textFont 6
-			feeder 0
+			decoration
 			visible 1
-			exp text ( "@" + dvarstring( "g_TeamName_Axis" )  )
-			visible when ( team( "name" ) == "TEAM_AXIS"  )
+			foreColor 1 1 1 0.2
+			textFont 6
+			textScale 0.4583
+			textstyle 6
+			visible when ( team( "name" ) == "TEAM_AXIS" )
+			exp text ( "@" + dvarstring( "g_TeamName_Axis" ) )
 		}
 		itemDef
 		{
 			rect 10 196 128 128 1 1
-			style 0
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 0.2
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.4583
-			textStyle 6
-			textFont 6
-			feeder 0
+			decoration
 			visible 1
-			exp text ( "@" + dvarstring( "g_TeamName_Axis" )  )
-			visible when ( team( "name" ) == "TEAM_FREE" && localvarstring( "ui_team" ) == "opfor"  )
-		}		
+			foreColor 1 1 1 0.2
+			textFont 6
+			textScale 0.4583
+			textstyle 6
+			visible when ( team( "name" ) == "TEAM_FREE" && localvarstring( "ui_team" ) == "opfor" )
+			exp text ( "@" + dvarstring( "g_TeamName_Axis" ) )
+		}
 		itemDef
 		{
-			name game_choose_class
+			name "game_choose_class"
 			rect -64 28 336 20 1 1
+			group "mw2_button"
 			style 1
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background menu_button_selection_bar
-			group mw2_button
-			type 1
-			align 0
-			textAlign 6
-			textAlignX -60
-			textAlignY 0
-			textScale 0.375
-			textStyle 0
-			textFont 3
-			feeder 0
-			text "@MPUI_CHOOSE_CLASS"
 			visible 1
+			foreColor 1 1 1 1
+			disableColor 0.6 0.55 0.55 1
+			background "menu_button_selection_bar"
+			type 1
+			textFont 3
+			textAlign 6
+			textAlignx -60
+			textScale 0.375
+			text "@MPUI_CHOOSE_CLASS"
+			disabled when ( !( ( localvarstring( "ui_team" ) == "marines" ) || ( localvarstring( "ui_team" ) == "opfor" ) ) || !( 1 ) )
 			onFocus
 			{
 				play "mouse_over";
-				if ( dvarstring( "gameMode" ) != "mp"  )
+				if ( dvarstring( "gameMode" ) != "mp" )
 				{
-					setItemColor mw2_button "backcolor" 0 0 0 0;
+					setItemColor "mw2_button" backColor 0 0 0 0;
 				}
-				setItemColor self "backcolor" 0 0 0 1;
-				setLocalVarBool ui_menuAButton 1;
-				setLocalVarFloat ui_popupYPos 0.000000;
+				setItemColor self backColor 0 0 0 1;
+				setLocalVarBool "ui_menuAButton" ( 1 );
+				setLocalVarFloat "ui_popupYPos" ( getfocuseditemy( ) );
 			}
 			leaveFocus
 			{
-				setItemColor self "backcolor" 0 0 0 "0.0";
-				setLocalVarString ui_hint_text "@NULL_EMPTY"  );
-				setLocalVarBool ui_menuAButton 1;
+				setItemColor self backColor 0 0 0 "0.0";
+				setLocalVarString "ui_hint_text" ( "@NULL_EMPTY" );
+				setLocalVarBool "ui_menuAButton" ( 0 );
 			}
 			action
 			{
 				play "mouse_click";
-            if ( ( localvarstring( "ui_team" ) == "marines" )  )
-            {
-               scriptMenuResponse "changeclass_marines";
-            }
-            if ( ( localvarstring( "ui_team" ) == "opfor" )  )
-            {
-               scriptMenuResponse "changeclass_opfor";
-            }
-         }
-         disabled when ( !( ( localvarstring( "ui_team" ) == "marines" ) || ( localvarstring( "ui_team" ) == "opfor" ) ) || !( 1 )  )
+				if ( ( localVarString( "ui_team" ) == "marines" ) )
+				{
+					scriptMenuResponse "changeclass_marines";
+				}
+				if ( ( localVarString( "ui_team" ) == "opfor" ) )
+				{
+					scriptMenuResponse "changeclass_opfor";
+				}
+			}			
 		}
 		itemDef
 		{
-			name game_choose_team
+			name "game_choose_team"
 			rect -64 48 336 20 1 1
+			group "mw2_button"
 			style 1
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background menu_button_selection_bar
-			group mw2_button
-			type 1
-			align 0
-			textAlign 6
-			textAlignX -60
-			textAlignY 0
-			textScale 0.375
-			textStyle 0
-			textFont 3
-			feeder 0
-			text "@MPUI_CHANGE_TEAM"
 			visible 1
+			foreColor 1 1 1 1
+			disableColor 0.6 0.55 0.55 1
+			background "menu_button_selection_bar"
+			type 1
+			textFont 3
+			textAlign 6
+			textAlignx -60
+			textScale 0.375
+			text "@MPUI_CHANGE_TEAM"
+			disabled when ( !( dvarBool( "ui_allow_teamchange" ) && ( !dvarBool( "onlinegame" ) || dvarBool( "xblive_privatematch" ) ) ) )
 			onFocus
 			{
 				play "mouse_over";
-				if ( dvarstring( "gameMode" ) != "mp"  )
+				if ( dvarstring( "gameMode" ) != "mp" )
 				{
-					setItemColor mw2_button "backcolor" 0 0 0 0;
+					setItemColor "mw2_button" backColor 0 0 0 0;
 				}
-				setItemColor self "backcolor" 0 0 0 1;
-				setLocalVarBool ui_menuAButton 1;
-				setLocalVarFloat ui_popupYPos 0.000000;
+				setItemColor self backColor 0 0 0 1;
+				setLocalVarBool "ui_menuAButton" ( 1 );
+				setLocalVarFloat "ui_popupYPos" ( getfocuseditemy( ) );
 			}
 			leaveFocus
 			{
-				setItemColor self "backcolor" 0 0 0 "0.0";
-				setLocalVarString ui_hint_text "@NULL_EMPTY"  );
-				setLocalVarBool ui_menuAButton 1;
+				setItemColor self backColor 0 0 0 "0.0";
+				setLocalVarString "ui_hint_text" ( "@NULL_EMPTY" );
+				setLocalVarBool "ui_menuAButton" ( 0 );
 			}
 			action
 			{
 				play "mouse_click";
 				scriptMenuResponse "changeteam";
-			}
-         disabled when ( !( dvarbool( "ui_allow_teamchange" ) && ( !dvarbool( "onlinegame" ) || dvarbool( "xblive_privatematch" ) ) ) )
+			}			
 		}
 		itemDef
 		{
 			rect 0 68 216 1 1 1
 			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
+			decoration
+			visible 1
 			foreColor 1 1 1 0.65
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background gradient_fadein
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
+			background "gradient_fadein"
 			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
-			visible 1
 		}
 		itemDef
 		{
-			name game_options
+			name "game_options"
 			rect -64 68 336 20 1 1
+			group "mw2_button"
 			style 1
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
+			visible 1
 			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background menu_button_selection_bar
-			group mw2_button
+			disableColor 0.6 0.55 0.55 1
+			background "menu_button_selection_bar"
 			type 1
-			align 0
-			textAlign 6
-			textAlignX -60
-			textAlignY 0
-			textScale 0.375
-			textStyle 0
 			textFont 3
-			feeder 0
+			textAlign 6
+			textAlignx -60
+			textScale 0.375
 			text "@MENU_OPTIONS"
-			visible 1
 			onFocus
 			{
 				play "mouse_over";
-				if ( dvarstring( "gameMode" ) != "mp"  )
+				if ( dvarstring( "gameMode" ) != "mp" )
 				{
-					setItemColor mw2_button "backcolor" 0 0 0 0;
+					setItemColor "mw2_button" backColor 0 0 0 0;
 				}
-				setItemColor self "backcolor" 0 0 0 1;
-				setLocalVarBool ui_menuAButton 1;
-				setLocalVarFloat ui_popupYPos 0.000000;
+				setItemColor self backColor 0 0 0 1;
+				setLocalVarBool "ui_menuAButton" ( 1 );
+				setLocalVarFloat "ui_popupYPos" ( getfocuseditemy( ) );
 			}
 			leaveFocus
 			{
-				setItemColor self "backcolor" 0 0 0 "0.0";
-				setLocalVarString ui_hint_text "@NULL_EMPTY"  );
-				setLocalVarBool ui_menuAButton 1;
+				setItemColor self backColor 0 0 0 "0.0";
+				setLocalVarString "ui_hint_text" ( "@NULL_EMPTY" );
+				setLocalVarBool "ui_menuAButton" ( 0 );
 			}
 			action
 			{
 				play "mouse_click";
-				close "self";
-				open "pc_options_video";
-				execnow "set ui_allow_graphic_change 0";
-			}
+				close self;
+				open "main_options";
+			}			
 		}
 		itemDef
 		{
-			name game_options
+			name "game_endgame"
 			rect -64 88 336 20 1 1
+			group "mw2_button"
 			style 1
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background menu_button_selection_bar
-			group mw2_button
-			type 1
-			align 0
-			textAlign 6
-			textAlignX -60
-			textAlignY 0
-			textScale 0.375
-			textStyle 0
-			textFont 3
-			feeder 0
-			text "@MPUI_MUTE_PLAYERS"
 			visible 1
-			onFocus
-			{
-				play "mouse_over";
-				if ( dvarstring( "gameMode" ) != "mp"  )
-				{
-					setItemColor mw2_button "backcolor" 0 0 0 0;
-				}
-				setItemColor self "backcolor" 0 0 0 1;
-				setLocalVarBool ui_menuAButton 1;
-				setLocalVarFloat ui_popupYPos 0.000000;
-			}
-			leaveFocus
-			{
-				setItemColor self "backcolor" 0 0 0 "0.0";
-				setLocalVarString ui_hint_text "@NULL_EMPTY"  );
-				setLocalVarBool ui_menuAButton 1;
-			}
-			action
-			{
-				play "mouse_click";
-				close "self";
-				open "muteplayer";
-			}
-		}
-		itemDef
-		{
-			name game_endgame
-			rect -64 108 336 20 1 1
-			style 1
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
 			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background menu_button_selection_bar
-			group mw2_button
+			disableColor 0.6 0.55 0.55 1
+			background "menu_button_selection_bar"
 			type 1
-			align 0
-			textAlign 6
-			textAlignX -60
-			textAlignY 0
-			textScale 0.375
-			textStyle 0
 			textFont 3
-			feeder 0
+			textAlign 6
+			textAlignx -60
+			textScale 0.375
 			text "@MENU_END_GAME"
-			visible 1
+			visible when ( ( dvarBool( "onlinegame" ) && !dvarBool( "xblive_privatematch" ) ) == 0 && ( dvarBool( "sv_running" ) ) )
 			onFocus
 			{
 				play "mouse_over";
-				if ( dvarstring( "gameMode" ) != "mp"  )
+				if ( dvarstring( "gameMode" ) != "mp" )
 				{
-					setItemColor mw2_button "backcolor" 0 0 0 0;
+					setItemColor "mw2_button" backColor 0 0 0 0;
 				}
-				setItemColor self "backcolor" 0 0 0 1;
-				setLocalVarBool ui_menuAButton 1;
-				setLocalVarFloat ui_popupYPos 0.000000;
+				setItemColor self backColor 0 0 0 1;
+				setLocalVarBool "ui_menuAButton" ( 1 );
+				setLocalVarFloat "ui_popupYPos" ( getfocuseditemy( ) );
 			}
 			leaveFocus
 			{
-				setItemColor self "backcolor" 0 0 0 "0.0";
-				setLocalVarString ui_hint_text "@NULL_EMPTY"  );
-				setLocalVarBool ui_menuAButton 1;
+				setItemColor self backColor 0 0 0 "0.0";
+				setLocalVarString "ui_hint_text" ( "@NULL_EMPTY" );
+				setLocalVarBool "ui_menuAButton" ( 0 );
 			}
 			action
 			{
 				play "mouse_click";
 				open "popup_endgame";
-			}
-            visible when ( !( dvarbool( "onlinegame" ) && !dvarbool( "xblive_privatematch" ) ) && ( dvarbool( "sv_running" ) )  )
+			}			
 		}
 		itemDef
 		{
-			name game_leavegame
-			rect -64 108 336 20 1 1
+			name "game_leavegame"
+			rect -64 88 336 20 1 1
+			group "mw2_button"
 			style 1
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
+			visible 1
 			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background menu_button_selection_bar
-			group mw2_button
+			disableColor 0.6 0.55 0.55 1
+			background "menu_button_selection_bar"
 			type 1
-			align 0
-			textAlign 6
-			textAlignX -60
-			textAlignY 0
-			textScale 0.375
-			textStyle 0
 			textFont 3
-			feeder 0
+			textAlign 6
+			textAlignx -60
+			textScale 0.375
 			text "@MENU_LEAVE_GAME"
-			visible 1
+			visible when ( ( dvarBool( "onlinegame" ) && !dvarBool( "xblive_privatematch" ) ) || !( dvarBool( "sv_running" ) ) )
 			onFocus
 			{
 				play "mouse_over";
-				if ( dvarstring( "gameMode" ) != "mp"  )
+				if ( dvarString( "gameMode" ) != "mp" )
 				{
-					setItemColor mw2_button "backcolor" 0 0 0 0;
+					setItemColor "mw2_button" backColor 0 0 0 0;
 				}
-				setItemColor self "backcolor" 0 0 0 1;
-				setLocalVarBool ui_menuAButton 1;
-				setLocalVarFloat ui_popupYPos 0.000000;
+				setItemColor self backColor 0 0 0 1;
+				setLocalVarBool "ui_menuAButton" ( 1 );
+				setLocalVarFloat "ui_popupYPos" ( getfocuseditemy( ) );
 			}
 			leaveFocus
 			{
-				setItemColor self "backcolor" 0 0 0 "0.0";
-				setLocalVarString ui_hint_text "@NULL_EMPTY"  );
-				setLocalVarBool ui_menuAButton 1;
-         }
-         action
-         {
-            play "mouse_click";
-            if ( ( !dvarbool( "xblive_privatematch" ) ) == 0 && ( ( dvarbool( "sv_running" ) ) == 0 ) && ( inprivateparty( ) && !privatepartyhost( ) && privatepartyhostinlobby( ) )  )
-            {
-               open "popup_leavegameandparty";
-            }
-            if ( ( !dvarbool( "xblive_privatematch" ) ) == 0 && ( ( dvarbool( "sv_running" ) ) == 0 ) && ( !inprivateparty( ) || privatepartyhost( ) || !privatepartyhostinlobby( ) )  )
-            {
-               open "popup_leavegame";
-            }
-            if ( ( dvarbool( "sv_running" ) )  )
-            {
-               open "popup_endgame_ranked";
-            }
-            if ( ( dvarbool( "sv_running" ) ) == 0 && ( inprivateparty( ) && !privatepartyhost( ) && privatepartyhostinlobby( ) )  )
-            {
-               open "popup_leavegameandparty_ranked";
-            }
-            if ( ( dvarbool( "sv_running" ) ) == 0 && ( !inprivateparty( ) || privatepartyhost( ) || !privatepartyhostinlobby( ) )  )
-            {
-               open "popup_leavegame_ranked";
-            }
-         }
-         visible when ( !( dvarbool( "sv_running" ) )  )
-      }
-		itemDef
-		{
-			rect 0 128 216 1 1 1
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 0.65
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background gradient_fadein
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
-			visible 1
-		}
-		itemDef
-		{
-			name fav_message_pop
-			rect -64 128 336 20 1 1
-			style 1
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background menu_button_selection_bar
-			group mw2_button
-			type 1
-			align 0
-			textAlign 6
-			textAlignX -60
-			textAlignY 0
-			textScale 0.375
-			textStyle 0
-			textFont 3
-			feeder 0
-			text "@MENU_ADD_TO_FAVORITES"
-			visible 1
-			onFocus
-			{
-				play "mouse_over";
-				if ( dvarstring( "gameMode" ) != "mp"  )
-				{
-					setItemColor mw2_button "backcolor" 0 0 0 0;
-				}
-				setItemColor self "backcolor" 0 0 0 1;
-				setLocalVarBool ui_menuAButton 1;
-				setLocalVarFloat ui_popupYPos 0.000000;
-			}
-			leaveFocus
-			{
-				setItemColor self "backcolor" 0 0 0 "0.0";
-				setLocalVarString ui_hint_text "@NULL_EMPTY"  );
-				setLocalVarBool ui_menuAButton 1;
+				setItemColor self backColor 0 0 0 "0.0";
+				setLocalVarString "ui_hint_text" ( "@NULL_EMPTY" );
+				setLocalVarBool "ui_menuAButton" ( 0 );
 			}
 			action
 			{
 				play "mouse_click";
-				exec "favorite";
-                open "fav_message_popmenu";
-			}   
-		} 
+				if ( ( dvarBool( "onlinegame" ) && !dvarBool( "xblive_privatematch" ) ) == 0 && ( ( dvarBool( "sv_running" ) ) == 0 ) && ( inprivateparty( ) && !privatepartyhost( ) && privatepartyhostinlobby( ) ) )
+				{
+					open "popup_leavegameandparty";
+				}
+				if ( ( dvarBool( "onlinegame" ) && !dvarBool( "xblive_privatematch" ) ) == 0 && ( ( dvarBool( "sv_running" ) ) == 0 ) && ( !inprivateparty( ) || privatepartyhost( ) || !privatepartyhostinlobby( ) ) )
+				{
+					open "popup_leavegame";
+				}
+				if ( ( dvarBool( "onlinegame" ) && !dvarBool( "xblive_privatematch" ) ) && ( dvarBool( "sv_running" ) ) )
+				{
+					open "popup_endgame_ranked";
+				}
+				if ( ( dvarBool( "onlinegame" ) && !dvarBool( "xblive_privatematch" ) ) && ( dvarBool( "sv_running" ) ) == 0 && ( inprivateparty( ) && !privatepartyhost( ) && privatepartyhostinlobby( ) ) )
+				{
+					open "popup_leavegameandparty_ranked";
+				}
+				if ( ( dvarBool( "onlinegame" ) && !dvarBool( "xblive_privatematch" ) ) && ( dvarBool( "sv_running" ) ) == 0 && ( !inprivateparty( ) || privatepartyhost( ) || !privatepartyhostinlobby( ) ) )
+				{
+					open "popup_leavegame_ranked";
+				}
+			}			
+		}
 		itemDef
 		{
 			rect -64 -20 336 20 1 3
 			style 1
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
 			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background menu_button_selection_bar
-			group mw2_button
+			background "menu_button_selection_bar"
+			group "mw2_button"
 			type 1
-			align 0
 			textAlign 6
 			textAlignX -60
-			textAlignY 0
 			textScale 0.375
-			textStyle 0
 			textFont 3
-			feeder 0
 			text "@PLATFORM_BACK_CAPS"
 			visible 1
 			onFocus
 			{
 				play "mouse_over";
-				if ( dvarstring( "gameMode" ) != "mp"  )
-				{
-					setItemColor mw2_button "backcolor" 0 0 0 0;
-				}
-				setItemColor self "backcolor" 0 0 0 1;
-				setLocalVarBool ui_menuAButton 1;
+				setItemColor self backColor 0 0 0 1;
+				setLocalVarBool "ui_menuAButton" ( 1 );
 			}
 			leaveFocus
 			{
-				setItemColor self "backcolor" 0 0 0 "0.0";
-				setLocalVarString ui_hint_text "@NULL_EMPTY"  );
-				setLocalVarBool ui_menuAButton 1;
+				setItemColor self backColor 0 0 0 0.0;
+				setLocalVarBool "ui_menuAButton" ( 0 );
 			}
 			action
 			{
@@ -1265,56 +629,6 @@
 				play "mouse_click";
 				escape "self";
 			}
-			visible when ( "@PLATFORM_BACK_CAPS" == "@PLATFORM_BACK_CAPS"  )
-		}
-		itemDef
-		{
-			rect -64 -20 336 20 1 3
-			style 1
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background menu_button_selection_bar
-			group mw2_button
-			type 1
-			align 0
-			textAlign 6
-			textAlignX -60
-			textAlignY 0
-			textScale 0.375
-			textStyle 0
-			textFont 3
-			feeder 0
-			text "@PLATFORM_BACK_CAPS"
-			visible 1
-			onFocus
-			{
-				play "mouse_over";
-				if ( dvarstring( "gameMode" ) != "mp"  )
-				{
-					setItemColor mw2_button "backcolor" 0 0 0 0;
-				}
-				setItemColor self "backcolor" 0 0 0 1;
-				setLocalVarBool ui_menuAButton 1;
-			}
-			leaveFocus
-			{
-				setItemColor self "backcolor" 0 0 0 "0.0";
-				setLocalVarString ui_hint_text "@NULL_EMPTY"  );
-				setLocalVarBool ui_menuAButton 1;
-			}
-			action
-			{
-				play "mouse_click";
-				play "mouse_click";
-				open "popup_summary";
-			}
-			visible when ( "@PLATFORM_BACK_CAPS" == "@PLATFORM_GAME_SUMMARY_CAPS"  )
 		}
 	}
 }	
