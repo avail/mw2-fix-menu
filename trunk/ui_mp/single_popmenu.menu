@@ -11,9 +11,7 @@
 		fadeCycle 1
 		fadeClamp 1
 		fadeAmount 0.1
-		popup 1
-		visible 1
-		legacySplitScreenScale
+		popup
 		onOpen
 		{
 			setLocalVarInt "ui_centerPopup" ( 1 );
