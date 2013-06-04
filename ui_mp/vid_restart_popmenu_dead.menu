@@ -2,7 +2,7 @@
 	menuDef
 	{
 		name "vid_restart_popmenu_dead"
-		rect -150 -84 300 84 2 2
+		rect 0 0 0 84 2 2
 		style 1
 		foreColor 1 1 1 1
 		focusColor 1 1 1 1		
@@ -124,7 +124,7 @@
 		}
 		itemDef
 		{
-			rect -214 -148 64 64 2 2
+			rect 0 -148 0 0 2 2
 			style 3
 			foreColor 0 0 0 1
 			background "drop_shadow_tl"
@@ -135,7 +135,7 @@
 		}
 		itemDef
 		{
-			rect -150 -148 300 64 2 2
+			rect 0 -148 0 0 2 2
 			style 3
 			foreColor 0 0 0 1
 			background "drop_shadow_t"
@@ -146,7 +146,7 @@
 		}
 		itemDef
 		{
-			rect 150 -148 64 64 2 2
+			rect 0 -148 0 0 2 2
 			style 3
 			foreColor 0 0 0 1
 			background "drop_shadow_tr"
@@ -157,7 +157,7 @@
 		}
 		itemDef
 		{
-			rect 150 -84 64 0 2 2
+			rect 0 -84 0 0 2 2
 			style 3
 			foreColor 0 0 0 1
 			background "drop_shadow_r"
@@ -169,7 +169,7 @@
 		}
 		itemDef
 		{
-			rect 150 -84 64 64 2 2
+			rect 0 -84 0 0 2 2
 			style 3
 			foreColor 0 0 0 1
 			background "drop_shadow_br"
@@ -181,7 +181,7 @@
 		}
 		itemDef
 		{
-			rect -150 -84 300 64 2 2
+			rect 0 -84 0 0 2 2
 			style 3
 			foreColor 0 0 0 1
 			background "drop_shadow_b"
@@ -193,7 +193,7 @@
 		}
 		itemDef
 		{
-			rect -214 -84 64 64 2 2
+			rect 0 -84 0 0 2 2
 			style 3
 			foreColor 0 0 0 1
 			background "drop_shadow_bl"
@@ -205,7 +205,7 @@
 		}
 		itemDef
 		{
-			rect -214 -84 64 0 2 2
+			rect 0 -84 0 0 2 2
 			style 3
 			foreColor 0 0 0 1
 			background "drop_shadow_l"
