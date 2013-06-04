@@ -12,7 +12,7 @@
 		onOpen
 		{
 			setLocalVarInt "ui_centerPopup" 1;
-			setfocus "ok";
+			setFocus "ok";
 		}
 		onClose
 		{
