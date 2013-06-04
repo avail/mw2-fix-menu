@@ -7,10 +7,10 @@
 		focusColor 1 1 1 1		
 		onOpen
 		{
-			execnow "setfromdvar r_picmip ui_r_picmip";
-			execnow "setfromdvar r_picmip_bump ui_r_picmip_bump";
-			execnow "setfromdvar r_picmip_spec ui_r_picmip_spec";
-			execnow "setfromdvar r_picmip_manual ui_r_picmip_manual";
+			execNow "setFromDvar r_picmip ui_r_picmip";
+			execNow "setFromDvar r_picmip_bump ui_r_picmip_bump";
+			execNow "setFromDvar r_picmip_spec ui_r_picmip_spec";
+			execNow "setFromDvar r_picmip_manual ui_r_picmip_manual";
 			exec "wait; r_applyPicmip";
 			close "apply_picmip_popmenu";
 		}
