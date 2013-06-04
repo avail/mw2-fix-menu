@@ -1,143 +1,70 @@
 {
 	menuDef
 	{
-		name mp_vid_restart_popmenu_listen
+		name "mp_vid_restart_popmenu_listen"
 		fullscreen 0
-		rect -150 -84 300 84 2 2
+		rect 0 0 0 84 2 2
 		style 1
-		border 0
-		ownerdraw 0
-		ownerdrawFlag 0
-		borderSize 0
+		focusColor 1 1 1 1
 		foreColor 1 1 1 1
 		backColor 1 1 1 1
-		borderColor 0 0 0 0
-		outlineColor 0 0 0 0
-		background white
-		fadeCycle 0
-		fadeClamp 0
-		fadeAmount 0
-		fadeInAmount 0
-		blurWorld 0
+		background "white"
+		popup
 		onOpen
 		{
-			setLocalVarInt ui_centerPopup 1;
-			"setfocus" "ok";
+			setLocalVarInt "ui_centerPopup" 1;
+			setFocus "ok";
 		}
 		onClose
 		{
-			setLocalVarInt ui_centerPopup 1;
+			setLocalVarInt "ui_centerPopup" 0;
 		}
 		onESC
 		{
-			"close" "self";
-			"close" "mp_vid_restart_popmenu_listen";
+			close "self";
+			close "mp_vid_restart_popmenu_listen";
 		}
-		focusColor 1 1 1 1
-		popup 
-		legacySplitScreenScale 
 		itemDef
 		{
 			rect -1004 -564 1708 960 2 2
 			style 1
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
 			foreColor 1 1 1 1
 			backColor 0 0 0 0.35
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			origin -854 -480
-			background white
+			background "white"
 			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
 			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
 			visible 1
 		}
 		itemDef
 		{
 			rect -1004 -564 1708 960 2 2
 			style 1
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
 			foreColor 1 1 1 1
 			backColor 1 1 1 1
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			origin -854 -480
-			background xpbar_stencilbase
+			background "xpbar_stencilbase"
 			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
 			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
 			visible 1
 		}
 		itemDef
 		{
 			rect -150 -84 300 84 2 2
 			style 1
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
 			foreColor 1 1 1 1
 			backColor 0.5 0.5 0.5 1
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			origin 0 0
-			background white
+			background "white"
 			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
 			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
 			visible 1
 		}
 		itemDef
 		{
 			rect -150 -84 1708 480 2 2
 			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
 			foreColor 1 1 1 0.75
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			origin 0 0
-			background mw2_popup_bg_fogstencil
+			background "mw2_popup_bg_fogstencil"
 			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
 			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
 			visible 1
 			exp rect x ( 0 - ( ( float( milliseconds( ) % 60000 ) / 60000 ) * ( 854 ) )  )
 		}
@@ -145,26 +72,10 @@
 		{
 			rect -150 -84 -1708 -480 2 2
 			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
 			foreColor 0.85 0.85 0.85 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			origin 0 0
-			background mw2_popup_bg_fogscroll
+			background "mw2_popup_bg_fogscroll"
 			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
 			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
 			visible 1
 			exp rect x ( 0 - ( ( float( milliseconds( ) % 60000 ) / 60000 ) * ( 854 ) )  )
 		}
@@ -172,26 +83,10 @@
 		{
 			rect -150 -84 300 0 2 2
 			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
 			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			origin 0 0
-			background mockup_popup_bg_stencilfill
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
+			background "mockup_popup_bg_stencilfill"
+			decoration
 			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
 			visible 1
 			exp rect h ( ( 24 + 3 * 20 )  )
 		}
@@ -199,26 +94,10 @@
 		{
 			rect -150 -84 -1708 -480 2 2
 			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
 			foreColor 1 1 1 0.75
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			origin 0 0
-			background mw2_popup_bg_fogstencil
+			background "mw2_popup_bg_fogstencil"
 			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
 			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
 			visible 1
 			exp rect x ( ( - 854 ) + ( ( float( milliseconds( ) % 50000 ) / 50000 ) * ( 854 ) )  )
 		}
@@ -226,26 +105,10 @@
 		{
 			rect -150 -84 -1708 -480 2 2
 			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
 			foreColor 0.85 0.85 0.85 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			origin 0 0
-			background mw2_popup_bg_fogscroll
+			background "mw2_popup_bg_fogscroll"
 			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
 			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
 			visible 1
 			exp rect x ( ( - 854 ) + ( ( float( milliseconds( ) % 50000 ) / 50000 ) * ( 854 ) )  )
 		}
@@ -253,274 +116,24 @@
 		{
 			rect -150 -84 300 0 1 1
 			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
 			foreColor 1 1 1 0
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			origin 0 0
-			background small_box_lightfx
+			background "small_box_lightfx"
 			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
 			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
 			visible 1
-			exp rect h ( ( 24 + 3 * 20 )  )
-		}
-		itemDef
-		{
-			rect -214 -148 64 64 2 2
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 0 0 0 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			origin -64 -64
-			background drop_shadow_tl
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
-			visible 1
-			visible when ( 1  )
-		}
-		itemDef
-		{
-			rect -150 -148 300 64 2 2
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 0 0 0 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			origin 0 -64
-			background drop_shadow_t
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
-			visible 1
-			visible when ( 1  )
-		}
-		itemDef
-		{
-			rect 150 -148 64 64 2 2
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 0 0 0 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			origin 300 -64
-			background drop_shadow_tr
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
-			visible 1
-			visible when ( 1  )
-		}
-		itemDef
-		{
-			rect 150 -84 64 0 2 2
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 0 0 0 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			origin 300 0
-			background drop_shadow_r
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
-			visible 1
-			visible when ( 1  )
-			exp rect h ( ( 24 + 3 * 20 )  )
-		}
-		itemDef
-		{
-			rect 150 -84 64 64 2 2
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 0 0 0 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			origin 300 0
-			background drop_shadow_br
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
-			visible 1
-			visible when ( 1  )
-			exp rect y ( ( 0 - 0 ) + ( ( 24 + 3 * 20 ) )  )
-		}
-		itemDef
-		{
-			rect -150 -84 300 64 2 2
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 0 0 0 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			origin 0 0
-			background drop_shadow_b
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
-			visible 1
-			visible when ( 1  )
-			exp rect y ( ( 0 - 0 ) + ( ( 24 + 3 * 20 ) )  )
-		}
-		itemDef
-		{
-			rect -214 -84 64 64 2 2
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 0 0 0 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			origin -64 0
-			background drop_shadow_bl
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
-			visible 1
-			visible when ( 1  )
-			exp rect y ( ( 0 - 0 ) + ( ( 24 + 3 * 20 ) )  )
-		}
-		itemDef
-		{
-			rect -214 -84 64 0 2 2
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 0 0 0 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			origin -64 0
-			background drop_shadow_l
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
-			visible 1
-			visible when ( 1  )
 			exp rect h ( ( 24 + 3 * 20 )  )
 		}
 		itemDef
 		{
 			rect -150 -84 300 24 2 2
 			style 1
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
 			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			origin 0 0
-			background gradient_fadein
+			background "gradient_fadein"
 			decoration 
-			type 0
-			align 0
 			textAlign 5
 			textAlignX -4
-			textAlignY 0
 			textScale 0.375
-			textStyle 0
 			textFont 9
-			feeder 0
 			text "@MENU_APPLY_SETTINGS"
 			visible 1
 		}
@@ -528,76 +141,50 @@
 		{
 			rect -146 -64 292 42 2 2
 			style 1
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
 			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			origin 4 20
 			decoration 
 			autoWrapped 
-			type 0
-			align 0
 			textAlign 5
-			textAlignX 0
-			textAlignY 0
 			textScale 0.375
-			textStyle 0
 			textFont 3
-			feeder 0
 			text "@MENU_UNABLE_TO_APPLY"
 			visible 1
 			visible when ( 1  )
 		}
 		itemDef
 		{
-			name ok
+			name "ok"
 			rect -146 -20 292 20 2 2
 			style 1
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
 			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			origin 4 64
-			background popup_button_selection_bar
-			group mw2_popup_button
+			background "popup_button_selection_bar"
+			group "mw2_popup_button"
 			type 1
-			align 0
 			textAlign 6
 			textAlignX -24
-			textAlignY 0
 			textScale 0.375
-			textStyle 0
 			textFont 3
-			feeder 0
 			text "@MENU_OK"
 			visible 1
 			onFocus
 			{
-				"play" "mouse_over";
-				if ( dvarstring(static)( 2 ) != "mp"  )
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp"  )
 				{
-					"setItemColor" "mw2_popup_button" "backcolor" 0 0 0 0;
+					setItemColor mw2_popup_button "backcolor" 0 0 0 0;
 				}
-				"setItemColor" "self" "backcolor" 0 0 0 1;
+				setItemColor self "backcolor" 0 0 0 1;
 				setLocalVarBool ui_popupAButton 1;
 			}
 			leaveFocus
 			{
-				"setItemColor" "self" "backcolor" 1 1 1 0;
+				setItemColor self "backcolor" 1 1 1 0;
 				setLocalVarBool ui_popupAButton 1;
 			}
 			action
 			{
-				"play" "mouse_click";
-				"close" "self";
+				play "mouse_click";
+				close "self";
 			}
 			visible when ( 1  )
 		}
