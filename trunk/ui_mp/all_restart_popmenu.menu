@@ -6,15 +6,13 @@
 		style 1
 		foreColor 1 1 1 1
 		focusColor 1 1 1 1
-		popup 1
-		visible 1
-		legacySplitScreenScale
 		backColor 1 1 1 1
 		background white
+		popup
 		onOpen
 		{
 			setLocalVarInt "ui_centerPopup" ( 1 );
-			setfocus "no";
+			setFocus "no";
 		}
 		onClose
 		{
