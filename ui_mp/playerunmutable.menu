@@ -11,12 +11,12 @@
 		popup		
 		onOpen
 		{
-			setLocalVarInt "ui_centerPopup" 1;
-			"focusFirst";
+			setLocalVarInt "ui_centerPopup" ( "1" );
+			focusFirst;
 		}
 		onClose
 		{
-			setLocalVarInt "ui_centerPopup" 0;
+			setLocalVarInt "ui_centerPopup" ( "0" );
 		}
 		onESC
 		{
@@ -157,12 +157,12 @@
 					setItemColor "mw2_popup_button" "backColor" 0 0 0 0;
 				}
 				setItemColor self "backColor" 0 0 0 1;
-				setLocalVarBool "ui_popupAButton" 1;
+				setLocalVarBool "ui_popupAButton" ( "1" );
 			}
 			leaveFocus
 			{
 				setItemColor self "backColor" 1 1 1 0;
-				setLocalVarBool "ui_popupAButton" 0;
+				setLocalVarBool "ui_popupAButton" ( "0" );
 			}
 			action
 			{
@@ -192,12 +192,12 @@
 					setItemColor "mw2_popup_button" "backColor" 0 0 0 0;
 				}
 				setItemColor self "backColor" 0 0 0 1;
-				setLocalVarBool "ui_popupAButton" 1;
+				setLocalVarBool "ui_popupAButton" ( "1" );
 			}
 			leaveFocus
 			{
 				setItemColor self "backColor" 1 1 1 0;
-				setLocalVarBool "ui_popupAButton" 0;
+				setLocalVarBool "ui_popupAButton" ( "0" );
 			}
 			action
 			{
