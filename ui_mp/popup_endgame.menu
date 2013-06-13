@@ -306,19 +306,5 @@
 				setLocalVarBool "ui_popupAButton" ( 0 );
 			}
 		}
-		itemDef
-		{
-			rect -150 -84 292 22 2 2
-			decoration
-			visible 1
-			forecolor 1 1 1 1
-			textfont 1
-			textalign 10
-			textaligny -1
-			textscale 0.28
-			text "@PLATFORM_UI_SELECTBUTTON"
-			exp rect y ( getfocuseditemy( ) + ( ( 24 + 3 * 20 ) ) )
-			visible when ( localvarbool( "ui_popupAButton" ) )
-		}
 	}
 }	
