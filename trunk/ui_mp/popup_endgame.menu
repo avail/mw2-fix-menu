@@ -2,7 +2,7 @@
 	menuDef
 	{
 		name "popup_endgame"
-		rect -150 -84 300 84 2 2
+		rect 0 0 0 84 2 2
 		style 1
 		popup
 		legacySplitScreenScale
