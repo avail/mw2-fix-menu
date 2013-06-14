@@ -1,19 +1,17 @@
-#define "!!" INGAME
 {
 	menuDef
 	{
-		name pc_options_actions
-		fullscreen 0
+		name "pc_options_actions"
 		rect 0 0 640 480
 		focusColor 1 1 1 1		
 		foreColor 1 1 1 1
 		onOpen
 		{
-			setLocalVarBool ui_hideBack 1;
+			setLocalVarBool "ui_hideBack" ( "1" );
 		}
 		onClose
 		{
-			setLocalVarBool ui_hideBack 0;
+			setLocalVarBool "ui_hideBack" ( "0" );
 		}
 		onESC
 		{
@@ -28,7 +26,6 @@
 			decoration 
 			textScale 0.55
 			visible 1
-			visible when ( 1  )
 		}
 		itemDef
 		{
@@ -39,6 +36,7 @@
 			decoration 
 			textScale 0.55
 			visible 1
+			visible when ( ( dvarInt( cl_ingame ) != 1 );  )
 			exp rect x ( ( 0 - 107 ) - ( ( float( milliseconds( ) % 60000 ) / 60000 ) * ( 854 ) )  )
 		}
 		itemDef
@@ -50,7 +48,7 @@
 			decoration 
 			textScale 0.55
 			visible 1
-			visible when ( 1  )
+			visible when ( ( dvarInt( cl_ingame ) != 1 );  )
 			exp rect x ( ( - 107 + 854 ) + ( ( float( milliseconds( ) % 50000 ) / 50000 ) * ( 854 ) )  )
 		}
 		itemDef
@@ -62,7 +60,7 @@
 			decoration 
 			textScale 0.55
 			visible 1
-			visible when ( dvarstring( "gameMode" )) == "sp"  )
+			visible when ( dvarstring( "gameMode" ) == "sp"  && ( dvarInt( cl_ingame ) != 1 );  )
 		}
 		itemDef
 		{
@@ -73,7 +71,7 @@
 			decoration 
 			textScale 0.55
 			visible 1
-			visible when ( dvarstring( "gameMode" )) == "so"  )
+			visible when ( dvarstring( "gameMode" ) == "so" && ( dvarInt( cl_ingame ) != 1 );  )
 		}
 		itemDef
 		{
@@ -84,7 +82,7 @@
 			decoration 
 			textScale 0.55
 			visible 1
-			visible when ( dvarstring( "gameMode" ) == "mp"  )
+			visible when ( dvarstring( "gameMode" ) == "mp"  && ( dvarInt( cl_ingame ) != 1 );  )
 		}
 		itemDef
 		{
@@ -95,7 +93,7 @@
 			decoration 
 			textScale 0.55
 			visible 1
-			visible when ( !ui_active  )
+			visible when ( ( dvarInt( cl_ingame ) != 1 );  )
 			exp forecolor a ( ( ( sin milliseconds( ) / 1500 ) + 1 ) * 0.250000 ) + 0.250000  )
 		}
 		itemDef
@@ -107,31 +105,17 @@
 			decoration 
 			textScale 0.55
 			visible 1
-			visible when ( !ui_active  )
+			visible when ( ( dvarInt( cl_ingame ) != 1 );  )
 			exp forecolor a ( ( ( sin milliseconds( ) / 480 ) + 1 ) * 0.250000 ) + 0.250000  )
 		}
 		itemDef
 		{
 			rect 232 0 344 28 1 1
-			style 0
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
 			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
 			decoration 
-			type 0
-			align 0
 			textAlign 5
-			textAlignX 0
-			textAlignY 0
 			textScale 0.5
-			textStyle 0
 			textFont 9
-			feeder 0
 			text "@MENU_ACTIONS"
 			visible 1
 		}
@@ -139,24 +123,13 @@
 		{
 			rect 232 28 344 20 1 1
 			style 1
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
 			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background menu_setting_selection_bar
+			background ""menu_setting_selection_bar""
 			type 14
-			align 0
 			textAlign 4
 			textAlignX 180
-			textAlignY 0
 			textScale 0.375
-			textStyle 0
 			textFont 3
-			feeder 0
 			visible 1
 			onFocus
 			{
@@ -178,25 +151,12 @@
 		itemDef
 		{
 			rect 232 28 344 20 1 1
-			style 0
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
 			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
 			decoration 
-			type 0
-			align 0
 			textAlign 6
 			textAlignX -180
-			textAlignY 0
 			textScale 0.375
-			textStyle 0
 			textFont 3
-			feeder 0
 			text "@MENU_FIRE_WEAPON"
 			visible 1
 		}
@@ -204,24 +164,13 @@
 		{
 			rect 232 48 344 20 1 1
 			style 1
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
 			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background menu_setting_selection_bar
+			background ""menu_setting_selection_bar""
 			type 14
-			align 0
 			textAlign 4
 			textAlignX 180
-			textAlignY 0
 			textScale 0.375
-			textStyle 0
 			textFont 3
-			feeder 0
 			visible 1
 			onFocus
 			{
@@ -243,25 +192,12 @@
 		itemDef
 		{
 			rect 232 48 344 20 1 1
-			style 0
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
 			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
 			decoration 
-			type 0
-			align 0
 			textAlign 6
 			textAlignX -180
-			textAlignY 0
 			textScale 0.375
-			textStyle 0
 			textFont 3
-			feeder 0
 			text "@MENU_AIM_DOWN_THE_SIGHT"
 			visible 1
 		}
@@ -269,24 +205,13 @@
 		{
 			rect 232 68 344 20 1 1
 			style 1
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
 			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background menu_setting_selection_bar
+			background ""menu_setting_selection_bar""
 			type 14
-			align 0
 			textAlign 4
 			textAlignX 180
-			textAlignY 0
 			textScale 0.375
-			textStyle 0
 			textFont 3
-			feeder 0
 			visible 1
 			onFocus
 			{
@@ -308,25 +233,12 @@
 		itemDef
 		{
 			rect 232 68 344 20 1 1
-			style 0
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
 			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
 			decoration 
-			type 0
-			align 0
 			textAlign 6
 			textAlignX -180
-			textAlignY 0
 			textScale 0.375
-			textStyle 0
 			textFont 3
-			feeder 0
 			text "@MENU_HOLD_AIM_DOWN_SIGHT"
 			visible 1
 		}
@@ -334,24 +246,13 @@
 		{
 			rect 232 88 344 20 1 1
 			style 1
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
 			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background menu_setting_selection_bar
+			background "menu_setting_selection_bar"
 			type 14
-			align 0
 			textAlign 4
 			textAlignX 180
-			textAlignY 0
 			textScale 0.375
-			textStyle 0
 			textFont 3
-			feeder 0
 			visible 1
 			onFocus
 			{
@@ -373,25 +274,12 @@
 		itemDef
 		{
 			rect 232 88 344 20 1 1
-			style 0
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
 			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
 			decoration 
-			type 0
-			align 0
 			textAlign 6
 			textAlignX -180
-			textAlignY 0
 			textScale 0.375
-			textStyle 0
 			textFont 3
-			feeder 0
 			text "@MENU_RELOAD_WEAPON"
 			visible 1
 		}
@@ -399,24 +287,13 @@
 		{
 			rect 232 108 344 20 1 1
 			style 1
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
 			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background menu_setting_selection_bar
+			background "menu_setting_selection_bar"
 			type 14
-			align 0
 			textAlign 4
 			textAlignX 180
-			textAlignY 0
 			textScale 0.375
-			textStyle 0
 			textFont 3
-			feeder 0
 			visible 1
 			onFocus
 			{
@@ -438,25 +315,12 @@
 		itemDef
 		{
 			rect 232 108 344 20 1 1
-			style 0
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
 			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
 			decoration 
-			type 0
-			align 0
 			textAlign 6
 			textAlignX -180
-			textAlignY 0
 			textScale 0.375
-			textStyle 0
 			textFont 3
-			feeder 0
 			text "@MENU_SWITCH_WEAPON"
 			visible 1
 		}
@@ -464,24 +328,13 @@
 		{
 			rect 232 128 344 20 1 1
 			style 1
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
 			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background menu_setting_selection_bar
+			background "menu_setting_selection_bar"
 			type 14
-			align 0
 			textAlign 4
 			textAlignX 180
-			textAlignY 0
 			textScale 0.375
-			textStyle 0
 			textFont 3
-			feeder 0
 			visible 1
 			onFocus
 			{
@@ -503,25 +356,12 @@
 		itemDef
 		{
 			rect 232 128 344 20 1 1
-			style 0
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
 			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
 			decoration 
-			type 0
-			align 0
 			textAlign 6
 			textAlignX -180
-			textAlignY 0
 			textScale 0.375
-			textStyle 0
 			textFont 3
-			feeder 0
 			text "@MENU_MELEE_ATTACK"
 			visible 1
 		}
@@ -529,24 +369,13 @@
 		{
 			rect 232 148 344 20 1 1
 			style 1
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
 			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background menu_setting_selection_bar
+			background "menu_setting_selection_bar"
 			type 14
-			align 0
 			textAlign 4
 			textAlignX 180
-			textAlignY 0
 			textScale 0.375
-			textStyle 0
 			textFont 3
-			feeder 0
 			visible 1
 			onFocus
 			{
@@ -568,25 +397,12 @@
 		itemDef
 		{
 			rect 232 148 344 20 1 1
-			style 0
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
 			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
 			decoration 
-			type 0
-			align 0
 			textAlign 6
 			textAlignX -180
-			textAlignY 0
 			textScale 0.375
-			textStyle 0
 			textFont 3
-			feeder 0
 			text "@MENU_USE"
 			visible 1
 		}
@@ -594,24 +410,13 @@
 		{
 			rect 232 168 344 20 1 1
 			style 1
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
 			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background menu_setting_selection_bar
+			background "menu_setting_selection_bar"
 			type 14
-			align 0
 			textAlign 4
 			textAlignX 180
-			textAlignY 0
 			textScale 0.375
-			textStyle 0
 			textFont 3
-			feeder 0
 			visible 1
 			onFocus
 			{
@@ -633,25 +438,12 @@
 		itemDef
 		{
 			rect 232 168 344 20 1 1
-			style 0
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
 			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
 			decoration 
-			type 0
-			align 0
 			textAlign 6
 			textAlignX -180
-			textAlignY 0
 			textScale 0.375
-			textStyle 0
 			textFont 3
-			feeder 0
 			text "@MENU_FRAG_EQUIPMENT"
 			visible 1
 		}
@@ -659,24 +451,13 @@
 		{
 			rect 232 188 344 20 1 1
 			style 1
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
 			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background menu_setting_selection_bar
+			background "menu_setting_selection_bar"
 			type 14
-			align 0
 			textAlign 4
 			textAlignX 180
-			textAlignY 0
 			textScale 0.375
-			textStyle 0
 			textFont 3
-			feeder 0
 			visible 1
 			onFocus
 			{
@@ -698,25 +479,12 @@
 		itemDef
 		{
 			rect 232 188 344 20 1 1
-			style 0
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
 			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
 			decoration 
-			type 0
-			align 0
 			textAlign 6
 			textAlignX -180
-			textAlignY 0
 			textScale 0.375
-			textStyle 0
 			textFont 3
-			feeder 0
 			text "@MENU_THROW_SPECIAL_GRENADE"
 			visible 1
 		}
@@ -724,24 +492,13 @@
 		{
 			rect 232 208 344 20 1 1
 			style 1
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
 			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background menu_setting_selection_bar
+			background "menu_setting_selection_bar"
 			type 14
-			align 0
 			textAlign 4
 			textAlignX 180
-			textAlignY 0
 			textScale 0.375
-			textStyle 0
 			textFont 3
-			feeder 0
 			visible 1
 			onFocus
 			{
@@ -763,25 +520,12 @@
 		itemDef
 		{
 			rect 232 208 344 20 1 1
-			style 0
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
 			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
 			decoration 
-			type 0
-			align 0
 			textAlign 6
 			textAlignX -180
-			textAlignY 0
 			textScale 0.375
-			textStyle 0
 			textFont 3
-			feeder 0
 			text "@MENU_WEAPON_ATTACHMENT"
 			visible 1
 		}
@@ -789,24 +533,13 @@
 		{
 			rect 232 228 344 20 1 1
 			style 1
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
 			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background menu_setting_selection_bar
+			background "menu_setting_selection_bar"
 			type 14
-			align 0
 			textAlign 4
 			textAlignX 180
-			textAlignY 0
 			textScale 0.375
-			textStyle 0
 			textFont 3
-			feeder 0
 			visible 1
 			onFocus
 			{
@@ -828,25 +561,12 @@
 		itemDef
 		{
 			rect 232 228 344 20 1 1
-			style 0
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
 			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
 			decoration 
-			type 0
-			align 0
 			textAlign 6
 			textAlignX -180
-			textAlignY 0
 			textScale 0.375
-			textStyle 0
 			textFont 3
-			feeder 0
 			text "@MENU_INVENTORY_KILLSTREAK"
 			visible 1
 		}
@@ -854,24 +574,13 @@
 		{
 			rect 232 248 344 20 1 1
 			style 1
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
 			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background menu_setting_selection_bar
+			background "menu_setting_selection_bar"
 			type 14
-			align 0
 			textAlign 4
 			textAlignX 180
-			textAlignY 0
 			textScale 0.375
-			textStyle 0
 			textFont 3
-			feeder 0
 			visible 1
 			onFocus
 			{
@@ -893,25 +602,12 @@
 		itemDef
 		{
 			rect 232 248 344 20 1 1
-			style 0
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
 			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
 			decoration 
-			type 0
-			align 0
 			textAlign 6
 			textAlignX -180
-			textAlignY 0
 			textScale 0.375
-			textStyle 0
 			textFont 3
-			feeder 0
 			text "@MENU_SECONDARY_INVENTORY"
 			visible 1
 		}
@@ -919,24 +615,13 @@
 		{
 			rect 232 268 344 20 1 1
 			style 1
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
 			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background menu_setting_selection_bar
+			background "menu_setting_selection_bar"
 			type 14
-			align 0
 			textAlign 4
 			textAlignX 180
-			textAlignY 0
 			textScale 0.375
-			textStyle 0
 			textFont 3
-			feeder 0
 			visible 1
 			onFocus
 			{
@@ -958,25 +643,12 @@
 		itemDef
 		{
 			rect 232 268 344 20 1 1
-			style 0
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
 			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
 			decoration 
-			type 0
-			align 0
 			textAlign 6
 			textAlignX -180
-			textAlignY 0
 			textScale 0.375
-			textStyle 0
 			textFont 3
-			feeder 0
 			text "@MENU_NVG_WATCH"
 			visible 1
 		}
@@ -984,49 +656,23 @@
 		{
 			rect 216 308 -292 1 1 1
 			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
 			foreColor 1 1 1 0.65
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background line_horizontal
+			background "line_horizontal"
 			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
 			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
 			visible 1
 		}
 		itemDef
 		{
 			rect 232 308 344 20 1 1
 			style 1
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
 			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background menu_setting_selection_bar
+			background "menu_setting_selection_bar"
 			type 14
-			align 0
 			textAlign 4
 			textAlignX 180
-			textAlignY 0
 			textScale 0.375
-			textStyle 0
 			textFont 3
-			feeder 0
 			visible 1
 			onFocus
 			{
@@ -1048,25 +694,12 @@
 		itemDef
 		{
 			rect 232 308 344 20 1 1
-			style 0
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
 			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
 			decoration 
-			type 0
-			align 0
 			textAlign 6
 			textAlignX -180
-			textAlignY 0
 			textScale 0.375
-			textStyle 0
 			textFont 3
-			feeder 0
 			text "@MENU_SHOW_OBJECTIVES_SCORES"
 			visible 1
 		}
@@ -1074,25 +707,14 @@
 		{
 			rect -64 -20 336 20 1 3
 			style 1
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
 			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background menu_button_selection_bar
-			group mw2_button
+			background "menu_button_selection_bar"
+			group "mw2_button"
 			type 1
-			align 0
 			textAlign 6
 			textAlignX -60
-			textAlignY 0
 			textScale 0.375
-			textStyle 0
 			textFont 3
-			feeder 0
 			text "@PLATFORM_BACK_CAPS"
 			visible 1
 			onFocus
@@ -1100,16 +722,16 @@
 				play "mouse_over";
 				if ( dvarstring( "gameMode" ) != "mp"  )
 				{
-					setItemColor mw2_button "backcolor" 0 0 0 0;
+					setItemColor "mw2_button" "backcolor" 0 0 0 0;
 				}
 				setItemColor self "backcolor" 0 0 0 1;
-				setLocalVarBool ui_menuAButton 1;
+				setLocalVarBool "ui_menuAButton" 1;
 			}
 			leaveFocus
 			{
 				setItemColor self "backcolor" 0 0 0 "0.0";
 				setLocalVarString ui_hint_text "@NULL_EMPTY"  );
-				setLocalVarBool ui_menuAButton 1;
+				setLocalVarBool "ui_menuAButton" 1;
 			}
 			action
 			{
@@ -1123,25 +745,14 @@
 		{
 			rect -64 -20 336 20 1 3
 			style 1
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
 			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background menu_button_selection_bar
-			group mw2_button
+			background "menu_button_selection_bar"
+			group "mw2_button"
 			type 1
-			align 0
 			textAlign 6
 			textAlignX -60
-			textAlignY 0
 			textScale 0.375
-			textStyle 0
 			textFont 3
-			feeder 0
 			text "@PLATFORM_BACK_CAPS"
 			visible 1
 			onFocus
@@ -1149,16 +760,16 @@
 				play "mouse_over";
 				if ( dvarstring( "gameMode" ) != "mp"  )
 				{
-					setItemColor mw2_button "backcolor" 0 0 0 0;
+					setItemColor "mw2_button" "backcolor" 0 0 0 0;
 				}
 				setItemColor self "backcolor" 0 0 0 1;
-				setLocalVarBool ui_menuAButton 1;
+				setLocalVarBool "ui_menuAButton" 1;
 			}
 			leaveFocus
 			{
 				setItemColor self "backcolor" 0 0 0 "0.0";
 				setLocalVarString ui_hint_text "@NULL_EMPTY"  );
-				setLocalVarBool ui_menuAButton 1;
+				setLocalVarBool "ui_menuAButton" 1;
 			}
 			action
 			{
@@ -1173,25 +784,13 @@
 			name keyBindStatus
 			rect 10 20 500 240 2 3
 			style 1
-			border 0
 			ownerdraw 250
-			ownerdrawFlag 0
-			borderSize 0
 			foreColor 0.65 0.65 0.65 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
 			decoration 
 			autoWrapped 
 			type 8
-			align 0
 			textAlign 1
-			textAlignX 0
-			textAlignY 0
 			textScale 0.375
-			textStyle 0
-			textFont 0
-			feeder 0
 		}
 	}
 }
