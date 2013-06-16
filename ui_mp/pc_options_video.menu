@@ -2,77 +2,85 @@
 	menuDef
 	{
 		name "pc_options_video"
+		fullscreen 0
 		rect 0 0 640 480
-		foreColor 1 1 1 1
 		focusColor 1 1 1 1		
+		foreColor 1 1 1 1
 		blurWorld 7
 		onOpen
 		{
-			ExecNow "profile_menuDvarsSetup; resetViewPort";
-			setLocalVarBool ui_hideBack 1;
-			if (!localvarint("ui_showApply") && !localvarint("ui_showPicApply"))
-			{
-				exec "exec options_graphics.cfg";
-			}
+			ExecNow "profile_menuDvarsSetup; resetViewport";
+			close "options_multi";
+			close "options_graphics_defaults";
+			close "options_graphics_texture";
+			close "options_control_defaults";
+			setLocalVarBool "ui_showApply" ( 1 );
+			setLocalVarBool "ui_hideBack" ( 1 );
+			exec "exec options_graphics.cfg";
+			execOnDvarFloatValue "r_zfeather 0 set ui_zfeather 0";
+			execOnDvarFloatValue "r_zfeather 1 set ui_zfeather 1";
+			execOnDvarFloatValue "r_depthPrepassModels 1 set ui_zfeather 2";
 			ExecNow "profile_menuDvarsSetup; resetViewport";
 		}
 		onClose
 		{
 			ExecNow "profile_menuDvarsFinish; resetViewport";
-			setLocalVarBool ui_hideBack 0;
-			execondvarintvalue "r_lodScaleRigid" 2 "set r_lodScaleSkinned 4; set r_lodBiasSkinned -200; set r_lodBiasRigid -100";
-			execondvarintvalue "r_lodScaleRigid" 1 "set r_lodScaleSkinned 1; set r_lodBiasSkinned 0; set r_lodBiasRigid 0";
+			setLocalVarBool "ui_hideBack" ( 0 );
+			execOnDvarIntValue "ui_zfeather 0 set r_zfeather 0; set r_depthPrepassModels 0";
+			execOnDvarIntValue "ui_zfeather 1 set r_zfeather 1; set r_depthPrepassModels 0";
+			execondvarintvalue "r_lodScaleRigid 2 set r_lodScaleSkinned 4; set r_lodBiasSkinned -200; set r_lodBiasRigid -100";
+			execondvarintvalue "r_lodScaleRigid 1 set r_lodScaleSkinned 1; set r_lodBiasRigid 0";
 		}
-		onEsc
+		onESC
 		{
-			close self;
+			close "self";
 			if ( !( menuisopen( "pc_options_advanced_video" ) || menuisopen( "pc_options_video" ) || menuisopen( "pc_options_Audio" ) || menuisopen( "pc_options_controls" ) || menuisopen( "pc_options_voice" ) ) && localvarbool( "ui_showPicApply" ) && !localvarbool( "ui_showApply" ) && !localvarbool( "ui_showAudioApply" )  )
 			{
-				execnow "setfromdvar r_picmip ui_r_picmip";
-				execnow "setfromdvar r_picmip_bump ui_r_picmip_bump";
-				execnow "setfromdvar r_picmip_spec ui_r_picmip_spec";
-				execnow "setfromdvar r_picmip_manual ui_r_picmip_manual";
+				execNow "setfromdvar r_picmip ui_r_picmip";
+				execNow "setfromdvar r_picmip_bump ui_r_picmip_bump";
+				execNow "setfromdvar r_picmip_spec ui_r_picmip_spec";
+				execNow "setfromdvar r_picmip_manual ui_r_picmip_manual";
 				exec "wait; wait; r_applyPicmip";
-				setLocalVarBool ui_showPicApply 0;
+				setLocalVarBool "ui_showPicApply" ( 0 );
 			}
 			if ( !( menuisopen( "pc_options_advanced_video" ) || menuisopen( "pc_options_video" ) || menuisopen( "pc_options_Audio" ) || menuisopen( "pc_options_controls" ) || menuisopen( "pc_options_voice" ) ) && localvarbool( "ui_showApply" ) || localvarbool( "ui_showAudioApply" )  )
 			{
-				open all_restart_popmenu;
+				open "all_restart_popmenu";
 			}
 			ExecNow "profile_menuDvarsFinish; resetViewport";
-		}			
+		}
 		itemDef
 		{
 			rect -427 -240 854 480 2 2
 			style 3
 			foreColor 0 0 0 0.4
-			background white
+			background "white"
 			decoration 
 			textScale 0.55
 			visible 1
-			visible when ( dvarstring( "gameMode" ) == "mp" || ( dvarstring( "gameMode" ) == "so" && !dvarbool( "ui_allow_graphicschange" ) ) ) )
+			visible when ( dvarstring( "gameMode" ) == "mp" || ( dvarstring( "gameMode" ) == "so" && !dvarbool( "ui_allow_graphicschange" ) ) )  )
 		}
 		itemDef
 		{
 			rect 0 0 640 480 4 4
 			style 3
 			foreColor 1 1 1 1
-			background mw2_main_background
+			background "mw2_main_background"
 			decoration 
 			textScale 0.55
 			visible 1
-			visible when ( ( dvarInt( cl_ingame ) != 1 ); )
+			visible when ( dvarInt( "cl_ingame" ) != 1 );  )
 		}
 		itemDef
 		{
 			rect 0 0 1708 480
 			style 3
 			foreColor 1 1 1 0.5
-			background mw2_main_cloud_overlay
+			background "mw2_main_cloud_overlay"
 			decoration 
 			textScale 0.55
 			visible 1
-			visible when ( ( dvarInt( cl_ingame ) != 1 ); )
+			visible when ( dvarInt( "cl_ingame" ) != 1 );  )
 			exp rect x ( ( 0 - 107 ) - ( ( float( milliseconds( ) % 60000 ) / 60000 ) * ( 854 ) )  )
 		}
 		itemDef
@@ -80,11 +88,11 @@
 			rect 0 0 -1708 -480
 			style 3
 			foreColor 1 1 1 0.5
-			background mw2_main_cloud_overlay
+			background "mw2_main_cloud_overlay"
 			decoration 
 			textScale 0.55
 			visible 1
-			visible when ( ( dvarInt( cl_ingame ) != 1 ); )
+			visible when ( dvarInt( "cl_ingame" ) != 1 );  )
 			exp rect x ( ( - 107 + 854 ) + ( ( float( milliseconds( ) % 50000 ) / 50000 ) * ( 854 ) )  )
 		}
 		itemDef
@@ -92,22 +100,22 @@
 			rect -427 -240 854 480 2 2
 			style 3
 			foreColor 1 1 1 1
-			background mw2_main_mp_image
+			background "mw2_main_mp_image"
 			decoration 
 			textScale 0.55
 			visible 1
-			visible when ( dvarstring( "gameMode" ) == "mp" && ( dvarInt( cl_ingame ) != 1 ); )
+			visible when ( dvarstring( "gameMode" ) == "mp" && ( dvarInt( "cl_ingame" ) != 1 );  )
 		}
 		itemDef
 		{
 			rect 0 0 640 480 4 4
 			style 3
 			foreColor 1 1 1 0
-			background mockup_bg_glow
+			background "mockup_bg_glow"
 			decoration 
 			textScale 0.55
 			visible 1
-			visible when ( ( dvarInt( cl_ingame ) != 1 ); )
+			visible when ( ( dvarInt( "cl_ingame" ) != 1 );  )
 			exp forecolor a ( ( ( sin milliseconds( ) / 1500 ) + 1 ) * 0.250000 ) + 0.250000  )
 		}
 		itemDef
@@ -119,7 +127,7 @@
 			decoration 
 			textScale 0.55
 			visible 1
-			visible when ( ( dvarInt( cl_ingame ) != 1 ); )
+			visible when ( ( dvarInt( "cl_ingame" ) != 1 );  )
 			exp forecolor a ( ( ( sin milliseconds( ) / 480 ) + 1 ) * 0.250000 ) + 0.250000  )
 		}
 		itemDef
@@ -127,33 +135,32 @@
 			rect -64 0 280 480 1 0
 			style 3
 			foreColor 1 1 1 0.1
-			background gradient_fadein_fadebottom
+			background "gradient_fadein_fadebottom"
 			decoration 
 			textScale 0.55
 			visible 1
-			visible when ( 1  )
 		}
 		itemDef
 		{
 			rect 0 0 640 480 4 4
 			style 3
 			foreColor 0.25 0.25 0.25 0.75
-			background gradient_fadein
+			background "gradient_fadein"
 			decoration 
 			textScale 0.55
 			visible 1
-			visible when ( ( dvarInt( cl_ingame ) != 1 ); )
+			visible when ( ( dvarInt( "cl_ingame" ) != 1 );  )
 		}
 		itemDef
 		{
 			rect 0 0 640 480 4 4
 			style 3
 			foreColor 0.25 0.25 0.25 0.75
-			background gradient_fadein
+			background "gradient_fadein"
 			decoration 
 			textScale 0.55
 			visible 1
-			visible when ( ( dvarInt( cl_ingame ) != 1 ); )
+			visible when ( ( dvarInt( "cl_ingame" ) != 1 );  )
 		}
 		itemDef
 		{
@@ -163,7 +170,6 @@
 			textAlign 6
 			textAlignX -60
 			textScale 0.5
-			text
 			textFont 9
 			text "@MENU_OPTIONS_CAPS"
 			visible 1
@@ -173,13 +179,12 @@
 			rect -64 28 336 20 1 1
 			style 1
 			foreColor 1 1 1 1
-			background menu_button_selection_bar
-			group mw2_button
+			background "menu_button_selection_bar"
+			group "mw2_button"
 			type 1
 			textAlign 6
 			textAlignX -60
 			textScale 0.375
-			text
 			textFont 3
 			text "@MENU_VIDEO"
 			visible 1
@@ -188,49 +193,33 @@
 				play "mouse_over";
 				if ( dvarstring( "gameMode" ) != "mp"  )
 				{
-					setItemColor mw2_button "backcolor" 0 0 0 0;
+					setItemColor "mw2_button" "backcolor" 0 0 0 0;
 				}
 				setItemColor self "backcolor" 0 0 0 1;
-				setLocalVarBool ui_menuAButton 1;
+				setLocalVarBool "ui_menuAButton" ( 1 );
 				setLocalVarFloat ui_popupYPos 0.000000;
 			}
 			leaveFocus
 			{
 				setItemColor self "backcolor" 0 0 0 "0.0";
-				setLocalVarString ui_hint_text "@NULL_EMPTY"  );
-				setLocalVarBool ui_menuAButton 1;
+				setLocalVarString "ui_hint_text" ( "@NULL_EMPTY" );
+				setLocalVarBool "ui_menuAButton" ( 0 );
 			}
 			action
 			{
-				play "mouse_click";
-				close "pc_options_video";
+				play "mouse_click";				
 				close "pc_options_voice";
 				close "pc_options_adanced_video";
-				close "options_texture_quality";
-				close "pc_options_audio";
 				close "pc_options_movement";
 				close "pc_options_controls";
-				close "options_look";
-				close "options_move";
-				close "options_shoot";
-				close "options_misc";
-				close "options_graphics";
-				close "options_sound";
-				close "options_game";
-				close "options_view";
-				close "options_defaults";
-				close "options_driverinfo";
-				close "options_credits";
 				close "options_multi";
-				close "options_graphics_defaults";
 				close "options_graphics_texture";
+				close "options_graphics_defaults";
 				close "options_control_defaults";
 				close "options_voice";
 				close "options_multi";
 				close "controls_multi";
 				close "main_options";
-				close "pc_options_audio";
-				close "pc_options_video";
 				close "main_controls";
 				open "pc_options_video";
 			}
@@ -240,13 +229,12 @@
 			rect -64 48 336 20 1 1
 			style 1
 			foreColor 1 1 1 1
-			background menu_button_selection_bar
-			group mw2_button
+			background "menu_button_selection_bar"
+			group "mw2_button"
 			type 1
 			textAlign 6
 			textAlignX -60
 			textScale 0.375
-			text
 			textFont 3
 			text "@MENU_AUDIO"
 			visible 1
@@ -255,49 +243,34 @@
 				play "mouse_over";
 				if ( dvarstring( "gameMode" ) != "mp"  )
 				{
-					setItemColor mw2_button "backcolor" 0 0 0 0;
+					setItemColor self "backcolor" 0 0 0 0;
 				}
 				setItemColor self "backcolor" 0 0 0 1;
-				setLocalVarBool ui_menuAButton 1;
+				setLocalVarBool "ui_menuAButton" ( 1 );
 				setLocalVarFloat ui_popupYPos 0.000000;
 			}
 			leaveFocus
 			{
 				setItemColor self "backcolor" 0 0 0 "0.0";
-				setLocalVarString ui_hint_text "@NULL_EMPTY"  );
-				setLocalVarBool ui_menuAButton 1;
+				setLocalVarString "ui_hint_text" ( "@NULL_EMPTY" );
+				setLocalVarBool "ui_menuAButton" ( 0 );
 			}
 			action
 			{
 				play "mouse_click";
-				close "pc_options_video";
+				close "pc_options_video";				
 				close "pc_options_voice";
 				close "pc_options_adanced_video";
-				close "options_texture_quality";
-				close "pc_options_audio";
 				close "pc_options_movement";
 				close "pc_options_controls";
-				close "options_look";
-				close "options_move";
-				close "options_shoot";
-				close "options_misc";
-				close "options_graphics";
-				close "options_sound";
-				close "options_game";
-				close "options_view";
-				close "options_defaults";
-				close "options_driverinfo";
-				close "options_credits";
 				close "options_multi";
-				close "options_graphics_defaults";
 				close "options_graphics_texture";
+				close "options_graphics_defaults";
 				close "options_control_defaults";
 				close "options_voice";
 				close "options_multi";
 				close "controls_multi";
 				close "main_options";
-				close "pc_options_audio";
-				close "pc_options_video";
 				close "main_controls";
 				open "pc_options_audio";
 			}
@@ -307,13 +280,12 @@
 			rect -64 68 336 20 1 1
 			style 1
 			foreColor 1 1 1 1
-			background menu_button_selection_bar
-			group mw2_button
+			background "menu_button_selection_bar"
+			group "mw2_button"
 			type 1
 			textAlign 6
 			textAlignX -60
 			textScale 0.375
-			text
 			textFont 3
 			text "@MENU_CONTROLS"
 			visible 1
@@ -322,49 +294,33 @@
 				play "mouse_over";
 				if ( dvarstring( "gameMode" ) != "mp"  )
 				{
-					setItemColor mw2_button "backcolor" 0 0 0 0;
+					setItemColor self "backcolor" 0 0 0 0;
 				}
 				setItemColor self "backcolor" 0 0 0 1;
-				setLocalVarBool ui_menuAButton 1;
+				setLocalVarBool "ui_menuAButton" ( 1 );
 				setLocalVarFloat ui_popupYPos 0.000000;
 			}
 			leaveFocus
 			{
 				setItemColor self "backcolor" 0 0 0 "0.0";
-				setLocalVarString ui_hint_text "@NULL_EMPTY"  );
-				setLocalVarBool ui_menuAButton 1;
+				setLocalVarString "ui_hint_text" ( "@NULL_EMPTY" );
+				setLocalVarBool "ui_menuAButton" ( 0 );
 			}
 			action
 			{
 				play "mouse_click";
-				close "pc_options_video";
+				close "pc_options_video";				
 				close "pc_options_voice";
 				close "pc_options_adanced_video";
-				close "options_texture_quality";
-				close "pc_options_audio";
 				close "pc_options_movement";
-				close "pc_options_controls";
-				close "options_look";
-				close "options_move";
-				close "options_shoot";
-				close "options_misc";
-				close "options_graphics";
-				close "options_sound";
-				close "options_game";
-				close "options_view";
-				close "options_defaults";
-				close "options_driverinfo";
-				close "options_credits";
 				close "options_multi";
-				close "options_graphics_defaults";
 				close "options_graphics_texture";
+				close "options_graphics_defaults";
 				close "options_control_defaults";
 				close "options_voice";
 				close "options_multi";
 				close "controls_multi";
 				close "main_options";
-				close "pc_options_audio";
-				close "pc_options_video";
 				close "main_controls";
 				open "pc_options_controls";
 			}
@@ -374,13 +330,12 @@
 			rect -64 88 336 20 1 1
 			style 1
 			foreColor 1 1 1 1
-			background menu_button_selection_bar
-			group mw2_button
+			background "menu_button_selection_bar"
+			group "mw2_button"
 			type 1
 			textAlign 6
 			textAlignX -60
 			textScale 0.375
-			text
 			textFont 3
 			text "@MENU_VOICE"
 			visible 1
@@ -389,49 +344,33 @@
 				play "mouse_over";
 				if ( dvarstring( "gameMode" ) != "mp"  )
 				{
-					setItemColor mw2_button "backcolor" 0 0 0 0;
+					setItemColor self "backcolor" 0 0 0 0;
 				}
 				setItemColor self "backcolor" 0 0 0 1;
-				setLocalVarBool ui_menuAButton 1;
+				setLocalVarBool "ui_menuAButton" ( 1 );
 				setLocalVarFloat ui_popupYPos 0.000000;
 			}
 			leaveFocus
 			{
 				setItemColor self "backcolor" 0 0 0 "0.0";
-				setLocalVarString ui_hint_text "@NULL_EMPTY"  );
-				setLocalVarBool ui_menuAButton 1;
+				setLocalVarString "ui_hint_text" ( "@NULL_EMPTY" );
+				setLocalVarBool "ui_menuAButton" ( 1 );
 			}
 			action
 			{
 				play "mouse_click";
 				close "pc_options_video";
-				close "pc_options_voice";
 				close "pc_options_adanced_video";
-				close "options_texture_quality";
-				close "pc_options_audio";
 				close "pc_options_movement";
 				close "pc_options_controls";
-				close "options_look";
-				close "options_move";
-				close "options_shoot";
-				close "options_misc";
-				close "options_graphics";
-				close "options_sound";
-				close "options_game";
-				close "options_view";
-				close "options_defaults";
-				close "options_driverinfo";
-				close "options_credits";
 				close "options_multi";
-				close "options_graphics_defaults";
 				close "options_graphics_texture";
+				close "options_graphics_defaults";
 				close "options_control_defaults";
 				close "options_voice";
 				close "options_multi";
 				close "controls_multi";
 				close "main_options";
-				close "pc_options_audio";
-				close "pc_options_video";
 				close "main_controls";
 				open "pc_options_voice";
 			}
@@ -443,10 +382,7 @@
 			foreColor 1 1 1 0.65
 			background gradient_fadein
 			decoration 
-			text
 			textScale 0.55
-			text
-			textFont 0
 			visible 1
 		}
 		itemDef
@@ -454,13 +390,12 @@
 			rect -64 108 336 20 1 1
 			style 1
 			foreColor 1 1 1 1
-			background menu_button_selection_bar
-			group mw2_button
+			background "menu_button_selection_bar"
+			group "mw2_button"
 			type 1
 			textAlign 6
 			textAlignX -60
 			textScale 0.375
-			text
 			textFont 3
 			text "@MENU_RESET_SYSTEM_DEFAULTS"
 			visible 1
@@ -469,17 +404,17 @@
 				play "mouse_over";
 				if ( dvarstring( "gameMode" ) != "mp"  )
 				{
-					setItemColor mw2_button "backcolor" 0 0 0 0;
+					setItemColor self "backcolor" 0 0 0 0;
 				}
 				setItemColor self "backcolor" 0 0 0 1;
-				setLocalVarBool ui_menuAButton 1;
+				setLocalVarBool "ui_menuAButton" ( 1 );
 				setLocalVarFloat ui_popupYPos 0.000000;
 			}
 			leaveFocus
 			{
 				setItemColor self "backcolor" 0 0 0 "0.0";
-				setLocalVarString ui_hint_text "@NULL_EMPTY"  );
-				setLocalVarBool ui_menuAButton 1;
+				setLocalVarString "ui_hint_text" ( "@NULL_EMPTY" );
+				setLocalVarBool "ui_menuAButton" ( 0 );
 			}
 			action
 			{
@@ -492,13 +427,12 @@
 			rect -64 -20 336 20 1 3
 			style 1
 			foreColor 1 1 1 1
-			background menu_button_selection_bar
-			group mw2_button
+			background "menu_button_selection_bar"
+			group "mw2_button"
 			type 1
 			textAlign 6
 			textAlignX -60
 			textScale 0.375
-			text
 			textFont 3
 			text "@PLATFORM_BACK_CAPS"
 			visible 1
@@ -507,17 +441,16 @@
 				play "mouse_over";
 				if ( dvarstring( "gameMode" ) != "mp"  )
 				{
-					setItemColor mw2_button "backcolor" 0 0 0 0;
+					setItemColor self "backcolor" 0 0 0 0;
 				}
 				setItemColor self "backcolor" 0 0 0 1;
-				setLocalVarBool ui_menuAButton 1;
-				setLocalVarFloat ui_popupYPos 0.000000;
+				setLocalVarBool "ui_menuAButton" ( 1 );
 			}
 			leaveFocus
 			{
 				setItemColor self "backcolor" 0 0 0 "0.0";
-				setLocalVarString ui_hint_text "@NULL_EMPTY"  );
-				setLocalVarBool ui_menuAButton 1;
+				setLocalVarString "ui_hint_text" ( "@NULL_EMPTY" );
+				setLocalVarBool "ui_menuAButton" ( 0 );
 			}
 			action
 			{
@@ -526,14 +459,14 @@
 				escape "self";
 				if ( !( menuisopen( "pc_options_advanced_video" ) || menuisopen( "pc_options_video" ) || menuisopen( "pc_options_Audio" ) || menuisopen( "pc_options_controls" ) || menuisopen( "pc_options_voice" ) )  )
 				{
-					if ( localvarbool( "ui_showPicApply" ) && !localvarbool( "ui_showApply" )  )
+					if ( localVarBool( "ui_showPicApply" ) && !localVarBool( "ui_showApply" )  )
 					{
-						execnow "setfromdvar r_picmip ui_r_picmip";
-						execnow "setfromdvar r_picmip_bump ui_r_picmip_bump";
-						execnow "setfromdvar r_picmip_spec ui_r_picmip_spec";
-						execnow "setfromdvar r_picmip_manual ui_r_picmip_manual";
+						execNow "setfromdvar r_picmip ui_r_picmip";
+						execNow "setfromdvar r_picmip_bump ui_r_picmip_bump";
+						execNow "setfromdvar r_picmip_spec ui_r_picmip_spec";
+						execNow "setfromdvar r_picmip_manual ui_r_picmip_manual";
 						exec "wait; r_applyPicmip";
-						setLocalVarBool ui_showPicApply 1;
+						setLocalVarBool "ui_showPicApply"  ( 1 );
 					}
 					if ( localvarbool( "ui_showApply" ) || localvarbool( "ui_showAudioApply" )  )
 					{
@@ -549,9 +482,8 @@
 			decoration 
 			textAlign 5
 			textScale 0.5
-			text
 			textFont 9
-			text "@MENU_VIDEO"
+			text "@MENU_GRAPHICS"
 			visible 1
 		}
 		itemDef
@@ -559,29 +491,28 @@
 			rect 232 28 344 20 1 1
 			style 1
 			foreColor 1 1 1 1
-			background menu_setting_selection_bar
+			background "menu_setting_selection_bar"
 			type 13
 			textAlign 4
 			textAlignX 180
 			textScale 0.375
-			text
 			textFont 3
 			visible 1
 			onFocus
 			{
 			    play "mouse_over";
 				setItemColor self "backcolor" 0 0 0 1;
-				setlocalvarBool ui_graphics_hint_display 1;
+				setlocalvarBool "ui_graphics_hint_display" ( 1 );
 			}
 			leaveFocus
 			{
 				setItemColor self "backcolor" 0 0 0 0;
-				setlocalvarBool ui_graphics_hint_display 0;				
+				setlocalvarBool "ui_graphics_hint_display" ( 0 );				
 			}
 			action
 			{
 				play "mouse_click";
-				setLocalVarBool ui_showApply 1;
+				setLocalVarBool "ui_showApply" ( 1 );
 			}
 			dvar "ui_r_mode"
 			dvarEnumList "r_mode"
@@ -594,35 +525,37 @@
 			textAlign 6
 			textAlignX -180
 			textScale 0.375
-			text
 			textFont 3
 			text "@MENU_VIDEO_MODE"
 			visible 1
 		}
 		itemDef
 		{
-			rect 412 51 344 20 1 1
+			rect 232 48 344 20 1 1
+			style 1
 			foreColor 1 1 1 1
-			type 10
-			text
-			textScale 0.55
-			text
-			textFont 0
+			background "menu_setting_selection_bar"
+			type 11
+			textAlign 4
+			textAlignX 180
+			textScale 0.375
+			textFont 3
 			visible 1
 			onFocus
 			{
-				play "mouse_over";
-				setLocalVarBool ui_brightness_hint_display 1;
+			    play "mouse_over";
+				setItemColor self "backcolor" 0 0 0 1;
 			}
 			leaveFocus
 			{
-				setLocalVarBool ui_brightness_hint_display 0;
+				setItemColor self "backcolor" 0 0 0 0;
 			}
 			action
 			{
-				ExecNow "profile_menuDvarsFinish";
+				play "mouse_click";
+				setLocalVarBool "ui_showApply" ( 1 );
 			}
-			dvarFloat "profileMenuOption_Gamma" 0.5 0.8 3
+			dvar "ui_r_fullscreen"
 		}
 		itemDef
 		{
@@ -632,23 +565,663 @@
 			textAlign 6
 			textAlignX -180
 			textScale 0.375
-			text
+			textFont 3
+			text "@MENU_FULLSCREEN"
+			visible 1
+		}
+		itemDef
+		{
+			rect 232 68 344 20 1 1
+			style 1
+			foreColor 1 1 1 1
+			background "menu_setting_selection_bar"
+			type 13
+			textAlign 4
+			textAlignX 180
+			textScale 0.375
+			textFont 3
+			visible 1
+			onFocus
+			{
+			    play "mouse_over";
+				setItemColor self "backcolor" 0 0 0 1;
+			}
+			leaveFocus
+			{
+				setItemColor self "backcolor" 0 0 0 0;
+			}
+			action
+			{
+				play "mouse_click";
+				setLocalVarBool "ui_showApply" ( 1 );
+			}
+			dvar "ui_r_displayRefresh"
+			dvarEnumList "r_displayRefresh"
+		}
+		itemDef
+		{
+			rect 232 68 344 20 1 1
+			foreColor 1 1 1 1
+			decoration 
+			textAlign 6
+			textAlignX -180
+			textScale 0.375
+			textFont 3
+			text "@MENU_SCREEN_REFRESH_RATE"
+			visible 1
+		}
+		itemDef
+		{
+			rect 232 88 344 20 1 1
+			style 1
+			foreColor 1 1 1 1
+			background "menu_setting_selection_bar"
+			type 12
+			textAlign 4
+			textAlignX 180
+			textScale 0.375
+			textFont 3
+			visible 1
+			onFocus
+			{
+			    play "mouse_over";
+				setItemColor self "backcolor" 0 0 0 1;
+			}
+			leaveFocus
+			{
+				setItemColor self "backcolor" 0 0 0 0;
+			}
+			action
+			{
+				play "mouse_click";
+				setLocalVarBool "ui_showApply" ( 1 );
+			}
+			dvar "ui_r_aspectratio" 
+			dvarStrList { "@MENU_AUTO"; "auto"; "@MENU_STANDARD_4_3"; "standard"; "@MENU_WIDE_16_10"; "wide 16:10"; "@MENU_WIDE_16_9"; "wide 16:9" }
+		}
+		itemDef
+		{
+			rect 232 88 344 20 1 1
+			foreColor 1 1 1 1
+			decoration 
+			textAlign 6
+			textAlignX -180
+			textScale 0.375
+			textFont 3
+			text "@MENU_ASPECT_RATIO"
+			visible 1
+		}
+		itemDef
+		{
+			rect 232 108 344 20 1 1
+			style 1
+			foreColor 1 1 1 1
+			background "menu_setting_selection_bar"
+			type 12
+			textAlign 4
+			textAlignX 180
+			textScale 0.375
+			textFont 3
+			visible 1
+			onFocus
+			{
+			    play "mouse_over";
+				setItemColor self "backcolor" 0 0 0 1;
+			}
+			leaveFocus
+			{
+				setItemColor self "backcolor" 0 0 0 0;
+			}
+			action
+			{
+				play "mouse_click";
+				setLocalVarBool "ui_showApply" ( 1 );
+			}
+			dvar "ui_r_aasamples"
+			dvarStrList { "@MENU_OFF" 1 "@MENU_2X" 2 "@MENU_4X" 4 }
+		}
+		itemDef
+		{
+			rect 232 108 344 20 1 1
+			foreColor 1 1 1 1
+			decoration 
+			textAlign 6
+			textAlignX -180
+			textScale 0.375
+			textFont 3
+			text "@MENU_ANTIALIASING"
+			visible 1
+		}
+		itemDef
+		{
+			rect 412 131 344 20 1 1
+			foreColor 1 1 1 1
+			type 10
+			textScale 0.55
+			visible 1
+			onFocus
+			{
+				play "mouse_over";
+				setLocalVarBool "ui_brightness_hint_display" ( 1 );
+			}
+			leaveFocus
+			{
+				setLocalVarBool "ui_brightness_hint_display" ( 0 );
+			}
+			action
+			{
+				ExecNow "profile_menuDvarsFinish";
+			}
+			dvarFloat profileMenuOption_Gamma 0.5 0.8 3
+		}
+		itemDef
+		{
+			rect 232 128 344 20 1 1
+			foreColor 1 1 1 1
+			decoration 
+			textAlign 6
+			textAlignX -180
+			textScale 0.375
 			textFont 3
 			text "@MENU_BRIGHTNESS"
 			visible 1
 		}
 		itemDef
 		{
-			rect 260 88 315 20 1 1
+			rect 232 148 344 20 1 1
 			style 1
 			foreColor 1 1 1 1
-			background menu_setting_selection_bar
+			background "menu_setting_selection_bar"
+			type 11
+			textAlign 4
+			textAlignX 180
+			textScale 0.375
+			textFont 3
+			visible 1
+			onFocus
+			{
+				play "mouse_over";
+				setItemColor self "backcolor" 0 0 0 1;
+			}
+			leaveFocus
+			{
+				setItemColor self "backcolor" 0 0 0 0;
+			}
+			action
+			{
+				play "mouse_click";
+				setLocalVarBool "ui_showApply" ( 1 );
+			}
+			dvar "ui_r_vsync"
+		}
+		itemDef
+		{
+			rect 232 148 344 20 1 1
+			foreColor 1 1 1 1
+			decoration 
+			textAlign 6
+			textAlignX -180
+			textScale 0.375
+			textFont 3
+			text "@MENU_SYNC_EVERY_FRAME"
+			visible 1
+		}
+		itemDef
+		{
+			rect 232 168 344 20 1 1
+			style 1
+			foreColor 1 1 1 1
+			background "menu_setting_selection_bar"
+			type 11
+			textAlign 4
+			textAlignX 180
+			textScale 0.375
+			textFont 3
+			visible 1
+			onFocus
+			{
+			    play "mouse_over";
+				setItemColor self "backcolor" 0 0 0 1;
+			}
+			leaveFocus
+			{
+				setItemColor self "backcolor" 0 0 0 0;
+			}
+			action
+			{
+				play "mouse_click";
+			}
+			dvar "r_multiGpu"
+		}
+		itemDef
+		{
+			rect 232 168 344 20 1 1
+			foreColor 1 1 1 1
+			decoration 
+			textAlign 6
+			textAlignX -180
+			textScale 0.375
+			textFont 3
+			text "@MENU_OPTIMIZE_FOR_DUAL_VIDEO_CARDS"
+			visible 1
+		}
+		itemDef
+		{
+			rect 232 188 344 20 1 1
+			style 1
+			foreColor 1 1 1 1
+			background "menu_setting_selection_bar"
+			type 11
+			textAlign 4
+			textAlignX 180
+			textScale 0.375
+			textFont 3
+			visible 1
+			onFocus
+			{
+			    play "mouse_over";
+				setItemColor self "backcolor" 0 0 0 1;
+			}
+			leaveFocus
+			{
+				setItemColor self "backcolor" 0 0 0 0;
+			}
+			action
+			{
+				play "mouse_click";
+			}
+			dvar "sm_enable"
+		}
+		itemDef
+		{
+			rect 232 188 344 20 1 1
+			foreColor 1 1 1 1
+			decoration 
+			textAlign 6
+			textAlignX -180
+			textScale 0.375
+			textFont 3
+			text "@MENU_SHADOWS"
+			visible 1
+		}
+		itemDef
+		{
+			rect 232 208 344 20 1 1
+			style 1
+			foreColor 1 1 1 1
+			background "menu_setting_selection_bar"
+			type 11
+			textAlign 4
+			textAlignX 180
+			textScale 0.375
+			textFont 3
+			visible 1
+			onFocus
+			{
+			    play "mouse_over";
+				setItemColor self "backcolor" 0 0 0 1;
+			}
+			leaveFocus
+			{
+				setItemColor self "backcolor" 0 0 0 0;
+			}
+			action
+			{
+				play "mouse_click";
+			}
+			dvar "r_specular"
+		}
+		itemDef
+		{
+			rect 232 208 344 20 1 1
+			foreColor 1 1 1 1
+			decoration 
+			textAlign 6
+			textAlignX -180
+			textScale 0.375
+			textFont 3
+			text "@MENU_SPECULAR_MAP"
+			visible 1
+		}
+		itemDef
+		{
+			rect 232 228 344 20 1 1
+			style 1
+			foreColor 1 1 1 1
+			background "menu_setting_selection_bar"
+			type 11
+			textAlign 4
+			textAlignX 180
+			textScale 0.375
+			textFont 3
+			visible 1
+			onFocus
+			{
+			    play "mouse_over";
+				setItemColor self "backcolor" 0 0 0 1;
+			}
+			leaveFocus
+			{
+				setItemColor self "backcolor" 0 0 0 0;
+			}
+			action
+			{
+				play "mouse_click";
+			}
+			dvar "r_dof_enable"
+		}
+		itemDef
+		{
+			rect 232 228 344 20 1 1
+			foreColor 1 1 1 1
+			decoration 
+			textAlign 6
+			textAlignX -180
+			textScale 0.375
+			textFont 3
+			text "@MENU_DOF"
+			visible 1
+		}
+		itemDef
+		{
+			rect 232 248 344 20 1 1
+			style 1
+			foreColor 1 1 1 1
+			background "menu_setting_selection_bar"
+			type 11
+			textAlign 4
+			textAlignX 180
+			textScale 0.375
+			textFont 3
+			visible 1
+			onFocus
+			{
+			    play "mouse_over";
+				setItemColor self "backcolor" 0 0 0 1;
+			}
+			leaveFocus
+			{
+				setItemColor self "backcolor" 0 0 0 0;
+			}
+			action
+			{
+				play "mouse_click";
+			}
+			dvar "r_glow_allowed"
+		}
+		itemDef
+		{
+			rect 232 248 344 20 1 1
+			foreColor 1 1 1 1
+			decoration 
+			textAlign 6
+			textAlignX -180
+			textScale 0.375
+			textFont 3
+			text "@MENU_GLOW"
+			visible 1
+		}
+		itemDef
+		{
+			rect 232 268 344 20 1 1
+			style 1
+			foreColor 1 1 1 1
+			background "menu_setting_selection_bar"
+			type 12
+			textAlign 4
+			textAlignX 180
+			textScale 0.375
+			textFont 3
+			visible 1
+			onFocus
+			{
+			    play "mouse_over";
+				setItemColor self "backcolor" 0 0 0 1;
+			}
+			leaveFocus
+			{
+				setItemColor self "backcolor" 0 0 0 0;
+			}
+			action
+			{
+				play "mouse_click";
+			}
+			dvar "r_dlightlimit"
+			dvarStrList { "@MENU_OFF" 0 "@MENU_LOW" 2 "@MENU_NORMAL" 4 }, ; )
+		}
+		itemDef
+		{
+			rect 232 268 344 20 1 1
+			foreColor 1 1 1 1
+			decoration 
+			textAlign 6
+			textAlignX -180
+			textScale 0.375
+			textFont 3
+			text "@MENU_NUMBER_OF_DYNAMIC_LIGHTS"
+			visible 1
+		}
+		itemDef
+		{
+			rect 232 288 344 20 1 1
+			style 1
+			foreColor 1 1 1 1
+			background "menu_setting_selection_bar"
+			type 12
+			textAlign 4
+			textAlignX 180
+			textScale 0.375
+			textFont 3
+			visible 1
+			onFocus
+			{
+				setItemColor self "backcolor" 0 0 0 1 play "mouse_over";
+			}
+			leaveFocus
+			{
+				setItemColor self "backcolor" 0 0 0 0;
+			}
+			action
+			{
+				play "mouse_click";
+				setLocalVarBool "ui_showApply" ( 1 );
+			}
+			dvar "ui_zfeather"
+			dvarStrList { "@MENU_NO" 0 "@MENU_YES" 1 }
+		}
+		itemDef
+		{
+			rect 232 288 344 20 1 1
+			foreColor 1 1 1 1
+			decoration 
+			textAlign 6
+			textAlignX -180
+			textScale 0.375
+			textFont 3
+			text "@MENU_ZFEATHER_SMOKE"
+			visible 1
+		}
+		itemDef
+		{
+			rect 232 308 344 20 1 1
+			style 1
+			foreColor 1 1 1 1
+			background "menu_setting_selection_bar"
+			type 11
+			textAlign 4
+			textAlignX 180
+			textScale 0.375
+			textFont 3
+			visible 1
+			onFocus
+			{
+			    play "mouse_over";
+				setItemColor self "backcolor" 0 0 0 1;
+			}
+			leaveFocus
+			{
+				setItemColor self "backcolor" 0 0 0 0;
+			}
+			action
+			{
+				play "mouse_click";
+			}
+			dvar "ragdoll_enable"
+		}
+		itemDef
+		{
+			rect 232 308 344 20 1 1
+			foreColor 1 1 1 1
+			decoration 
+			textAlign 6
+			textAlignX -180
+			textScale 0.375
+			textFont 3
+			text "@MENU_RAGDOLL"
+			visible 1
+		}
+		itemDef
+		{
+			rect 232 328 344 20 1 1
+			style 1
+			foreColor 1 1 1 1
+			background "menu_setting_selection_bar"
+			type 11
+			textAlign 4
+			textAlignX 180
+			textScale 0.375
+			textFont 3
+			visible 1
+			onFocus
+			{
+			    play "mouse_over";
+				setItemColor self "backcolor" 0 0 0 1;
+			}
+			leaveFocus
+			{
+				setItemColor self "backcolor" 0 0 0 0;
+			}
+			action
+			{
+				play "mouse_click";
+			}
+			dvar "fx_marks"
+		}
+		itemDef
+		{
+			rect 232 328 344 20 1 1
+			foreColor 1 1 1 1
+			decoration 
+			textAlign 6
+			textAlignX -180
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			text "@MENU_BULLET_IMPACTS"
+			visible 1
+		}
+		itemDef
+		{
+			rect 232 348 344 20 1 1
+			style 1
+			foreColor 1 1 1 1
+			background "menu_setting_selection_bar"
+			type 12
+			textAlign 4
+			textAlignX 180
+			textScale 0.375
+			textFont 3
+			visible 1
+			onFocus
+			{
+				setItemColor self "backcolor" 0 0 0 1 play "mouse_over";
+			}
+			leaveFocus
+			{
+				setItemColor self "backcolor" 0 0 0 0;
+			}
+			action
+			{
+				play "mouse_click";
+			}
+			dvar "r_lodScaleRigid"
+			dvarStrList { "@MENU_NORMAL" 1 "@MENU_LOW" 2 }
+		}
+		itemDef
+		{
+			rect 232 348 344 20 1 1
+			foreColor 1 1 1 1
+			decoration 
+			textAlign 6
+			textAlignX -180
+			textScale 0.375
+			textFont 3
+			text "@MENU_MODEL_DETAIL"
+			visible 1
+		}
+		itemDef
+		{
+			rect 232 368 344 20 1 1
+			style 1
+			foreColor 1 1 1 1
+			background "menu_setting_selection_bar"
+			type 12
+			textAlign 4
+			textAlignX 180
+			textScale 0.375
+			textFont 3
+			visible 1
+			onFocus
+			{
+			    play "mouse_over";
+				setItemColor self "backcolor" 0 0 0 1;
+			}
+			leaveFocus
+			{
+				setItemColor self "backcolor" 0 0 0 0;
+			}
+			action
+			{
+				play "mouse_click";
+			}
+			dvar "r_drawWater"
+			dvarStrList { "@MENU_NORMAL" 1 "@MENU_LOW" 0 }
+		}
+		itemDef
+		{
+			rect 232 368 344 20 1 1
+			foreColor 1 1 1 1
+			decoration 
+			textAlign 6
+			textAlignX -180
+			textScale 0.375
+			textFont 3
+			text "@MENU_WATER_DETAIL"
+			visible 1
+		}
+		itemDef
+		{
+			rect 260 399 315 20 1 1
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background "menu_setting_selection_bar"
 			type 1
+			align 0
 			textAlign 6
 			textAlignX -155
+			textAlignY 0
 			textScale 0.375
-			text
+			textStyle 0
 			textFont 3
+			feeder 0
 			text "@MENU_ADVANCED_VIDEO"
 			visible 1
 			onFocus
@@ -663,9 +1236,9 @@
 			action
 			{   
 			    play "mouse_click";
-				open "pc_options_advanced_video";
+				open "options_graphics_texture";
 			}
-		}
+		}		
 		itemDef
 		{
 			name graphic_warning
@@ -675,10 +1248,7 @@
 			decoration 
 			autoWrapped 
 			type 1
-			text
 			textScale 0.375
-			text
-			textFont 0
 			text "@MENU_GRAPHICS_WARNING"
 			visible 1
 			visible when ( localvarbool( "ui_graphics_hint_display" )  )
@@ -692,10 +1262,7 @@
 			decoration 
 			autoWrapped 
 			type 1
-			text
 			textScale 0.375
-			text
-			textFont 0
 			text "@MENU_BRIGHTNESS_HINT_PC"
 			visible 1
 			visible when ( localvarbool( "ui_brightness_hint_display" )  )
