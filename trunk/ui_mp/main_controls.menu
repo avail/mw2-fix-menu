@@ -163,7 +163,7 @@
 			textAlignX -60
 			textScale 0.375
 			textFont 3
-			text "Movement"
+			text "@MENU_MOVEMENT"
 			visible 1
 			onFocus
 			{
@@ -203,7 +203,7 @@
 			textAlignX -60
 			textScale 0.375
 			textFont 3
-			text "Actions"
+			text "@MENU_ACTIONS"
 			visible 1
 			onFocus
 			{
@@ -243,7 +243,7 @@
 			textAlignX -60
 			textScale 0.375
 			textFont 3
-			text "Look"
+			text "@MENU_LOOK"
 			visible 1
 			onFocus
 			{
@@ -404,7 +404,7 @@
 			{
 				play "mouse_click";
 				play "mouse_click";
-				"escape" "self";
+				escape "self";
 			}
 			visible when ( "@PLATFORM_BACK_CAPS" == "@PLATFORM_BACK_CAPS"  )
 		}
