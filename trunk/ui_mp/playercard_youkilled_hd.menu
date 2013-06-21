@@ -1,0 +1,31 @@
+{
+	menuDef
+	{
+		name "playercard_youkilled_hd"
+		rect 0 0 640 480 4 4
+		visible 1
+		forecolor 1 1 1 1
+		visible when ( ( milliseconds( ) - localvarint( "ui_show_youKilled" ) < 2500 && ( ! ( milliseconds( ) - localvarint( "ui_show_killedBy" ) < 4000 || ( inkillcam( ) ) ) ) ) )
+		exp rect y ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_show_youKilled" ) ) / 150 ) , 1 ) , 0 ) * ( 180 ) ) + ( min( max( ( milliseconds( ) - localvarint( "ui_show_youKilled" ) + 2350 ) / 150 , 0 ) , 1 ) * ( 180 ) ) )
+		
+		#include "ui_mp/playercard.inc"
+		PLAYERCARD(8, 0, 9, 10, -137, -80)
+		itemDef
+		{
+			rect 0 0 208 20 9 10
+			style 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			glowColor 1 0.8 0.6 1
+			textfont 6
+			textalign 5
+			textscale 0.375
+			textstyle 8
+			exp rect x ( ( 0 - 104 ) )
+			exp rect y ( ( - 80 ) + ( 0 - 20 ) )
+			visible when ( ( getplayercardinfo( 0 , 0 , 8 ) != 0 ) )
+			exp text ( "@MP_YOU_KILLED" )
+		}
+	}
+}

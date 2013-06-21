@@ -1,0 +1,41 @@
+#include "ui/choices_setup_common_iw4.menu"
+#include "ui_mp/choices_setup_teams.menu"
+{
+	menuDef
+	{
+		name "team_marinesopfor"
+		rect 0 0 640 480
+		focusColor 1 1 1 1
+		style 1
+		blurWorld 7.0
+		legacySplitScreenScale
+		onOpen
+		{
+			setFocus "autoassign";
+		}
+		onEsc
+		{
+			scriptMenuResponse "back";
+		}
+
+		#include "ui_mp/ingame_bg.inc"
+		#include "ui_mp/teamicon.inc"
+		#include "ui_mp/tactical_map.inc"
+		
+		CHOICE_MENU_TITLE( "@MPUI_CHOOSE_TEAM", 1 )
+				
+		CHOICE_BUTTON_NOHI( 0, "@MPUI_SPECTATOR", scriptMenuResponse "spectator"; when( TEAM_IS_SPECTATOR ) )
+		
+		CHOICE_BUTTON_NOHI( 1, "@" + dvarString( "g_TeamName_Axis" ), scriptMenuResponse "axis";, when( TEAM_IS_OPFOR ) )
+		CHOICE_BUTTON_NOHI( 2, "@" + dvarString( "g_TeamName_Allies" ), scriptMenuResponse "allies";,  when( TEAM_IS_MARINES ) )
+		CHOICE_SEPARATOR( 3 )
+		CHOICE_BUTTON_NOHI( 3, "@MPUI_AUTOASSIGN", scriptMenuResponse "autoassign";, when( TEAM_IS_NONE ) )
+		CHOICE_SEPARATOR( 4 )		
+		CHOICE_BUTTON( 4, "@MENU_OPTIONS", close "self"; open "main_options"; )
+		
+		CHOICE_BUTTON_VIS_NOHI( 5, "@MPUI_END_GAME", open "popup_endgame", ;, when( dvarbool( "sv_running" ) ) )
+		CHOICE_BUTTON_VIS_NOHI( 5, "@MENU_LEAVE_GAME", open "popup_leavegame", ;, when( !dvarbool( "sv_running" ) ) )
+
+		CHOICE_BACK( "@PLATFORM_BACK_CAPS", close "self"; )		
+	}
+}
