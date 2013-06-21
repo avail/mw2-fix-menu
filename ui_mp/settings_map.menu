@@ -221,7 +221,7 @@
       #include "ui_mp/map_info.inc"
 
       MAP_CHOICE_BUTTON_VIS(0, ;, "DLC Packages",open settings_bonus_map;, 1, preview_dcemp, "MORE","You Can Never Have Enough DLC...")
-      MAP_CHOICE_BUTTON_VIS(1, ;, "Singleplayer Maps",open single_popmenu;, 1, preview_dcemp, "Ported Campaign Maps","Maps That The 4D1 Community Has Ported From Singleplayer.")
+      MAP_CHOICE_BUTTON_VIS(1, ;, "Singleplayer Maps",open streak_set1;, 1, preview_dcemp, "Ported Campaign Maps","Maps That The 4D1 Community Has Ported From Singleplayer.")
 	  HORIZONTAL_LINE(2)
       MAP_CHOICE_BUTTON_VIS(2, ;, "Afghan",setdvar ui_mapname mp_afghan;close settings_map;close self;, 1, "preview_mp_afghan", "Afghan", "MPUI_DESC_MAP_AFGHAN")      
       MAP_CHOICE_BUTTON_VIS(3, ;, "Derail",setdvar ui_mapname mp_derail;close settings_map;close self;, 1, "preview_mp_derail", "Derail", "MPUI_DESC_MAP_DERAIL")         
