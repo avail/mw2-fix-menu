@@ -11,7 +11,7 @@
 		blurWorld 7
 		onOpen
 		{
-			setLocalVarBool "ui_showApply" ( 1 );
+			setLocalVarBool "ui_showApply" ( 0 );
 			setLocalVarBool "ui_hideBack" ( 1 );
 			setitemcolor fadebox "backcolor" 0 0 0 1;
 			fadeout "fadebox";
@@ -19,7 +19,7 @@
 		}
 		onClose
 		{
-			setLocalVarBool "ui_hideBack" ( 1 );
+			setLocalVarBool "ui_hideBack" ( 0 );
 		}
 		onESC
 		{
@@ -34,7 +34,7 @@
 			decoration 
 			textScale 0.55
 			visible 1
-			visible when ( dvarstring( "gameMode" ) == "mp" || ( dvarstring( "gameMode" ) == "so" && !dvarbool( "ui_allow_graphicschange" ) ) )  )
+			visible when ( dvarstring( "gameMode" ) == "mp" || ( dvarstring( "gameMode" ) == "so" && !dvarbool( "ui_multiplayer" ) ) )  )
 		}
 		itemDef
 		{
