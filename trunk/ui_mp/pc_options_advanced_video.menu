@@ -12,7 +12,7 @@
 		}
 		onClose
 		{
-			ExecNow "profile_menuDvarsFinish;resetViewport";
+			ExecNow "profile_menuDvarsFinish; resetViewport";
 			setLocalVarBool ui_hideBack ( 0 );
 			execondvarintvalue "r_lodScaleRigid" 2 "set r_lodScaleSkinned 4; set r_lodBiasSkinned -200; et r_lodBiasRigid -100";
 			execondvarintvalue "r_lodScaleRigid" 1 "set r_lodScaleSkinned 1; set r_lodBiasSkinned 0; set r_lodBiasRigid 0";
@@ -20,7 +20,7 @@
 		}
 		onESC
 		{
-			close self;
+			close "self";
 		}
 		itemDef
 		{

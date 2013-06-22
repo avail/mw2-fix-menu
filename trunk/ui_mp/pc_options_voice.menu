@@ -32,7 +32,7 @@
 			{
 				open "all_restart_popmenu";
 			}
-			ExecNow "profile_menuDvarsFinish; resetViewport";
+			ExecNow "profile_menuDvarsFinish; updateGamerProfile; resetViewport";
 		}
 		itemDef
 		{
@@ -43,7 +43,7 @@
 			decoration 
 			textScale 0.55
 			visible 1
-			visible when ( dvarstring( "gameMode" ) == "mp" || ( dvarstring( "gameMode" ) == "so" && !dvarbool( "ui_allow_graphicschange" ) ) )  )
+			visible when ( dvarstring( "gameMode" ) == "mp" || ( dvarstring( "gameMode" ) == "so" && !dvarbool( "ui_multiplayer" ) ) )  )
 		}
 		itemDef
 		{

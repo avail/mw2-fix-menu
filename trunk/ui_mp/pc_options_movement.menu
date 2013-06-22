@@ -1,22 +1,22 @@
 {
 	menuDef
 	{
-		name pc_options_movement
+		name "pc_options_movement"
 		fullscreen 0
 		rect 0 0 640 480
 		focusColor 1 1 1 1		
 		foreColor 1 1 1 1
 		onOpen
 		{
-			setLocalVarBool ui_hideBack 1;
+			setLocalVarBool "ui_hideBack" ( 1 );
 		}
 		onClose
 		{
-			setLocalVarBool ui_hideBack 0;
+			setLocalVarBool "ui_hideBack" ( 0 );
 		}
 		onESC
 		{
-			close self;
+			close "self";
 		}
 		itemDef
 		{
@@ -61,7 +61,7 @@
 			decoration 
 			textScale 0.55
 			visible 1
-			visible when ( dvarstring( "gameMode" )) == "sp"  )
+			visible when ( dvarstring( "gameMode" ) == "sp"  )
 		}
 		itemDef
 		{
@@ -72,7 +72,7 @@
 			decoration 
 			textScale 0.55
 			visible 1
-			visible when ( dvarstring( "gameMode" )) == "so"  )
+			visible when ( dvarstring( "gameMode" ) == "so"  )
 		}
 		itemDef
 		{

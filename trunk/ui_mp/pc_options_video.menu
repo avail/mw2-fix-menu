@@ -14,7 +14,7 @@
 			close "options_graphics_defaults";
 			close "options_graphics_texture";
 			close "options_control_defaults";
-			setLocalVarBool "ui_showApply" ( 1 );
+			setLocalVarBool "ui_showApply" ( 0 );
 			setLocalVarBool "ui_hideBack" ( 1 );
 			exec "exec options_graphics.cfg";
 			execOnDvarFloatValue "r_zfeather 0 set ui_zfeather 0";
@@ -47,7 +47,7 @@
 			{
 				open "all_restart_popmenu";
 			}
-			ExecNow "profile_menuDvarsFinish; resetViewport";
+			ExecNow "profile_menuDvarsFinish; updateGamerProfile; resetViewport";
 		}
 		itemDef
 		{
@@ -58,7 +58,7 @@
 			decoration 
 			textScale 0.55
 			visible 1
-			visible when ( dvarstring( "gameMode" ) == "mp" || ( dvarstring( "gameMode" ) == "so" && !dvarbool( "ui_allow_graphicschange" ) ) )  )
+			visible when ( dvarstring( "gameMode" ) == "mp" || ( dvarstring( "gameMode" ) == "so" && !dvarbool( "ui_multiplayer" ) ) )  )
 		}
 		itemDef
 		{

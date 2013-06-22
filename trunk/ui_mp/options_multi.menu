@@ -8,7 +8,7 @@
 		blurWorld 7
 		onOpen
 		{
-			exec "setfromdvar ui_name name";
+			exec "setFromDvar ui_name name";
 			close "options_look";
 			close "options_move";
 			close "options_shoot";
@@ -23,29 +23,29 @@
 			close "options_graphics_texture";
 			close "options_control_defaults";
 			setLocalVarBool "ui_hideBack" ( 1 );
-			execnow "profile_menuDvarsSetup; resetViewport";
+			execNow "profile_menuDvarsSetup; resetViewport";
 		}
 		onClose
 		{
 			setLocalVarBool "ui_hideBack" ( 0 );
-			exec "setfromdvar name ui_name";
+			exec "setFromDvar name ui_name";
 		}
 		onESC
 		{
 			close "self";
 			if ( !( menuisopen( "pc_options_advanced_video" ) || menuisopen( "pc_options_video" ) || menuisopen( "pc_options_Audio" ) || menuisopen( "pc_options_controls" ) || menuisopen( "pc_options_voice" ) ) && localvarbool( "ui_showPicApply" ) && !localvarbool( "ui_showApply" ) && !localvarbool( "ui_showAudioApply" )  )
 			{
-				execnow "setfromdvar r_picmip ui_r_picmip";
-				execnow "setfromdvar r_picmip_bump ui_r_picmip_bump";
-				execnow "setfromdvar r_picmip_spec ui_r_picmip_spec";
-				execnow "setfromdvar r_picmip_manual ui_r_picmip_manual";
+				execNow "setFromDvar r_picmip ui_r_picmip";
+				execNow "setFromDvar r_picmip_bump ui_r_picmip_bump";
+				execNow "setFromDvar r_picmip_spec ui_r_picmip_spec";
+				execNow "setFromDvar r_picmip_manual ui_r_picmip_manual";
 				setLocalVarBool "ui_showPicApply" ( 1 );
 			}
 			if ( !( menuisopen( "pc_options_advanced_video" ) || menuisopen( "pc_options_video" ) || menuisopen( "pc_options_Audio" ) || menuisopen( "pc_options_controls" ) || menuisopen( "pc_options_voice" ) ) && localvarbool( "ui_showApply" ) || localvarbool( "ui_showAudioApply" )  )
 			{
 				open "all_restart_popmenu";
 			}
-			execnow "profile_menuDvarsFinish; resetViewport";
+			execNow "profile_menuDvarsFinish; updateGamerProfile; resetViewport";
 		}
 		itemDef
 		{
@@ -56,7 +56,7 @@
 			decoration 
 			textScale 0.55
 			visible 1
-			visible when ( dvarstring( "gameMode" ) == "mp" || ( dvarstring( "gameMode" ) == "so" && !dvarbool( "ui_allow_graphicschange" ) ) )  )
+			visible when ( dvarstring( "gameMode" ) == "mp" || ( dvarstring( "gameMode" ) == "so" && !dvarbool( "ui_multiplayer" ) ) )  )
 		}
 		itemDef
 		{
