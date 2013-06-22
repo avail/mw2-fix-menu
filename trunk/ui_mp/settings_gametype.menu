@@ -1,0 +1,273 @@
+{
+	menuDef
+	{
+		name "settings_gametype"
+		rect 0 0 640 480 0 0
+		style 1
+		forecolor 1 1 1 1
+		focuscolor 1 1 1 1
+		fullscreen 1
+		fadeCycle 1
+		fadeClamp 1
+		fadeAmount 0.1
+		soundLoop "music_mainmenu_mp"
+		onOpen
+		{
+			focusFirst;
+			setFocusByDvar "ui_gametype";
+		}
+		onClose
+		{
+			execNow "xupdatepartystate";
+		}
+		onEsc
+		{
+			close "settings_gametype";
+		}
+		itemDef
+		{
+			rect 0 0 640 480 4 4
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			background "mw2_main_background"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect 0 0 1708 480 0 0
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 0.5
+			background "mw2_main_cloud_overlay"
+			textscale 0.55
+			exp rect x ( ( 0 - 107 ) - ( ( float( milliseconds( ) % 60000 ) / 60000 ) * ( 854 ) ) )
+		}
+		itemDef
+		{
+			rect 0 0 -1708 -480 0 0
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 0.5
+			background "mw2_main_cloud_overlay"
+			textscale 0.55
+			exp rect x ( ( - 107 + 854 ) + ( ( float( milliseconds( ) % 50000 ) / 50000 ) * ( 854 ) ) )
+		}
+		itemDef
+		{
+			rect 0 0 640 480 4 4
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 0
+			background "mockup_bg_glow"
+			textscale 0.55
+			exp forecolor a ( ( ( sin( milliseconds( ) / 1500 ) + 1 ) * 0.25 ) + 0.25 )
+		}
+		itemDef
+		{
+			rect 0 0 640 480 4 4
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 0
+			background "mockup_bg_glow"
+			textscale 0.55
+			exp forecolor a ( ( ( sin( milliseconds( ) / 480 ) + 1 ) * 0.25 ) + 0.25 )
+		}
+		itemDef
+		{
+			rect 0 0 272 28 1 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 9
+			textalign 6
+			textalignx -60
+			textscale 0.44
+			text "@MENU_CHOOSE_GAME_MODE_CAP"
+		}
+		itemDef
+		{
+			rect 0 28 640 356 4 1
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 0.15
+			background "white"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect -32 -4 32 32 4 1
+			style 3
+			decoration
+			visible 1
+			forecolor 0 0 0 1
+			background "drop_shadow_tl"
+			textscale 0.55
+			visible when ( 1 )
+		}
+		itemDef
+		{
+			rect 0 -4 640 32 4 1
+			style 3
+			decoration
+			visible 1
+			forecolor 0 0 0 1
+			background "drop_shadow_t"
+			textscale 0.55
+			visible when ( 1 )
+		}
+		itemDef
+		{
+			rect 640 -4 32 32 4 1
+			style 3
+			decoration
+			visible 1
+			forecolor 0 0 0 1
+			background "drop_shadow_tr"
+			textscale 0.55
+			visible when ( 1 )
+		}
+		itemDef
+		{
+			rect 640 28 32 356 4 1
+			style 3
+			decoration
+			visible 1
+			forecolor 0 0 0 1
+			background "drop_shadow_r"
+			textscale 0.55
+			visible when ( 1 )
+		}
+		itemDef
+		{
+			rect 640 384 32 32 4 1
+			style 3
+			decoration
+			visible 1
+			forecolor 0 0 0 1
+			background "drop_shadow_br"
+			textscale 0.55
+			visible when ( 1 )
+		}
+		itemDef
+		{
+			rect 0 384 640 32 4 1
+			style 3
+			decoration
+			visible 1
+			forecolor 0 0 0 1
+			background "drop_shadow_b"
+			textscale 0.55
+			visible when ( 1 )
+		}
+		itemDef
+		{
+			rect -32 384 32 32 4 1
+			style 3
+			decoration
+			visible 1
+			forecolor 0 0 0 1
+			background "drop_shadow_bl"
+			textscale 0.55
+			visible when ( 1 )
+		}
+		itemDef
+		{
+			rect -32 28 32 356 4 1
+			style 3
+			decoration
+			visible 1
+			forecolor 0 0 0 1
+			background "drop_shadow_l"
+			textscale 0.55
+			visible when ( 1 )
+		}
+		#include "ui_mp/game_info.inc"
+		GAMETYPE_BUTTON( 0, "@MPUI_DEATHMATCH", setDvar ui_gametype "dm"; close "settings_gametype"; close "self";, "@MPUI_DEATHMATCH", "@MENU_KILL_EVERYONE_FIRST_PLAYER" )		
+		GAMETYPE_BUTTON( 1, "@MPUI_TEAM_DEATHMATCH", setDvar ui_gametype "war"; close "settings_gametype"; close "self";, "@MPUI_TEAM_DEATHMATCH", "@MENU_KILL_PLAYERS_ON_THE_OPPOSING" )
+		GAMETYPE_BUTTON( 2, "@MPUI_SEARCH_AND_DESTROY", setDvar ui_gametype "sd"; close "settings_gametype"; close "self";, "@MPUI_SEARCH_AND_DESTROY", "@MENU_TEAMS_TAKE_TURNS_DEFENDING" )
+		GAMETYPE_BUTTON( 3, "@MPUI_SABOTAGE", setDvar ui_gametype "sab"; close "settings_gametype"; close "self";, "@MPUI_SABOTAGE", "@MENU_1_BOMB_IN_THE_CENTER" )
+		GAMETYPE_BUTTON( 4, "@MPUI_DOMINATION", setDvar ui_gametype "dom"; close "settings_gametype"; close "self";, "@MPUI_DOMINATION", "@MENU_CAPTURE_AND_HOLD_THE" )
+		GAMETYPE_BUTTON( 5, "@MPUI_HEADQUARTERS", setDvar ui_gametype "koth"; close "settings_gametype"; close "self";, "@MPUI_HEADQUARTERS", "@MENU_CAPTURE_THE_HEADQUARTERS" )
+		GAMETYPE_BUTTON( 6, "@MPUI_ONE_FLAG", setDvar ui_gametype "oneflag"; close "settings_gametype"; close "self";, "@MPUI_ONE_FLAG", "@MENU_TEAMS_TAKE_TURNS_CAPTURING" )
+		GAMETYPE_BUTTON( 7, "@MPUI_ARENA", setDvar ui_gametype "arena"; close "settings_gametype"; close "self";, "@MPUI_ARENA", "@MENU_ARENA" )
+		GAMETYPE_BUTTON( 8, "@MPUI_DD", setDvar ui_gametype "dd"; close "settings_gametype"; close "self";, "@MPUI_DD", "@MENU_DD" )
+		GAMETYPE_BUTTON( 9, "@MPUI_VIP", setDvar ui_gametype "vip"; close "settings_gametype"; close "self";, "@MPUI_VIP", "@MENU_VIP" )
+		GAMETYPE_BUTTON( 10, "@MPUI_CTF", setDvar ui_gametype "ctf"; close "settings_gametype"; close "self";, "@MPUI_CTF", "@MENU_CTF_DESC" )
+		GAMETYPE_BUTTON( 11, "@MPUI_GTNW", setDvar ui_gametype "gtnw"; close "settings_gametype"; close "self";, "@MPUI_GTNW", "@MENU_GTNW_DESC" )
+
+		itemDef
+		{
+			rect -292 28 292 356 3 1
+			style 3
+			foreColor 0 0 0 0.7
+			background "black"
+			decoration 
+			textScale 0.55
+			visible 1
+		}
+		itemDef
+		{
+			rect -272 28 264 200 3 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 9
+			textalign 4
+			textalignx 8
+			textscale 0.375
+			exp text ( localvarstring( "ui_info_name" ) )
+		}
+		itemDef
+		{
+			rect -272 28 264 200 3 1
+			decoration
+			autowrapped
+			visible 1
+			forecolor 1 1 1 0.65
+			textfont 3
+			textalign 4
+			textalignx 8
+			textaligny 20
+			textscale 0.375
+			exp text ( localvarstring( "ui_info_desc" ) )
+		}
+		itemDef
+		{
+			rect -64 -20 336 20 1 3
+			style 1
+			foreColor 1 1 1 1
+			background "menu_button_selection_bar"
+			group "mw2_button"
+			type 1
+			textAlign 6
+			textAlignX -60
+			textScale 0.375
+			textFont 3
+			text "@PLATFORM_BACK_CAPS"
+			visible 1
+			onFocus
+			{
+				play "mouse_over";
+				setItemColor self "backColor" 0 0 0 1;
+				setLocalVarBool "ui_menuAButton" ( 1 );
+			}
+			leaveFocus
+			{
+				setItemColor self "backColor" 0 0 0 0.0;
+				setLocalVarBool "ui_menuAButton" ( 0 );
+			}
+			action
+			{
+				play "mouse_click";
+                close "self";
+			}
+		}
+	}
+}	
