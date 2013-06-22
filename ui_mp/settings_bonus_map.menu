@@ -217,8 +217,9 @@
                 close "self";
 			}
 		}
-      #include "ui_mp/map_info.inc"
 
+      #include "ui_mp/map_info.inc"
+		
       MAP_CHOICE_BUTTON_VIS(0, ;, "Bailout",setdvar ui_mapname mp_complex;close settings_bonus_map;close settings_map;, 1, preview_mp_complex, "Bailout", PATCH_DESC_MAP_COMPLEX)
       MAP_CHOICE_BUTTON_VIS(1, ;, "Crash",setdvar ui_mapname mp_crash;close settings_bonus_map;close settings_map;, 1, preview_mp_crash, "Crash", MPUI_DESC_MAP_CRASH)
       MAP_CHOICE_BUTTON_VIS(2, ;, "Overgrown",setdvar ui_mapname mp_overgrown;close settings_bonus_map;close settings_map;, 1, preview_mp_overgrown, "Overgrown", MPUI_DESC_MAP_OVERGROWN)				 
