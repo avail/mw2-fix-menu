@@ -1,0 +1,165 @@
+{
+	menuDef
+	{
+		name "quickresponses"
+		rect 6 268 190 204 1 1
+		style 1
+		focusColor 1 1 1 1
+		foreColor 1 1 1 1
+		popup
+		onOpen
+		{
+			setLocalVarInt "ui_centerPopup" ( 1 );
+			setDvar "cl_bypassMouseInput" ( 1 );
+		}
+		onClose
+		{
+			play "mouse_click";
+			setLocalVarInt "ui_centerPopup" ( 0 );
+			setDvar "cl_bypassMouseInput" ( 0 );
+		}
+		onESC
+		{
+			close "self";
+		}
+		itemDef
+		{
+			rect 4 266 194 208 1 1
+			style 3
+			border 1
+			borderSize 2
+			foreColor 0.2 0.2 0.22 0.65
+			borderColor 0.4 0.405 0.42 1
+			background "white"
+			decoration 
+			textScale 0.55
+			visible 1
+		}
+		itemDef
+		{
+			rect 6 268 190 204 1 1
+			style 3
+			foreColor 1 1 1 0.7
+			background "gradient_bottom"
+			decoration 
+			textScale 0.55
+			visible 1
+		}
+		itemDef
+		{
+			rect 103 270 0 0 1 1
+			foreColor 0.69 0.69 0.69 1
+			decoration 
+			type 1
+			textAlign 5
+			textScale 0.4583
+			textStyle 6
+			textFont 1
+			visible 1
+			exp text ( "@QUICKMESSAGE_QUICK_MESSAGE"  )
+		}
+		execKey "1" { scriptMenuResponse "1"; close "quickresponses"; }
+		itemDef
+		{
+			name "window"
+			rect 22 304 0 0 1 1
+			foreColor 1 1 1 1
+			decoration 
+			group "ingamebox"
+			textAlignY 8
+			textScale 0.375
+			textStyle 3
+			textFont 1
+			text "1. Yes Sir"
+			visible 1
+		}
+		execKey "2" { scriptMenuResponse "2"; close "quickresponses"; }		
+		itemDef
+		{
+			name "window"
+			rect 22 320 0 0 1 1
+			foreColor 1 1 1 1
+			decoration 
+			group "ingamebox"
+			textAlignY 8
+			textScale 0.375
+			textStyle 3
+			textFont 1
+			text "2. No Sir"
+			visible 1
+		}
+		execKey "3" { scriptMenuResponse "3"; close "quickresponses"; }				
+		itemDef
+		{
+			name "window"
+			rect 22 336 0 0 1 1
+			foreColor 1 1 1 1
+			decoration 
+			group "ingamebox"
+			textAlignY 8
+			textScale 0.375
+			textStyle 3
+			textFont 1
+			text "3. Im On My Way"
+			visible 1
+		}
+		execKey "4" { scriptMenuResponse "4"; close "quickresponses"; }				
+		itemDef
+		{
+			name "window"
+			rect 22 352 0 0 1 1
+			foreColor 1 1 1 1
+			decoration 
+			group "ingamebox"
+			textAlignY 8
+			textScale 0.375
+			textStyle 3
+			textFont 1
+			text "4. Sorry"
+			visible 1
+		}
+		execKey "5" { scriptMenuResponse "5"; close "quickresponses"; }				
+		itemDef
+		{
+			name "window"
+			rect 22 368 0 0 1 1
+			foreColor 1 1 1 1
+			decoration 
+			group "ingamebox"
+			textAlignY 8
+			textScale 0.375
+			textStyle 3
+			textFont 1
+			text "5. Great Shot"
+			visible 1
+		}
+		execKey "6" { scriptMenuResponse "6"; close "quickresponses"; }				
+		itemDef
+		{
+			name "window"
+			rect 22 384 0 0 1 1
+			foreColor 1 1 1 1
+			decoration 
+			group "ingamebox"
+			textAlignY 8
+			textScale 0.375
+			textStyle 3
+			textFont 1
+			text "6. Took Long Enough"
+			visible 1
+		}
+		itemDef
+		{
+			name "window"
+			rect 22 416 0 0 1 1
+			foreColor 1 1 1 1
+			decoration 
+			textAlignY 8
+			textScale 0.375
+			textStyle 3
+			textFont 1
+			text "Esc. Exit"
+			visible 1
+		}
+	}
+}
