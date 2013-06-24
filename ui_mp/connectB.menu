@@ -7,7 +7,6 @@
 		style 1
 		focusColor 1 1 1 1
 		foreColor 1 1 1 1
-		backColor 1 0 0 0
 		onOpen
 		{
 			exec "selectStringTableEntryInDvar mp/didyouknow.csv 0 didyouknow";
