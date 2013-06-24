@@ -1,9 +1,8 @@
 {
 	menuDef
 	{
-	{
 		name "popup_cac_handgun_secondary"
-		rect -64 0 854 184 1 1
+		rect 0 0 854 184 1 1
 		style 1
 		popup
 		forecolor 1 1 1 1
