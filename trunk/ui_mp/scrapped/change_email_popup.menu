@@ -1,0 +1,228 @@
+{
+	menuDef
+	{
+		name "change_email_popup"
+		rect 0 0 0 104 2 2
+		style 1
+		focusColor 1 1 1 1
+		foreColor 1 1 1 1
+		fadeCycle 1
+		fadeClamp 1
+		fadeAmount 0.1
+		popup
+		onOpen
+		{
+			setLocalVarInt "ui_centerPopup" ( 1 );
+			focusfirst;
+			setDvar "iwnet_email" "";
+			setFocus "changeemail_email";
+		}
+		onClose
+		{
+			play "mouse_click";
+			setLocalVarInt "ui_centerPopup" ( 0 );
+		}
+		onESC
+		{
+			close "self";
+		}
+		itemDef
+		{
+			rect -164 -54 328 108 2 2
+			style 3
+			border 1
+			borderSize 2
+			foreColor 0.2 0.21 0.25 1
+			borderColor 0.4 0.405 0.42 1
+			background "white"
+			decoration 
+			textScale 0.55
+			visible 1
+		}
+		itemDef
+		{
+			rect -162 -52 324 104 2 2
+			style 3
+			foreColor 1 1 1 0.7
+			background "gradient_bottom"
+			decoration 
+			textScale 0.55
+			visible 1
+		}
+		itemDef
+		{
+			rect 2 -50 0 0 2 2
+			foreColor 0.69 0.69 0.69 1
+			decoration 
+			type 1
+			textAlign 5
+			textScale 0.4583
+			textStyle 6
+			textFont 1
+			visible 1
+			exp text ( "@MENU_IWNET_CHANGE_EMAIL"  )
+		}
+		itemDef
+		{
+			name "changeemail_email"
+			rect -120 -16 240 18 2 2
+			style 1
+			foreColor 0.9 0.9 0.9 1
+			backColor 0 0 0 0.3
+			type 22
+			textAlign 8
+			textAlignY -2
+			textScale 0.375
+			textFont 1
+			text "@MENU_IWNET_EMAIL"
+			visible 1
+			dvar "iwnet_email"
+		}
+		itemDef
+		{
+			rect -160 12 315.5 18 2 2
+			style 3
+			foreColor 0.9 0.9 1 0.07
+			decoration 
+			textScale 0.55
+			visible 1
+			exp material ( "gradient_fadein"  )
+		}
+		itemDef
+		{
+			rect 155.5 12 4.5 18 2 2
+			style 3
+			foreColor 0.9 0.9 1 0.07
+			background "button_highlight_end"
+			decoration 
+			textScale 0.55
+			visible 1
+		}
+		itemDef
+		{
+			rect -160 12 315.5 18 2 2
+			style 3
+			borderSize 2
+			foreColor 0.9 0.95 1 0.25
+			borderColor 0.8 0.95 1 0.4
+			background "gradient_fadein"
+			decoration 
+			textScale 0.55
+			visible 1
+			visible when ( localvarint( "ui_highlight" ) == 1 && localvarstring( "ui_choicegroup" ) == "popmenu"  )
+		}
+		itemDef
+		{
+			rect 155.5 12 4.5 18 2 2
+			style 3
+			foreColor 0.9 0.95 1 0.25
+			background "button_highlight_end"
+			decoration 
+			textScale 0.55
+			visible 1
+			visible when ( localvarint( "ui_highlight" ) == 1 && localvarstring( "ui_choicegroup" ) == "popmenu"  )
+		}
+		itemDef
+		{
+			rect -160 12 320 18 2 2
+			foreColor 0.69 0.69 0.69 1
+			type 1
+			textAlign 10
+			textAlignX -6
+			textScale 0.4
+			textStyle 6
+			textFont 1
+			visible 1
+			onFocus
+			{
+				play "mouse_submenu_over";
+				setLocalVarInt "ui_highlight" ( 1 );
+				setLocalVarString "ui_choicegroup" ( "popmenu" );
+			}
+			leaveFocus
+			{
+				setLocalVarInt "ui_highlight" ( 0 );
+			}
+			action
+			{
+				play "mouse_click";
+				uiScript "iwNetChangeEmail";
+				close "self";
+			}
+			exp text ( "@MENU_OK"  )
+		}
+		itemDef
+		{
+			rect -160 32 315.5 18 2 2
+			style 3
+			foreColor 0.9 0.9 1 0.07
+			decoration 
+			textScale 0.55
+			visible 1
+			exp material ( "gradient_fadein"  )
+		}
+		itemDef
+		{
+			rect 155.5 32 4.5 18 2 2
+			style 3
+			foreColor 0.9 0.9 1 0.07
+			background "button_highlight_end"
+			decoration 
+			textScale 0.55
+			visible 1
+		}
+		itemDef
+		{
+			rect -160 32 315.5 18 2 2
+			style 3
+			borderSize 2
+			foreColor 0.9 0.95 1 0.25
+			borderColor 0.8 0.95 1 0.4
+			background "gradient_fadein"
+			decoration 
+			textScale 0.55
+			visible 1
+			visible when ( localvarint( "ui_highlight" ) == 2 && localvarstring( "ui_choicegroup" ) == "popmenu"  )
+		}
+		itemDef
+		{
+			rect 155.5 32 4.5 18 2 2
+			style 3
+			foreColor 0.9 0.95 1 0.25
+			background button_highlight_end
+			decoration 
+			textScale 0.55
+			visible 1
+			visible when ( localvarint( "ui_highlight" ) == 2 && localvarstring( "ui_choicegroup" ) == "popmenu"  )
+		}
+		itemDef
+		{
+			rect -160 32 320 18 2 2
+			foreColor 0.69 0.69 0.69 1
+			type 1
+			textAlign 10
+			textAlignX -6
+			textScale 0.4
+			textStyle 6
+			textFont 1
+			visible 1
+			onFocus
+			{
+				"play" "mouse_submenu_over";
+				setLocalVarInt "ui_highlight" ( 2 );
+				setLocalVarString "ui_choicegroup" ( "popmenu" );
+			}
+			leaveFocus
+			{
+				setLocalVarInt "ui_highlight" ( 0 );
+			}
+			action
+			{
+				play "mouse_click";
+				open "account_settings_menu";
+				close "self";
+			}
+			exp text ( "@MENU_CANCEL"  )
+		}
+	}
+}

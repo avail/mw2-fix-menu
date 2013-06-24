@@ -1,0 +1,2667 @@
+{
+	menuDef
+	{
+		name menu_gamesetup_splitscreen
+		fullscreen 1
+		rect 0 0 640 480
+		style 1
+		border 0
+		ownerdraw 0
+		ownerdrawFlag 0
+		borderSize 0
+		foreColor 1 1 1 1
+		backColor 0 0 0 0
+		borderColor 0 0 0 0
+		outlineColor 0 0 0 0
+		soundLoop music_mainmenu_mp
+		fadeCycle 1
+		fadeClamp 1
+		fadeAmount 0.1
+		fadeInAmount 0
+		blurWorld 0
+		onOpen
+		{
+			if ( dvarbool(static)( 4 )  )
+			{
+				setLocalVarInt ui_autoopened 1;
+				"open" "popup_summary_splitscreen";
+				"setdvar" "ui_opensummary" 0;
+			}
+			"setFocus" "splitscreen_gamesetup";
+			"exec" "exec dvar_defaults.cfg";
+		}
+		onESC
+		{
+			if ( dvarbool(static)( 6 )  )
+			{
+				if ( splitscreenplayercount( ) >= 1  )
+				{
+					"setPlayerDataSplitscreen" ( 0 , "round" , "awardCount" , 0);
+				}
+				if ( splitscreenplayercount( ) >= 2  )
+				{
+					"setPlayerDataSplitscreen" ( 1 , "round" , "awardCount" , 0);
+				}
+				if ( splitscreenplayercount( ) >= 3  )
+				{
+					"setPlayerDataSplitscreen" ( 2 , "round" , "awardCount" , 0);
+				}
+				if ( splitscreenplayercount( ) >= 4  )
+				{
+					"setPlayerDataSplitscreen" ( 3 , "round" , "awardCount" , 0);
+				}
+			}
+			else
+			{
+				"setPlayerData" ( "round" , "awardCount" , 0);
+			}
+			if ( dvarbool(static)( 6 )  )			"uiScript" "clearClientMatchData";
+			"exec" "splitscreencontrols";
+			"close" "menu_gamesetup_splitscreen";
+			"open" "menu_splitscreensignin";
+		}
+		focusColor 1 1 1 1
+		execKey "§"
+		{
+			"open" "popup_summary_splitscreen";
+			"play" "mouse_click";
+		}
+		itemDef
+		{
+			rect 0 0 640 480 4 4
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background mw2_main_background
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+		}
+		itemDef
+		{
+			rect 0 0 1708 480
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.5
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background mw2_main_cloud_overlay
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp   ( ( 0 - 107 ) - ( ( float( milliseconds( ) % 60000 ) / 60000 ) * ( 854 ) )  )
+		}
+		itemDef
+		{
+			rect 0 0 -1708 -480
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.5
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background mw2_main_cloud_overlay
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp   ( ( - 107 + 854 ) + ( ( float( milliseconds( ) % 50000 ) / 50000 ) * ( 854 ) )  )
+		}
+		itemDef
+		{
+			rect 0 0 640 480 4 4
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background mockup_bg_glow
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp   ( ( ( sin milliseconds( ) / 1500 ) + 1 ) * 0.250000 ) + 0.250000  )
+		}
+		itemDef
+		{
+			rect 0 0 640 480 4 4
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background mockup_bg_glow
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp   ( ( ( sin milliseconds( ) / 480 ) + 1 ) * 0.250000 ) + 0.250000  )
+		}
+		itemDef
+		{
+			rect -64 0 280 480 1 0
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background gradient_fadein_fadebottom
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+		}
+		itemDef
+		{
+			rect 0 0 272 28 1 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 6
+			textAlignX -60
+			textAlignY 0
+			textScale 0.44
+			textStyle 0
+			textFont 9
+			feeder 0
+			text "@MENU_SPLIT_SCREEN_SETUP"
+			visible 1
+		}
+		itemDef
+		{
+			name splitscreen_startmatch
+			rect -64 28 336 20 1 1
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background menu_button_selection_bar
+			group mw2_button
+			type 1
+			align 0
+			textAlign 6
+			textAlignX -60
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			text "@MENU_START_MATCH_CAPS"
+			visible 1
+			onFocus
+			{
+				"play" "mouse_over";
+				if ( dvarstring(static)( 2 ) != "mp"  )
+				{
+					"setItemColor" "mw2_button" "backcolor" 0 0 0 0;
+				}
+				"setItemColor" "self" "backcolor" 0 0 0 1;
+				setLocalVarBool ui_menuAButton 1;
+				setLocalVarFloat ui_popupYPos 0.000000;
+				setLocalVarString ui_hint_text "@MENU_DESC_START_MATCH"  );
+			}
+			leaveFocus
+			{
+				"setItemColor" "self" "backcolor" 0 0 0 "0.0";
+				setLocalVarString ui_hint_text "@NULL_EMPTY"  );
+				setLocalVarBool ui_menuAButton 1;
+			}
+			action
+			{
+				"play" "mouse_click";
+				"exec" "selectStringTableEntryInDvar mp/didyouknow.csv 0 didyouknow";
+				"uiScript" "StartServer";
+			}
+		}
+		itemDef
+		{
+			name splitscreen_gamesetup
+			rect -64 48 336 20 1 1
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background menu_button_selection_bar
+			group mw2_button
+			type 1
+			align 0
+			textAlign 6
+			textAlignX -60
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			text "@MENU_GAME_SETUP_CAPS"
+			visible 1
+			onFocus
+			{
+				"play" "mouse_over";
+				if ( dvarstring(static)( 2 ) != "mp"  )
+				{
+					"setItemColor" "mw2_button" "backcolor" 0 0 0 0;
+				}
+				"setItemColor" "self" "backcolor" 0 0 0 1;
+				setLocalVarBool ui_menuAButton 1;
+				setLocalVarFloat ui_popupYPos 0.000000;
+				setLocalVarString ui_hint_text "@MPUI_DESC_GAME_SETUP"  );
+			}
+			leaveFocus
+			{
+				"setItemColor" "self" "backcolor" 0 0 0 "0.0";
+				setLocalVarString ui_hint_text "@NULL_EMPTY"  );
+				setLocalVarBool ui_menuAButton 1;
+			}
+			action
+			{
+				"play" "mouse_click";
+				"open" "popup_gamesetup";
+			}
+		}
+		itemDef
+		{
+			rect 0 68 216 1 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.65
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background gradient_fadein
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+		}
+		itemDef
+		{
+			name splitscreen_cac
+			rect -64 68 336 20 1 1
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background menu_button_selection_bar
+			group mw2_button
+			type 1
+			align 0
+			textAlign 6
+			textAlignX -60
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			text "@MENU_CREATE_A_CLASS_CAPS"
+			visible 1
+			onFocus
+			{
+				"play" "mouse_over";
+				if ( dvarstring(static)( 2 ) != "mp"  )
+				{
+					"setItemColor" "mw2_button" "backcolor" 0 0 0 0;
+				}
+				"setItemColor" "self" "backcolor" 0 0 0 1;
+				setLocalVarBool ui_menuAButton 1;
+				setLocalVarFloat ui_popupYPos 0.000000;
+				setLocalVarString ui_hint_text "@MPUI_DESC_CREATE_A_CLASS"  );
+			}
+			leaveFocus
+			{
+				"setItemColor" "self" "backcolor" 0 0 0 "0.0";
+				setLocalVarString ui_hint_text "@NULL_EMPTY"  );
+				setLocalVarBool ui_menuAButton 1;
+			}
+			action
+			{
+				"play" "mouse_click";
+				"execnow" "nosplitscreen";
+				if ( isitemunlocked( "cac" )  )
+				{
+					"open" "cac_popup";
+				}
+				else
+				{
+					"play" "action_denied";
+					setLocalVarInt ui_lockedHintTime 3;
+					setLocalVarString ui_lockedHintDesc "@" + tablelookup( "mp/rankTable.csv" , 0 , tablelookup( "mp/unlockTable.csv" , 0 , "cac" , 2 ) , 17  );
+					"execnow" "splitscreencontrols";
+				}
+				if ( isitemunlocked( "cac" )  )			}
+		}
+		itemDef
+		{
+			name splitscreen_cards
+			rect -64 88 336 20 1 1
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background menu_button_selection_bar
+			group mw2_button
+			type 1
+			align 0
+			textAlign 6
+			textAlignX -60
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			text "@MENU_PLAYERCARD_CAPS"
+			visible 1
+			onFocus
+			{
+				"play" "mouse_over";
+				if ( dvarstring(static)( 2 ) != "mp"  )
+				{
+					"setItemColor" "mw2_button" "backcolor" 0 0 0 0;
+				}
+				"setItemColor" "self" "backcolor" 0 0 0 1;
+				setLocalVarBool ui_menuAButton 1;
+				setLocalVarFloat ui_popupYPos 0.000000;
+				setLocalVarString ui_hint_text "@MPUI_DESC_PLAYERCARD"  );
+			}
+			leaveFocus
+			{
+				"setItemColor" "self" "backcolor" 0 0 0 "0.0";
+				setLocalVarString ui_hint_text "@NULL_EMPTY"  );
+				setLocalVarBool ui_menuAButton 1;
+			}
+			action
+			{
+				"play" "mouse_click";
+				"execnow" "nosplitscreen";
+				if ( isitemunlocked( "playercard" )  )
+				{
+					"open" "popup_callsign";
+				}
+				else
+				{
+					"play" "action_denied";
+					setLocalVarInt ui_lockedHintTime 3;
+					setLocalVarString ui_lockedHintDesc "@MPUI_DESC_PLAYERCARD"  );
+					"execnow" "splitscreencontrols";
+				}
+				if ( isitemunlocked( "playercard" )  )			}
+		}
+		itemDef
+		{
+			name splitscreen_barracks
+			rect -64 108 336 20 1 1
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background menu_button_selection_bar
+			group mw2_button
+			type 1
+			align 0
+			textAlign 6
+			textAlignX -60
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			text "@MENU_BARRACKS_CAPS"
+			visible 1
+			onFocus
+			{
+				"play" "mouse_over";
+				if ( dvarstring(static)( 2 ) != "mp"  )
+				{
+					"setItemColor" "mw2_button" "backcolor" 0 0 0 0;
+				}
+				"setItemColor" "self" "backcolor" 0 0 0 1;
+				setLocalVarBool ui_menuAButton 1;
+				setLocalVarFloat ui_popupYPos 0.000000;
+				setLocalVarString ui_hint_text "@MPUI_DESC_BARRACKS"  );
+			}
+			leaveFocus
+			{
+				"setItemColor" "self" "backcolor" 0 0 0 "0.0";
+				setLocalVarString ui_hint_text "@NULL_EMPTY"  );
+				setLocalVarBool ui_menuAButton 1;
+			}
+			action
+			{
+				"play" "mouse_click";
+				"open" "menu_offline_barracks";
+			}
+		}
+		itemDef
+		{
+			rect 0 168 212 36 1 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.65
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			autoWrapped 
+			type 0
+			align 0
+			textAlign 6
+			textAlignX 0
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			visible 1
+			exp text ( localvarstring( "ui_hint_text" )  )
+			visible when ( !localvarbool( "ui_centerPopup" ) && !localvarbool( "ui_leftPopup" ) && ( ( localvarint( "ui_lockedHintTime" ) + ( 2000 + 1000 ) ) < milliseconds( ) )  )
+		}
+		itemDef
+		{
+			rect 0 168 212 36 1 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.85 0.4 0.4 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			autoWrapped 
+			type 0
+			align 0
+			textAlign 6
+			textAlignX 0
+			textAlignY 0
+			textScale 0.375
+			textStyle 8
+			textFont 3
+			feeder 0
+			visible 1
+			exp text ( localvarstring( "ui_lockedHintDesc" )  )
+			visible when ( !localvarbool( "ui_centerPopup" ) && !localvarbool( "ui_leftPopup" )  )
+			exp   ( max min ( 1 - ( milliseconds( ) - localvarint( "ui_lockedHintTime" ) + 2000 ) / 1000 ) , 1 ) , 0 )  )
+		}
+		itemDef
+		{
+			rect -64 -40 336 20 1 3
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background menu_button_selection_bar
+			group mw2_button
+			type 1
+			align 0
+			textAlign 6
+			textAlignX -60
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			text "@PLATFORM_GAME_SUMMARY_CAPS"
+			visible 1
+			onFocus
+			{
+				"play" "mouse_over";
+				if ( dvarstring(static)( 2 ) != "mp"  )
+				{
+					"setItemColor" "mw2_button" "backcolor" 0 0 0 0;
+				}
+				"setItemColor" "self" "backcolor" 0 0 0 1;
+				setLocalVarBool ui_menuAButton 1;
+			}
+			leaveFocus
+			{
+				"setItemColor" "self" "backcolor" 0 0 0 "0.0";
+				setLocalVarString ui_hint_text "@NULL_EMPTY"  );
+				setLocalVarBool ui_menuAButton 1;
+			}
+			action
+			{
+				"play" "mouse_click";
+				"play" "mouse_click";
+				"escape" "self";
+			}
+			visible when ( "@PLATFORM_GAME_SUMMARY_CAPS" == "@PLATFORM_BACK_CAPS"  )
+		}
+		itemDef
+		{
+			rect -64 -40 336 20 1 3
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background menu_button_selection_bar
+			group mw2_button
+			type 1
+			align 0
+			textAlign 6
+			textAlignX -60
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			text "@PLATFORM_GAME_SUMMARY_CAPS"
+			visible 1
+			onFocus
+			{
+				"play" "mouse_over";
+				if ( dvarstring(static)( 2 ) != "mp"  )
+				{
+					"setItemColor" "mw2_button" "backcolor" 0 0 0 0;
+				}
+				"setItemColor" "self" "backcolor" 0 0 0 1;
+				setLocalVarBool ui_menuAButton 1;
+			}
+			leaveFocus
+			{
+				"setItemColor" "self" "backcolor" 0 0 0 "0.0";
+				setLocalVarString ui_hint_text "@NULL_EMPTY"  );
+				setLocalVarBool ui_menuAButton 1;
+			}
+			action
+			{
+				"play" "mouse_click";
+				"play" "mouse_click";
+				"open" "popup_summary";
+			}
+			visible when ( "@PLATFORM_GAME_SUMMARY_CAPS" == "@PLATFORM_GAME_SUMMARY_CAPS"  )
+		}
+		itemDef
+		{
+			rect -64 -20 336 20 1 3
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background menu_button_selection_bar
+			group mw2_button
+			type 1
+			align 0
+			textAlign 6
+			textAlignX -60
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			text "@PLATFORM_BACK_CAPS"
+			visible 1
+			onFocus
+			{
+				"play" "mouse_over";
+				if ( dvarstring(static)( 2 ) != "mp"  )
+				{
+					"setItemColor" "mw2_button" "backcolor" 0 0 0 0;
+				}
+				"setItemColor" "self" "backcolor" 0 0 0 1;
+				setLocalVarBool ui_menuAButton 1;
+			}
+			leaveFocus
+			{
+				"setItemColor" "self" "backcolor" 0 0 0 "0.0";
+				setLocalVarString ui_hint_text "@NULL_EMPTY"  );
+				setLocalVarBool ui_menuAButton 1;
+			}
+			action
+			{
+				"play" "mouse_click";
+				"play" "mouse_click";
+				"escape" "self";
+			}
+			visible when ( "@PLATFORM_BACK_CAPS" == "@PLATFORM_BACK_CAPS"  )
+		}
+		itemDef
+		{
+			rect -64 -20 336 20 1 3
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background menu_button_selection_bar
+			group mw2_button
+			type 1
+			align 0
+			textAlign 6
+			textAlignX -60
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			text "@PLATFORM_BACK_CAPS"
+			visible 1
+			onFocus
+			{
+				"play" "mouse_over";
+				if ( dvarstring(static)( 2 ) != "mp"  )
+				{
+					"setItemColor" "mw2_button" "backcolor" 0 0 0 0;
+				}
+				"setItemColor" "self" "backcolor" 0 0 0 1;
+				setLocalVarBool ui_menuAButton 1;
+			}
+			leaveFocus
+			{
+				"setItemColor" "self" "backcolor" 0 0 0 "0.0";
+				setLocalVarString ui_hint_text "@NULL_EMPTY"  );
+				setLocalVarBool ui_menuAButton 1;
+			}
+			action
+			{
+				"play" "mouse_click";
+				"play" "mouse_click";
+				"open" "popup_summary";
+			}
+			visible when ( "@PLATFORM_BACK_CAPS" == "@PLATFORM_GAME_SUMMARY_CAPS"  )
+		}
+		itemDef
+		{
+			rect 0 -199 216 122 1 3
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( getmapimage( )  )
+		}
+		itemDef
+		{
+			rect 0 -199 216 20 1 3
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0.5
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background white
+			decoration 
+			autoWrapped 
+			type 0
+			align 0
+			textAlign 6
+			textAlignX -4
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			visible 1
+			exp text ( getmapname( )  )
+		}
+		itemDef
+		{
+			rect 0 -179 216 20 1 3
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 1 0 0 0.25
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background white
+			decoration 
+			autoWrapped 
+			type 0
+			align 0
+			textAlign 6
+			textAlignX -4
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			visible 1
+			exp text ( dvarstring(static)( 32 )  )
+			visible when ( dvarstring(static)( 32 ) != ""  )
+		}
+		itemDef
+		{
+			rect 0 -97 216 20 1 3
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.65
+			backColor 0 0 0 0.5
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background white
+			decoration 
+			autoWrapped 
+			type 0
+			align 0
+			textAlign 6
+			textAlignX -4
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			visible 1
+			exp text ( "@" + tablelookup( "mp/gameTypesTable.csv" , 0 , dvarstring(static)( 41 ) , 1 )  )
+		}
+		itemDef
+		{
+			rect -256 209 260 74 3 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0 0 0 0.15
+			backColor 0 0 0 0
+			borderColor 1 1 1 0.2
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( "white"  )
+			visible when ( dvarint(static)( 42 ) + dvarint(static)( 43 ) + dvarint(static)( 44 ) + dvarint(static)( 45 ) == 2  )
+		}
+		itemDef
+		{
+			rect -256 287 260 74 3 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0 0 0 0.15
+			backColor 0 0 0 0
+			borderColor 1 1 1 0.2
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( "white"  )
+			visible when ( dvarint(static)( 42 ) + dvarint(static)( 43 ) + dvarint(static)( 44 ) + dvarint(static)( 45 ) == 2  )
+		}
+		itemDef
+		{
+			rect -256 209 128 74 3 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0 0 0 0.15
+			backColor 0 0 0 0
+			borderColor 1 1 1 0.2
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( "white"  )
+			visible when ( dvarint(static)( 42 ) + dvarint(static)( 43 ) + dvarint(static)( 44 ) + dvarint(static)( 45 ) > 2  )
+		}
+		itemDef
+		{
+			rect -124 209 128 74 3 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0 0 0 0.15
+			backColor 0 0 0 0
+			borderColor 1 1 1 0.2
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( "white"  )
+			visible when ( dvarint(static)( 42 ) + dvarint(static)( 43 ) + dvarint(static)( 44 ) + dvarint(static)( 45 ) > 2  )
+		}
+		itemDef
+		{
+			rect -256 287 260 74 3 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0 0 0 0.15
+			backColor 0 0 0 0
+			borderColor 1 1 1 0.2
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( "white"  )
+			visible when ( dvarint(static)( 42 ) + dvarint(static)( 43 ) + dvarint(static)( 44 ) + dvarint(static)( 45 ) == 3  )
+		}
+		itemDef
+		{
+			rect -256 287 128 74 3 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0 0 0 0.15
+			backColor 0 0 0 0
+			borderColor 1 1 1 0.2
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( "white"  )
+			visible when ( dvarint(static)( 42 ) + dvarint(static)( 43 ) + dvarint(static)( 44 ) + dvarint(static)( 45 ) == 4  )
+		}
+		itemDef
+		{
+			rect -124 287 128 74 3 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0 0 0 0.15
+			backColor 0 0 0 0
+			borderColor 1 1 1 0.2
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( "white"  )
+			visible when ( dvarint(static)( 42 ) + dvarint(static)( 43 ) + dvarint(static)( 44 ) + dvarint(static)( 45 ) == 4  )
+		}
+		itemDef
+		{
+			rect -191.5 235 0 0 3 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 1
+			textAlignX 0
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 1
+			feeder 0
+			text "@MENU_PLAYER1"
+			visible 1
+			visible when ( dvarbool(static)( 42 )  )
+		}
+		itemDef
+		{
+			rect -223.5 221 64 64 3 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background xenon_controller_top
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( dvarbool(static)( 42 )  )
+		}
+		itemDef
+		{
+			rect -191.5 235 0 0 3 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 1
+			textAlignX 0
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 1
+			feeder 0
+			text "@MENU_PLAYER2"
+			visible 1
+			visible when ( ( dvarint(static)( 42 ) + dvarint(static)( 43 ) + dvarint(static)( 44 ) + dvarint(static)( 45 ) == 1 && dvarbool(static)( 43 ) )  )
+		}
+		itemDef
+		{
+			rect -223.5 221 64 64 3 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background xenon_controller_top
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( ( dvarint(static)( 42 ) + dvarint(static)( 43 ) + dvarint(static)( 44 ) + dvarint(static)( 45 ) == 1 && dvarbool(static)( 43 ) )  )
+		}
+		itemDef
+		{
+			rect -191.5 235 0 0 3 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 1
+			textAlignX 0
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 1
+			feeder 0
+			text "@MENU_PLAYER2"
+			visible 1
+			visible when ( ( dvarint(static)( 42 ) + dvarint(static)( 43 ) + dvarint(static)( 44 ) + dvarint(static)( 45 ) > 1 && !dvarbool(static)( 42 ) && dvarbool(static)( 43 ) )  )
+		}
+		itemDef
+		{
+			rect -223.5 221 64 64 3 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background xenon_controller_top
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( ( dvarint(static)( 42 ) + dvarint(static)( 43 ) + dvarint(static)( 44 ) + dvarint(static)( 45 ) > 1 && !dvarbool(static)( 42 ) && dvarbool(static)( 43 ) )  )
+		}
+		itemDef
+		{
+			rect -59.5 235 0 0 3 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 1
+			textAlignX 0
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 1
+			feeder 0
+			text "@MENU_PLAYER2"
+			visible 1
+			visible when ( ( dvarint(static)( 42 ) + dvarint(static)( 43 ) + dvarint(static)( 44 ) + dvarint(static)( 45 ) > 2 && dvarbool(static)( 42 ) && dvarbool(static)( 43 ) )  )
+		}
+		itemDef
+		{
+			rect -91.5 221 64 64 3 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background xenon_controller_top
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( ( dvarint(static)( 42 ) + dvarint(static)( 43 ) + dvarint(static)( 44 ) + dvarint(static)( 45 ) > 2 && dvarbool(static)( 42 ) && dvarbool(static)( 43 ) )  )
+		}
+		itemDef
+		{
+			rect -191.5 313 0 0 3 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 1
+			textAlignX 0
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 1
+			feeder 0
+			text "@MENU_PLAYER2"
+			visible 1
+			visible when ( ( !dvarbool(static)( 44 ) && !dvarbool(static)( 45 ) && dvarbool(static)( 42 ) && dvarbool(static)( 43 ) )  )
+		}
+		itemDef
+		{
+			rect -223.5 299 64 64 3 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background xenon_controller_top
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( ( !dvarbool(static)( 44 ) && !dvarbool(static)( 45 ) && dvarbool(static)( 42 ) && dvarbool(static)( 43 ) )  )
+		}
+		itemDef
+		{
+			rect -191.5 235 0 0 3 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 1
+			textAlignX 0
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 1
+			feeder 0
+			text "@MENU_PLAYER3"
+			visible 1
+			visible when ( ( dvarint(static)( 42 ) + dvarint(static)( 43 ) + dvarint(static)( 44 ) + dvarint(static)( 45 ) == 1 && dvarbool(static)( 44 ) )  )
+		}
+		itemDef
+		{
+			rect -223.5 221 64 64 3 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background xenon_controller_top
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( ( dvarint(static)( 42 ) + dvarint(static)( 43 ) + dvarint(static)( 44 ) + dvarint(static)( 45 ) == 1 && dvarbool(static)( 44 ) )  )
+		}
+		itemDef
+		{
+			rect -191.5 235 0 0 3 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 1
+			textAlignX 0
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 1
+			feeder 0
+			text "@MENU_PLAYER3"
+			visible 1
+			visible when ( ( dvarint(static)( 42 ) + dvarint(static)( 43 ) + dvarint(static)( 44 ) + dvarint(static)( 45 ) == 2 && dvarbool(static)( 45 ) && dvarbool(static)( 44 ) )  )
+		}
+		itemDef
+		{
+			rect -223.5 221 64 64 3 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background xenon_controller_top
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( ( dvarint(static)( 42 ) + dvarint(static)( 43 ) + dvarint(static)( 44 ) + dvarint(static)( 45 ) == 2 && dvarbool(static)( 45 ) && dvarbool(static)( 44 ) )  )
+		}
+		itemDef
+		{
+			rect -59.5 235 0 0 3 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 1
+			textAlignX 0
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 1
+			feeder 0
+			text "@MENU_PLAYER3"
+			visible 1
+			visible when ( ( dvarint(static)( 42 ) + dvarint(static)( 43 ) + dvarint(static)( 44 ) + dvarint(static)( 45 ) == 3 && dvarbool(static)( 45 ) && dvarbool(static)( 44 ) )  )
+		}
+		itemDef
+		{
+			rect -91.5 221 64 64 3 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background xenon_controller_top
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( ( dvarint(static)( 42 ) + dvarint(static)( 43 ) + dvarint(static)( 44 ) + dvarint(static)( 45 ) == 3 && dvarbool(static)( 45 ) && dvarbool(static)( 44 ) )  )
+		}
+		itemDef
+		{
+			rect -191.5 313 0 0 3 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 1
+			textAlignX 0
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 1
+			feeder 0
+			text "@MENU_PLAYER3"
+			visible 1
+			visible when ( ( dvarint(static)( 42 ) + dvarint(static)( 43 ) + dvarint(static)( 44 ) + dvarint(static)( 45 ) == 2 && !dvarbool(static)( 45 ) && dvarbool(static)( 44 ) )  )
+		}
+		itemDef
+		{
+			rect -223.5 299 64 64 3 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background xenon_controller_top
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( ( dvarint(static)( 42 ) + dvarint(static)( 43 ) + dvarint(static)( 44 ) + dvarint(static)( 45 ) == 2 && !dvarbool(static)( 45 ) && dvarbool(static)( 44 ) )  )
+		}
+		itemDef
+		{
+			rect -191.5 313 0 0 3 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 1
+			textAlignX 0
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 1
+			feeder 0
+			text "@MENU_PLAYER3"
+			visible 1
+			visible when ( ( dvarint(static)( 42 ) + dvarint(static)( 43 ) + dvarint(static)( 44 ) + dvarint(static)( 45 ) == 3 && !dvarbool(static)( 45 ) && dvarbool(static)( 44 ) )  )
+		}
+		itemDef
+		{
+			rect -223.5 299 64 64 3 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background xenon_controller_top
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( ( dvarint(static)( 42 ) + dvarint(static)( 43 ) + dvarint(static)( 44 ) + dvarint(static)( 45 ) == 3 && !dvarbool(static)( 45 ) && dvarbool(static)( 44 ) )  )
+		}
+		itemDef
+		{
+			rect -191.5 313 0 0 3 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 1
+			textAlignX 0
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 1
+			feeder 0
+			text "@MENU_PLAYER3"
+			visible 1
+			visible when ( ( dvarint(static)( 42 ) + dvarint(static)( 43 ) + dvarint(static)( 44 ) + dvarint(static)( 45 ) == 4 )  )
+		}
+		itemDef
+		{
+			rect -223.5 299 64 64 3 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background xenon_controller_top
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( ( dvarint(static)( 42 ) + dvarint(static)( 43 ) + dvarint(static)( 44 ) + dvarint(static)( 45 ) == 4 )  )
+		}
+		itemDef
+		{
+			rect -191.5 235 0 0 3 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 1
+			textAlignX 0
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 1
+			feeder 0
+			text "@MENU_PLAYER4"
+			visible 1
+			visible when ( ( !dvarbool(static)( 42 ) && !dvarbool(static)( 43 ) && !dvarbool(static)( 44 ) && dvarbool(static)( 45 ) )  )
+		}
+		itemDef
+		{
+			rect -223.5 221 64 64 3 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background xenon_controller_top
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( ( !dvarbool(static)( 42 ) && !dvarbool(static)( 43 ) && !dvarbool(static)( 44 ) && dvarbool(static)( 45 ) )  )
+		}
+		itemDef
+		{
+			rect -191.5 313 0 0 3 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 1
+			textAlignX 0
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 1
+			feeder 0
+			text "@MENU_PLAYER4"
+			visible 1
+			visible when ( ( dvarint(static)( 42 ) + dvarint(static)( 43 ) + dvarint(static)( 44 ) + dvarint(static)( 45 ) == 2 && dvarbool(static)( 45 ) )  )
+		}
+		itemDef
+		{
+			rect -223.5 299 64 64 3 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background xenon_controller_top
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( ( dvarint(static)( 42 ) + dvarint(static)( 43 ) + dvarint(static)( 44 ) + dvarint(static)( 45 ) == 2 && dvarbool(static)( 45 ) )  )
+		}
+		itemDef
+		{
+			rect -191.5 313 0 0 3 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 1
+			textAlignX 0
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 1
+			feeder 0
+			text "@MENU_PLAYER4"
+			visible 1
+			visible when ( ( dvarint(static)( 42 ) + dvarint(static)( 43 ) + dvarint(static)( 44 ) + dvarint(static)( 45 ) == 3 && dvarbool(static)( 45 ) )  )
+		}
+		itemDef
+		{
+			rect -223.5 299 64 64 3 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background xenon_controller_top
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( ( dvarint(static)( 42 ) + dvarint(static)( 43 ) + dvarint(static)( 44 ) + dvarint(static)( 45 ) == 3 && dvarbool(static)( 45 ) )  )
+		}
+		itemDef
+		{
+			rect -59.5 313 0 0 3 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 1
+			textAlignX 0
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 1
+			feeder 0
+			text "@MENU_PLAYER4"
+			visible 1
+			visible when ( ( dvarint(static)( 42 ) + dvarint(static)( 43 ) + dvarint(static)( 44 ) + dvarint(static)( 45 ) == 4 )  )
+		}
+		itemDef
+		{
+			rect -91.5 299 64 64 3 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background xenon_controller_top
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( ( dvarint(static)( 42 ) + dvarint(static)( 43 ) + dvarint(static)( 44 ) + dvarint(static)( 45 ) == 4 )  )
+		}
+		itemDef
+		{
+			rect 0 0 272 40 3 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.25 0.25 0.25 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background playercard_bg
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( ( 0 < splitscreenplayercount( ) ) && ( getplayercardinfo( 0 , 1 , 0 ) != 0 )  )
+			exp   ( - 268  )
+			exp   ( 28 + ( 0 * 42 ) - 10  )
+		}
+		itemDef
+		{
+			rect 0 0 160 32 3 1
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 1 1 1 1
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 9
+			textAlignX 0
+			textAlignY 0
+			textScale 0.375
+			textStyle 8
+			textFont 3
+			feeder 0
+			visible 1
+			exp text ( "@" + tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 1 , 0 ) , 1 )  )
+			exp material ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 1 , 0 ) , 2 )  )
+			visible when ( ( 0 < splitscreenplayercount( ) ) && ( getplayercardinfo( 0 , 1 , 0 ) != 0 )  )
+			exp   ( - 248  )
+			exp   ( 28 + ( 0 * 42 ) - 10 - 4  )
+			exp   ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 1 , 0 ) , 3 )  )
+			exp   ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 1 , 0 ) , 4 )  )
+			exp   ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 1 , 0 ) , 5 )  )
+		}
+		itemDef
+		{
+			rect 0 0 248 20 3 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 4
+			textAlignX 10
+			textAlignY 4
+			textScale 0.3333
+			textStyle 8
+			textFont 10
+			feeder 0
+			visible 1
+			exp text ( getplayercardinfo( 8 , 1 , 0 )  )
+			visible when ( ( 0 < splitscreenplayercount( ) ) && ( getplayercardinfo( 0 , 1 , 0 ) != 0 )  )
+			exp   ( ( - 248 )  )
+			exp   ( ( 28 + ( 0 * 42 ) - 10 ) + 20  )
+		}
+		itemDef
+		{
+			rect 0 0 40 40 3 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( tablelookupbyrow( "mp/cardIconTable.csv" , getplayercardinfo( 2 , 1 , 0 ) , 1 )  )
+			visible when ( ( 0 < splitscreenplayercount( ) ) && ( getplayercardinfo( 0 , 1 , 0 ) != 0 )  )
+			exp   ( ( - 248 ) + 160  )
+			exp   ( ( 28 + ( 0 * 42 ) - 10 )  )
+		}
+		itemDef
+		{
+			rect 0 0 20 20 3 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( tablelookup( "mp/rankIconTable.csv" , 0 , getplayercardinfo( 4 , 1 , 0 ) , ( getplayercardinfo( 5 , 1 , 0 ) + 1 ) )  )
+			visible when ( ( 0 < splitscreenplayercount( ) ) && ( getplayercardinfo( 0 , 1 , 0 ) != 0 ) && ( getplayercardinfo( 4 , 1 , 0 ) >= 0 )  )
+			exp   ( ( - 248 ) + 204  )
+			exp   ( ( 28 + ( 0 * 42 ) - 10 )  )
+		}
+		itemDef
+		{
+			rect 0 0 20 20 3 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 9
+			textAlignX 0
+			textAlignY 0
+			textScale 0.375
+			textStyle 7
+			textFont 3
+			feeder 0
+			visible 1
+			exp text ( tablelookup( "mp/rankTable.csv" , 0 , getplayercardinfo( 4 , 1 , 0 ) , 14 )  )
+			visible when ( ( 0 < splitscreenplayercount( ) ) && ( getplayercardinfo( 0 , 1 , 0 ) != 0 ) && ( getplayercardinfo( 4 , 1 , 0 ) >= 0 )  )
+			exp   ( ( - 248 ) + 222  )
+			exp   ( ( 28 + ( 0 * 42 ) - 10 )  )
+		}
+		itemDef
+		{
+			rect 0 0 40 18 3 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 9
+			textAlignX 0
+			textAlignY 0
+			textScale 0.375
+			textStyle 7
+			textFont 3
+			feeder 0
+			visible 1
+			exp text ( "[" + getplayercardinfo( 9 , 1 , 0 ) + "]"  )
+			visible when ( ( 0 < splitscreenplayercount( ) ) && ( getplayercardinfo( 0 , 1 , 0 ) != 0 ) && getplayercardinfo( 9 , 1 , 0 ) != ""  )
+			exp   ( ( - 248 ) + 204  )
+			exp   ( ( 28 + ( 0 * 42 ) - 10 ) + 18  )
+		}
+		itemDef
+		{
+			rect 0 0 272 40 3 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.25 0.25 0.25 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background playercard_bg
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( ( 1 < splitscreenplayercount( ) ) && ( getplayercardinfo( 0 , 1 , 1 ) != 0 )  )
+			exp   ( - 268  )
+			exp   ( 28 + ( 1 * 42 ) - 10  )
+		}
+		itemDef
+		{
+			rect 0 0 160 32 3 1
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 1 1 1 1
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 9
+			textAlignX 0
+			textAlignY 0
+			textScale 0.375
+			textStyle 8
+			textFont 3
+			feeder 0
+			visible 1
+			exp text ( "@" + tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 1 , 1 ) , 1 )  )
+			exp material ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 1 , 1 ) , 2 )  )
+			visible when ( ( 1 < splitscreenplayercount( ) ) && ( getplayercardinfo( 0 , 1 , 1 ) != 0 )  )
+			exp   ( - 248  )
+			exp   ( 28 + ( 1 * 42 ) - 10 - 4  )
+			exp   ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 1 , 1 ) , 3 )  )
+			exp   ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 1 , 1 ) , 4 )  )
+			exp   ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 1 , 1 ) , 5 )  )
+		}
+		itemDef
+		{
+			rect 0 0 248 20 3 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 4
+			textAlignX 10
+			textAlignY 4
+			textScale 0.3333
+			textStyle 8
+			textFont 10
+			feeder 0
+			visible 1
+			exp text ( getplayercardinfo( 8 , 1 , 1 )  )
+			visible when ( ( 1 < splitscreenplayercount( ) ) && ( getplayercardinfo( 0 , 1 , 1 ) != 0 )  )
+			exp   ( ( - 248 )  )
+			exp   ( ( 28 + ( 1 * 42 ) - 10 ) + 20  )
+		}
+		itemDef
+		{
+			rect 0 0 40 40 3 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( tablelookupbyrow( "mp/cardIconTable.csv" , getplayercardinfo( 2 , 1 , 1 ) , 1 )  )
+			visible when ( ( 1 < splitscreenplayercount( ) ) && ( getplayercardinfo( 0 , 1 , 1 ) != 0 )  )
+			exp   ( ( - 248 ) + 160  )
+			exp   ( ( 28 + ( 1 * 42 ) - 10 )  )
+		}
+		itemDef
+		{
+			rect 0 0 20 20 3 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( tablelookup( "mp/rankIconTable.csv" , 0 , getplayercardinfo( 4 , 1 , 1 ) , ( getplayercardinfo( 5 , 1 , 1 ) + 1 ) )  )
+			visible when ( ( 1 < splitscreenplayercount( ) ) && ( getplayercardinfo( 0 , 1 , 1 ) != 0 ) && ( getplayercardinfo( 4 , 1 , 1 ) >= 0 )  )
+			exp   ( ( - 248 ) + 204  )
+			exp   ( ( 28 + ( 1 * 42 ) - 10 )  )
+		}
+		itemDef
+		{
+			rect 0 0 20 20 3 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 9
+			textAlignX 0
+			textAlignY 0
+			textScale 0.375
+			textStyle 7
+			textFont 3
+			feeder 0
+			visible 1
+			exp text ( tablelookup( "mp/rankTable.csv" , 0 , getplayercardinfo( 4 , 1 , 1 ) , 14 )  )
+			visible when ( ( 1 < splitscreenplayercount( ) ) && ( getplayercardinfo( 0 , 1 , 1 ) != 0 ) && ( getplayercardinfo( 4 , 1 , 1 ) >= 0 )  )
+			exp   ( ( - 248 ) + 222  )
+			exp   ( ( 28 + ( 1 * 42 ) - 10 )  )
+		}
+		itemDef
+		{
+			rect 0 0 40 18 3 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 9
+			textAlignX 0
+			textAlignY 0
+			textScale 0.375
+			textStyle 7
+			textFont 3
+			feeder 0
+			visible 1
+			exp text ( "[" + getplayercardinfo( 9 , 1 , 1 ) + "]"  )
+			visible when ( ( 1 < splitscreenplayercount( ) ) && ( getplayercardinfo( 0 , 1 , 1 ) != 0 ) && getplayercardinfo( 9 , 1 , 1 ) != ""  )
+			exp   ( ( - 248 ) + 204  )
+			exp   ( ( 28 + ( 1 * 42 ) - 10 ) + 18  )
+		}
+		itemDef
+		{
+			rect 0 0 272 40 3 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.25 0.25 0.25 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background playercard_bg
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( ( 2 < splitscreenplayercount( ) ) && ( getplayercardinfo( 0 , 1 , 2 ) != 0 )  )
+			exp   ( - 268  )
+			exp   ( 28 + ( 2 * 42 ) - 10  )
+		}
+		itemDef
+		{
+			rect 0 0 160 32 3 1
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 1 1 1 1
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 9
+			textAlignX 0
+			textAlignY 0
+			textScale 0.375
+			textStyle 8
+			textFont 3
+			feeder 0
+			visible 1
+			exp text ( "@" + tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 1 , 2 ) , 1 )  )
+			exp material ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 1 , 2 ) , 2 )  )
+			visible when ( ( 2 < splitscreenplayercount( ) ) && ( getplayercardinfo( 0 , 1 , 2 ) != 0 )  )
+			exp   ( - 248  )
+			exp   ( 28 + ( 2 * 42 ) - 10 - 4  )
+			exp   ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 1 , 2 ) , 3 )  )
+			exp   ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 1 , 2 ) , 4 )  )
+			exp   ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 1 , 2 ) , 5 )  )
+		}
+		itemDef
+		{
+			rect 0 0 248 20 3 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 4
+			textAlignX 10
+			textAlignY 4
+			textScale 0.3333
+			textStyle 8
+			textFont 10
+			feeder 0
+			visible 1
+			exp text ( getplayercardinfo( 8 , 1 , 2 )  )
+			visible when ( ( 2 < splitscreenplayercount( ) ) && ( getplayercardinfo( 0 , 1 , 2 ) != 0 )  )
+			exp   ( ( - 248 )  )
+			exp   ( ( 28 + ( 2 * 42 ) - 10 ) + 20  )
+		}
+		itemDef
+		{
+			rect 0 0 40 40 3 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( tablelookupbyrow( "mp/cardIconTable.csv" , getplayercardinfo( 2 , 1 , 2 ) , 1 )  )
+			visible when ( ( 2 < splitscreenplayercount( ) ) && ( getplayercardinfo( 0 , 1 , 2 ) != 0 )  )
+			exp   ( ( - 248 ) + 160  )
+			exp   ( ( 28 + ( 2 * 42 ) - 10 )  )
+		}
+		itemDef
+		{
+			rect 0 0 20 20 3 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( tablelookup( "mp/rankIconTable.csv" , 0 , getplayercardinfo( 4 , 1 , 2 ) , ( getplayercardinfo( 5 , 1 , 2 ) + 1 ) )  )
+			visible when ( ( 2 < splitscreenplayercount( ) ) && ( getplayercardinfo( 0 , 1 , 2 ) != 0 ) && ( getplayercardinfo( 4 , 1 , 2 ) >= 0 )  )
+			exp   ( ( - 248 ) + 204  )
+			exp   ( ( 28 + ( 2 * 42 ) - 10 )  )
+		}
+		itemDef
+		{
+			rect 0 0 20 20 3 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 9
+			textAlignX 0
+			textAlignY 0
+			textScale 0.375
+			textStyle 7
+			textFont 3
+			feeder 0
+			visible 1
+			exp text ( tablelookup( "mp/rankTable.csv" , 0 , getplayercardinfo( 4 , 1 , 2 ) , 14 )  )
+			visible when ( ( 2 < splitscreenplayercount( ) ) && ( getplayercardinfo( 0 , 1 , 2 ) != 0 ) && ( getplayercardinfo( 4 , 1 , 2 ) >= 0 )  )
+			exp   ( ( - 248 ) + 222  )
+			exp   ( ( 28 + ( 2 * 42 ) - 10 )  )
+		}
+		itemDef
+		{
+			rect 0 0 40 18 3 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 9
+			textAlignX 0
+			textAlignY 0
+			textScale 0.375
+			textStyle 7
+			textFont 3
+			feeder 0
+			visible 1
+			exp text ( "[" + getplayercardinfo( 9 , 1 , 2 ) + "]"  )
+			visible when ( ( 2 < splitscreenplayercount( ) ) && ( getplayercardinfo( 0 , 1 , 2 ) != 0 ) && getplayercardinfo( 9 , 1 , 2 ) != ""  )
+			exp   ( ( - 248 ) + 204  )
+			exp   ( ( 28 + ( 2 * 42 ) - 10 ) + 18  )
+		}
+		itemDef
+		{
+			rect 0 0 272 40 3 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.25 0.25 0.25 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background playercard_bg
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( ( 3 < splitscreenplayercount( ) ) && ( getplayercardinfo( 0 , 1 , 3 ) != 0 )  )
+			exp   ( - 268  )
+			exp   ( 28 + ( 3 * 42 ) - 10  )
+		}
+		itemDef
+		{
+			rect 0 0 160 32 3 1
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 1 1 1 1
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 9
+			textAlignX 0
+			textAlignY 0
+			textScale 0.375
+			textStyle 8
+			textFont 3
+			feeder 0
+			visible 1
+			exp text ( "@" + tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 1 , 3 ) , 1 )  )
+			exp material ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 1 , 3 ) , 2 )  )
+			visible when ( ( 3 < splitscreenplayercount( ) ) && ( getplayercardinfo( 0 , 1 , 3 ) != 0 )  )
+			exp   ( - 248  )
+			exp   ( 28 + ( 3 * 42 ) - 10 - 4  )
+			exp   ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 1 , 3 ) , 3 )  )
+			exp   ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 1 , 3 ) , 4 )  )
+			exp   ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 1 , 3 ) , 5 )  )
+		}
+		itemDef
+		{
+			rect 0 0 248 20 3 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 4
+			textAlignX 10
+			textAlignY 4
+			textScale 0.3333
+			textStyle 8
+			textFont 10
+			feeder 0
+			visible 1
+			exp text ( getplayercardinfo( 8 , 1 , 3 )  )
+			visible when ( ( 3 < splitscreenplayercount( ) ) && ( getplayercardinfo( 0 , 1 , 3 ) != 0 )  )
+			exp   ( ( - 248 )  )
+			exp   ( ( 28 + ( 3 * 42 ) - 10 ) + 20  )
+		}
+		itemDef
+		{
+			rect 0 0 40 40 3 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( tablelookupbyrow( "mp/cardIconTable.csv" , getplayercardinfo( 2 , 1 , 3 ) , 1 )  )
+			visible when ( ( 3 < splitscreenplayercount( ) ) && ( getplayercardinfo( 0 , 1 , 3 ) != 0 )  )
+			exp   ( ( - 248 ) + 160  )
+			exp   ( ( 28 + ( 3 * 42 ) - 10 )  )
+		}
+		itemDef
+		{
+			rect 0 0 20 20 3 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( tablelookup( "mp/rankIconTable.csv" , 0 , getplayercardinfo( 4 , 1 , 3 ) , ( getplayercardinfo( 5 , 1 , 3 ) + 1 ) )  )
+			visible when ( ( 3 < splitscreenplayercount( ) ) && ( getplayercardinfo( 0 , 1 , 3 ) != 0 ) && ( getplayercardinfo( 4 , 1 , 3 ) >= 0 )  )
+			exp   ( ( - 248 ) + 204  )
+			exp   ( ( 28 + ( 3 * 42 ) - 10 )  )
+		}
+		itemDef
+		{
+			rect 0 0 20 20 3 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 9
+			textAlignX 0
+			textAlignY 0
+			textScale 0.375
+			textStyle 7
+			textFont 3
+			feeder 0
+			visible 1
+			exp text ( tablelookup( "mp/rankTable.csv" , 0 , getplayercardinfo( 4 , 1 , 3 ) , 14 )  )
+			visible when ( ( 3 < splitscreenplayercount( ) ) && ( getplayercardinfo( 0 , 1 , 3 ) != 0 ) && ( getplayercardinfo( 4 , 1 , 3 ) >= 0 )  )
+			exp   ( ( - 248 ) + 222  )
+			exp   ( ( 28 + ( 3 * 42 ) - 10 )  )
+		}
+		itemDef
+		{
+			rect 0 0 40 18 3 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 9
+			textAlignX 0
+			textAlignY 0
+			textScale 0.375
+			textStyle 7
+			textFont 3
+			feeder 0
+			visible 1
+			exp text ( "[" + getplayercardinfo( 9 , 1 , 3 ) + "]"  )
+			visible when ( ( 3 < splitscreenplayercount( ) ) && ( getplayercardinfo( 0 , 1 , 3 ) != 0 ) && getplayercardinfo( 9 , 1 , 3 ) != ""  )
+			exp   ( ( - 248 ) + 204  )
+			exp   ( ( 28 + ( 3 * 42 ) - 10 ) + 18  )
+		}
+	}
+}

@@ -1,0 +1,10 @@
+{
+	menuDef
+	{
+		name "ingamecontrols_sensitivity"
+		rect 0 0 640 480
+		focusColor 1 1 1 1
+		foreColor 1 1 1 1
+		blurWorld 6
+	}
+}
