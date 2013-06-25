@@ -1,0 +1,16 @@
+{
+	menuDef
+	{
+		name youkilled_card_display
+		fullscreen 0
+		rect 0 0 640 1 1 0
+		focusColor 0 0 0 0
+		foreColor 1 1 1 1
+		decoration
+		onOpen
+		{
+			setLocalVarInt "ui_show_youKilled" ( 3 );
+			close "self";
+		}
+	}
+}

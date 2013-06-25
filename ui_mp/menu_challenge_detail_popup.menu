@@ -1,0 +1,768 @@
+{
+	menuDef
+	{
+		name menu_challenge_detail_popup
+		fullscreen 0
+		rect -272 -60 544 120 2 2
+		style 1
+		border 0
+		ownerdraw 0
+		ownerdrawFlag 0
+		borderSize 0
+		foreColor 1 1 1 1
+		backColor 1 1 1 1
+		borderColor 0 0 0 0
+		outlineColor 0 0 0 0
+		background white
+		fadeCycle 1
+		fadeClamp 1
+		fadeAmount 0.1
+		fadeInAmount 0
+		blurWorld 0
+		onESC
+		{
+			"close" "self";
+		}
+		focusColor 1 1 1 1
+		popup 
+		outOfBoundsClick 
+		allowedBinding +talk
+		execKeyInt 1
+		{
+			"close" "self";
+		}
+		execKey "¨"
+		{
+			"close" "self";
+		}
+		itemDef
+		{
+			rect -1126 -540 3416 1920 2 2
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0.35
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin -854 -480
+			background white
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+		}
+		itemDef
+		{
+			rect -1126 -540 3416 1920 2 2
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 1 1 1 1
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin -854 -480
+			background xpbar_stencilbase
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+		}
+		itemDef
+		{
+			rect -427 -60 854 120 2 2
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0.5 0.5 0.5 1
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin -155 0
+			background white
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+		}
+		itemDef
+		{
+			rect -272 -60 1708 480 2 9
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.75
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 0 0
+			background mw2_popup_bg_fogstencil
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp   ( ( 0 - ( 854 - 544 ) * 0.500000 ) - ( ( float( milliseconds( ) % 60000 ) / 60000 ) * ( 854 ) )  )
+		}
+		itemDef
+		{
+			rect -272 -60 -1708 -480 2 9
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.85 0.85 0.85 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 0 0
+			background mw2_popup_bg_fogscroll
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp   ( ( 0 - ( 854 - 544 ) * 0.500000 ) - ( ( float( milliseconds( ) % 60000 ) / 60000 ) * ( 854 ) )  )
+		}
+		itemDef
+		{
+			rect -427 -60 854 0 2 9
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin -155 0
+			background mockup_popup_bg_stencilfill
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp   ( 120  )
+		}
+		itemDef
+		{
+			rect -272 -60 -1708 -480 2 9
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.75
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 0 0
+			background mw2_popup_bg_fogstencil
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp   ( ( 0 - ( 854 - 544 ) * 0.500000 ) + ( 0 - 854 ) + ( ( float( milliseconds( ) % 50000 ) / 50000 ) * ( 854 ) )  )
+		}
+		itemDef
+		{
+			rect -272 -60 -1708 -480 2 9
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.85 0.85 0.85 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 0 0
+			background mw2_popup_bg_fogscroll
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp   ( ( 0 - ( 854 - 544 ) * 0.500000 ) + ( 0 - 854 ) + ( ( float( milliseconds( ) % 50000 ) / 50000 ) * ( 854 ) )  )
+		}
+		itemDef
+		{
+			rect -491 -124 64 64 2 2
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0 0 0 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin -219 -64
+			background drop_shadow_tl
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1  )
+		}
+		itemDef
+		{
+			rect -427 -124 854 64 2 2
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0 0 0 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin -155 -64
+			background drop_shadow_t
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1  )
+		}
+		itemDef
+		{
+			rect 427 -124 64 64 2 2
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0 0 0 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 699 -64
+			background drop_shadow_tr
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1  )
+		}
+		itemDef
+		{
+			rect 427 -60 64 120 2 2
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0 0 0 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 699 0
+			background drop_shadow_r
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1  )
+		}
+		itemDef
+		{
+			rect 427 60 64 64 2 2
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0 0 0 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 699 120
+			background drop_shadow_br
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1  )
+		}
+		itemDef
+		{
+			rect -427 60 854 64 2 2
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0 0 0 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin -155 120
+			background drop_shadow_b
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1  )
+		}
+		itemDef
+		{
+			rect -491 60 64 64 2 2
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0 0 0 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin -219 120
+			background drop_shadow_bl
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1  )
+		}
+		itemDef
+		{
+			rect -491 -60 64 120 2 2
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0 0 0 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin -219 0
+			background drop_shadow_l
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1  )
+		}
+		itemDef
+		{
+			rect -1126 -540 3416 1920 2 2
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0.35
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin -854 -480
+			background white
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+		}
+		itemDef
+		{
+			rect -427 -60 854 20 2 2
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin -155 0
+			background white
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+		}
+		itemDef
+		{
+			rect -272 -60 544 20 2 2
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 5
+			textAlignX 0
+			textAlignY 0
+			textScale 0.4
+			textStyle 0
+			textFont 9
+			feeder 0
+			visible 1
+			exp text ( locstring( "@" + tablelookup( "mp/allChallengesTable.csv" , 0 , localvarstring( "ui_challenge_ref" ) , 1 ) ) + locstring( "@" + tablelookup( "mp/allChallengesTable.csv" , 0 , localvarstring( "ui_challenge_ref" ) , 3 ) + "_" + localvarint( "ui_challenge_state" ) )  )
+		}
+		itemDef
+		{
+			rect -272 -40 544 40 2 2
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.65
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 0 20
+			decoration 
+			autoWrapped 
+			type 0
+			align 0
+			textAlign 5
+			textAlignX 0
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			visible 1
+			exp text ( locstring( "@" + tablelookup( "mp/allChallengesTable.csv" , 0 , localvarstring( "ui_challenge_ref" ) , 2 ) , ( int tablelookup( "mp/allChallengesTable.csv" , 0 , localvarstring( "ui_challenge_ref" ) , 6 + ( ( localvarint( "ui_challenge_state" ) - 1 ) * 2 ) ) ) ) )  )
+			visible when ( "@" + tablelookup( "mp/allChallengesTable.csv" , 0 , localvarstring( "ui_challenge_ref" ) , 3 ) != "@CHALLENGE_BLANK" && ( localvarstring( "ui_challenge_ref" ) != "ch_marathon_pro" && localvarstring( "ui_challenge_ref" ) != "ch_lightweight_pro" )  )
+		}
+		itemDef
+		{
+			rect -272 -40 544 40 2 2
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.65
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 0 20
+			decoration 
+			autoWrapped 
+			type 0
+			align 0
+			textAlign 5
+			textAlignX 0
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			visible 1
+			exp text ( locstring( "@" + tablelookup( "mp/allChallengesTable.csv" , 0 , localvarstring( "ui_challenge_ref" ) , 2 ) , int ( int tablelookup( "mp/allChallengesTable.csv" , 0 , localvarstring( "ui_challenge_ref" ) , 6 + ( ( localvarint( "ui_challenge_state" ) - 1 ) * 2 ) ) ) ) / 5280 ) )  )
+			visible when ( "@" + tablelookup( "mp/allChallengesTable.csv" , 0 , localvarstring( "ui_challenge_ref" ) , 3 ) != "@CHALLENGE_BLANK" && ( localvarstring( "ui_challenge_ref" ) == "ch_marathon_pro" || localvarstring( "ui_challenge_ref" ) == "ch_lightweight_pro" )  )
+		}
+		itemDef
+		{
+			rect -272 -40 544 40 2 2
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.65
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 0 20
+			decoration 
+			autoWrapped 
+			type 0
+			align 0
+			textAlign 5
+			textAlignX 0
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			visible 1
+			exp text ( "@" + tablelookup( "mp/allChallengesTable.csv" , 0 , localvarstring( "ui_challenge_ref" ) , 2 )  )
+			visible when ( "@" + tablelookup( "mp/allChallengesTable.csv" , 0 , localvarstring( "ui_challenge_ref" ) , 3 ) == "@CHALLENGE_BLANK"  )
+		}
+		itemDef
+		{
+			rect -272 0 544 20 2 2
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.65
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 0 60
+			decoration 
+			autoWrapped 
+			type 0
+			align 0
+			textAlign 5
+			textAlignX 0
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			visible 1
+			exp text ( locstring( "@CHALLENGE_PROGRESS_X_OF_Y" , getplayerdata( "challengeProgress" , localvarstring( "ui_challenge_ref" ) ) , ( int tablelookup( "mp/allChallengesTable.csv" , 0 , localvarstring( "ui_challenge_ref" ) , 6 + ( ( localvarint( "ui_challenge_state" ) - 1 ) * 2 ) ) ) ) )  )
+			visible when ( localvarstring( "ui_challenge_ref" ) != "ch_marathon_pro" && localvarstring( "ui_challenge_ref" ) != "ch_lightweight_pro"  )
+		}
+		itemDef
+		{
+			rect -272 0 544 20 2 2
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.65
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 0 60
+			decoration 
+			autoWrapped 
+			type 0
+			align 0
+			textAlign 5
+			textAlignX 0
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			visible 1
+			exp text ( locstring( "@CHALLENGE_PROGRESS_X_OF_Y" , int getplayerdata( "challengeProgress" , localvarstring( "ui_challenge_ref" ) ) / 5280 ) , int ( int tablelookup( "mp/allChallengesTable.csv" , 0 , localvarstring( "ui_challenge_ref" ) , 6 + ( ( localvarint( "ui_challenge_state" ) - 1 ) * 2 ) ) ) ) / 5280 ) )  )
+			visible when ( localvarstring( "ui_challenge_ref" ) == "ch_marathon_pro" || localvarstring( "ui_challenge_ref" ) == "ch_lightweight_pro"  )
+		}
+		itemDef
+		{
+			rect -272 20 544 20 2 2
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.65
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 0 80
+			decoration 
+			autoWrapped 
+			type 0
+			align 0
+			textAlign 5
+			textAlignX 0
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			visible 1
+			exp text ( locstring( "@MPUI_REWARD_XP" , int tablelookup( "mp/allChallengesTable.csv" , 0 , localvarstring( "ui_challenge_ref" ) , 7 + ( ( localvarint( "ui_challenge_state" ) - 1 ) * 2 ) ) ) )  )
+			visible when ( 1  )
+		}
+		itemDef
+		{
+			rect -272 40 544 20 2 2
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.65
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 0 100
+			decoration 
+			type 0
+			align 0
+			textAlign 5
+			textAlignX 0
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			visible 1
+			exp text ( locstring( "@MPUI_UNLOCKS_ATTACHMENT" , "@" + tablelookup( "mp/attachmentTable.csv" , 4 , localvarstring( "ui_selected_ref" ) , 3 ) )  )
+			visible when ( tablelookup( "mp/attachmentTable.csv" , 4 , localvarstring( "ui_selected_ref" ) , 4 ) != ""  )
+		}
+		itemDef
+		{
+			rect -272 40 544 40 2 2
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.65
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 0 100
+			decoration 
+			type 0
+			align 0
+			textAlign 5
+			textAlignX 0
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			visible 1
+			exp text ( locstring( "@MPUI_UNLOCKS_CAMO" , "@" + tablelookup( "mp/camoTable.csv" , 1 , localvarstring( "ui_selected_ref" ) , 2 ) )  )
+			visible when ( tablelookup( "mp/camoTable.csv" , 1 , localvarstring( "ui_selected_ref" ) , 1 ) != ""  )
+		}
+	}
+}

@@ -1,0 +1,5974 @@
+{
+	menuDef
+	{
+		name menu_records
+		fullscreen 1
+		rect 0 0 640 480
+		style 1
+		border 0
+		ownerdraw 0
+		ownerdrawFlag 0
+		borderSize 0
+		foreColor 1 1 1 1
+		backColor 0 0 0 0
+		borderColor 0 0 0 0
+		outlineColor 0 0 0 0
+		soundLoop music_mainmenu_mp
+		fadeCycle 1
+		fadeClamp 1
+		fadeAmount 0.1
+		fadeInAmount 0
+		blurWorld 0
+		onOpen
+		{
+			setLocalVarInt ui_pageIndex 1;
+			setLocalVarInt ui_numPages 1;
+			if ( ( tablelookupbyrow( "mp/awardTable.csv" , ( 1 * 18 ) , 1 ) != "" )  )
+			{
+				setLocalVarInt ui_numPages 2;
+			}
+			if ( ( tablelookupbyrow( "mp/awardTable.csv" , ( 2 * 18 ) , 1 ) != "" )  )
+			{
+				setLocalVarInt ui_numPages 2;
+			}
+			if ( ( tablelookupbyrow( "mp/awardTable.csv" , ( 3 * 18 ) , 1 ) != "" )  )
+			{
+				setLocalVarInt ui_numPages 2;
+			}
+			if ( ( tablelookupbyrow( "mp/awardTable.csv" , ( 4 * 18 ) , 1 ) != "" )  )
+			{
+				setLocalVarInt ui_numPages 2;
+			}
+			if ( ( tablelookupbyrow( "mp/awardTable.csv" , ( 5 * 18 ) , 1 ) != "" )  )
+			{
+				setLocalVarInt ui_numPages 2;
+			}
+			if ( ( tablelookupbyrow( "mp/awardTable.csv" , ( 6 * 18 ) , 1 ) != "" )  )
+			{
+				setLocalVarInt ui_numPages 2;
+			}
+			if ( ( tablelookupbyrow( "mp/awardTable.csv" , ( 7 * 18 ) , 1 ) != "" )  )
+			{
+				setLocalVarInt ui_numPages 2;
+			}
+			if ( ( tablelookupbyrow( "mp/awardTable.csv" , ( 8 * 18 ) , 1 ) != "" )  )
+			{
+				setLocalVarInt ui_numPages 2;
+			}
+			if ( ( tablelookupbyrow( "mp/awardTable.csv" , ( 9 * 18 ) , 1 ) != "" )  )
+			{
+				setLocalVarInt ui_numPages 2;
+			}
+			if ( ( tablelookupbyrow( "mp/awardTable.csv" , ( 10 * 18 ) , 1 ) != "" )  )
+			{
+				setLocalVarInt ui_numPages 2;
+			}
+			if ( ( tablelookupbyrow( "mp/awardTable.csv" , ( 11 * 18 ) , 1 ) != "" )  )
+			{
+				setLocalVarInt ui_numPages 2;
+			}
+			if ( ( tablelookupbyrow( "mp/awardTable.csv" , ( 12 * 18 ) , 1 ) != "" )  )
+			{
+				setLocalVarInt ui_numPages 2;
+			}
+			if ( ( tablelookupbyrow( "mp/awardTable.csv" , ( 13 * 18 ) , 1 ) != "" )  )
+			{
+				setLocalVarInt ui_numPages 2;
+			}
+			if ( ( tablelookupbyrow( "mp/awardTable.csv" , ( 14 * 18 ) , 1 ) != "" )  )
+			{
+				setLocalVarInt ui_numPages 2;
+			}
+			if ( ( tablelookupbyrow( "mp/awardTable.csv" , ( 15 * 18 ) , 1 ) != "" )  )
+			{
+				setLocalVarInt ui_numPages 2;
+			}
+			if ( ( tablelookupbyrow( "mp/awardTable.csv" , ( 16 * 18 ) , 1 ) != "" )  )
+			{
+				setLocalVarInt ui_numPages 2;
+			}
+			if ( ( tablelookupbyrow( "mp/awardTable.csv" , ( 17 * 18 ) , 1 ) != "" )  )
+			{
+				setLocalVarInt ui_numPages 2;
+			}
+			if ( ( tablelookupbyrow( "mp/awardTable.csv" , ( 18 * 18 ) , 1 ) != "" )  )
+			{
+				setLocalVarInt ui_numPages 2;
+			}
+			if ( ( tablelookupbyrow( "mp/awardTable.csv" , ( 19 * 18 ) , 1 ) != "" )  )
+			{
+				setLocalVarInt ui_numPages 2;
+			}
+			if ( ( tablelookupbyrow( "mp/awardTable.csv" , ( 20 * 18 ) , 1 ) != "" )  )
+			{
+				setLocalVarInt ui_numPages 2;
+			}
+			if ( ( tablelookupbyrow( "mp/awardTable.csv" , ( 21 * 18 ) , 1 ) != "" )  )
+			{
+				setLocalVarInt ui_numPages 2;
+			}
+			"focusFirst";
+		}
+		onESC
+		{
+			"close" "self";
+		}
+		focusColor 1 1 1 1
+		execKey "ú"
+		{
+			if ( localvarint( "ui_pageIndex" )  )
+			{
+				setLocalVarInt ui_pageIndex 6;
+			}
+			"focusFirst";
+		}
+		execKey "ù"
+		{
+			if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" )  )
+			{
+				setLocalVarInt ui_pageIndex 6;
+			}
+			"focusFirst";
+		}
+		execKey "π"
+		{
+			if ( localvarint( "ui_pageIndex" )  )
+			{
+				setLocalVarInt ui_pageIndex 6;
+			}
+			"focusFirst";
+		}
+		execKey "∫"
+		{
+			if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" )  )
+			{
+				setLocalVarInt ui_pageIndex 6;
+			}
+			"focusFirst";
+		}
+		itemDef
+		{
+			rect 0 0 640 480 4 4
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background mw2_main_background
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+		}
+		itemDef
+		{
+			rect 0 0 1708 480
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.5
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background mw2_main_cloud_overlay
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp   ( ( 0 - 107 ) - ( ( float( milliseconds( ) % 60000 ) / 60000 ) * ( 854 ) )  )
+		}
+		itemDef
+		{
+			rect 0 0 -1708 -480
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.5
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background mw2_main_cloud_overlay
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp   ( ( - 107 + 854 ) + ( ( float( milliseconds( ) % 50000 ) / 50000 ) * ( 854 ) )  )
+		}
+		itemDef
+		{
+			rect 0 0 640 480 4 4
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background mockup_bg_glow
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp   ( ( ( sin milliseconds( ) / 1500 ) + 1 ) * 0.250000 ) + 0.250000  )
+		}
+		itemDef
+		{
+			rect 0 0 640 480 4 4
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background mockup_bg_glow
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp   ( ( ( sin milliseconds( ) / 480 ) + 1 ) * 0.250000 ) + 0.250000  )
+		}
+		itemDef
+		{
+			rect -320 0 640 28 2 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 5
+			textAlignX 0
+			textAlignY 0
+			textScale 0.5833
+			textStyle 0
+			textFont 9
+			feeder 0
+			text "@MPUI_HIGHLIGHTS_CAPS"
+			visible 1
+		}
+		itemDef
+		{
+			rect 0 28 640 268 4 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.15
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background white
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+		}
+		itemDef
+		{
+			rect -32 -4 32 32 4 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0 0 0 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background drop_shadow_tl
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1  )
+		}
+		itemDef
+		{
+			rect 0 -4 640 32 4 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0 0 0 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background drop_shadow_t
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1  )
+		}
+		itemDef
+		{
+			rect 640 -4 32 32 4 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0 0 0 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background drop_shadow_tr
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1  )
+		}
+		itemDef
+		{
+			rect 640 28 32 268 4 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0 0 0 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background drop_shadow_r
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1  )
+		}
+		itemDef
+		{
+			rect 640 296 32 32 4 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0 0 0 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background drop_shadow_br
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1  )
+		}
+		itemDef
+		{
+			rect 0 296 640 32 4 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0 0 0 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background drop_shadow_b
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1  )
+		}
+		itemDef
+		{
+			rect -32 296 32 32 4 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0 0 0 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background drop_shadow_bl
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1  )
+		}
+		itemDef
+		{
+			rect -32 28 32 268 4 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0 0 0 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background drop_shadow_l
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1  )
+		}
+		itemDef
+		{
+			rect 0 360 640 20 4 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.15
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background white
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+		}
+		itemDef
+		{
+			rect -32 328 32 32 4 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0 0 0 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background drop_shadow_tl
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1  )
+		}
+		itemDef
+		{
+			rect 0 328 640 32 4 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0 0 0 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background drop_shadow_t
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1  )
+		}
+		itemDef
+		{
+			rect 640 328 32 32 4 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0 0 0 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background drop_shadow_tr
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1  )
+		}
+		itemDef
+		{
+			rect 640 360 32 20 4 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0 0 0 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background drop_shadow_r
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1  )
+		}
+		itemDef
+		{
+			rect 640 380 32 32 4 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0 0 0 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background drop_shadow_br
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1  )
+		}
+		itemDef
+		{
+			rect 0 380 640 32 4 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0 0 0 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background drop_shadow_b
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1  )
+		}
+		itemDef
+		{
+			rect -32 380 32 32 4 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0 0 0 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background drop_shadow_bl
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1  )
+		}
+		itemDef
+		{
+			rect -32 360 32 20 4 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0 0 0 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background drop_shadow_l
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1  )
+		}
+		itemDef
+		{
+			rect -272 28 544 24 2 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 6
+			textAlignX -4
+			textAlignY 0
+			textScale 0.3333
+			textStyle 0
+			textFont 10
+			feeder 0
+			visible 1
+			exp text ( locstring( "@MPUI_PAGE_N_SLASH_N" , ( localvarint( "ui_pageIndex" ) + 1 ) , ( localvarint( "ui_numPages" ) + 1 ) )  )
+			visible when ( 1  )
+		}
+		itemDef
+		{
+			name highlightImage0_0
+			rect -234.952 51.3333 81.3333 81.3333 2 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background highlight_selected
+			execKeyInt 30
+			{
+				if ( 0 == 0  )
+				{
+					if ( localvarint( "ui_pageIndex" )  )
+					{
+						setLocalVarInt ui_pageIndex 6;
+						"setFocus" "highlightImage0_5";
+					}
+				}
+				if ( 0 == 1  )
+				{
+					"setFocus" "highlightImage0_0";
+				}
+				if ( 0 == 2  )
+				{
+					"setFocus" "highlightImage0_1";
+				}
+				if ( 0 == 3  )
+				{
+					"setFocus" "highlightImage0_2";
+				}
+				if ( 0 == 4  )
+				{
+					"setFocus" "highlightImage0_3";
+				}
+				if ( 0 == 5  )
+				{
+					"setFocus" "highlightImage0_4";
+				}
+			}
+			execKeyInt 31
+			{
+				if ( 0 == 0  )
+				{
+					"setFocus" "highlightImage0_1";
+				}
+				if ( 0 == 1  )
+				{
+					"setFocus" "highlightImage0_2";
+				}
+				if ( 0 == 2  )
+				{
+					"setFocus" "highlightImage0_3";
+				}
+				if ( 0 == 3  )
+				{
+					"setFocus" "highlightImage0_4";
+				}
+				if ( 0 == 4  )
+				{
+					"setFocus" "highlightImage0_5";
+				}
+				if ( 0 == 5  )
+				{
+					if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" )  )
+					{
+						setLocalVarInt ui_pageIndex 6;
+						"setFocus" "highlightImage0_0";
+					}
+				}
+			}
+			execKeyInt 22
+			{
+				if ( 0 == 0  )
+				{
+					if ( localvarint( "ui_pageIndex" )  )
+					{
+						setLocalVarInt ui_pageIndex 6;
+						"setFocus" "highlightImage0_5";
+					}
+				}
+				if ( 0 == 1  )
+				{
+					"setFocus" "highlightImage0_0";
+				}
+				if ( 0 == 2  )
+				{
+					"setFocus" "highlightImage0_1";
+				}
+				if ( 0 == 3  )
+				{
+					"setFocus" "highlightImage0_2";
+				}
+				if ( 0 == 4  )
+				{
+					"setFocus" "highlightImage0_3";
+				}
+				if ( 0 == 5  )
+				{
+					"setFocus" "highlightImage0_4";
+				}
+			}
+			execKeyInt 23
+			{
+				if ( 0 == 0  )
+				{
+					"setFocus" "highlightImage0_1";
+				}
+				if ( 0 == 1  )
+				{
+					"setFocus" "highlightImage0_2";
+				}
+				if ( 0 == 2  )
+				{
+					"setFocus" "highlightImage0_3";
+				}
+				if ( 0 == 3  )
+				{
+					"setFocus" "highlightImage0_4";
+				}
+				if ( 0 == 4  )
+				{
+					"setFocus" "highlightImage0_5";
+				}
+				if ( 0 == 5  )
+				{
+					if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" )  )
+					{
+						setLocalVarInt ui_pageIndex 6;
+						"setFocus" "highlightImage0_0";
+					}
+				}
+			}
+			execKey "ú"
+			{
+				if ( localvarint( "ui_pageIndex" )  )
+				{
+					setLocalVarInt ui_pageIndex 6;
+				}
+				"setFocus" "highlightImage0_0";
+			}
+			execKey "ù"
+			{
+				if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" )  )
+				{
+					setLocalVarInt ui_pageIndex 6;
+				}
+				"setFocus" "highlightImage0_0";
+			}
+			execKey "π"
+			{
+				if ( localvarint( "ui_pageIndex" )  )
+				{
+					setLocalVarInt ui_pageIndex 6;
+				}
+				"setFocus" "highlightImage0_0";
+			}
+			execKey "∫"
+			{
+				if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" )  )
+				{
+					setLocalVarInt ui_pageIndex 6;
+				}
+				"setFocus" "highlightImage0_0";
+			}
+			type 1
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			onFocus
+			{
+				setLocalVarInt ui_highlightIndex 10;
+				"play" "mouse_over";
+			}
+			action
+			{
+				"play" "mouse_click";
+			}
+			visible when ( ( tablelookupbyrow( "mp/awardTable.csv" , 0 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) != "" )  )
+			exp   ( 0.450000 + ( tablelookupbyrow( "mp/awardTable.csv" , 0 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) != "" )  )
+			exp   ( 0.450000 + ( tablelookupbyrow( "mp/awardTable.csv" , 0 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) != "" )  )
+			exp   ( ( getfocuseditemname( ) == "highlightImage0_0" ) * ( ( sin milliseconds( ) / 150 ) * 0.500000 + 0.500000 ) * 0.500000 + 0.500000 )  )
+		}
+		itemDef
+		{
+			rect -226.286 60 64 64 2 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background award_locked
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( ( tablelookupbyrow( "mp/awardTable.csv" , 0 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) != "" ) && getplayerdata( "awards" , tablelookupbyrow( "mp/awardTable.csv" , 0 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) ) == 0  )
+		}
+		itemDef
+		{
+			rect -226.286 60 64 64 2 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material tablelookup( "mp/awardTable.csv" , 1 , tablelookupbyrow( "mp/awardTable.csv" , 0 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) , 2  )
+			visible when ( ( tablelookupbyrow( "mp/awardTable.csv" , 0 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) != "" ) && getplayerdata( "awards" , tablelookupbyrow( "mp/awardTable.csv" , 0 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) ) > 0  )
+		}
+		itemDef
+		{
+			rect -226.286 60 64 64 2 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 14
+			textAlignX 0
+			textAlignY 0
+			textScale 0.375
+			textStyle 8
+			textFont 3
+			feeder 0
+			visible 1
+			exp text ( locstring( "@MPUI_X_N" , getplayerdata( "awards" , tablelookupbyrow( "mp/awardTable.csv" , 0 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) ) )  )
+			visible when ( ( tablelookupbyrow( "mp/awardTable.csv" , 0 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) != "" ) && getplayerdata( "awards" , tablelookupbyrow( "mp/awardTable.csv" , 0 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) ) > 0  )
+		}
+		itemDef
+		{
+			name highlightImage1_0
+			rect -234.952 127.333 81.3333 81.3333 2 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background highlight_selected
+			execKeyInt 30
+			{
+				if ( 0 == 0  )
+				{
+					if ( localvarint( "ui_pageIndex" )  )
+					{
+						setLocalVarInt ui_pageIndex 6;
+						"setFocus" "highlightImage1_5";
+					}
+				}
+				if ( 0 == 1  )
+				{
+					"setFocus" "highlightImage1_0";
+				}
+				if ( 0 == 2  )
+				{
+					"setFocus" "highlightImage1_1";
+				}
+				if ( 0 == 3  )
+				{
+					"setFocus" "highlightImage1_2";
+				}
+				if ( 0 == 4  )
+				{
+					"setFocus" "highlightImage1_3";
+				}
+				if ( 0 == 5  )
+				{
+					"setFocus" "highlightImage1_4";
+				}
+			}
+			execKeyInt 31
+			{
+				if ( 0 == 0  )
+				{
+					"setFocus" "highlightImage1_1";
+				}
+				if ( 0 == 1  )
+				{
+					"setFocus" "highlightImage1_2";
+				}
+				if ( 0 == 2  )
+				{
+					"setFocus" "highlightImage1_3";
+				}
+				if ( 0 == 3  )
+				{
+					"setFocus" "highlightImage1_4";
+				}
+				if ( 0 == 4  )
+				{
+					"setFocus" "highlightImage1_5";
+				}
+				if ( 0 == 5  )
+				{
+					if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" )  )
+					{
+						setLocalVarInt ui_pageIndex 6;
+						"setFocus" "highlightImage1_0";
+					}
+				}
+			}
+			execKeyInt 22
+			{
+				if ( 0 == 0  )
+				{
+					if ( localvarint( "ui_pageIndex" )  )
+					{
+						setLocalVarInt ui_pageIndex 6;
+						"setFocus" "highlightImage1_5";
+					}
+				}
+				if ( 0 == 1  )
+				{
+					"setFocus" "highlightImage1_0";
+				}
+				if ( 0 == 2  )
+				{
+					"setFocus" "highlightImage1_1";
+				}
+				if ( 0 == 3  )
+				{
+					"setFocus" "highlightImage1_2";
+				}
+				if ( 0 == 4  )
+				{
+					"setFocus" "highlightImage1_3";
+				}
+				if ( 0 == 5  )
+				{
+					"setFocus" "highlightImage1_4";
+				}
+			}
+			execKeyInt 23
+			{
+				if ( 0 == 0  )
+				{
+					"setFocus" "highlightImage1_1";
+				}
+				if ( 0 == 1  )
+				{
+					"setFocus" "highlightImage1_2";
+				}
+				if ( 0 == 2  )
+				{
+					"setFocus" "highlightImage1_3";
+				}
+				if ( 0 == 3  )
+				{
+					"setFocus" "highlightImage1_4";
+				}
+				if ( 0 == 4  )
+				{
+					"setFocus" "highlightImage1_5";
+				}
+				if ( 0 == 5  )
+				{
+					if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" )  )
+					{
+						setLocalVarInt ui_pageIndex 6;
+						"setFocus" "highlightImage1_0";
+					}
+				}
+			}
+			execKey "ú"
+			{
+				if ( localvarint( "ui_pageIndex" )  )
+				{
+					setLocalVarInt ui_pageIndex 6;
+				}
+				"setFocus" "highlightImage1_0";
+			}
+			execKey "ù"
+			{
+				if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" )  )
+				{
+					setLocalVarInt ui_pageIndex 6;
+				}
+				"setFocus" "highlightImage1_0";
+			}
+			execKey "π"
+			{
+				if ( localvarint( "ui_pageIndex" )  )
+				{
+					setLocalVarInt ui_pageIndex 6;
+				}
+				"setFocus" "highlightImage1_0";
+			}
+			execKey "∫"
+			{
+				if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" )  )
+				{
+					setLocalVarInt ui_pageIndex 6;
+				}
+				"setFocus" "highlightImage1_0";
+			}
+			type 1
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			onFocus
+			{
+				setLocalVarInt ui_highlightIndex 10;
+				"play" "mouse_over";
+			}
+			action
+			{
+				"play" "mouse_click";
+			}
+			visible when ( ( tablelookupbyrow( "mp/awardTable.csv" , 1 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) != "" )  )
+			exp   ( 0.450000 + ( tablelookupbyrow( "mp/awardTable.csv" , 1 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) != "" )  )
+			exp   ( 0.450000 + ( tablelookupbyrow( "mp/awardTable.csv" , 1 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) != "" )  )
+			exp   ( ( getfocuseditemname( ) == "highlightImage1_0" ) * ( ( sin milliseconds( ) / 150 ) * 0.500000 + 0.500000 ) * 0.500000 + 0.500000 )  )
+		}
+		itemDef
+		{
+			rect -226.286 136 64 64 2 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background award_locked
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( ( tablelookupbyrow( "mp/awardTable.csv" , 1 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) != "" ) && getplayerdata( "awards" , tablelookupbyrow( "mp/awardTable.csv" , 1 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) ) == 0  )
+		}
+		itemDef
+		{
+			rect -226.286 136 64 64 2 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material tablelookup( "mp/awardTable.csv" , 1 , tablelookupbyrow( "mp/awardTable.csv" , 1 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) , 2  )
+			visible when ( ( tablelookupbyrow( "mp/awardTable.csv" , 1 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) != "" ) && getplayerdata( "awards" , tablelookupbyrow( "mp/awardTable.csv" , 1 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) ) > 0  )
+		}
+		itemDef
+		{
+			rect -226.286 136 64 64 2 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 14
+			textAlignX 0
+			textAlignY 0
+			textScale 0.375
+			textStyle 8
+			textFont 3
+			feeder 0
+			visible 1
+			exp text ( locstring( "@MPUI_X_N" , getplayerdata( "awards" , tablelookupbyrow( "mp/awardTable.csv" , 1 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) ) )  )
+			visible when ( ( tablelookupbyrow( "mp/awardTable.csv" , 1 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) != "" ) && getplayerdata( "awards" , tablelookupbyrow( "mp/awardTable.csv" , 1 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) ) > 0  )
+		}
+		itemDef
+		{
+			name highlightImage2_0
+			rect -234.952 203.333 81.3333 81.3333 2 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background highlight_selected
+			execKeyInt 30
+			{
+				if ( 0 == 0  )
+				{
+					if ( localvarint( "ui_pageIndex" )  )
+					{
+						setLocalVarInt ui_pageIndex 6;
+						"setFocus" "highlightImage2_5";
+					}
+				}
+				if ( 0 == 1  )
+				{
+					"setFocus" "highlightImage2_0";
+				}
+				if ( 0 == 2  )
+				{
+					"setFocus" "highlightImage2_1";
+				}
+				if ( 0 == 3  )
+				{
+					"setFocus" "highlightImage2_2";
+				}
+				if ( 0 == 4  )
+				{
+					"setFocus" "highlightImage2_3";
+				}
+				if ( 0 == 5  )
+				{
+					"setFocus" "highlightImage2_4";
+				}
+			}
+			execKeyInt 31
+			{
+				if ( 0 == 0  )
+				{
+					"setFocus" "highlightImage2_1";
+				}
+				if ( 0 == 1  )
+				{
+					"setFocus" "highlightImage2_2";
+				}
+				if ( 0 == 2  )
+				{
+					"setFocus" "highlightImage2_3";
+				}
+				if ( 0 == 3  )
+				{
+					"setFocus" "highlightImage2_4";
+				}
+				if ( 0 == 4  )
+				{
+					"setFocus" "highlightImage2_5";
+				}
+				if ( 0 == 5  )
+				{
+					if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" )  )
+					{
+						setLocalVarInt ui_pageIndex 6;
+						"setFocus" "highlightImage2_0";
+					}
+				}
+			}
+			execKeyInt 22
+			{
+				if ( 0 == 0  )
+				{
+					if ( localvarint( "ui_pageIndex" )  )
+					{
+						setLocalVarInt ui_pageIndex 6;
+						"setFocus" "highlightImage2_5";
+					}
+				}
+				if ( 0 == 1  )
+				{
+					"setFocus" "highlightImage2_0";
+				}
+				if ( 0 == 2  )
+				{
+					"setFocus" "highlightImage2_1";
+				}
+				if ( 0 == 3  )
+				{
+					"setFocus" "highlightImage2_2";
+				}
+				if ( 0 == 4  )
+				{
+					"setFocus" "highlightImage2_3";
+				}
+				if ( 0 == 5  )
+				{
+					"setFocus" "highlightImage2_4";
+				}
+			}
+			execKeyInt 23
+			{
+				if ( 0 == 0  )
+				{
+					"setFocus" "highlightImage2_1";
+				}
+				if ( 0 == 1  )
+				{
+					"setFocus" "highlightImage2_2";
+				}
+				if ( 0 == 2  )
+				{
+					"setFocus" "highlightImage2_3";
+				}
+				if ( 0 == 3  )
+				{
+					"setFocus" "highlightImage2_4";
+				}
+				if ( 0 == 4  )
+				{
+					"setFocus" "highlightImage2_5";
+				}
+				if ( 0 == 5  )
+				{
+					if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" )  )
+					{
+						setLocalVarInt ui_pageIndex 6;
+						"setFocus" "highlightImage2_0";
+					}
+				}
+			}
+			execKey "ú"
+			{
+				if ( localvarint( "ui_pageIndex" )  )
+				{
+					setLocalVarInt ui_pageIndex 6;
+				}
+				"setFocus" "highlightImage2_0";
+			}
+			execKey "ù"
+			{
+				if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" )  )
+				{
+					setLocalVarInt ui_pageIndex 6;
+				}
+				"setFocus" "highlightImage2_0";
+			}
+			execKey "π"
+			{
+				if ( localvarint( "ui_pageIndex" )  )
+				{
+					setLocalVarInt ui_pageIndex 6;
+				}
+				"setFocus" "highlightImage2_0";
+			}
+			execKey "∫"
+			{
+				if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" )  )
+				{
+					setLocalVarInt ui_pageIndex 6;
+				}
+				"setFocus" "highlightImage2_0";
+			}
+			type 1
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			onFocus
+			{
+				setLocalVarInt ui_highlightIndex 10;
+				"play" "mouse_over";
+			}
+			action
+			{
+				"play" "mouse_click";
+			}
+			visible when ( ( tablelookupbyrow( "mp/awardTable.csv" , 2 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) != "" )  )
+			exp   ( 0.450000 + ( tablelookupbyrow( "mp/awardTable.csv" , 2 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) != "" )  )
+			exp   ( 0.450000 + ( tablelookupbyrow( "mp/awardTable.csv" , 2 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) != "" )  )
+			exp   ( ( getfocuseditemname( ) == "highlightImage2_0" ) * ( ( sin milliseconds( ) / 150 ) * 0.500000 + 0.500000 ) * 0.500000 + 0.500000 )  )
+		}
+		itemDef
+		{
+			rect -226.286 212 64 64 2 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background award_locked
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( ( tablelookupbyrow( "mp/awardTable.csv" , 2 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) != "" ) && getplayerdata( "awards" , tablelookupbyrow( "mp/awardTable.csv" , 2 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) ) == 0  )
+		}
+		itemDef
+		{
+			rect -226.286 212 64 64 2 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material tablelookup( "mp/awardTable.csv" , 1 , tablelookupbyrow( "mp/awardTable.csv" , 2 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) , 2  )
+			visible when ( ( tablelookupbyrow( "mp/awardTable.csv" , 2 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) != "" ) && getplayerdata( "awards" , tablelookupbyrow( "mp/awardTable.csv" , 2 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) ) > 0  )
+		}
+		itemDef
+		{
+			rect -226.286 212 64 64 2 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 14
+			textAlignX 0
+			textAlignY 0
+			textScale 0.375
+			textStyle 8
+			textFont 3
+			feeder 0
+			visible 1
+			exp text ( locstring( "@MPUI_X_N" , getplayerdata( "awards" , tablelookupbyrow( "mp/awardTable.csv" , 2 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) ) )  )
+			visible when ( ( tablelookupbyrow( "mp/awardTable.csv" , 2 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) != "" ) && getplayerdata( "awards" , tablelookupbyrow( "mp/awardTable.csv" , 2 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) ) > 0  )
+		}
+		itemDef
+		{
+			name highlightImage0_1
+			rect -157.238 51.3333 81.3333 81.3333 2 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background highlight_selected
+			execKeyInt 30
+			{
+				if ( 1 == 0  )
+				{
+					if ( localvarint( "ui_pageIndex" )  )
+					{
+						setLocalVarInt ui_pageIndex 6;
+						"setFocus" "highlightImage0_5";
+					}
+				}
+				if ( 1 == 1  )
+				{
+					"setFocus" "highlightImage0_0";
+				}
+				if ( 1 == 2  )
+				{
+					"setFocus" "highlightImage0_1";
+				}
+				if ( 1 == 3  )
+				{
+					"setFocus" "highlightImage0_2";
+				}
+				if ( 1 == 4  )
+				{
+					"setFocus" "highlightImage0_3";
+				}
+				if ( 1 == 5  )
+				{
+					"setFocus" "highlightImage0_4";
+				}
+			}
+			execKeyInt 31
+			{
+				if ( 1 == 0  )
+				{
+					"setFocus" "highlightImage0_1";
+				}
+				if ( 1 == 1  )
+				{
+					"setFocus" "highlightImage0_2";
+				}
+				if ( 1 == 2  )
+				{
+					"setFocus" "highlightImage0_3";
+				}
+				if ( 1 == 3  )
+				{
+					"setFocus" "highlightImage0_4";
+				}
+				if ( 1 == 4  )
+				{
+					"setFocus" "highlightImage0_5";
+				}
+				if ( 1 == 5  )
+				{
+					if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" )  )
+					{
+						setLocalVarInt ui_pageIndex 6;
+						"setFocus" "highlightImage0_0";
+					}
+				}
+			}
+			execKeyInt 22
+			{
+				if ( 1 == 0  )
+				{
+					if ( localvarint( "ui_pageIndex" )  )
+					{
+						setLocalVarInt ui_pageIndex 6;
+						"setFocus" "highlightImage0_5";
+					}
+				}
+				if ( 1 == 1  )
+				{
+					"setFocus" "highlightImage0_0";
+				}
+				if ( 1 == 2  )
+				{
+					"setFocus" "highlightImage0_1";
+				}
+				if ( 1 == 3  )
+				{
+					"setFocus" "highlightImage0_2";
+				}
+				if ( 1 == 4  )
+				{
+					"setFocus" "highlightImage0_3";
+				}
+				if ( 1 == 5  )
+				{
+					"setFocus" "highlightImage0_4";
+				}
+			}
+			execKeyInt 23
+			{
+				if ( 1 == 0  )
+				{
+					"setFocus" "highlightImage0_1";
+				}
+				if ( 1 == 1  )
+				{
+					"setFocus" "highlightImage0_2";
+				}
+				if ( 1 == 2  )
+				{
+					"setFocus" "highlightImage0_3";
+				}
+				if ( 1 == 3  )
+				{
+					"setFocus" "highlightImage0_4";
+				}
+				if ( 1 == 4  )
+				{
+					"setFocus" "highlightImage0_5";
+				}
+				if ( 1 == 5  )
+				{
+					if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" )  )
+					{
+						setLocalVarInt ui_pageIndex 6;
+						"setFocus" "highlightImage0_0";
+					}
+				}
+			}
+			execKey "ú"
+			{
+				if ( localvarint( "ui_pageIndex" )  )
+				{
+					setLocalVarInt ui_pageIndex 6;
+				}
+				"setFocus" "highlightImage0_1";
+			}
+			execKey "ù"
+			{
+				if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" )  )
+				{
+					setLocalVarInt ui_pageIndex 6;
+				}
+				"setFocus" "highlightImage0_1";
+			}
+			execKey "π"
+			{
+				if ( localvarint( "ui_pageIndex" )  )
+				{
+					setLocalVarInt ui_pageIndex 6;
+				}
+				"setFocus" "highlightImage0_1";
+			}
+			execKey "∫"
+			{
+				if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" )  )
+				{
+					setLocalVarInt ui_pageIndex 6;
+				}
+				"setFocus" "highlightImage0_1";
+			}
+			type 1
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			onFocus
+			{
+				setLocalVarInt ui_highlightIndex 10;
+				"play" "mouse_over";
+			}
+			action
+			{
+				"play" "mouse_click";
+			}
+			visible when ( ( tablelookupbyrow( "mp/awardTable.csv" , 3 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) != "" )  )
+			exp   ( 0.450000 + ( tablelookupbyrow( "mp/awardTable.csv" , 3 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) != "" )  )
+			exp   ( 0.450000 + ( tablelookupbyrow( "mp/awardTable.csv" , 3 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) != "" )  )
+			exp   ( ( getfocuseditemname( ) == "highlightImage0_1" ) * ( ( sin milliseconds( ) / 150 ) * 0.500000 + 0.500000 ) * 0.500000 + 0.500000 )  )
+		}
+		itemDef
+		{
+			rect -148.571 60 64 64 2 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background award_locked
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( ( tablelookupbyrow( "mp/awardTable.csv" , 3 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) != "" ) && getplayerdata( "awards" , tablelookupbyrow( "mp/awardTable.csv" , 3 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) ) == 0  )
+		}
+		itemDef
+		{
+			rect -148.571 60 64 64 2 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material tablelookup( "mp/awardTable.csv" , 1 , tablelookupbyrow( "mp/awardTable.csv" , 3 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) , 2  )
+			visible when ( ( tablelookupbyrow( "mp/awardTable.csv" , 3 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) != "" ) && getplayerdata( "awards" , tablelookupbyrow( "mp/awardTable.csv" , 3 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) ) > 0  )
+		}
+		itemDef
+		{
+			rect -148.571 60 64 64 2 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 14
+			textAlignX 0
+			textAlignY 0
+			textScale 0.375
+			textStyle 8
+			textFont 3
+			feeder 0
+			visible 1
+			exp text ( locstring( "@MPUI_X_N" , getplayerdata( "awards" , tablelookupbyrow( "mp/awardTable.csv" , 3 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) ) )  )
+			visible when ( ( tablelookupbyrow( "mp/awardTable.csv" , 3 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) != "" ) && getplayerdata( "awards" , tablelookupbyrow( "mp/awardTable.csv" , 3 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) ) > 0  )
+		}
+		itemDef
+		{
+			name highlightImage1_1
+			rect -157.238 127.333 81.3333 81.3333 2 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background highlight_selected
+			execKeyInt 30
+			{
+				if ( 1 == 0  )
+				{
+					if ( localvarint( "ui_pageIndex" )  )
+					{
+						setLocalVarInt ui_pageIndex 6;
+						"setFocus" "highlightImage1_5";
+					}
+				}
+				if ( 1 == 1  )
+				{
+					"setFocus" "highlightImage1_0";
+				}
+				if ( 1 == 2  )
+				{
+					"setFocus" "highlightImage1_1";
+				}
+				if ( 1 == 3  )
+				{
+					"setFocus" "highlightImage1_2";
+				}
+				if ( 1 == 4  )
+				{
+					"setFocus" "highlightImage1_3";
+				}
+				if ( 1 == 5  )
+				{
+					"setFocus" "highlightImage1_4";
+				}
+			}
+			execKeyInt 31
+			{
+				if ( 1 == 0  )
+				{
+					"setFocus" "highlightImage1_1";
+				}
+				if ( 1 == 1  )
+				{
+					"setFocus" "highlightImage1_2";
+				}
+				if ( 1 == 2  )
+				{
+					"setFocus" "highlightImage1_3";
+				}
+				if ( 1 == 3  )
+				{
+					"setFocus" "highlightImage1_4";
+				}
+				if ( 1 == 4  )
+				{
+					"setFocus" "highlightImage1_5";
+				}
+				if ( 1 == 5  )
+				{
+					if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" )  )
+					{
+						setLocalVarInt ui_pageIndex 6;
+						"setFocus" "highlightImage1_0";
+					}
+				}
+			}
+			execKeyInt 22
+			{
+				if ( 1 == 0  )
+				{
+					if ( localvarint( "ui_pageIndex" )  )
+					{
+						setLocalVarInt ui_pageIndex 6;
+						"setFocus" "highlightImage1_5";
+					}
+				}
+				if ( 1 == 1  )
+				{
+					"setFocus" "highlightImage1_0";
+				}
+				if ( 1 == 2  )
+				{
+					"setFocus" "highlightImage1_1";
+				}
+				if ( 1 == 3  )
+				{
+					"setFocus" "highlightImage1_2";
+				}
+				if ( 1 == 4  )
+				{
+					"setFocus" "highlightImage1_3";
+				}
+				if ( 1 == 5  )
+				{
+					"setFocus" "highlightImage1_4";
+				}
+			}
+			execKeyInt 23
+			{
+				if ( 1 == 0  )
+				{
+					"setFocus" "highlightImage1_1";
+				}
+				if ( 1 == 1  )
+				{
+					"setFocus" "highlightImage1_2";
+				}
+				if ( 1 == 2  )
+				{
+					"setFocus" "highlightImage1_3";
+				}
+				if ( 1 == 3  )
+				{
+					"setFocus" "highlightImage1_4";
+				}
+				if ( 1 == 4  )
+				{
+					"setFocus" "highlightImage1_5";
+				}
+				if ( 1 == 5  )
+				{
+					if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" )  )
+					{
+						setLocalVarInt ui_pageIndex 6;
+						"setFocus" "highlightImage1_0";
+					}
+				}
+			}
+			execKey "ú"
+			{
+				if ( localvarint( "ui_pageIndex" )  )
+				{
+					setLocalVarInt ui_pageIndex 6;
+				}
+				"setFocus" "highlightImage1_1";
+			}
+			execKey "ù"
+			{
+				if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" )  )
+				{
+					setLocalVarInt ui_pageIndex 6;
+				}
+				"setFocus" "highlightImage1_1";
+			}
+			execKey "π"
+			{
+				if ( localvarint( "ui_pageIndex" )  )
+				{
+					setLocalVarInt ui_pageIndex 6;
+				}
+				"setFocus" "highlightImage1_1";
+			}
+			execKey "∫"
+			{
+				if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" )  )
+				{
+					setLocalVarInt ui_pageIndex 6;
+				}
+				"setFocus" "highlightImage1_1";
+			}
+			type 1
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			onFocus
+			{
+				setLocalVarInt ui_highlightIndex 10;
+				"play" "mouse_over";
+			}
+			action
+			{
+				"play" "mouse_click";
+			}
+			visible when ( ( tablelookupbyrow( "mp/awardTable.csv" , 4 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) != "" )  )
+			exp   ( 0.450000 + ( tablelookupbyrow( "mp/awardTable.csv" , 4 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) != "" )  )
+			exp   ( 0.450000 + ( tablelookupbyrow( "mp/awardTable.csv" , 4 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) != "" )  )
+			exp   ( ( getfocuseditemname( ) == "highlightImage1_1" ) * ( ( sin milliseconds( ) / 150 ) * 0.500000 + 0.500000 ) * 0.500000 + 0.500000 )  )
+		}
+		itemDef
+		{
+			rect -148.571 136 64 64 2 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background award_locked
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( ( tablelookupbyrow( "mp/awardTable.csv" , 4 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) != "" ) && getplayerdata( "awards" , tablelookupbyrow( "mp/awardTable.csv" , 4 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) ) == 0  )
+		}
+		itemDef
+		{
+			rect -148.571 136 64 64 2 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material tablelookup( "mp/awardTable.csv" , 1 , tablelookupbyrow( "mp/awardTable.csv" , 4 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) , 2  )
+			visible when ( ( tablelookupbyrow( "mp/awardTable.csv" , 4 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) != "" ) && getplayerdata( "awards" , tablelookupbyrow( "mp/awardTable.csv" , 4 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) ) > 0  )
+		}
+		itemDef
+		{
+			rect -148.571 136 64 64 2 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 14
+			textAlignX 0
+			textAlignY 0
+			textScale 0.375
+			textStyle 8
+			textFont 3
+			feeder 0
+			visible 1
+			exp text ( locstring( "@MPUI_X_N" , getplayerdata( "awards" , tablelookupbyrow( "mp/awardTable.csv" , 4 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) ) )  )
+			visible when ( ( tablelookupbyrow( "mp/awardTable.csv" , 4 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) != "" ) && getplayerdata( "awards" , tablelookupbyrow( "mp/awardTable.csv" , 4 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) ) > 0  )
+		}
+		itemDef
+		{
+			name highlightImage2_1
+			rect -157.238 203.333 81.3333 81.3333 2 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background highlight_selected
+			execKeyInt 30
+			{
+				if ( 1 == 0  )
+				{
+					if ( localvarint( "ui_pageIndex" )  )
+					{
+						setLocalVarInt ui_pageIndex 6;
+						"setFocus" "highlightImage2_5";
+					}
+				}
+				if ( 1 == 1  )
+				{
+					"setFocus" "highlightImage2_0";
+				}
+				if ( 1 == 2  )
+				{
+					"setFocus" "highlightImage2_1";
+				}
+				if ( 1 == 3  )
+				{
+					"setFocus" "highlightImage2_2";
+				}
+				if ( 1 == 4  )
+				{
+					"setFocus" "highlightImage2_3";
+				}
+				if ( 1 == 5  )
+				{
+					"setFocus" "highlightImage2_4";
+				}
+			}
+			execKeyInt 31
+			{
+				if ( 1 == 0  )
+				{
+					"setFocus" "highlightImage2_1";
+				}
+				if ( 1 == 1  )
+				{
+					"setFocus" "highlightImage2_2";
+				}
+				if ( 1 == 2  )
+				{
+					"setFocus" "highlightImage2_3";
+				}
+				if ( 1 == 3  )
+				{
+					"setFocus" "highlightImage2_4";
+				}
+				if ( 1 == 4  )
+				{
+					"setFocus" "highlightImage2_5";
+				}
+				if ( 1 == 5  )
+				{
+					if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" )  )
+					{
+						setLocalVarInt ui_pageIndex 6;
+						"setFocus" "highlightImage2_0";
+					}
+				}
+			}
+			execKeyInt 22
+			{
+				if ( 1 == 0  )
+				{
+					if ( localvarint( "ui_pageIndex" )  )
+					{
+						setLocalVarInt ui_pageIndex 6;
+						"setFocus" "highlightImage2_5";
+					}
+				}
+				if ( 1 == 1  )
+				{
+					"setFocus" "highlightImage2_0";
+				}
+				if ( 1 == 2  )
+				{
+					"setFocus" "highlightImage2_1";
+				}
+				if ( 1 == 3  )
+				{
+					"setFocus" "highlightImage2_2";
+				}
+				if ( 1 == 4  )
+				{
+					"setFocus" "highlightImage2_3";
+				}
+				if ( 1 == 5  )
+				{
+					"setFocus" "highlightImage2_4";
+				}
+			}
+			execKeyInt 23
+			{
+				if ( 1 == 0  )
+				{
+					"setFocus" "highlightImage2_1";
+				}
+				if ( 1 == 1  )
+				{
+					"setFocus" "highlightImage2_2";
+				}
+				if ( 1 == 2  )
+				{
+					"setFocus" "highlightImage2_3";
+				}
+				if ( 1 == 3  )
+				{
+					"setFocus" "highlightImage2_4";
+				}
+				if ( 1 == 4  )
+				{
+					"setFocus" "highlightImage2_5";
+				}
+				if ( 1 == 5  )
+				{
+					if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" )  )
+					{
+						setLocalVarInt ui_pageIndex 6;
+						"setFocus" "highlightImage2_0";
+					}
+				}
+			}
+			execKey "ú"
+			{
+				if ( localvarint( "ui_pageIndex" )  )
+				{
+					setLocalVarInt ui_pageIndex 6;
+				}
+				"setFocus" "highlightImage2_1";
+			}
+			execKey "ù"
+			{
+				if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" )  )
+				{
+					setLocalVarInt ui_pageIndex 6;
+				}
+				"setFocus" "highlightImage2_1";
+			}
+			execKey "π"
+			{
+				if ( localvarint( "ui_pageIndex" )  )
+				{
+					setLocalVarInt ui_pageIndex 6;
+				}
+				"setFocus" "highlightImage2_1";
+			}
+			execKey "∫"
+			{
+				if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" )  )
+				{
+					setLocalVarInt ui_pageIndex 6;
+				}
+				"setFocus" "highlightImage2_1";
+			}
+			type 1
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			onFocus
+			{
+				setLocalVarInt ui_highlightIndex 10;
+				"play" "mouse_over";
+			}
+			action
+			{
+				"play" "mouse_click";
+			}
+			visible when ( ( tablelookupbyrow( "mp/awardTable.csv" , 5 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) != "" )  )
+			exp   ( 0.450000 + ( tablelookupbyrow( "mp/awardTable.csv" , 5 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) != "" )  )
+			exp   ( 0.450000 + ( tablelookupbyrow( "mp/awardTable.csv" , 5 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) != "" )  )
+			exp   ( ( getfocuseditemname( ) == "highlightImage2_1" ) * ( ( sin milliseconds( ) / 150 ) * 0.500000 + 0.500000 ) * 0.500000 + 0.500000 )  )
+		}
+		itemDef
+		{
+			rect -148.571 212 64 64 2 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background award_locked
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( ( tablelookupbyrow( "mp/awardTable.csv" , 5 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) != "" ) && getplayerdata( "awards" , tablelookupbyrow( "mp/awardTable.csv" , 5 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) ) == 0  )
+		}
+		itemDef
+		{
+			rect -148.571 212 64 64 2 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material tablelookup( "mp/awardTable.csv" , 1 , tablelookupbyrow( "mp/awardTable.csv" , 5 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) , 2  )
+			visible when ( ( tablelookupbyrow( "mp/awardTable.csv" , 5 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) != "" ) && getplayerdata( "awards" , tablelookupbyrow( "mp/awardTable.csv" , 5 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) ) > 0  )
+		}
+		itemDef
+		{
+			rect -148.571 212 64 64 2 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 14
+			textAlignX 0
+			textAlignY 0
+			textScale 0.375
+			textStyle 8
+			textFont 3
+			feeder 0
+			visible 1
+			exp text ( locstring( "@MPUI_X_N" , getplayerdata( "awards" , tablelookupbyrow( "mp/awardTable.csv" , 5 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) ) )  )
+			visible when ( ( tablelookupbyrow( "mp/awardTable.csv" , 5 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) != "" ) && getplayerdata( "awards" , tablelookupbyrow( "mp/awardTable.csv" , 5 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) ) > 0  )
+		}
+		itemDef
+		{
+			name highlightImage0_2
+			rect -79.5238 51.3333 81.3333 81.3333 2 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background highlight_selected
+			execKeyInt 30
+			{
+				if ( 2 == 0  )
+				{
+					if ( localvarint( "ui_pageIndex" )  )
+					{
+						setLocalVarInt ui_pageIndex 6;
+						"setFocus" "highlightImage0_5";
+					}
+				}
+				if ( 2 == 1  )
+				{
+					"setFocus" "highlightImage0_0";
+				}
+				if ( 2 == 2  )
+				{
+					"setFocus" "highlightImage0_1";
+				}
+				if ( 2 == 3  )
+				{
+					"setFocus" "highlightImage0_2";
+				}
+				if ( 2 == 4  )
+				{
+					"setFocus" "highlightImage0_3";
+				}
+				if ( 2 == 5  )
+				{
+					"setFocus" "highlightImage0_4";
+				}
+			}
+			execKeyInt 31
+			{
+				if ( 2 == 0  )
+				{
+					"setFocus" "highlightImage0_1";
+				}
+				if ( 2 == 1  )
+				{
+					"setFocus" "highlightImage0_2";
+				}
+				if ( 2 == 2  )
+				{
+					"setFocus" "highlightImage0_3";
+				}
+				if ( 2 == 3  )
+				{
+					"setFocus" "highlightImage0_4";
+				}
+				if ( 2 == 4  )
+				{
+					"setFocus" "highlightImage0_5";
+				}
+				if ( 2 == 5  )
+				{
+					if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" )  )
+					{
+						setLocalVarInt ui_pageIndex 6;
+						"setFocus" "highlightImage0_0";
+					}
+				}
+			}
+			execKeyInt 22
+			{
+				if ( 2 == 0  )
+				{
+					if ( localvarint( "ui_pageIndex" )  )
+					{
+						setLocalVarInt ui_pageIndex 6;
+						"setFocus" "highlightImage0_5";
+					}
+				}
+				if ( 2 == 1  )
+				{
+					"setFocus" "highlightImage0_0";
+				}
+				if ( 2 == 2  )
+				{
+					"setFocus" "highlightImage0_1";
+				}
+				if ( 2 == 3  )
+				{
+					"setFocus" "highlightImage0_2";
+				}
+				if ( 2 == 4  )
+				{
+					"setFocus" "highlightImage0_3";
+				}
+				if ( 2 == 5  )
+				{
+					"setFocus" "highlightImage0_4";
+				}
+			}
+			execKeyInt 23
+			{
+				if ( 2 == 0  )
+				{
+					"setFocus" "highlightImage0_1";
+				}
+				if ( 2 == 1  )
+				{
+					"setFocus" "highlightImage0_2";
+				}
+				if ( 2 == 2  )
+				{
+					"setFocus" "highlightImage0_3";
+				}
+				if ( 2 == 3  )
+				{
+					"setFocus" "highlightImage0_4";
+				}
+				if ( 2 == 4  )
+				{
+					"setFocus" "highlightImage0_5";
+				}
+				if ( 2 == 5  )
+				{
+					if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" )  )
+					{
+						setLocalVarInt ui_pageIndex 6;
+						"setFocus" "highlightImage0_0";
+					}
+				}
+			}
+			execKey "ú"
+			{
+				if ( localvarint( "ui_pageIndex" )  )
+				{
+					setLocalVarInt ui_pageIndex 6;
+				}
+				"setFocus" "highlightImage0_2";
+			}
+			execKey "ù"
+			{
+				if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" )  )
+				{
+					setLocalVarInt ui_pageIndex 6;
+				}
+				"setFocus" "highlightImage0_2";
+			}
+			execKey "π"
+			{
+				if ( localvarint( "ui_pageIndex" )  )
+				{
+					setLocalVarInt ui_pageIndex 6;
+				}
+				"setFocus" "highlightImage0_2";
+			}
+			execKey "∫"
+			{
+				if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" )  )
+				{
+					setLocalVarInt ui_pageIndex 6;
+				}
+				"setFocus" "highlightImage0_2";
+			}
+			type 1
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			onFocus
+			{
+				setLocalVarInt ui_highlightIndex 10;
+				"play" "mouse_over";
+			}
+			action
+			{
+				"play" "mouse_click";
+			}
+			visible when ( ( tablelookupbyrow( "mp/awardTable.csv" , 6 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) != "" )  )
+			exp   ( 0.450000 + ( tablelookupbyrow( "mp/awardTable.csv" , 6 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) != "" )  )
+			exp   ( 0.450000 + ( tablelookupbyrow( "mp/awardTable.csv" , 6 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) != "" )  )
+			exp   ( ( getfocuseditemname( ) == "highlightImage0_2" ) * ( ( sin milliseconds( ) / 150 ) * 0.500000 + 0.500000 ) * 0.500000 + 0.500000 )  )
+		}
+		itemDef
+		{
+			rect -70.8571 60 64 64 2 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background award_locked
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( ( tablelookupbyrow( "mp/awardTable.csv" , 6 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) != "" ) && getplayerdata( "awards" , tablelookupbyrow( "mp/awardTable.csv" , 6 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) ) == 0  )
+		}
+		itemDef
+		{
+			rect -70.8571 60 64 64 2 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material tablelookup( "mp/awardTable.csv" , 1 , tablelookupbyrow( "mp/awardTable.csv" , 6 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) , 2  )
+			visible when ( ( tablelookupbyrow( "mp/awardTable.csv" , 6 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) != "" ) && getplayerdata( "awards" , tablelookupbyrow( "mp/awardTable.csv" , 6 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) ) > 0  )
+		}
+		itemDef
+		{
+			rect -70.8571 60 64 64 2 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 14
+			textAlignX 0
+			textAlignY 0
+			textScale 0.375
+			textStyle 8
+			textFont 3
+			feeder 0
+			visible 1
+			exp text ( locstring( "@MPUI_X_N" , getplayerdata( "awards" , tablelookupbyrow( "mp/awardTable.csv" , 6 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) ) )  )
+			visible when ( ( tablelookupbyrow( "mp/awardTable.csv" , 6 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) != "" ) && getplayerdata( "awards" , tablelookupbyrow( "mp/awardTable.csv" , 6 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) ) > 0  )
+		}
+		itemDef
+		{
+			name highlightImage1_2
+			rect -79.5238 127.333 81.3333 81.3333 2 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background highlight_selected
+			execKeyInt 30
+			{
+				if ( 2 == 0  )
+				{
+					if ( localvarint( "ui_pageIndex" )  )
+					{
+						setLocalVarInt ui_pageIndex 6;
+						"setFocus" "highlightImage1_5";
+					}
+				}
+				if ( 2 == 1  )
+				{
+					"setFocus" "highlightImage1_0";
+				}
+				if ( 2 == 2  )
+				{
+					"setFocus" "highlightImage1_1";
+				}
+				if ( 2 == 3  )
+				{
+					"setFocus" "highlightImage1_2";
+				}
+				if ( 2 == 4  )
+				{
+					"setFocus" "highlightImage1_3";
+				}
+				if ( 2 == 5  )
+				{
+					"setFocus" "highlightImage1_4";
+				}
+			}
+			execKeyInt 31
+			{
+				if ( 2 == 0  )
+				{
+					"setFocus" "highlightImage1_1";
+				}
+				if ( 2 == 1  )
+				{
+					"setFocus" "highlightImage1_2";
+				}
+				if ( 2 == 2  )
+				{
+					"setFocus" "highlightImage1_3";
+				}
+				if ( 2 == 3  )
+				{
+					"setFocus" "highlightImage1_4";
+				}
+				if ( 2 == 4  )
+				{
+					"setFocus" "highlightImage1_5";
+				}
+				if ( 2 == 5  )
+				{
+					if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" )  )
+					{
+						setLocalVarInt ui_pageIndex 6;
+						"setFocus" "highlightImage1_0";
+					}
+				}
+			}
+			execKeyInt 22
+			{
+				if ( 2 == 0  )
+				{
+					if ( localvarint( "ui_pageIndex" )  )
+					{
+						setLocalVarInt ui_pageIndex 6;
+						"setFocus" "highlightImage1_5";
+					}
+				}
+				if ( 2 == 1  )
+				{
+					"setFocus" "highlightImage1_0";
+				}
+				if ( 2 == 2  )
+				{
+					"setFocus" "highlightImage1_1";
+				}
+				if ( 2 == 3  )
+				{
+					"setFocus" "highlightImage1_2";
+				}
+				if ( 2 == 4  )
+				{
+					"setFocus" "highlightImage1_3";
+				}
+				if ( 2 == 5  )
+				{
+					"setFocus" "highlightImage1_4";
+				}
+			}
+			execKeyInt 23
+			{
+				if ( 2 == 0  )
+				{
+					"setFocus" "highlightImage1_1";
+				}
+				if ( 2 == 1  )
+				{
+					"setFocus" "highlightImage1_2";
+				}
+				if ( 2 == 2  )
+				{
+					"setFocus" "highlightImage1_3";
+				}
+				if ( 2 == 3  )
+				{
+					"setFocus" "highlightImage1_4";
+				}
+				if ( 2 == 4  )
+				{
+					"setFocus" "highlightImage1_5";
+				}
+				if ( 2 == 5  )
+				{
+					if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" )  )
+					{
+						setLocalVarInt ui_pageIndex 6;
+						"setFocus" "highlightImage1_0";
+					}
+				}
+			}
+			execKey "ú"
+			{
+				if ( localvarint( "ui_pageIndex" )  )
+				{
+					setLocalVarInt ui_pageIndex 6;
+				}
+				"setFocus" "highlightImage1_2";
+			}
+			execKey "ù"
+			{
+				if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" )  )
+				{
+					setLocalVarInt ui_pageIndex 6;
+				}
+				"setFocus" "highlightImage1_2";
+			}
+			execKey "π"
+			{
+				if ( localvarint( "ui_pageIndex" )  )
+				{
+					setLocalVarInt ui_pageIndex 6;
+				}
+				"setFocus" "highlightImage1_2";
+			}
+			execKey "∫"
+			{
+				if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" )  )
+				{
+					setLocalVarInt ui_pageIndex 6;
+				}
+				"setFocus" "highlightImage1_2";
+			}
+			type 1
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			onFocus
+			{
+				setLocalVarInt ui_highlightIndex 10;
+				"play" "mouse_over";
+			}
+			action
+			{
+				"play" "mouse_click";
+			}
+			visible when ( ( tablelookupbyrow( "mp/awardTable.csv" , 7 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) != "" )  )
+			exp   ( 0.450000 + ( tablelookupbyrow( "mp/awardTable.csv" , 7 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) != "" )  )
+			exp   ( 0.450000 + ( tablelookupbyrow( "mp/awardTable.csv" , 7 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) != "" )  )
+			exp   ( ( getfocuseditemname( ) == "highlightImage1_2" ) * ( ( sin milliseconds( ) / 150 ) * 0.500000 + 0.500000 ) * 0.500000 + 0.500000 )  )
+		}
+		itemDef
+		{
+			rect -70.8571 136 64 64 2 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background award_locked
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( ( tablelookupbyrow( "mp/awardTable.csv" , 7 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) != "" ) && getplayerdata( "awards" , tablelookupbyrow( "mp/awardTable.csv" , 7 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) ) == 0  )
+		}
+		itemDef
+		{
+			rect -70.8571 136 64 64 2 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material tablelookup( "mp/awardTable.csv" , 1 , tablelookupbyrow( "mp/awardTable.csv" , 7 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) , 2  )
+			visible when ( ( tablelookupbyrow( "mp/awardTable.csv" , 7 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) != "" ) && getplayerdata( "awards" , tablelookupbyrow( "mp/awardTable.csv" , 7 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) ) > 0  )
+		}
+		itemDef
+		{
+			rect -70.8571 136 64 64 2 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 14
+			textAlignX 0
+			textAlignY 0
+			textScale 0.375
+			textStyle 8
+			textFont 3
+			feeder 0
+			visible 1
+			exp text ( locstring( "@MPUI_X_N" , getplayerdata( "awards" , tablelookupbyrow( "mp/awardTable.csv" , 7 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) ) )  )
+			visible when ( ( tablelookupbyrow( "mp/awardTable.csv" , 7 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) != "" ) && getplayerdata( "awards" , tablelookupbyrow( "mp/awardTable.csv" , 7 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) ) > 0  )
+		}
+		itemDef
+		{
+			name highlightImage2_2
+			rect -79.5238 203.333 81.3333 81.3333 2 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background highlight_selected
+			execKeyInt 30
+			{
+				if ( 2 == 0  )
+				{
+					if ( localvarint( "ui_pageIndex" )  )
+					{
+						setLocalVarInt ui_pageIndex 6;
+						"setFocus" "highlightImage2_5";
+					}
+				}
+				if ( 2 == 1  )
+				{
+					"setFocus" "highlightImage2_0";
+				}
+				if ( 2 == 2  )
+				{
+					"setFocus" "highlightImage2_1";
+				}
+				if ( 2 == 3  )
+				{
+					"setFocus" "highlightImage2_2";
+				}
+				if ( 2 == 4  )
+				{
+					"setFocus" "highlightImage2_3";
+				}
+				if ( 2 == 5  )
+				{
+					"setFocus" "highlightImage2_4";
+				}
+			}
+			execKeyInt 31
+			{
+				if ( 2 == 0  )
+				{
+					"setFocus" "highlightImage2_1";
+				}
+				if ( 2 == 1  )
+				{
+					"setFocus" "highlightImage2_2";
+				}
+				if ( 2 == 2  )
+				{
+					"setFocus" "highlightImage2_3";
+				}
+				if ( 2 == 3  )
+				{
+					"setFocus" "highlightImage2_4";
+				}
+				if ( 2 == 4  )
+				{
+					"setFocus" "highlightImage2_5";
+				}
+				if ( 2 == 5  )
+				{
+					if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" )  )
+					{
+						setLocalVarInt ui_pageIndex 6;
+						"setFocus" "highlightImage2_0";
+					}
+				}
+			}
+			execKeyInt 22
+			{
+				if ( 2 == 0  )
+				{
+					if ( localvarint( "ui_pageIndex" )  )
+					{
+						setLocalVarInt ui_pageIndex 6;
+						"setFocus" "highlightImage2_5";
+					}
+				}
+				if ( 2 == 1  )
+				{
+					"setFocus" "highlightImage2_0";
+				}
+				if ( 2 == 2  )
+				{
+					"setFocus" "highlightImage2_1";
+				}
+				if ( 2 == 3  )
+				{
+					"setFocus" "highlightImage2_2";
+				}
+				if ( 2 == 4  )
+				{
+					"setFocus" "highlightImage2_3";
+				}
+				if ( 2 == 5  )
+				{
+					"setFocus" "highlightImage2_4";
+				}
+			}
+			execKeyInt 23
+			{
+				if ( 2 == 0  )
+				{
+					"setFocus" "highlightImage2_1";
+				}
+				if ( 2 == 1  )
+				{
+					"setFocus" "highlightImage2_2";
+				}
+				if ( 2 == 2  )
+				{
+					"setFocus" "highlightImage2_3";
+				}
+				if ( 2 == 3  )
+				{
+					"setFocus" "highlightImage2_4";
+				}
+				if ( 2 == 4  )
+				{
+					"setFocus" "highlightImage2_5";
+				}
+				if ( 2 == 5  )
+				{
+					if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" )  )
+					{
+						setLocalVarInt ui_pageIndex 6;
+						"setFocus" "highlightImage2_0";
+					}
+				}
+			}
+			execKey "ú"
+			{
+				if ( localvarint( "ui_pageIndex" )  )
+				{
+					setLocalVarInt ui_pageIndex 6;
+				}
+				"setFocus" "highlightImage2_2";
+			}
+			execKey "ù"
+			{
+				if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" )  )
+				{
+					setLocalVarInt ui_pageIndex 6;
+				}
+				"setFocus" "highlightImage2_2";
+			}
+			execKey "π"
+			{
+				if ( localvarint( "ui_pageIndex" )  )
+				{
+					setLocalVarInt ui_pageIndex 6;
+				}
+				"setFocus" "highlightImage2_2";
+			}
+			execKey "∫"
+			{
+				if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" )  )
+				{
+					setLocalVarInt ui_pageIndex 6;
+				}
+				"setFocus" "highlightImage2_2";
+			}
+			type 1
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			onFocus
+			{
+				setLocalVarInt ui_highlightIndex 10;
+				"play" "mouse_over";
+			}
+			action
+			{
+				"play" "mouse_click";
+			}
+			visible when ( ( tablelookupbyrow( "mp/awardTable.csv" , 8 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) != "" )  )
+			exp   ( 0.450000 + ( tablelookupbyrow( "mp/awardTable.csv" , 8 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) != "" )  )
+			exp   ( 0.450000 + ( tablelookupbyrow( "mp/awardTable.csv" , 8 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) != "" )  )
+			exp   ( ( getfocuseditemname( ) == "highlightImage2_2" ) * ( ( sin milliseconds( ) / 150 ) * 0.500000 + 0.500000 ) * 0.500000 + 0.500000 )  )
+		}
+		itemDef
+		{
+			rect -70.8571 212 64 64 2 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background award_locked
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( ( tablelookupbyrow( "mp/awardTable.csv" , 8 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) != "" ) && getplayerdata( "awards" , tablelookupbyrow( "mp/awardTable.csv" , 8 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) ) == 0  )
+		}
+		itemDef
+		{
+			rect -70.8571 212 64 64 2 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material tablelookup( "mp/awardTable.csv" , 1 , tablelookupbyrow( "mp/awardTable.csv" , 8 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) , 2  )
+			visible when ( ( tablelookupbyrow( "mp/awardTable.csv" , 8 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) != "" ) && getplayerdata( "awards" , tablelookupbyrow( "mp/awardTable.csv" , 8 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) ) > 0  )
+		}
+		itemDef
+		{
+			rect -70.8571 212 64 64 2 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 14
+			textAlignX 0
+			textAlignY 0
+			textScale 0.375
+			textStyle 8
+			textFont 3
+			feeder 0
+			visible 1
+			exp text ( locstring( "@MPUI_X_N" , getplayerdata( "awards" , tablelookupbyrow( "mp/awardTable.csv" , 8 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) ) )  )
+			visible when ( ( tablelookupbyrow( "mp/awardTable.csv" , 8 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) != "" ) && getplayerdata( "awards" , tablelookupbyrow( "mp/awardTable.csv" , 8 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) ) > 0  )
+		}
+		itemDef
+		{
+			name highlightImage0_3
+			rect -1.80952 51.3333 81.3333 81.3333 2 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background highlight_selected
+			execKeyInt 30
+			{
+				if ( 3 == 0  )
+				{
+					if ( localvarint( "ui_pageIndex" )  )
+					{
+						setLocalVarInt ui_pageIndex 6;
+						"setFocus" "highlightImage0_5";
+					}
+				}
+				if ( 3 == 1  )
+				{
+					"setFocus" "highlightImage0_0";
+				}
+				if ( 3 == 2  )
+				{
+					"setFocus" "highlightImage0_1";
+				}
+				if ( 3 == 3  )
+				{
+					"setFocus" "highlightImage0_2";
+				}
+				if ( 3 == 4  )
+				{
+					"setFocus" "highlightImage0_3";
+				}
+				if ( 3 == 5  )
+				{
+					"setFocus" "highlightImage0_4";
+				}
+			}
+			execKeyInt 31
+			{
+				if ( 3 == 0  )
+				{
+					"setFocus" "highlightImage0_1";
+				}
+				if ( 3 == 1  )
+				{
+					"setFocus" "highlightImage0_2";
+				}
+				if ( 3 == 2  )
+				{
+					"setFocus" "highlightImage0_3";
+				}
+				if ( 3 == 3  )
+				{
+					"setFocus" "highlightImage0_4";
+				}
+				if ( 3 == 4  )
+				{
+					"setFocus" "highlightImage0_5";
+				}
+				if ( 3 == 5  )
+				{
+					if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" )  )
+					{
+						setLocalVarInt ui_pageIndex 6;
+						"setFocus" "highlightImage0_0";
+					}
+				}
+			}
+			execKeyInt 22
+			{
+				if ( 3 == 0  )
+				{
+					if ( localvarint( "ui_pageIndex" )  )
+					{
+						setLocalVarInt ui_pageIndex 6;
+						"setFocus" "highlightImage0_5";
+					}
+				}
+				if ( 3 == 1  )
+				{
+					"setFocus" "highlightImage0_0";
+				}
+				if ( 3 == 2  )
+				{
+					"setFocus" "highlightImage0_1";
+				}
+				if ( 3 == 3  )
+				{
+					"setFocus" "highlightImage0_2";
+				}
+				if ( 3 == 4  )
+				{
+					"setFocus" "highlightImage0_3";
+				}
+				if ( 3 == 5  )
+				{
+					"setFocus" "highlightImage0_4";
+				}
+			}
+			execKeyInt 23
+			{
+				if ( 3 == 0  )
+				{
+					"setFocus" "highlightImage0_1";
+				}
+				if ( 3 == 1  )
+				{
+					"setFocus" "highlightImage0_2";
+				}
+				if ( 3 == 2  )
+				{
+					"setFocus" "highlightImage0_3";
+				}
+				if ( 3 == 3  )
+				{
+					"setFocus" "highlightImage0_4";
+				}
+				if ( 3 == 4  )
+				{
+					"setFocus" "highlightImage0_5";
+				}
+				if ( 3 == 5  )
+				{
+					if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" )  )
+					{
+						setLocalVarInt ui_pageIndex 6;
+						"setFocus" "highlightImage0_0";
+					}
+				}
+			}
+			execKey "ú"
+			{
+				if ( localvarint( "ui_pageIndex" )  )
+				{
+					setLocalVarInt ui_pageIndex 6;
+				}
+				"setFocus" "highlightImage0_3";
+			}
+			execKey "ù"
+			{
+				if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" )  )
+				{
+					setLocalVarInt ui_pageIndex 6;
+				}
+				"setFocus" "highlightImage0_3";
+			}
+			execKey "π"
+			{
+				if ( localvarint( "ui_pageIndex" )  )
+				{
+					setLocalVarInt ui_pageIndex 6;
+				}
+				"setFocus" "highlightImage0_3";
+			}
+			execKey "∫"
+			{
+				if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" )  )
+				{
+					setLocalVarInt ui_pageIndex 6;
+				}
+				"setFocus" "highlightImage0_3";
+			}
+			type 1
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			onFocus
+			{
+				setLocalVarInt ui_highlightIndex 10;
+				"play" "mouse_over";
+			}
+			action
+			{
+				"play" "mouse_click";
+			}
+			visible when ( ( tablelookupbyrow( "mp/awardTable.csv" , 9 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) != "" )  )
+			exp   ( 0.450000 + ( tablelookupbyrow( "mp/awardTable.csv" , 9 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) != "" )  )
+			exp   ( 0.450000 + ( tablelookupbyrow( "mp/awardTable.csv" , 9 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) != "" )  )
+			exp   ( ( getfocuseditemname( ) == "highlightImage0_3" ) * ( ( sin milliseconds( ) / 150 ) * 0.500000 + 0.500000 ) * 0.500000 + 0.500000 )  )
+		}
+		itemDef
+		{
+			rect 6.85714 60 64 64 2 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background award_locked
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( ( tablelookupbyrow( "mp/awardTable.csv" , 9 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) != "" ) && getplayerdata( "awards" , tablelookupbyrow( "mp/awardTable.csv" , 9 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) ) == 0  )
+		}
+		itemDef
+		{
+			rect 6.85714 60 64 64 2 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material tablelookup( "mp/awardTable.csv" , 1 , tablelookupbyrow( "mp/awardTable.csv" , 9 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) , 2  )
+			visible when ( ( tablelookupbyrow( "mp/awardTable.csv" , 9 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) != "" ) && getplayerdata( "awards" , tablelookupbyrow( "mp/awardTable.csv" , 9 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) ) > 0  )
+		}
+		itemDef
+		{
+			rect 6.85714 60 64 64 2 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 14
+			textAlignX 0
+			textAlignY 0
+			textScale 0.375
+			textStyle 8
+			textFont 3
+			feeder 0
+			visible 1
+			exp text ( locstring( "@MPUI_X_N" , getplayerdata( "awards" , tablelookupbyrow( "mp/awardTable.csv" , 9 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) ) )  )
+			visible when ( ( tablelookupbyrow( "mp/awardTable.csv" , 9 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) != "" ) && getplayerdata( "awards" , tablelookupbyrow( "mp/awardTable.csv" , 9 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) ) > 0  )
+		}
+		itemDef
+		{
+			name highlightImage1_3
+			rect -1.80952 127.333 81.3333 81.3333 2 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background highlight_selected
+			execKeyInt 30
+			{
+				if ( 3 == 0  )
+				{
+					if ( localvarint( "ui_pageIndex" )  )
+					{
+						setLocalVarInt ui_pageIndex 6;
+						"setFocus" "highlightImage1_5";
+					}
+				}
+				if ( 3 == 1  )
+				{
+					"setFocus" "highlightImage1_0";
+				}
+				if ( 3 == 2  )
+				{
+					"setFocus" "highlightImage1_1";
+				}
+				if ( 3 == 3  )
+				{
+					"setFocus" "highlightImage1_2";
+				}
+				if ( 3 == 4  )
+				{
+					"setFocus" "highlightImage1_3";
+				}
+				if ( 3 == 5  )
+				{
+					"setFocus" "highlightImage1_4";
+				}
+			}
+			execKeyInt 31
+			{
+				if ( 3 == 0  )
+				{
+					"setFocus" "highlightImage1_1";
+				}
+				if ( 3 == 1  )
+				{
+					"setFocus" "highlightImage1_2";
+				}
+				if ( 3 == 2  )
+				{
+					"setFocus" "highlightImage1_3";
+				}
+				if ( 3 == 3  )
+				{
+					"setFocus" "highlightImage1_4";
+				}
+				if ( 3 == 4  )
+				{
+					"setFocus" "highlightImage1_5";
+				}
+				if ( 3 == 5  )
+				{
+					if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" )  )
+					{
+						setLocalVarInt ui_pageIndex 6;
+						"setFocus" "highlightImage1_0";
+					}
+				}
+			}
+			execKeyInt 22
+			{
+				if ( 3 == 0  )
+				{
+					if ( localvarint( "ui_pageIndex" )  )
+					{
+						setLocalVarInt ui_pageIndex 6;
+						"setFocus" "highlightImage1_5";
+					}
+				}
+				if ( 3 == 1  )
+				{
+					"setFocus" "highlightImage1_0";
+				}
+				if ( 3 == 2  )
+				{
+					"setFocus" "highlightImage1_1";
+				}
+				if ( 3 == 3  )
+				{
+					"setFocus" "highlightImage1_2";
+				}
+				if ( 3 == 4  )
+				{
+					"setFocus" "highlightImage1_3";
+				}
+				if ( 3 == 5  )
+				{
+					"setFocus" "highlightImage1_4";
+				}
+			}
+			execKeyInt 23
+			{
+				if ( 3 == 0  )
+				{
+					"setFocus" "highlightImage1_1";
+				}
+				if ( 3 == 1  )
+				{
+					"setFocus" "highlightImage1_2";
+				}
+				if ( 3 == 2  )
+				{
+					"setFocus" "highlightImage1_3";
+				}
+				if ( 3 == 3  )
+				{
+					"setFocus" "highlightImage1_4";
+				}
+				if ( 3 == 4  )
+				{
+					"setFocus" "highlightImage1_5";
+				}
+				if ( 3 == 5  )
+				{
+					if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" )  )
+					{
+						setLocalVarInt ui_pageIndex 6;
+						"setFocus" "highlightImage1_0";
+					}
+				}
+			}
+			execKey "ú"
+			{
+				if ( localvarint( "ui_pageIndex" )  )
+				{
+					setLocalVarInt ui_pageIndex 6;
+				}
+				"setFocus" "highlightImage1_3";
+			}
+			execKey "ù"
+			{
+				if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" )  )
+				{
+					setLocalVarInt ui_pageIndex 6;
+				}
+				"setFocus" "highlightImage1_3";
+			}
+			execKey "π"
+			{
+				if ( localvarint( "ui_pageIndex" )  )
+				{
+					setLocalVarInt ui_pageIndex 6;
+				}
+				"setFocus" "highlightImage1_3";
+			}
+			execKey "∫"
+			{
+				if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" )  )
+				{
+					setLocalVarInt ui_pageIndex 6;
+				}
+				"setFocus" "highlightImage1_3";
+			}
+			type 1
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			onFocus
+			{
+				setLocalVarInt ui_highlightIndex 10;
+				"play" "mouse_over";
+			}
+			action
+			{
+				"play" "mouse_click";
+			}
+			visible when ( ( tablelookupbyrow( "mp/awardTable.csv" , 10 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) != "" )  )
+			exp   ( 0.450000 + ( tablelookupbyrow( "mp/awardTable.csv" , 10 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) != "" )  )
+			exp   ( 0.450000 + ( tablelookupbyrow( "mp/awardTable.csv" , 10 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) != "" )  )
+			exp   ( ( getfocuseditemname( ) == "highlightImage1_3" ) * ( ( sin milliseconds( ) / 150 ) * 0.500000 + 0.500000 ) * 0.500000 + 0.500000 )  )
+		}
+		itemDef
+		{
+			rect 6.85714 136 64 64 2 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background award_locked
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( ( tablelookupbyrow( "mp/awardTable.csv" , 10 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) != "" ) && getplayerdata( "awards" , tablelookupbyrow( "mp/awardTable.csv" , 10 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) ) == 0  )
+		}
+		itemDef
+		{
+			rect 6.85714 136 64 64 2 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material tablelookup( "mp/awardTable.csv" , 1 , tablelookupbyrow( "mp/awardTable.csv" , 10 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) , 2  )
+			visible when ( ( tablelookupbyrow( "mp/awardTable.csv" , 10 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) != "" ) && getplayerdata( "awards" , tablelookupbyrow( "mp/awardTable.csv" , 10 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) ) > 0  )
+		}
+		itemDef
+		{
+			rect 6.85714 136 64 64 2 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 14
+			textAlignX 0
+			textAlignY 0
+			textScale 0.375
+			textStyle 8
+			textFont 3
+			feeder 0
+			visible 1
+			exp text ( locstring( "@MPUI_X_N" , getplayerdata( "awards" , tablelookupbyrow( "mp/awardTable.csv" , 10 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) ) )  )
+			visible when ( ( tablelookupbyrow( "mp/awardTable.csv" , 10 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) != "" ) && getplayerdata( "awards" , tablelookupbyrow( "mp/awardTable.csv" , 10 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) ) > 0  )
+		}
+		itemDef
+		{
+			name highlightImage2_3
+			rect -1.80952 203.333 81.3333 81.3333 2 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background highlight_selected
+			execKeyInt 30
+			{
+				if ( 3 == 0  )
+				{
+					if ( localvarint( "ui_pageIndex" )  )
+					{
+						setLocalVarInt ui_pageIndex 6;
+						"setFocus" "highlightImage2_5";
+					}
+				}
+				if ( 3 == 1  )
+				{
+					"setFocus" "highlightImage2_0";
+				}
+				if ( 3 == 2  )
+				{
+					"setFocus" "highlightImage2_1";
+				}
+				if ( 3 == 3  )
+				{
+					"setFocus" "highlightImage2_2";
+				}
+				if ( 3 == 4  )
+				{
+					"setFocus" "highlightImage2_3";
+				}
+				if ( 3 == 5  )
+				{
+					"setFocus" "highlightImage2_4";
+				}
+			}
+			execKeyInt 31
+			{
+				if ( 3 == 0  )
+				{
+					"setFocus" "highlightImage2_1";
+				}
+				if ( 3 == 1  )
+				{
+					"setFocus" "highlightImage2_2";
+				}
+				if ( 3 == 2  )
+				{
+					"setFocus" "highlightImage2_3";
+				}
+				if ( 3 == 3  )
+				{
+					"setFocus" "highlightImage2_4";
+				}
+				if ( 3 == 4  )
+				{
+					"setFocus" "highlightImage2_5";
+				}
+				if ( 3 == 5  )
+				{
+					if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" )  )
+					{
+						setLocalVarInt ui_pageIndex 6;
+						"setFocus" "highlightImage2_0";
+					}
+				}
+			}
+			execKeyInt 22
+			{
+				if ( 3 == 0  )
+				{
+					if ( localvarint( "ui_pageIndex" )  )
+					{
+						setLocalVarInt ui_pageIndex 6;
+						"setFocus" "highlightImage2_5";
+					}
+				}
+				if ( 3 == 1  )
+				{
+					"setFocus" "highlightImage2_0";
+				}
+				if ( 3 == 2  )
+				{
+					"setFocus" "highlightImage2_1";
+				}
+				if ( 3 == 3  )
+				{
+					"setFocus" "highlightImage2_2";
+				}
+				if ( 3 == 4  )
+				{
+					"setFocus" "highlightImage2_3";
+				}
+				if ( 3 == 5  )
+				{
+					"setFocus" "highlightImage2_4";
+				}
+			}
+			execKeyInt 23
+			{
+				if ( 3 == 0  )
+				{
+					"setFocus" "highlightImage2_1";
+				}
+				if ( 3 == 1  )
+				{
+					"setFocus" "highlightImage2_2";
+				}
+				if ( 3 == 2  )
+				{
+					"setFocus" "highlightImage2_3";
+				}
+				if ( 3 == 3  )
+				{
+					"setFocus" "highlightImage2_4";
+				}
+				if ( 3 == 4  )
+				{
+					"setFocus" "highlightImage2_5";
+				}
+				if ( 3 == 5  )
+				{
+					if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" )  )
+					{
+						setLocalVarInt ui_pageIndex 6;
+						"setFocus" "highlightImage2_0";
+					}
+				}
+			}
+			execKey "ú"
+			{
+				if ( localvarint( "ui_pageIndex" )  )
+				{
+					setLocalVarInt ui_pageIndex 6;
+				}
+				"setFocus" "highlightImage2_3";
+			}
+			execKey "ù"
+			{
+				if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" )  )
+				{
+					setLocalVarInt ui_pageIndex 6;
+				}
+				"setFocus" "highlightImage2_3";
+			}
+			execKey "π"
+			{
+				if ( localvarint( "ui_pageIndex" )  )
+				{
+					setLocalVarInt ui_pageIndex 6;
+				}
+				"setFocus" "highlightImage2_3";
+			}
+			execKey "∫"
+			{
+				if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" )  )
+				{
+					setLocalVarInt ui_pageIndex 6;
+				}
+				"setFocus" "highlightImage2_3";
+			}
+			type 1
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			onFocus
+			{
+				setLocalVarInt ui_highlightIndex 10;
+				"play" "mouse_over";
+			}
+			action
+			{
+				"play" "mouse_click";
+			}
+			visible when ( ( tablelookupbyrow( "mp/awardTable.csv" , 11 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) != "" )  )
+			exp   ( 0.450000 + ( tablelookupbyrow( "mp/awardTable.csv" , 11 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) != "" )  )
+			exp   ( 0.450000 + ( tablelookupbyrow( "mp/awardTable.csv" , 11 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) != "" )  )
+			exp   ( ( getfocuseditemname( ) == "highlightImage2_3" ) * ( ( sin milliseconds( ) / 150 ) * 0.500000 + 0.500000 ) * 0.500000 + 0.500000 )  )
+		}
+		itemDef
+		{
+			rect 6.85714 212 64 64 2 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background award_locked
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( ( tablelookupbyrow( "mp/awardTable.csv" , 11 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) != "" ) && getplayerdata( "awards" , tablelookupbyrow( "mp/awardTable.csv" , 11 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) ) == 0  )
+		}
+		itemDef
+		{
+			rect 6.85714 212 64 64 2 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material tablelookup( "mp/awardTable.csv" , 1 , tablelookupbyrow( "mp/awardTable.csv" , 11 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) , 2  )
+			visible when ( ( tablelookupbyrow( "mp/awardTable.csv" , 11 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) != "" ) && getplayerdata( "awards" , tablelookupbyrow( "mp/awardTable.csv" , 11 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) ) > 0  )
+		}
+		itemDef
+		{
+			rect 6.85714 212 64 64 2 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 14
+			textAlignX 0
+			textAlignY 0
+			textScale 0.375
+			textStyle 8
+			textFont 3
+			feeder 0
+			visible 1
+			exp text ( locstring( "@MPUI_X_N" , getplayerdata( "awards" , tablelookupbyrow( "mp/awardTable.csv" , 11 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) ) )  )
+			visible when ( ( tablelookupbyrow( "mp/awardTable.csv" , 11 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) != "" ) && getplayerdata( "awards" , tablelookupbyrow( "mp/awardTable.csv" , 11 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) ) > 0  )
+		}
+		itemDef
+		{
+			name highlightImage0_4
+			rect 75.9048 51.3333 81.3333 81.3333 2 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background highlight_selected
+			execKeyInt 30
+			{
+				if ( 4 == 0  )
+				{
+					if ( localvarint( "ui_pageIndex" )  )
+					{
+						setLocalVarInt ui_pageIndex 6;
+						"setFocus" "highlightImage0_5";
+					}
+				}
+				if ( 4 == 1  )
+				{
+					"setFocus" "highlightImage0_0";
+				}
+				if ( 4 == 2  )
+				{
+					"setFocus" "highlightImage0_1";
+				}
+				if ( 4 == 3  )
+				{
+					"setFocus" "highlightImage0_2";
+				}
+				if ( 4 == 4  )
+				{
+					"setFocus" "highlightImage0_3";
+				}
+				if ( 4 == 5  )
+				{
+					"setFocus" "highlightImage0_4";
+				}
+			}
+			execKeyInt 31
+			{
+				if ( 4 == 0  )
+				{
+					"setFocus" "highlightImage0_1";
+				}
+				if ( 4 == 1  )
+				{
+					"setFocus" "highlightImage0_2";
+				}
+				if ( 4 == 2  )
+				{
+					"setFocus" "highlightImage0_3";
+				}
+				if ( 4 == 3  )
+				{
+					"setFocus" "highlightImage0_4";
+				}
+				if ( 4 == 4  )
+				{
+					"setFocus" "highlightImage0_5";
+				}
+				if ( 4 == 5  )
+				{
+					if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" )  )
+					{
+						setLocalVarInt ui_pageIndex 6;
+						"setFocus" "highlightImage0_0";
+					}
+				}
+			}
+			execKeyInt 22
+			{
+				if ( 4 == 0  )
+				{
+					if ( localvarint( "ui_pageIndex" )  )
+					{
+						setLocalVarInt ui_pageIndex 6;
+						"setFocus" "highlightImage0_5";
+					}
+				}
+				if ( 4 == 1  )
+				{
+					"setFocus" "highlightImage0_0";
+				}
+				if ( 4 == 2  )
+				{
+					"setFocus" "highlightImage0_1";
+				}
+				if ( 4 == 3  )
+				{
+					"setFocus" "highlightImage0_2";
+				}
+				if ( 4 == 4  )
+				{
+					"setFocus" "highlightImage0_3";
+				}
+				if ( 4 == 5  )
+				{
+					"setFocus" "highlightImage0_4";
+				}
+			}
+			execKeyInt 23
+			{
+				if ( 4 == 0  )
+				{
+					"setFocus" "highlightImage0_1";
+				}
+				if ( 4 == 1  )
+				{
+					"setFocus" "highlightImage0_2";
+				}
+				if ( 4 == 2  )
+				{
+					"setFocus" "highlightImage0_3";
+				}
+				if ( 4 == 3  )
+				{
+					"setFocus" "highlightImage0_4";
+				}
+				if ( 4 == 4  )
+				{
+					"setFocus" "highlightImage0_5";
+				}
+				if ( 4 == 5  )
+				{
+					if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" )  )
+					{
+						setLocalVarInt ui_pageIndex 6;
+						"setFocus" "highlightImage0_0";
+					}
+				}
+			}
+			execKey "ú"
+			{
+				if ( localvarint( "ui_pageIndex" )  )
+				{
+					setLocalVarInt ui_pageIndex 6;
+				}
+				"setFocus" "highlightImage0_4";
+			}
+			execKey "ù"
+			{
+				if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" )  )
+				{
+					setLocalVarInt ui_pageIndex 6;
+				}
+				"setFocus" "highlightImage0_4";
+			}
+			execKey "π"
+			{
+				if ( localvarint( "ui_pageIndex" )  )
+				{
+					setLocalVarInt ui_pageIndex 6;
+				}
+				"setFocus" "highlightImage0_4";
+			}
+			execKey "∫"
+			{
+				if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" )  )
+				{
+					setLocalVarInt ui_pageIndex 6;
+				}
+				"setFocus" "highlightImage0_4";
+			}
+			type 1
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			onFocus
+			{
+				setLocalVarInt ui_highlightIndex 10;
+				"play" "mouse_over";
+			}
+			action
+			{
+				"play" "mouse_click";
+			}
+			visible when ( ( tablelookupbyrow( "mp/awardTable.csv" , 12 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) != "" )  )
+			exp   ( 0.450000 + ( tablelookupbyrow( "mp/awardTable.csv" , 12 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) != "" )  )
+			exp   ( 0.450000 + ( tablelookupbyrow( "mp/awardTable.csv" , 12 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) != "" )  )
+			exp   ( ( getfocuseditemname( ) == "highlightImage0_4" ) * ( ( sin milliseconds( ) / 150 ) * 0.500000 + 0.500000 ) * 0.500000 + 0.500000 )  )
+		}
+		itemDef
+		{
+			rect 84.5714 60 64 64 2 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background award_locked
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( ( tablelookupbyrow( "mp/awardTable.csv" , 12 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) != "" ) && getplayerdata( "awards" , tablelookupbyrow( "mp/awardTable.csv" , 12 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) ) == 0  )
+		}
+		itemDef
+		{
+			rect 84.5714 60 64 64 2 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material tablelookup( "mp/awardTable.csv" , 1 , tablelookupbyrow( "mp/awardTable.csv" , 12 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) , 2  )
+			visible when ( ( tablelookupbyrow( "mp/awardTable.csv" , 12 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) != "" ) && getplayerdata( "awards" , tablelookupbyrow( "mp/awardTable.csv" , 12 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) ) > 0  )
+		}
+		itemDef
+		{
+			rect 84.5714 60 64 64 2 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 14
+			textAlignX 0
+			textAlignY 0
+			textScale 0.375
+			textStyle 8
+			textFont 3
+			feeder 0
+			visible 1
+			exp text ( locstring( "@MPUI_X_N" , getplayerdata( "awards" , tablelookupbyrow( "mp/awardTable.csv" , 12 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) ) )  )
+			visible when ( ( tablelookupbyrow( "mp/awardTable.csv" , 12 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) != "" ) && getplayerdata( "awards" , tablelookupbyrow( "mp/awardTable.csv" , 12 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) ) > 0  )
+		}
+		itemDef
+		{
+			name highlightImage1_4
+			rect 75.9048 127.333 81.3333 81.3333 2 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background highlight_selected
+			execKeyInt 30
+			{
+				if ( 4 == 0  )
+				{
+					if ( localvarint( "ui_pageIndex" )  )
+					{
+						setLocalVarInt ui_pageIndex 6;
+						"setFocus" "highlightImage1_5";
+					}
+				}
+				if ( 4 == 1  )
+				{
+					"setFocus" "highlightImage1_0";
+				}
+				if ( 4 == 2  )
+				{
+					"setFocus" "highlightImage1_1";
+				}
+				if ( 4 == 3  )
+				{
+					"setFocus" "highlightImage1_2";
+				}
+				if ( 4 == 4  )
+				{
+					"setFocus" "highlightImage1_3";
+				}
+				if ( 4 == 5  )
+				{
+					"setFocus" "highlightImage1_4";
+				}
+			}
+			execKeyInt 31
+			{
+				if ( 4 == 0  )
+				{
+					"setFocus" "highlightImage1_1";
+				}
+				if ( 4 == 1  )
+				{
+					"setFocus" "highlightImage1_2";
+				}
+				if ( 4 == 2  )
+				{
+					"setFocus" "highlightImage1_3";
+				}
+				if ( 4 == 3  )
+				{
+					"setFocus" "highlightImage1_4";
+				}
+				if ( 4 == 4  )
+				{
+					"setFocus" "highlightImage1_5";
+				}
+				if ( 4 == 5  )
+				{
+					if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" )  )
+					{
+						setLocalVarInt ui_pageIndex 6;
+						"setFocus" "highlightImage1_0";
+					}
+				}
+			}
+			execKeyInt 22
+			{
+				if ( 4 == 0  )
+				{
+					if ( localvarint( "ui_pageIndex" )  )
+					{
+						setLocalVarInt ui_pageIndex 6;
+						"setFocus" "highlightImage1_5";
+					}
+				}
+				if ( 4 == 1  )
+				{
+					"setFocus" "highlightImage1_0";
+				}
+				if ( 4 == 2  )
+				{
+					"setFocus" "highlightImage1_1";
+				}
+				if ( 4 == 3  )
+				{
+					"setFocus" "highlightImage1_2";
+				}
+				if ( 4 == 4  )
+				{
+					"setFocus" "highlightImage1_3";
+				}
+				if ( 4 == 5  )
+				{
+					"setFocus" "highlightImage1_4";
+				}
+			}
+			execKeyInt 23
+			{
+				if ( 4 == 0  )
+				{
+					"setFocus" "highlightImage1_1";
+				}
+				if ( 4 == 1  )
+				{
+					"setFocus" "highlightImage1_2";
+				}
+				if ( 4 == 2  )
+				{
+					"setFocus" "highlightImage1_3";
+				}
+				if ( 4 == 3  )
+				{
+					"setFocus" "highlightImage1_4";
+				}
+				if ( 4 == 4  )
+				{
+					"setFocus" "highlightImage1_5";
+				}
+				if ( 4 == 5  )
+				{
+					if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" )  )
+					{
+						setLocalVarInt ui_pageIndex 6;
+						"setFocus" "highlightImage1_0";
+					}
+				}
+			}
+			execKey "ú"
+			{
+				if ( localvarint( "ui_pageIndex" )  )
+				{
+					setLocalVarInt ui_pageIndex 6;
+				}
+				"setFocus" "highlightImage1_4";
+			}
+			execKey "ù"
+			{
+				if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" )  )
+				{
+					setLocalVarInt ui_pageIndex 6;
+				}
+				"setFocus" "highlightImage1_4";
+			}
+			execKey "π"
+			{
+				if ( localvarint( "ui_pageIndex" )  )
+				{
+					setLocalVarInt ui_pageIndex 6;
+				}
+				"setFocus" "highlightImage1_4";
+			}
+			execKey "∫"
+			{
+				if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" )  )
+				{
+					setLocalVarInt ui_pageIndex 6;
+				}
+				"setFocus" "highlightImage1_4";
+			}
+			type 1
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			onFocus
+			{
+				setLocalVarInt ui_highlightIndex 10;
+				"play" "mouse_over";
+			}
+			action
+			{
+				"play" "mouse_click";
+			}
+			visible when ( ( tablelookupbyrow( "mp/awardTable.csv" , 13 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) != "" )  )
+			exp   ( 0.450000 + ( tablelookupbyrow( "mp/awardTable.csv" , 13 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) != "" )  )
+			exp   ( 0.450000 + ( tablelookupbyrow( "mp/awardTable.csv" , 13 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) != "" )  )
+			exp   ( ( getfocuseditemname( ) == "highlightImage1_4" ) * ( ( sin milliseconds( ) / 150 ) * 0.500000 + 0.500000 ) * 0.500000 + 0.500000 )  )
+		}
+		itemDef
+		{
+			rect 84.5714 136 64 64 2 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background award_locked
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( ( tablelookupbyrow( "mp/awardTable.csv" , 13 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) != "" ) && getplayerdata( "awards" , tablelookupbyrow( "mp/awardTable.csv" , 13 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) ) == 0  )
+		}
+		itemDef
+		{
+			rect 84.5714 136 64 64 2 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material tablelookup( "mp/awardTable.csv" , 1 , tablelookupbyrow( "mp/awardTable.csv" , 13 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) , 2  )
+			visible when ( ( tablelookupbyrow( "mp/awardTable.csv" , 13 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) != "" ) && getplayerdata( "awards" , tablelookupbyrow( "mp/awardTable.csv" , 13 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) ) > 0  )
+		}
+		itemDef
+		{
+			rect 84.5714 136 64 64 2 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 14
+			textAlignX 0
+			textAlignY 0
+			textScale 0.375
+			textStyle 8
+			textFont 3
+			feeder 0
+			visible 1
+			exp text ( locstring( "@MPUI_X_N" , getplayerdata( "awards" , tablelookupbyrow( "mp/awardTable.csv" , 13 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) ) )  )
+			visible when ( ( tablelookupbyrow( "mp/awardTable.csv" , 13 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) != "" ) && getplayerdata( "awards" , tablelookupbyrow( "mp/awardTable.csv" , 13 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) ) > 0  )
+		}
+		itemDef
+		{
+			name highlightImage2_4
+			rect 75.9048 203.333 81.3333 81.3333 2 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background highlight_selected
+			execKeyInt 30
+			{
+				if ( 4 == 0  )
+				{
+					if ( localvarint( "ui_pageIndex" )  )
+					{
+						setLocalVarInt ui_pageIndex 6;
+						"setFocus" "highlightImage2_5";
+					}
+				}
+				if ( 4 == 1  )
+				{
+					"setFocus" "highlightImage2_0";
+				}
+				if ( 4 == 2  )
+				{
+					"setFocus" "highlightImage2_1";
+				}
+				if ( 4 == 3  )
+				{
+					"setFocus" "highlightImage2_2";
+				}
+				if ( 4 == 4  )
+				{
+					"setFocus" "highlightImage2_3";
+				}
+				if ( 4 == 5  )
+				{
+					"setFocus" "highlightImage2_4";
+				}
+			}
+			execKeyInt 31
+			{
+				if ( 4 == 0  )
+				{
+					"setFocus" "highlightImage2_1";
+				}
+				if ( 4 == 1  )
+				{
+					"setFocus" "highlightImage2_2";
+				}
+				if ( 4 == 2  )
+				{
+					"setFocus" "highlightImage2_3";
+				}
+				if ( 4 == 3  )
+				{
+					"setFocus" "highlightImage2_4";
+				}
+				if ( 4 == 4  )
+				{
+					"setFocus" "highlightImage2_5";
+				}
+				if ( 4 == 5  )
+				{
+					if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" )  )
+					{
+						setLocalVarInt ui_pageIndex 6;
+						"setFocus" "highlightImage2_0";
+					}
+				}
+			}
+			execKeyInt 22
+			{
+				if ( 4 == 0  )
+				{
+					if ( localvarint( "ui_pageIndex" )  )
+					{
+						setLocalVarInt ui_pageIndex 6;
+						"setFocus" "highlightImage2_5";
+					}
+				}
+				if ( 4 == 1  )
+				{
+					"setFocus" "highlightImage2_0";
+				}
+				if ( 4 == 2  )
+				{
+					"setFocus" "highlightImage2_1";
+				}
+				if ( 4 == 3  )
+				{
+					"setFocus" "highlightImage2_2";
+				}
+				if ( 4 == 4  )
+				{
+					"setFocus" "highlightImage2_3";
+				}
+				if ( 4 == 5  )
+				{
+					"setFocus" "highlightImage2_4";
+				}
+			}
+			execKeyInt 23
+			{
+				if ( 4 == 0  )
+				{
+					"setFocus" "highlightImage2_1";
+				}
+				if ( 4 == 1  )
+				{
+					"setFocus" "highlightImage2_2";
+				}
+				if ( 4 == 2  )
+				{
+					"setFocus" "highlightImage2_3";
+				}
+				if ( 4 == 3  )
+				{
+					"setFocus" "highlightImage2_4";
+				}
+				if ( 4 == 4  )
+				{
+					"setFocus" "highlightImage2_5";
+				}
+				if ( 4 == 5  )
+				{
+					if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" )  )
+					{
+						setLocalVarInt ui_pageIndex 6;
+						"setFocus" "highlightImage2_0";
+					}
+				}
+			}
+			execKey "ú"
+			{
+				if ( localvarint( "ui_pageIndex" )  )
+				{
+					setLocalVarInt ui_pageIndex 6;
+				}
+				"setFocus" "highlightImage2_4";
+			}
+			execKey "ù"
+			{
+				if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" )  )
+				{
+					setLocalVarInt ui_pageIndex 6;
+				}
+				"setFocus" "highlightImage2_4";
+			}
+			execKey "π"
+			{
+				if ( localvarint( "ui_pageIndex" )  )
+				{
+					setLocalVarInt ui_pageIndex 6;
+				}
+				"setFocus" "highlightImage2_4";
+			}
+			execKey "∫"
+			{
+				if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" )  )
+				{
+					setLocalVarInt ui_pageIndex 6;
+				}
+				"setFocus" "highlightImage2_4";
+			}
+			type 1
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			onFocus
+			{
+				setLocalVarInt ui_highlightIndex 10;
+				"play" "mouse_over";
+			}
+			action
+			{
+				"play" "mouse_click";
+			}
+			visible when ( ( tablelookupbyrow( "mp/awardTable.csv" , 14 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) != "" )  )
+			exp   ( 0.450000 + ( tablelookupbyrow( "mp/awardTable.csv" , 14 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) != "" )  )
+			exp   ( 0.450000 + ( tablelookupbyrow( "mp/awardTable.csv" , 14 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) != "" )  )
+			exp   ( ( getfocuseditemname( ) == "highlightImage2_4" ) * ( ( sin milliseconds( ) / 150 ) * 0.500000 + 0.500000 ) * 0.500000 + 0.500000 )  )
+		}
+		itemDef
+		{
+			rect 84.5714 212 64 64 2 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background award_locked
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( ( tablelookupbyrow( "mp/awardTable.csv" , 14 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) != "" ) && getplayerdata( "awards" , tablelookupbyrow( "mp/awardTable.csv" , 14 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) ) == 0  )
+		}
+		itemDef
+		{
+			rect 84.5714 212 64 64 2 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material tablelookup( "mp/awardTable.csv" , 1 , tablelookupbyrow( "mp/awardTable.csv" , 14 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) , 2  )
+			visible when ( ( tablelookupbyrow( "mp/awardTable.csv" , 14 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) != "" ) && getplayerdata( "awards" , tablelookupbyrow( "mp/awardTable.csv" , 14 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) ) > 0  )
+		}
+		itemDef
+		{
+			rect 84.5714 212 64 64 2 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 14
+			textAlignX 0
+			textAlignY 0
+			textScale 0.375
+			textStyle 8
+			textFont 3
+			feeder 0
+			visible 1
+			exp text ( locstring( "@MPUI_X_N" , getplayerdata( "awards" , tablelookupbyrow( "mp/awardTable.csv" , 14 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) ) )  )
+			visible when ( ( tablelookupbyrow( "mp/awardTable.csv" , 14 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) != "" ) && getplayerdata( "awards" , tablelookupbyrow( "mp/awardTable.csv" , 14 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) ) > 0  )
+		}
+		itemDef
+		{
+			name highlightImage0_5
+			rect 153.619 51.3333 81.3333 81.3333 2 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background highlight_selected
+			execKeyInt 30
+			{
+				if ( 5 == 0  )
+				{
+					if ( localvarint( "ui_pageIndex" )  )
+					{
+						setLocalVarInt ui_pageIndex 6;
+						"setFocus" "highlightImage0_5";
+					}
+				}
+				if ( 5 == 1  )
+				{
+					"setFocus" "highlightImage0_0";
+				}
+				if ( 5 == 2  )
+				{
+					"setFocus" "highlightImage0_1";
+				}
+				if ( 5 == 3  )
+				{
+					"setFocus" "highlightImage0_2";
+				}
+				if ( 5 == 4  )
+				{
+					"setFocus" "highlightImage0_3";
+				}
+				if ( 5 == 5  )
+				{
+					"setFocus" "highlightImage0_4";
+				}
+			}
+			execKeyInt 31
+			{
+				if ( 5 == 0  )
+				{
+					"setFocus" "highlightImage0_1";
+				}
+				if ( 5 == 1  )
+				{
+					"setFocus" "highlightImage0_2";
+				}
+				if ( 5 == 2  )
+				{
+					"setFocus" "highlightImage0_3";
+				}
+				if ( 5 == 3  )
+				{
+					"setFocus" "highlightImage0_4";
+				}
+				if ( 5 == 4  )
+				{
+					"setFocus" "highlightImage0_5";
+				}
+				if ( 5 == 5  )
+				{
+					if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" )  )
+					{
+						setLocalVarInt ui_pageIndex 6;
+						"setFocus" "highlightImage0_0";
+					}
+				}
+			}
+			execKeyInt 22
+			{
+				if ( 5 == 0  )
+				{
+					if ( localvarint( "ui_pageIndex" )  )
+					{
+						setLocalVarInt ui_pageIndex 6;
+						"setFocus" "highlightImage0_5";
+					}
+				}
+				if ( 5 == 1  )
+				{
+					"setFocus" "highlightImage0_0";
+				}
+				if ( 5 == 2  )
+				{
+					"setFocus" "highlightImage0_1";
+				}
+				if ( 5 == 3  )
+				{
+					"setFocus" "highlightImage0_2";
+				}
+				if ( 5 == 4  )
+				{
+					"setFocus" "highlightImage0_3";
+				}
+				if ( 5 == 5  )
+				{
+					"setFocus" "highlightImage0_4";
+				}
+			}
+			execKeyInt 23
+			{
+				if ( 5 == 0  )
+				{
+					"setFocus" "highlightImage0_1";
+				}
+				if ( 5 == 1  )
+				{
+					"setFocus" "highlightImage0_2";
+				}
+				if ( 5 == 2  )
+				{
+					"setFocus" "highlightImage0_3";
+				}
+				if ( 5 == 3  )
+				{
+					"setFocus" "highlightImage0_4";
+				}
+				if ( 5 == 4  )
+				{
+					"setFocus" "highlightImage0_5";
+				}
+				if ( 5 == 5  )
+				{
+					if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" )  )
+					{
+						setLocalVarInt ui_pageIndex 6;
+						"setFocus" "highlightImage0_0";
+					}
+				}
+			}
+			execKey "ú"
+			{
+				if ( localvarint( "ui_pageIndex" )  )
+				{
+					setLocalVarInt ui_pageIndex 6;
+				}
+				"setFocus" "highlightImage0_5";
+			}
+			execKey "ù"
+			{
+				if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" )  )
+				{
+					setLocalVarInt ui_pageIndex 6;
+				}
+				"setFocus" "highlightImage0_5";
+			}
+			execKey "π"
+			{
+				if ( localvarint( "ui_pageIndex" )  )
+				{
+					setLocalVarInt ui_pageIndex 6;
+				}
+				"setFocus" "highlightImage0_5";
+			}
+			execKey "∫"
+			{
+				if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" )  )
+				{
+					setLocalVarInt ui_pageIndex 6;
+				}
+				"setFocus" "highlightImage0_5";
+			}
+			type 1
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			onFocus
+			{
+				setLocalVarInt ui_highlightIndex 10;
+				"play" "mouse_over";
+			}
+			action
+			{
+				"play" "mouse_click";
+			}
+			visible when ( ( tablelookupbyrow( "mp/awardTable.csv" , 15 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) != "" )  )
+			exp   ( 0.450000 + ( tablelookupbyrow( "mp/awardTable.csv" , 15 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) != "" )  )
+			exp   ( 0.450000 + ( tablelookupbyrow( "mp/awardTable.csv" , 15 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) != "" )  )
+			exp   ( ( getfocuseditemname( ) == "highlightImage0_5" ) * ( ( sin milliseconds( ) / 150 ) * 0.500000 + 0.500000 ) * 0.500000 + 0.500000 )  )
+		}
+		itemDef
+		{
+			rect 162.286 60 64 64 2 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background award_locked
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( ( tablelookupbyrow( "mp/awardTable.csv" , 15 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) != "" ) && getplayerdata( "awards" , tablelookupbyrow( "mp/awardTable.csv" , 15 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) ) == 0  )
+		}
+		itemDef
+		{
+			rect 162.286 60 64 64 2 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material tablelookup( "mp/awardTable.csv" , 1 , tablelookupbyrow( "mp/awardTable.csv" , 15 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) , 2  )
+			visible when ( ( tablelookupbyrow( "mp/awardTable.csv" , 15 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) != "" ) && getplayerdata( "awards" , tablelookupbyrow( "mp/awardTable.csv" , 15 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) ) > 0  )
+		}
+		itemDef
+		{
+			rect 162.286 60 64 64 2 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 14
+			textAlignX 0
+			textAlignY 0
+			textScale 0.375
+			textStyle 8
+			textFont 3
+			feeder 0
+			visible 1
+			exp text ( locstring( "@MPUI_X_N" , getplayerdata( "awards" , tablelookupbyrow( "mp/awardTable.csv" , 15 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) ) )  )
+			visible when ( ( tablelookupbyrow( "mp/awardTable.csv" , 15 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) != "" ) && getplayerdata( "awards" , tablelookupbyrow( "mp/awardTable.csv" , 15 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) ) > 0  )
+		}
+		itemDef
+		{
+			name highlightImage1_5
+			rect 153.619 127.333 81.3333 81.3333 2 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background highlight_selected
+			execKeyInt 30
+			{
+				if ( 5 == 0  )
+				{
+					if ( localvarint( "ui_pageIndex" )  )
+					{
+						setLocalVarInt ui_pageIndex 6;
+						"setFocus" "highlightImage1_5";
+					}
+				}
+				if ( 5 == 1  )
+				{
+					"setFocus" "highlightImage1_0";
+				}
+				if ( 5 == 2  )
+				{
+					"setFocus" "highlightImage1_1";
+				}
+				if ( 5 == 3  )
+				{
+					"setFocus" "highlightImage1_2";
+				}
+				if ( 5 == 4  )
+				{
+					"setFocus" "highlightImage1_3";
+				}
+				if ( 5 == 5  )
+				{
+					"setFocus" "highlightImage1_4";
+				}
+			}
+			execKeyInt 31
+			{
+				if ( 5 == 0  )
+				{
+					"setFocus" "highlightImage1_1";
+				}
+				if ( 5 == 1  )
+				{
+					"setFocus" "highlightImage1_2";
+				}
+				if ( 5 == 2  )
+				{
+					"setFocus" "highlightImage1_3";
+				}
+				if ( 5 == 3  )
+				{
+					"setFocus" "highlightImage1_4";
+				}
+				if ( 5 == 4  )
+				{
+					"setFocus" "highlightImage1_5";
+				}
+				if ( 5 == 5  )
+				{
+					if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" )  )
+					{
+						setLocalVarInt ui_pageIndex 6;
+						"setFocus" "highlightImage1_0";
+					}
+				}
+			}
+			execKeyInt 22
+			{
+				if ( 5 == 0  )
+				{
+					if ( localvarint( "ui_pageIndex" )  )
+					{
+						setLocalVarInt ui_pageIndex 6;
+						"setFocus" "highlightImage1_5";
+					}
+				}
+				if ( 5 == 1  )
+				{
+					"setFocus" "highlightImage1_0";
+				}
+				if ( 5 == 2  )
+				{
+					"setFocus" "highlightImage1_1";
+				}
+				if ( 5 == 3  )
+				{
+					"setFocus" "highlightImage1_2";
+				}
+				if ( 5 == 4  )
+				{
+					"setFocus" "highlightImage1_3";
+				}
+				if ( 5 == 5  )
+				{
+					"setFocus" "highlightImage1_4";
+				}
+			}
+			execKeyInt 23
+			{
+				if ( 5 == 0  )
+				{
+					"setFocus" "highlightImage1_1";
+				}
+				if ( 5 == 1  )
+				{
+					"setFocus" "highlightImage1_2";
+				}
+				if ( 5 == 2  )
+				{
+					"setFocus" "highlightImage1_3";
+				}
+				if ( 5 == 3  )
+				{
+					"setFocus" "highlightImage1_4";
+				}
+				if ( 5 == 4  )
+				{
+					"setFocus" "highlightImage1_5";
+				}
+				if ( 5 == 5  )
+				{
+					if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" )  )
+					{
+						setLocalVarInt ui_pageIndex 6;
+						"setFocus" "highlightImage1_0";
+					}
+				}
+			}
+			execKey "ú"
+			{
+				if ( localvarint( "ui_pageIndex" )  )
+				{
+					setLocalVarInt ui_pageIndex 6;
+				}
+				"setFocus" "highlightImage1_5";
+			}
+			execKey "ù"
+			{
+				if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" )  )
+				{
+					setLocalVarInt ui_pageIndex 6;
+				}
+				"setFocus" "highlightImage1_5";
+			}
+			execKey "π"
+			{
+				if ( localvarint( "ui_pageIndex" )  )
+				{
+					setLocalVarInt ui_pageIndex 6;
+				}
+				"setFocus" "highlightImage1_5";
+			}
+			execKey "∫"
+			{
+				if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" )  )
+				{
+					setLocalVarInt ui_pageIndex 6;
+				}
+				"setFocus" "highlightImage1_5";
+			}
+			type 1
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			onFocus
+			{
+				setLocalVarInt ui_highlightIndex 10;
+				"play" "mouse_over";
+			}
+			action
+			{
+				"play" "mouse_click";
+			}
+			visible when ( ( tablelookupbyrow( "mp/awardTable.csv" , 16 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) != "" )  )
+			exp   ( 0.450000 + ( tablelookupbyrow( "mp/awardTable.csv" , 16 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) != "" )  )
+			exp   ( 0.450000 + ( tablelookupbyrow( "mp/awardTable.csv" , 16 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) != "" )  )
+			exp   ( ( getfocuseditemname( ) == "highlightImage1_5" ) * ( ( sin milliseconds( ) / 150 ) * 0.500000 + 0.500000 ) * 0.500000 + 0.500000 )  )
+		}
+		itemDef
+		{
+			rect 162.286 136 64 64 2 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background award_locked
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( ( tablelookupbyrow( "mp/awardTable.csv" , 16 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) != "" ) && getplayerdata( "awards" , tablelookupbyrow( "mp/awardTable.csv" , 16 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) ) == 0  )
+		}
+		itemDef
+		{
+			rect 162.286 136 64 64 2 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material tablelookup( "mp/awardTable.csv" , 1 , tablelookupbyrow( "mp/awardTable.csv" , 16 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) , 2  )
+			visible when ( ( tablelookupbyrow( "mp/awardTable.csv" , 16 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) != "" ) && getplayerdata( "awards" , tablelookupbyrow( "mp/awardTable.csv" , 16 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) ) > 0  )
+		}
+		itemDef
+		{
+			rect 162.286 136 64 64 2 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 14
+			textAlignX 0
+			textAlignY 0
+			textScale 0.375
+			textStyle 8
+			textFont 3
+			feeder 0
+			visible 1
+			exp text ( locstring( "@MPUI_X_N" , getplayerdata( "awards" , tablelookupbyrow( "mp/awardTable.csv" , 16 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) ) )  )
+			visible when ( ( tablelookupbyrow( "mp/awardTable.csv" , 16 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) != "" ) && getplayerdata( "awards" , tablelookupbyrow( "mp/awardTable.csv" , 16 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) ) > 0  )
+		}
+		itemDef
+		{
+			name highlightImage2_5
+			rect 153.619 203.333 81.3333 81.3333 2 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background highlight_selected
+			execKeyInt 30
+			{
+				if ( 5 == 0  )
+				{
+					if ( localvarint( "ui_pageIndex" )  )
+					{
+						setLocalVarInt ui_pageIndex 6;
+						"setFocus" "highlightImage2_5";
+					}
+				}
+				if ( 5 == 1  )
+				{
+					"setFocus" "highlightImage2_0";
+				}
+				if ( 5 == 2  )
+				{
+					"setFocus" "highlightImage2_1";
+				}
+				if ( 5 == 3  )
+				{
+					"setFocus" "highlightImage2_2";
+				}
+				if ( 5 == 4  )
+				{
+					"setFocus" "highlightImage2_3";
+				}
+				if ( 5 == 5  )
+				{
+					"setFocus" "highlightImage2_4";
+				}
+			}
+			execKeyInt 31
+			{
+				if ( 5 == 0  )
+				{
+					"setFocus" "highlightImage2_1";
+				}
+				if ( 5 == 1  )
+				{
+					"setFocus" "highlightImage2_2";
+				}
+				if ( 5 == 2  )
+				{
+					"setFocus" "highlightImage2_3";
+				}
+				if ( 5 == 3  )
+				{
+					"setFocus" "highlightImage2_4";
+				}
+				if ( 5 == 4  )
+				{
+					"setFocus" "highlightImage2_5";
+				}
+				if ( 5 == 5  )
+				{
+					if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" )  )
+					{
+						setLocalVarInt ui_pageIndex 6;
+						"setFocus" "highlightImage2_0";
+					}
+				}
+			}
+			execKeyInt 22
+			{
+				if ( 5 == 0  )
+				{
+					if ( localvarint( "ui_pageIndex" )  )
+					{
+						setLocalVarInt ui_pageIndex 6;
+						"setFocus" "highlightImage2_5";
+					}
+				}
+				if ( 5 == 1  )
+				{
+					"setFocus" "highlightImage2_0";
+				}
+				if ( 5 == 2  )
+				{
+					"setFocus" "highlightImage2_1";
+				}
+				if ( 5 == 3  )
+				{
+					"setFocus" "highlightImage2_2";
+				}
+				if ( 5 == 4  )
+				{
+					"setFocus" "highlightImage2_3";
+				}
+				if ( 5 == 5  )
+				{
+					"setFocus" "highlightImage2_4";
+				}
+			}
+			execKeyInt 23
+			{
+				if ( 5 == 0  )
+				{
+					"setFocus" "highlightImage2_1";
+				}
+				if ( 5 == 1  )
+				{
+					"setFocus" "highlightImage2_2";
+				}
+				if ( 5 == 2  )
+				{
+					"setFocus" "highlightImage2_3";
+				}
+				if ( 5 == 3  )
+				{
+					"setFocus" "highlightImage2_4";
+				}
+				if ( 5 == 4  )
+				{
+					"setFocus" "highlightImage2_5";
+				}
+				if ( 5 == 5  )
+				{
+					if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" )  )
+					{
+						setLocalVarInt ui_pageIndex 6;
+						"setFocus" "highlightImage2_0";
+					}
+				}
+			}
+			execKey "ú"
+			{
+				if ( localvarint( "ui_pageIndex" )  )
+				{
+					setLocalVarInt ui_pageIndex 6;
+				}
+				"setFocus" "highlightImage2_5";
+			}
+			execKey "ù"
+			{
+				if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" )  )
+				{
+					setLocalVarInt ui_pageIndex 6;
+				}
+				"setFocus" "highlightImage2_5";
+			}
+			execKey "π"
+			{
+				if ( localvarint( "ui_pageIndex" )  )
+				{
+					setLocalVarInt ui_pageIndex 6;
+				}
+				"setFocus" "highlightImage2_5";
+			}
+			execKey "∫"
+			{
+				if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" )  )
+				{
+					setLocalVarInt ui_pageIndex 6;
+				}
+				"setFocus" "highlightImage2_5";
+			}
+			type 1
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			onFocus
+			{
+				setLocalVarInt ui_highlightIndex 10;
+				"play" "mouse_over";
+			}
+			action
+			{
+				"play" "mouse_click";
+			}
+			visible when ( ( tablelookupbyrow( "mp/awardTable.csv" , 17 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) != "" )  )
+			exp   ( 0.450000 + ( tablelookupbyrow( "mp/awardTable.csv" , 17 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) != "" )  )
+			exp   ( 0.450000 + ( tablelookupbyrow( "mp/awardTable.csv" , 17 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) != "" )  )
+			exp   ( ( getfocuseditemname( ) == "highlightImage2_5" ) * ( ( sin milliseconds( ) / 150 ) * 0.500000 + 0.500000 ) * 0.500000 + 0.500000 )  )
+		}
+		itemDef
+		{
+			rect 162.286 212 64 64 2 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background award_locked
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( ( tablelookupbyrow( "mp/awardTable.csv" , 17 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) != "" ) && getplayerdata( "awards" , tablelookupbyrow( "mp/awardTable.csv" , 17 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) ) == 0  )
+		}
+		itemDef
+		{
+			rect 162.286 212 64 64 2 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material tablelookup( "mp/awardTable.csv" , 1 , tablelookupbyrow( "mp/awardTable.csv" , 17 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) , 2  )
+			visible when ( ( tablelookupbyrow( "mp/awardTable.csv" , 17 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) != "" ) && getplayerdata( "awards" , tablelookupbyrow( "mp/awardTable.csv" , 17 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) ) > 0  )
+		}
+		itemDef
+		{
+			rect 162.286 212 64 64 2 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 14
+			textAlignX 0
+			textAlignY 0
+			textScale 0.375
+			textStyle 8
+			textFont 3
+			feeder 0
+			visible 1
+			exp text ( locstring( "@MPUI_X_N" , getplayerdata( "awards" , tablelookupbyrow( "mp/awardTable.csv" , 17 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) ) )  )
+			visible when ( ( tablelookupbyrow( "mp/awardTable.csv" , 17 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) != "" ) && getplayerdata( "awards" , tablelookupbyrow( "mp/awardTable.csv" , 17 + ( localvarint( "ui_pageIndex" ) * 18 ) , 1 ) ) > 0  )
+		}
+		itemDef
+		{
+			rect 0 296 640 64 4 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.5
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background black
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+		}
+		itemDef
+		{
+			rect -232 -112 464 64 2 3
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.65
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 5
+			textAlignX 0
+			textAlignY 8
+			textScale 0.5833
+			textStyle 0
+			textFont 9
+			feeder 0
+			visible 1
+			exp text ( "@" + tablelookup( "mp/awardTable.csv" , 1 , tablelookupbyrow( "mp/awardTable.csv" , localvarint( "ui_highlightIndex" ) , 1 ) , 3 )  )
+		}
+		itemDef
+		{
+			rect -232 -112 464 64 2 3
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.65
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 5
+			textAlignX 0
+			textAlignY 32
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			visible 1
+			exp text ( "@" + tablelookup( "mp/awardTable.csv" , 1 , tablelookupbyrow( "mp/awardTable.csv" , localvarint( "ui_highlightIndex" ) , 1 ) , 4 )  )
+		}
+		itemDef
+		{
+			rect -272 104 -32 128 2 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background summary_arrow
+			decoration 
+			group left_arrow
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( localvarint( "ui_pageIndex" )  )
+		}
+		itemDef
+		{
+			rect -272 104 32 128 2 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			type 1
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			onFocus
+			{
+				"play" "mouse_over";
+				"setItemColor" "left_arrow" "forecolor" 1 1 "0.5" 1;
+			}
+			leaveFocus
+			{
+				"setItemColor" "left_arrow" "forecolor" 1 1 1 1;
+			}
+			action
+			{
+				if ( localvarint( "ui_pageIndex" )  )
+				{
+					setLocalVarInt ui_pageIndex 6;
+				}
+			}
+			visible when ( localvarint( "ui_pageIndex" )  )
+		}
+		itemDef
+		{
+			name right_arrow
+			rect 240 104 32 128 2 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background summary_arrow
+			type 1
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			onFocus
+			{
+				"play" "mouse_over";
+				"setItemColor" "right_arrow" "forecolor" 1 1 "0.5" 1;
+			}
+			leaveFocus
+			{
+				"setItemColor" "right_arrow" "forecolor" 1 1 1 1;
+			}
+			action
+			{
+				if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" )  )
+				{
+					setLocalVarInt ui_pageIndex 6;
+				}
+			}
+			visible when ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" )  )
+		}
+		itemDef
+		{
+			rect -64 -20 336 20 1 3
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background menu_button_selection_bar
+			group mw2_button
+			type 1
+			align 0
+			textAlign 6
+			textAlignX -60
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			text "@PLATFORM_BACK_CAPS"
+			visible 1
+			onFocus
+			{
+				"play" "mouse_over";
+				if ( dvarstring(static)( 2 ) != "mp"  )
+				{
+					"setItemColor" "mw2_button" "backcolor" 0 0 0 0;
+				}
+				"setItemColor" "self" "backcolor" 0 0 0 1;
+				setLocalVarBool ui_menuAButton 1;
+			}
+			leaveFocus
+			{
+				"setItemColor" "self" "backcolor" 0 0 0 "0.0";
+				setLocalVarString ui_hint_text "@NULL_EMPTY"  );
+				setLocalVarBool ui_menuAButton 1;
+			}
+			action
+			{
+				"play" "mouse_click";
+				"play" "mouse_click";
+				"escape" "self";
+			}
+			visible when ( "@PLATFORM_BACK_CAPS" == "@PLATFORM_BACK_CAPS"  )
+		}
+		itemDef
+		{
+			rect -64 -20 336 20 1 3
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background menu_button_selection_bar
+			group mw2_button
+			type 1
+			align 0
+			textAlign 6
+			textAlignX -60
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			text "@PLATFORM_BACK_CAPS"
+			visible 1
+			onFocus
+			{
+				"play" "mouse_over";
+				if ( dvarstring(static)( 2 ) != "mp"  )
+				{
+					"setItemColor" "mw2_button" "backcolor" 0 0 0 0;
+				}
+				"setItemColor" "self" "backcolor" 0 0 0 1;
+				setLocalVarBool ui_menuAButton 1;
+			}
+			leaveFocus
+			{
+				"setItemColor" "self" "backcolor" 0 0 0 "0.0";
+				setLocalVarString ui_hint_text "@NULL_EMPTY"  );
+				setLocalVarBool ui_menuAButton 1;
+			}
+			action
+			{
+				"play" "mouse_click";
+				"play" "mouse_click";
+				"open" "popup_summary";
+			}
+			visible when ( "@PLATFORM_BACK_CAPS" == "@PLATFORM_GAME_SUMMARY_CAPS"  )
+		}
+	}
+}

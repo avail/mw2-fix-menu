@@ -1,0 +1,14 @@
+{
+	menuDef
+	{
+		name "gear_legs"
+		rect 4 100 184 124 1 1
+		style 1
+		focusColor 1 1 1 1
+		foreColor 1 1 1 1
+		fadeCycle 1
+		fadeClamp 1
+		fadeAmount 0.1
+		popup
+	}
+}	
