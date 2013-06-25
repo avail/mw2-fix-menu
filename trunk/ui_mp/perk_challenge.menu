@@ -1,0 +1,417 @@
+{
+	menuDef
+	{
+		name perk_challenge
+		fullscreen 0
+		rect 0 0 640 1 1 0
+		style 0
+		border 0
+		ownerdraw 0
+		ownerdrawFlag 0
+		borderSize 0
+		foreColor 1 1 1 1
+		backColor 0 0 0 0
+		borderColor 0 0 0 0
+		outlineColor 0 0 0 0
+		exp rect Y ( ( * ( 0 - 40 ) * *  )
+		fadeCycle 0
+		fadeClamp 0
+		fadeAmount 0
+		fadeInAmount 0
+		blurWorld 0
+		onOpen
+		{
+			"lerp" "alpha" "from" 0 "to" 1 "over" "0.2";
+			"lerp" "scale" "from" 0 "to" 1 "over" "0.2";
+			"lerp" y "from" - "100" "to" 0 "over" "0.2";
+			"close" "splash";
+			"close" "challenge";
+			"close" "defcon";
+			"close" "killstreak_pickup";
+			"close" "killstreak";
+			"close" "promotion";
+			setLocalVarString splashRef tablelookupbyrow( "mp/splashTable.csv" , splashrownum( 0 ) , 0  );
+			setLocalVarString challengeRef tablelookup( "mp/unlockTable.csv" , 3 , localvarstring( "splashRef" ) + "_" + ( int max getplayerdata( "challengeState" , localvarstring( "splashRef" ) ) , 1 ) ) - 1 ) , 0  );
+			if ( localvarstring( "challengeRef" ) != ""  )
+			{
+				setLocalVarString perkRef tablelookup( "mp/perkTable.csv" , 8 , localvarstring( "challengeRef" ) , 1  );
+				setLocalVarString perkUpgradeRef tablelookup( "mp/perkTable.csv" , 1 , localvarstring( "perkRef" ) , 8  );
+			}
+			else
+			{
+				setLocalVarString perkRef ( ""  );
+				setLocalVarString perkUpgradeRef ( ""  );
+			}
+			if ( localvarstring( "challengeRef" ) != ""  )			setLocalVarInt challenge_update_time 3;
+		}
+		onRequestClose
+		{
+			"lerp" "alpha" "from" 1 "to" 0 "over" "0.15";
+		}
+		focusColor 0 0 0 0
+		decoration 
+		itemDef
+		{
+			name challenge_title_tiered
+			rect 0 -110 0 0 2 2
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 1
+			textAlignX 0
+			textAlignY 0
+			textScale 0.7
+			textStyle 3
+			textFont 6
+			feeder 0
+			visible 1
+			exp text ( locstring( "@" + tablelookup( "mp/allChallengesTable.csv" , 0 , localvarstring( "splashRef" ) , 1 ) ) + locstring( "@" + tablelookup( "mp/allChallengesTable.csv" , 0 , localvarstring( "splashRef" ) , 3 ) + "_" + ( int max getplayerdata( "challengeState" , localvarstring( "splashRef" ) ) , 1 ) ) - 1 ) )  )
+			visible when ( ( && ( int max getplayerdata( "challengeState" , localvarstring( "splashRef" ) ) , 1 ) ) - 1 ) > 0  )
+		}
+		itemDef
+		{
+			name challenge_description
+			rect 0 -90 0 0 2 2
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 1
+			textAlignX 0
+			textAlignY 0
+			textScale 0.375
+			textStyle 3
+			textFont 0
+			feeder 0
+			visible 1
+			exp text ( getsplashdescription( 0 )  )
+			visible when ( (  )
+		}
+		itemDef
+		{
+			name challenge_icon
+			rect 40 -190 48 48 2 2
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( tablelookup( "mp/perkTable.csv" , 1 , localvarstring( "perkUpgradeRef" ) , 3 )  )
+			visible when ( ( && localvarstring( "perkUpgradeRef" ) != "" && isitemunlocked( localvarstring( "perkUpgradeRef" ) )  )
+			exp   ( ( 0 - 24 - 64 ) + ( min max ( milliseconds( ) - localvarint( "challenge_update_time" ) + 400 ) / 250 , 0 ) , 1 ) * 128 )  )
+			exp   ( min max ( milliseconds( ) - localvarint( "challenge_update_time" ) + 400 ) / 250 , 0 ) , 1 )  )
+		}
+		itemDef
+		{
+			rect -24 -190 16 48 2 2
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.15
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background summary_arrow
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( ( && localvarstring( "perkUpgradeRef" ) != "" && isitemunlocked( localvarstring( "perkUpgradeRef" ) )  )
+			exp   ( ( 0 - 8 - 64 ) + ( min max ( milliseconds( ) - localvarint( "challenge_update_time" ) + 400 ) / 250 , 0 ) , 1 ) * 48 )  )
+			exp   ( 0.350000 * min max ( milliseconds( ) - localvarint( "challenge_update_time" ) + 400 ) / 250 , 0 ) , 1 )  )
+		}
+		itemDef
+		{
+			rect -8 -190 16 48 2 2
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.2
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background summary_arrow
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( ( && localvarstring( "perkUpgradeRef" ) != "" && isitemunlocked( localvarstring( "perkUpgradeRef" ) )  )
+			exp   ( ( 0 - 8 - 64 ) + ( min max ( milliseconds( ) - localvarint( "challenge_update_time" ) + 400 ) / 250 , 0 ) , 1 ) * 64 )  )
+			exp   ( 0.450000 * min max ( milliseconds( ) - localvarint( "challenge_update_time" ) + 400 ) / 250 , 0 ) , 1 )  )
+		}
+		itemDef
+		{
+			rect 8 -190 16 48 2 2
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.25
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background summary_arrow
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( ( && localvarstring( "perkUpgradeRef" ) != "" && isitemunlocked( localvarstring( "perkUpgradeRef" ) )  )
+			exp   ( ( 0 - 8 - 64 ) + ( min max ( milliseconds( ) - localvarint( "challenge_update_time" ) + 400 ) / 250 , 0 ) , 1 ) * 80 )  )
+			exp   ( 0.550000 * min max ( milliseconds( ) - localvarint( "challenge_update_time" ) + 400 ) / 250 , 0 ) , 1 )  )
+		}
+		itemDef
+		{
+			name challenge_icon
+			rect -40 -190 48 48 2 2
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( tablelookup( "mp/perkTable.csv" , 1 , localvarstring( "perkRef" ) , 3 )  )
+			visible when ( ( && localvarstring( "perkUpgradeRef" ) != "" && isitemunlocked( localvarstring( "perkUpgradeRef" ) )  )
+			exp   ( ( 0 - 24 ) - ( min max ( milliseconds( ) - localvarint( "challenge_update_time" ) + 250 ) / 150 , 0 ) , 1 ) * 64 )  )
+		}
+		itemDef
+		{
+			name challenge_title_tiered_ss
+			rect 0 -135 0 0 2 2
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 1
+			textAlignX 0
+			textAlignY 0
+			textScale 0.729165
+			textStyle 3
+			textFont 6
+			feeder 0
+			visible 1
+			exp text ( locstring( "@" + tablelookup( "mp/allChallengesTable.csv" , 0 , localvarstring( "splashRef" ) , 1 ) ) + locstring( "@" + tablelookup( "mp/allChallengesTable.csv" , 0 , localvarstring( "splashRef" ) , 3 ) + "_" + ( int max getplayerdata( "challengeState" , localvarstring( "splashRef" ) ) , 1 ) ) - 1 ) )  )
+			visible when ( ( && ( int max getplayerdata( "challengeState" , localvarstring( "splashRef" ) ) , 1 ) ) - 1 ) > 0  )
+		}
+		itemDef
+		{
+			name challenge_icon_ss
+			rect 0 -135 60 60 2 2
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( tablelookup( "mp/perkTable.csv" , 1 , localvarstring( "perkUpgradeRef" ) , 3 )  )
+			visible when ( ( && && && localvarstring( "perkUpgradeRef" ) != "" && isitemunlocked( localvarstring( "perkUpgradeRef" ) )  )
+			exp   ( ( ( 0 - 20 - 56 ) * 1.500000 ) + ( min max ( milliseconds( ) - localvarint( "challenge_update_time" ) + 400 ) / 250 , 0 ) , 1 ) * ( 112 * 1.500000 ) )  )
+			exp   ( min max ( milliseconds( ) - localvarint( "challenge_update_time" ) + 400 ) / 250 , 0 ) , 1 )  )
+		}
+		itemDef
+		{
+			rect 0 -135 16.5 60 2 2
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.15
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background summary_arrow
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( ( && && && localvarstring( "perkUpgradeRef" ) != "" && isitemunlocked( localvarstring( "perkUpgradeRef" ) )  )
+			exp   ( ( ( 0 - 6 - 64 ) * 1.500000 ) + ( min max ( milliseconds( ) - localvarint( "challenge_update_time" ) + 400 ) / 250 , 0 ) , 1 ) * ( 48 * 1.500000 ) )  )
+			exp   ( 0.350000 * min max ( milliseconds( ) - localvarint( "challenge_update_time" ) + 400 ) / 250 , 0 ) , 1 )  )
+		}
+		itemDef
+		{
+			rect 0 -135 16.5 60 2 2
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.2
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background summary_arrow
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( ( && && && localvarstring( "perkUpgradeRef" ) != "" && isitemunlocked( localvarstring( "perkUpgradeRef" ) )  )
+			exp   ( ( ( 0 - 6 - 64 ) * 1.500000 ) + ( min max ( milliseconds( ) - localvarint( "challenge_update_time" ) + 400 ) / 250 , 0 ) , 1 ) * ( 64 * 1.500000 ) )  )
+			exp   ( 0.450000 * min max ( milliseconds( ) - localvarint( "challenge_update_time" ) + 400 ) / 250 , 0 ) , 1 )  )
+		}
+		itemDef
+		{
+			rect 0 -135 16.5 60 2 2
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.25
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background summary_arrow
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( ( && && && localvarstring( "perkUpgradeRef" ) != "" && isitemunlocked( localvarstring( "perkUpgradeRef" ) )  )
+			exp   ( ( ( 0 - 6 - 64 ) * 1.500000 ) + ( min max ( milliseconds( ) - localvarint( "challenge_update_time" ) + 400 ) / 250 , 0 ) , 1 ) * ( 80 * 1.500000 ) )  )
+			exp   ( 0.550000 * min max ( milliseconds( ) - localvarint( "challenge_update_time" ) + 400 ) / 250 , 0 ) , 1 )  )
+		}
+		itemDef
+		{
+			name challenge_icon_ss
+			rect 0 -135 60 60 2 2
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( tablelookup( "mp/perkTable.csv" , 1 , localvarstring( "perkRef" ) , 3 )  )
+			visible when ( ( && && && localvarstring( "perkUpgradeRef" ) != "" && isitemunlocked( localvarstring( "perkUpgradeRef" ) )  )
+			exp   ( ( ( 0 - 20 ) * 1.500000 ) - ( min max ( milliseconds( ) - localvarint( "challenge_update_time" ) + 250 ) / 150 , 0 ) , 1 ) * ( 56 * 1.500000 ) )  )
+		}
+	}
+}

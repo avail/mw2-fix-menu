@@ -1,0 +1,186 @@
+{
+	menuDef
+	{
+		name killstreak
+		fullscreen 0
+		rect 0 0 640 1 1 0
+		style 0
+		border 0
+		ownerdraw 0
+		ownerdrawFlag 0
+		borderSize 0
+		foreColor 1 1 1 1
+		backColor 0 0 0 0
+		borderColor 0 0 0 0
+		outlineColor 0 0 0 0
+		exp rect Y ( ( * ( 0 - 40 ) * *  )
+		fadeCycle 0
+		fadeClamp 0
+		fadeAmount 0
+		fadeInAmount 0
+		blurWorld 0
+		onOpen
+		{
+			"lerp" "alpha" "from" 0 "to" 1 "over" "0.15";
+			"lerp" x "from" - "640" "to" 0 "over" "0.15";
+			setLocalVarString tempName ( tablelookupbyrow( "mp/splashTable.csv" , splashrownum( 0 ) , 0 )  );
+			setLocalVarString ui_ksHint localvarstring( "tempName"  );
+			"close" "splash";
+			"close" "challenge";
+			"close" "defcon";
+			"close" "killstreak_pickup";
+			"close" "perk_challenge";
+			"close" "promotion";
+		}
+		onRequestClose
+		{
+			"lerp" x "from" 0 "to" "640" "over" "0.15";
+			"lerp" "alpha" "from" 1 "to" 0 "over" "0.15";
+		}
+		focusColor 0 0 0 0
+		decoration 
+		itemDef
+		{
+			name killstreak_title
+			rect 0 -110 0 0 2 2
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 1
+			textAlignX 0
+			textAlignY 0
+			textScale 0.5833
+			textStyle 3
+			textFont 9
+			feeder 0
+			visible 1
+			exp text ( getsplashtext( 0 )  )
+			visible when ( (  )
+			exp   ( tablelookupbyrow( "mp/splashTable.csv" , splashrownum( 0 ) , 5 )  )
+			exp   ( tablelookupbyrow( "mp/splashTable.csv" , splashrownum( 0 ) , 6 )  )
+			exp   ( tablelookupbyrow( "mp/splashTable.csv" , splashrownum( 0 ) , 7 )  )
+			exp   ( tablelookupbyrow( "mp/splashTable.csv" , splashrownum( 0 ) , 8 )  )
+		}
+		itemDef
+		{
+			name killstreak_description
+			rect 0 -90 0 0 2 2
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 1
+			textAlignX 0
+			textAlignY 0
+			textScale 0.375
+			textStyle 3
+			textFont 0
+			feeder 0
+			visible 1
+			exp text ( getsplashdescription( 0 )  )
+			visible when ( (  )
+		}
+		itemDef
+		{
+			name killstreak_icon
+			rect -24 -190 48 48 2 2
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( tablelookup( "mp/killstreakTable.csv" , 1 , localvarstring( "tempName" ) , 14 )  )
+			visible when ( ( && && && &&  )
+		}
+		itemDef
+		{
+			name killstreak_title_ss
+			rect 0 -135 0 0 2 2
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 1
+			textAlignX 0
+			textAlignY 0
+			textScale 0.87495
+			textStyle 3
+			textFont 9
+			feeder 0
+			visible 1
+			exp text ( getsplashtext( 0 )  )
+			visible when ( (  )
+			exp   ( tablelookupbyrow( "mp/splashTable.csv" , splashrownum( 0 ) , 5 )  )
+			exp   ( tablelookupbyrow( "mp/splashTable.csv" , splashrownum( 0 ) , 6 )  )
+			exp   ( tablelookupbyrow( "mp/splashTable.csv" , splashrownum( 0 ) , 7 )  )
+			exp   ( tablelookupbyrow( "mp/splashTable.csv" , splashrownum( 0 ) , 8 )  )
+		}
+		itemDef
+		{
+			name killstreak_icon_ss
+			rect -20 -135 40 40 2 2
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( tablelookup( "mp/killstreakTable.csv" , 1 , localvarstring( "tempName" ) , 14 )  )
+			visible when ( ( && && && &&  )
+		}
+	}
+}
