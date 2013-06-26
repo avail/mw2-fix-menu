@@ -1,7 +1,6 @@
 {
 	menuDef
 	{
-	{
 		name "remote_chopper_overlay"
 		rect 0 0 640 480 0 0
 		visible 1
