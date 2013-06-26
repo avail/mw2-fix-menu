@@ -1,7 +1,3 @@
-/********************************************
-*          dumped by: aerosoul94            *
-*********************************************/
-
 {
 	menuDef
 	{
@@ -9,10 +5,6 @@
 		rect 0 0 640 480 0 0
 		forecolor 1 1 1 1
 		focuscolor 1 1 1 1
-		execKey "BUTTON_START"
-		{
-			close self;
-		}
 		onClose
 		{
 			scriptmenuresponse "back";
@@ -1075,15 +1067,6 @@
 		}
 		itemDef
 		{
-			rect -272 0 272 408 3 1
-			style 3
-			decoration
-			visible 1
-			background "white"
-			textscale 0.55
-		}
-		itemDef
-		{
 			rect -272 28 -272 20 3 1
 			style 1
 			decoration
@@ -1689,18 +1672,6 @@
 			text "@PLATFORM_UI_SELECTBUTTON"
 			exp rect y ( getfocuseditemy( ) )
 			visible when ( localvarbool( "ui_menuAButton" ) && !localvarbool( "ui_centerPopup" ) )
-		}
-		itemDef
-		{
-			rect -64 -20 336 24 1 3
-			decoration
-			visible 1
-			forecolor 1 1 1 1
-			textfont 3
-			textalign 6
-			textalignx -30
-			textscale 0.375
-			text "@PLATFORM_CLOSE_BUTTONCANCEL_CAPS"
 		}
 		itemDef
 		{
