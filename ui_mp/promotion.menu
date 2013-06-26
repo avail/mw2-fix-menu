@@ -1,7 +1,6 @@
 {
 	menuDef
 	{
-	{
 		name "promotion"
 		rect 0 0 640 1 1 0
 		decoration
