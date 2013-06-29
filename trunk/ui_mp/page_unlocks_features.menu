@@ -12,10 +12,6 @@
 		fadeCycle 1
 		fadeClamp 1
 		fadeAmount 0.1
-		execKey "BUTTON_A"
-		{
-			close self;
-		}
 		onOpen
 		{
 			setLocalVarInt "ui_centerPopup" ( 1 );
