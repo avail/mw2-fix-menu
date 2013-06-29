@@ -12,7 +12,7 @@
 #define PRESTIGE_NEXT 	( stat( 2326 ) < MAX_PRESTIGE && stat( 252 ) == MAX_RANK )
 #define PRESTIGE_FINISH ( stat( 2326 ) == MAX_PRESTIGE)
 
-#define CAN_RANK_UP	( stat( 252 ) < MAX_RANK || stat( 2326 ) < MAX_PRESTIGE )
+#define CAN_RANK_UP		( stat( 252 ) < MAX_RANK || stat( 2326 ) < MAX_PRESTIGE )
 
 #define MAIN_EXEC \
 		setdvar "systemlink" 0; \
