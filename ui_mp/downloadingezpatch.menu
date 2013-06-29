@@ -1,7 +1,6 @@
 {
 	menuDef
 	{
-	{
 		name "downloadingezpatch"
 		rect -150 -104 300 104 2 2
 		style 1
