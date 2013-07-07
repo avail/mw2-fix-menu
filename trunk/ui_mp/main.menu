@@ -13,7 +13,7 @@
 		onOpen
 		{
 			open "main_text";
-			setDvar "ui_showEndOfGame" 0;
+			setDvar "ui_showEndOfGame" ( 0 );
 		}
 	}
 }
