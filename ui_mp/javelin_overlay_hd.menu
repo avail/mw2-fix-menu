@@ -1,0 +1,486 @@
+{
+	menuDef
+	{
+		name javelin_overlay_hd
+		fullscreen 0
+		rect 0 0 960 480 2 2
+		style 0
+		border 0
+		ownerdraw 0
+		ownerdrawFlag 0
+		borderSize 0
+		foreColor 1 1 1 1
+		backColor 0 0 0 0
+		borderColor 0 0 0 0
+		outlineColor 0 0 0 0
+		fadeCycle 0
+		fadeClamp 0
+		fadeAmount 0
+		fadeInAmount 0
+		visible when ( ( && &&  )
+		blurWorld 0
+		focusColor 0 0 0 0
+		visible 
+		itemDef
+		{
+			name target_line_horz_bg
+			rect 0 0 4000 4 5 5
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.25 0.25 0.25 0.95
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background white
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( weaplockblink( 15 ) && &&  )
+			exp   ( weaplockscreenposy( ) - 1  )
+		}
+		itemDef
+		{
+			name target_line_vert_bg
+			rect 0 0 6 4000 5 5
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.25 0.25 0.25 0.95
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background white
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( weaplockblink( 15 ) && &&  )
+			exp   ( weaplockscreenposx( ) - 2  )
+		}
+		itemDef
+		{
+			name target_line_horz
+			rect 0 239 4000 2 5 5
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.95 1 0.95 0.95
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background white
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( weaplockblink( 15 ) && &&  )
+			exp   ( weaplockscreenposy(  )
+		}
+		itemDef
+		{
+			name target_line_vert
+			rect 319 0 2 4000 5 5
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.95 1 0.95 0.95
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background white
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( weaplockblink( 15 ) && &&  )
+			exp   ( weaplockscreenposx(  )
+		}
+		itemDef
+		{
+			name prompt_tooCloseWarning
+			rect 0 -60 0 0 2 2
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 0.6 0.65 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 9
+			textAlignX 0
+			textAlignY 0
+			textScale 0.4583
+			textStyle 3
+			textFont 6
+			feeder 0
+			text "@MP_TOO_CLOSE_NOFIRE"
+			visible 1
+			visible when ( ( weaplocking( ) || weaplocked( ) ) && weaplocktooclose( ) && &&  )
+		}
+		itemDef
+		{
+			name prompt_tooCloseWarningPreLock
+			rect 0 -60 0 0 2 2
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 0.6 0.65 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 9
+			textAlignX 0
+			textAlignY 0
+			textScale 0.4583
+			textStyle 3
+			textFont 6
+			feeder 0
+			text "@MP_TOO_CLOSE_NOLOCK"
+			visible 1
+			visible when ( !weaplocking( ) && !weaplocked( ) && weaplocktooclose( ) && &&  )
+		}
+		itemDef
+		{
+			name prompt_holdForTarget
+			rect 0 -60 0 0 2 2
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.95 1 0.95 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 9
+			textAlignX 0
+			textAlignY 0
+			textScale 0.4583
+			textStyle 3
+			textFont 6
+			feeder 0
+			visible 1
+			visible when ( !weaplocking( ) && !weaplocked( ) && !weaplocktooclose( ) && &&  )
+		}
+		itemDef
+		{
+			name prompt_test
+			rect 0 60 0 0 2 2
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 9
+			textAlignX 0
+			textAlignY 0
+			textScale 0.4583
+			textStyle 3
+			textFont 6
+			feeder 0
+			exp text ( ( sin milliseconds( ) / 90 ) ) && &&  )
+		}
+		itemDef
+		{
+			name javelinlockbox
+			rect -40 -20 80 40 2 2
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.95 1 0.95 0.95
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background hud_javelin_lock_box
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( !weaplocking( ) && !weaplocked( ) && &&  )
+			exp   ( - 40 + ( sin milliseconds( ) / 90 ) ) * 2  )
+			exp   ( - 20 + ( sin milliseconds( ) / 90 ) ) * 1  )
+			exp   ( 80 + ( sin milliseconds( ) / 90 ) ) * 4  )
+			exp   ( 40 + ( sin milliseconds( ) / 90 ) ) * 2  )
+		}
+		itemDef
+		{
+			rect 0 0 640 480 4 4
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 1 1 0.3
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background ac130_overlay_grain
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+		}
+		itemDef
+		{
+			name WeaponJavelinBG_mp
+			rect -427 -240 854 480 2 2
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background hud_javelin_bg
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+		}
+		itemDef
+		{
+			name javelinlockon
+			rect 154 -198 64 64 2 2
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background hud_javelin_lock_on
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( weaplockblink( 4.500000 ) && &&  )
+		}
+		itemDef
+		{
+			name javelincluon
+			rect -300 -28 64 64 2 2
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background hud_javelin_clu_on
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( weaplockblink( 0 ) && !weapattacktop( ) && !weapattackdirect( ) && &&  )
+		}
+		itemDef
+		{
+			name javelintopoff
+			rect 228 -124 64 64 2 2
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background hud_javelin_top_on
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( weapattacktop( ) && &&  )
+		}
+		itemDef
+		{
+			name javelindiroff
+			rect 228 -28 64 64 2 2
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background hud_javelin_dir_on
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( weapattackdirect( ) && &&  )
+		}
+		itemDef
+		{
+			name javelinrocket_on
+			rect 30 144 64 64 2 2
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background hud_javelin_rocket_on
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( player( "clipammo" ) && &&  )
+		}
+		itemDef
+		{
+			name javelinnorocket_on
+			rect 154 144 64 64 2 2
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background hud_javelin_norocket_on
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( !player( "clipammo" ) && &&  )
+		}
+	}
+}

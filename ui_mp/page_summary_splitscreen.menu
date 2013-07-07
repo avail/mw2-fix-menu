@@ -1,0 +1,2478 @@
+{
+	menuDef
+	{
+		name page_summary_splitscreen
+		fullscreen 0
+		rect 0 50 544 337 2 1
+		style 1
+		border 0
+		ownerdraw 0
+		ownerdrawFlag 0
+		borderSize 0
+		foreColor 1 1 1 1
+		backColor 0 0 0 0
+		borderColor 0 0 0 0
+		outlineColor 0 0 0 0
+		exp rect X ( - ( 544 / 2 )  )
+		fadeCycle 1
+		fadeClamp 1
+		fadeAmount 0.1
+		fadeInAmount 0
+		blurWorld 0
+		onOpen
+		{
+			setLocalVarString ui_currentPage "page_summary_splitscreen"  );
+			if ( "page_summary_splitscreen" == "page_summary_splitscreen"  )
+			{
+				setLocalVarInt ui_leftArrow 1;
+				if ( ( getclientmatchdatadef( ) != "" )  )
+				{
+					setLocalVarInt ui_rightArrow 1;
+				}
+				else
+				{
+					setLocalVarInt ui_rightArrow 1;
+				}
+				if ( ( getclientmatchdatadef( ) != "" )  )			}
+			if ( "page_summary_splitscreen" == "page_highlights_splitscreen"  )
+			{
+				setLocalVarInt ui_leftArrow 1;
+				if ( ( getclientmatchdatadef( ) != "" )  )
+				{
+					setLocalVarInt ui_rightArrow 1;
+				}
+				else
+				{
+					setLocalVarInt ui_rightArrow 1;
+				}
+				if ( ( getclientmatchdatadef( ) != "" )  )			}
+			if ( "page_summary_splitscreen" == "page_scoreboard_splitscreen"  )
+			{
+				setLocalVarInt ui_leftArrow 1;
+				setLocalVarInt ui_rightArrow 1;
+			}
+			if ( localvarint( "ui_autoopened" )  )
+			{
+				"play" "mp_ingame_summary";
+				setLocalVarInt popup_summary_time_start 1;
+				setLocalVarInt ui_autoopened 1;
+			}
+			setLocalVarString ui_navbutton_a "@PLATFORM_BACK_CAPS"  );
+		}
+		onESC
+		{
+			"close" "self";
+			"close" "popup_summary_splitscreen";
+		}
+		focusColor 1 1 1 1
+		execKey "ù"
+		{
+			if ( "page_summary_splitscreen" == "page_summary_splitscreen"  )
+			{
+				if ( ( getclientmatchdatadef( ) != "" )  )
+				{
+					"close" "self";
+					"open" "page_highlights_splitscreen";
+					"play" "mouse_over";
+					setLocalVarInt ui_switchTime 3;
+					setLocalVarInt ui_switchDir 1;
+				}
+			}
+			if ( "page_summary_splitscreen" == "page_highlights_splitscreen"  )
+			{
+				if ( ( getclientmatchdatadef( ) != "" )  )
+				{
+					"close" "self";
+					"open" "page_scoreboard_splitscreen";
+					"play" "mouse_over";
+					setLocalVarInt ui_switchTime 3;
+					setLocalVarInt ui_switchDir 1;
+				}
+			}
+		}
+		execKey "∫"
+		{
+			if ( "page_summary_splitscreen" == "page_summary_splitscreen"  )
+			{
+				if ( ( getclientmatchdatadef( ) != "" )  )
+				{
+					"close" "self";
+					"open" "page_highlights_splitscreen";
+					"play" "mouse_over";
+					setLocalVarInt ui_switchTime 3;
+					setLocalVarInt ui_switchDir 1;
+				}
+			}
+			if ( "page_summary_splitscreen" == "page_highlights_splitscreen"  )
+			{
+				if ( ( getclientmatchdatadef( ) != "" )  )
+				{
+					"close" "self";
+					"open" "page_scoreboard_splitscreen";
+					"play" "mouse_over";
+					setLocalVarInt ui_switchTime 3;
+					setLocalVarInt ui_switchDir 1;
+				}
+			}
+		}
+		execKeyInt 23
+		{
+			if ( "page_summary_splitscreen" == "page_summary_splitscreen"  )
+			{
+				if ( ( getclientmatchdatadef( ) != "" )  )
+				{
+					"close" "self";
+					"open" "page_highlights_splitscreen";
+					"play" "mouse_over";
+					setLocalVarInt ui_switchTime 3;
+					setLocalVarInt ui_switchDir 1;
+				}
+			}
+			if ( "page_summary_splitscreen" == "page_highlights_splitscreen"  )
+			{
+				if ( ( getclientmatchdatadef( ) != "" )  )
+				{
+					"close" "self";
+					"open" "page_scoreboard_splitscreen";
+					"play" "mouse_over";
+					setLocalVarInt ui_switchTime 3;
+					setLocalVarInt ui_switchDir 1;
+				}
+			}
+		}
+		execKeyInt 31
+		{
+			if ( "page_summary_splitscreen" == "page_summary_splitscreen"  )
+			{
+				if ( ( getclientmatchdatadef( ) != "" )  )
+				{
+					"close" "self";
+					"open" "page_highlights_splitscreen";
+					"play" "mouse_over";
+					setLocalVarInt ui_switchTime 3;
+					setLocalVarInt ui_switchDir 1;
+				}
+			}
+			if ( "page_summary_splitscreen" == "page_highlights_splitscreen"  )
+			{
+				if ( ( getclientmatchdatadef( ) != "" )  )
+				{
+					"close" "self";
+					"open" "page_scoreboard_splitscreen";
+					"play" "mouse_over";
+					setLocalVarInt ui_switchTime 3;
+					setLocalVarInt ui_switchDir 1;
+				}
+			}
+		}
+		execKeyInt 1
+		{
+			"close" "self";
+			"close" "popup_summary_splitscreen";
+		}
+		itemDef
+		{
+			rect 0 50 544 28 2 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 5
+			textAlignX 0
+			textAlignY 0
+			textScale 0.5833
+			textStyle 0
+			textFont 9
+			feeder 0
+			text "@MPUI_SUMMARY"
+			visible 1
+		}
+		itemDef
+		{
+			rect 0 50 544 285.5 2 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0 0 0 0.3
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 0 0
+			background white
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1  )
+			exp   ( 42  )
+			exp   ( ( 28 )  )
+		}
+		itemDef
+		{
+			rect 0 50 544 285.5 2 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0 0 0 0.125
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 0 0
+			background gradient_vertical_rect
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1  )
+			exp   ( 42  )
+			exp   ( ( 28 )  )
+		}
+		itemDef
+		{
+			rect 0 50 450 48 2 1
+			style 3
+			border 1
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 1
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0.75
+			outlineColor 0 0 0 0
+			origin 0 0
+			background cardtitle_248x48
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( ( 0 < splitscreenplayercount( ) ) && ( getplayercardinfo( 0 , 1 , 0 ) != 0 )  )
+			exp   ( ( ( 42 + 5 ) )  )
+			exp   ( ( ( ( 28 ) ) + ( ( 71.333000 + 0 ) * 0 ) )  )
+		}
+		itemDef
+		{
+			rect 0 50 160 32 2 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 1 , 0 ) , 2 )  )
+			visible when ( ( 0 < splitscreenplayercount( ) ) && ( getplayercardinfo( 0 , 1 , 0 ) != 0 )  )
+			exp   ( ( ( 42 + 5 ) )  )
+			exp   ( ( ( ( 28 ) ) + ( ( 71.333000 + 0 ) * 0 ) ) - 2  )
+		}
+		itemDef
+		{
+			rect 0 50 160 32 2 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 9
+			textAlignX 0
+			textAlignY 0
+			textScale 0.375
+			textStyle 8
+			textFont 3
+			feeder 0
+			visible 1
+			exp text ( "@" + tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 1 , 0 ) , 1 )  )
+			visible when ( ( 0 < splitscreenplayercount( ) ) && ( getplayercardinfo( 0 , 1 , 0 ) != 0 )  )
+			exp   ( ( ( 42 + 5 ) )  )
+			exp   ( ( ( ( 28 ) ) + ( ( 71.333000 + 0 ) * 0 ) ) - 2  )
+			exp   ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 1 , 0 ) , 3 )  )
+			exp   ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 1 , 0 ) , 4 )  )
+			exp   ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 1 , 0 ) , 5 )  )
+		}
+		itemDef
+		{
+			rect 0 50 160 18 2 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 4
+			textAlignX 8
+			textAlignY 0
+			textScale 0.3333
+			textStyle 8
+			textFont 10
+			feeder 0
+			visible 1
+			exp text ( getplayercardinfo( 8 , 1 , 0 )  )
+			visible when ( ( 0 < splitscreenplayercount( ) ) && ( getplayercardinfo( 0 , 1 , 0 ) != 0 )  )
+			exp   ( ( ( 42 + 5 ) )  )
+			exp   ( ( ( ( ( 28 ) ) + ( ( 71.333000 + 0 ) * 0 ) ) ) + 28  )
+		}
+		itemDef
+		{
+			rect 0 50 48 48 2 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( tablelookupbyrow( "mp/cardIconTable.csv" , getplayercardinfo( 2 , 1 , 0 ) , 1 )  )
+			visible when ( ( 0 < splitscreenplayercount( ) ) && ( getplayercardinfo( 0 , 1 , 0 ) != 0 )  )
+			exp   ( ( ( ( 42 + 5 ) ) ) + 158  )
+			exp   ( ( ( ( ( 28 ) ) + ( ( 71.333000 + 0 ) * 0 ) ) )  )
+		}
+		itemDef
+		{
+			rect 260 78 232 24 2 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 260 28
+			decoration 
+			type 0
+			align 0
+			textAlign 10
+			textAlignX -2
+			textAlignY 2
+			textScale 0.35
+			textStyle 3
+			textFont 3
+			feeder 0
+			visible 1
+			exp text ( locstring( "@MPUI_SCORE_PRE_N" , getplayerdatasplitscreen( 0 , "round" , "score" ) )  )
+			visible when ( ( 0 < splitscreenplayercount( ) )  )
+		}
+		itemDef
+		{
+			rect 260 83 18 18 2 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 260 33
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( tablelookup( "mp/awardTable.csv" , 1 , getplayerdatasplitscreen( 0 , "round" , "awards" , 0 , "award" ) , 2 )  )
+			visible when ( getplayerdatasplitscreen( 0 , "round" , "awardCount" ) && ( 0 < splitscreenplayercount( ) )  )
+		}
+		itemDef
+		{
+			rect 260 78 232 24 2 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 0.8 0.4 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 260 28
+			decoration 
+			type 0
+			align 0
+			textAlign 8
+			textAlignX 20
+			textAlignY 2
+			textScale 0.35
+			textStyle 3
+			textFont 3
+			feeder 0
+			visible 1
+			exp text ( "@" + tablelookup( "mp/awardTable.csv" , 1 , getplayerdatasplitscreen( 0 , "round" , "awards" , 0 , "award" ) , 3 )  )
+			visible when ( getplayerdatasplitscreen( 0 , "round" , "awardCount" ) && ( 0 < splitscreenplayercount( ) )  )
+		}
+		itemDef
+		{
+			rect 260 102 232 24 2 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.701961 0.701961 0.729412 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 260 52
+			decoration 
+			type 0
+			align 0
+			textAlign 8
+			textAlignX 0
+			textAlignY -2
+			textScale 0.35
+			textStyle 3
+			textFont 3
+			feeder 0
+			visible 1
+			exp text ( "@" + tablelookup( "mp/awardTable.csv" , 1 , getplayerdatasplitscreen( 0 , "round" , "awards" , 0 , "award" ) , 4 )  )
+			visible when ( getplayerdatasplitscreen( 0 , "round" , "awardCount" ) && ( 0 < splitscreenplayercount( ) )  )
+		}
+		itemDef
+		{
+			rect -1280 141 4096 8 2 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin -1280 91
+			background xpbar_stencilbase
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( ( 0 < splitscreenplayercount( ) )  )
+		}
+		itemDef
+		{
+			rect 49 141 446.5 8 2 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.5
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 49 91
+			background summary_xpbar_shadow
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( ( 0 < splitscreenplayercount( ) )  )
+		}
+		itemDef
+		{
+			rect 49 141 446.5 8 2 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 49 91
+			background summary_xpbar
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( ( 0 < splitscreenplayercount( ) )  )
+		}
+		itemDef
+		{
+			rect 49 141 446.5 8 2 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 49 91
+			background summary_xpbar_solid
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( ( 0 < splitscreenplayercount( ) )  )
+			exp   ( ( ( 42 + 5 ) + 2 ) - 446.500000 * ( 1 - ( min ( getplayerdatasplitscreen( 0 , "experience" ) - tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdatasplitscreen( 0 , "experience" ) ) , 2 ) ) / ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdatasplitscreen( 0 , "experience" ) ) , 7 ) - tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdatasplitscreen( 0 , "experience" ) ) , 2 ) ) , 0.999900 ) * min max ( milliseconds( ) - localvarint( "popup_summary_time_start" ) ) / 500 , 0 ) , 1 ) ) )  )
+		}
+		itemDef
+		{
+			rect 49 141 446.5 8 2 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 49 91
+			background xpbar_xpfill
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( ( 0 < splitscreenplayercount( ) )  )
+			exp   ( ( ( 42 + 5 ) + 2 ) - 446.500000 * ( 1 - ( min ( getplayerdatasplitscreen( 0 , "experience" ) - tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdatasplitscreen( 0 , "experience" ) ) , 2 ) ) / ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdatasplitscreen( 0 , "experience" ) ) , 7 ) - tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdatasplitscreen( 0 , "experience" ) ) , 2 ) ) , 0.999900 ) * min max ( milliseconds( ) - localvarint( "popup_summary_time_start" ) ) / 500 , 0 ) , 1 ) ) )  )
+		}
+		itemDef
+		{
+			rect 49 141 446.5 8 2 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.5
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 49 91
+			background summary_xpbar_shadow
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( ( 0 < splitscreenplayercount( ) )  )
+		}
+		itemDef
+		{
+			rect 49 123 20 20 2 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 49 73
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( tablelookup( "mp/rankIconTable.csv" , 0 , levelforexperience( getplayerdatasplitscreen( 0 , "experience" ) ) , getplayerdatasplitscreen( 0 , "prestige" ) + 1 )  )
+			visible when ( ( 0 < splitscreenplayercount( ) )  )
+		}
+		itemDef
+		{
+			rect 69 123 16 20 2 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.701961 0.701961 0.729412 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 69 73
+			decoration 
+			type 0
+			align 0
+			textAlign 9
+			textAlignX 0
+			textAlignY 0
+			textScale 0.375
+			textStyle 7
+			textFont 3
+			feeder 0
+			visible 1
+			exp text ( tablelookup( "mp/ranktable.csv" , 0 , levelforexperience( getplayerdatasplitscreen( 0 , "experience" ) ) , 14 )  )
+			visible when ( ( 0 < splitscreenplayercount( ) )  )
+		}
+		itemDef
+		{
+			rect 459.5 123 20 20 2 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 459.5 73
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( tablelookup( "mp/rankIconTable.csv" , 0 , ( levelforexperience( getplayerdatasplitscreen( 0 , "experience" ) ) + 1 ) , getplayerdatasplitscreen( 0 , "prestige" ) + 1 )  )
+			visible when ( levelforexperience( getplayerdatasplitscreen( 0 , "experience" ) ) < int tablelookup( "mp/rankTable.csv" , 0 , "maxrank" , 1 ) ) && ( 0 < splitscreenplayercount( ) )  )
+		}
+		itemDef
+		{
+			rect 479.5 123 16 20 2 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.701961 0.701961 0.729412 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 479.5 73
+			decoration 
+			type 0
+			align 0
+			textAlign 9
+			textAlignX 0
+			textAlignY 0
+			textScale 0.375
+			textStyle 7
+			textFont 3
+			feeder 0
+			visible 1
+			exp text ( tablelookup( "mp/ranktable.csv" , 0 , ( levelforexperience( getplayerdatasplitscreen( 0 , "experience" ) ) + 1 ) , 14 )  )
+			visible when ( levelforexperience( getplayerdatasplitscreen( 0 , "experience" ) ) < int tablelookup( "mp/rankTable.csv" , 0 , "maxrank" , 1 ) ) && ( 0 < splitscreenplayercount( ) )  )
+		}
+		itemDef
+		{
+			rect 49 123 446.5 20 2 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 0.498039 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 49 73
+			decoration 
+			type 0
+			align 0
+			textAlign 1
+			textAlignX 0
+			textAlignY 18
+			textScale 0.3333
+			textStyle 3
+			textFont 10
+			feeder 0
+			visible 1
+			exp text ( locstring( "@MPUI_X_SLASH_Y_XP" , int ( getplayerdatasplitscreen( 0 , "experience" ) - tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdatasplitscreen( 0 , "experience" ) ) , 2 ) ) * min max ( milliseconds( ) - localvarint( "popup_summary_time_start" ) ) / 500 , 0 ) , 1 ) ) , int tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdatasplitscreen( 0 , "experience" ) ) , 7 ) - tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdatasplitscreen( 0 , "experience" ) ) , 2 ) ) )  )
+			visible when ( levelforexperience( getplayerdatasplitscreen( 0 , "experience" ) ) < int tablelookup( "mp/rankTable.csv" , 0 , "maxrank" , 1 ) ) && ( 0 < splitscreenplayercount( ) )  )
+		}
+		itemDef
+		{
+			rect 0 50 450 48 2 1
+			style 3
+			border 1
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 1
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0.75
+			outlineColor 0 0 0 0
+			origin 0 0
+			background cardtitle_248x48
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( ( 1 < splitscreenplayercount( ) ) && ( getplayercardinfo( 0 , 1 , 1 ) != 0 )  )
+			exp   ( ( ( 42 + 5 ) )  )
+			exp   ( ( ( ( 28 ) ) + ( ( 71.333000 + 0 ) * 1 ) )  )
+		}
+		itemDef
+		{
+			rect 0 50 160 32 2 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 1 , 1 ) , 2 )  )
+			visible when ( ( 1 < splitscreenplayercount( ) ) && ( getplayercardinfo( 0 , 1 , 1 ) != 0 )  )
+			exp   ( ( ( 42 + 5 ) )  )
+			exp   ( ( ( ( 28 ) ) + ( ( 71.333000 + 0 ) * 1 ) ) - 2  )
+		}
+		itemDef
+		{
+			rect 0 50 160 32 2 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 9
+			textAlignX 0
+			textAlignY 0
+			textScale 0.375
+			textStyle 8
+			textFont 3
+			feeder 0
+			visible 1
+			exp text ( "@" + tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 1 , 1 ) , 1 )  )
+			visible when ( ( 1 < splitscreenplayercount( ) ) && ( getplayercardinfo( 0 , 1 , 1 ) != 0 )  )
+			exp   ( ( ( 42 + 5 ) )  )
+			exp   ( ( ( ( 28 ) ) + ( ( 71.333000 + 0 ) * 1 ) ) - 2  )
+			exp   ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 1 , 1 ) , 3 )  )
+			exp   ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 1 , 1 ) , 4 )  )
+			exp   ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 1 , 1 ) , 5 )  )
+		}
+		itemDef
+		{
+			rect 0 50 160 18 2 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 4
+			textAlignX 8
+			textAlignY 0
+			textScale 0.3333
+			textStyle 8
+			textFont 10
+			feeder 0
+			visible 1
+			exp text ( getplayercardinfo( 8 , 1 , 1 )  )
+			visible when ( ( 1 < splitscreenplayercount( ) ) && ( getplayercardinfo( 0 , 1 , 1 ) != 0 )  )
+			exp   ( ( ( 42 + 5 ) )  )
+			exp   ( ( ( ( ( 28 ) ) + ( ( 71.333000 + 0 ) * 1 ) ) ) + 28  )
+		}
+		itemDef
+		{
+			rect 0 50 48 48 2 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( tablelookupbyrow( "mp/cardIconTable.csv" , getplayercardinfo( 2 , 1 , 1 ) , 1 )  )
+			visible when ( ( 1 < splitscreenplayercount( ) ) && ( getplayercardinfo( 0 , 1 , 1 ) != 0 )  )
+			exp   ( ( ( ( 42 + 5 ) ) ) + 158  )
+			exp   ( ( ( ( ( 28 ) ) + ( ( 71.333000 + 0 ) * 1 ) ) )  )
+		}
+		itemDef
+		{
+			rect 260 149.333 232 24 2 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 260 99.333
+			decoration 
+			type 0
+			align 0
+			textAlign 10
+			textAlignX -2
+			textAlignY 2
+			textScale 0.35
+			textStyle 3
+			textFont 3
+			feeder 0
+			visible 1
+			exp text ( locstring( "@MPUI_SCORE_PRE_N" , getplayerdatasplitscreen( 1 , "round" , "score" ) )  )
+			visible when ( ( 1 < splitscreenplayercount( ) )  )
+		}
+		itemDef
+		{
+			rect 260 154.333 18 18 2 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 260 104.333
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( tablelookup( "mp/awardTable.csv" , 1 , getplayerdatasplitscreen( 1 , "round" , "awards" , 0 , "award" ) , 2 )  )
+			visible when ( getplayerdatasplitscreen( 1 , "round" , "awardCount" ) && ( 1 < splitscreenplayercount( ) )  )
+		}
+		itemDef
+		{
+			rect 260 149.333 232 24 2 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 0.8 0.4 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 260 99.333
+			decoration 
+			type 0
+			align 0
+			textAlign 8
+			textAlignX 20
+			textAlignY 2
+			textScale 0.35
+			textStyle 3
+			textFont 3
+			feeder 0
+			visible 1
+			exp text ( "@" + tablelookup( "mp/awardTable.csv" , 1 , getplayerdatasplitscreen( 1 , "round" , "awards" , 0 , "award" ) , 3 )  )
+			visible when ( getplayerdatasplitscreen( 1 , "round" , "awardCount" ) && ( 1 < splitscreenplayercount( ) )  )
+		}
+		itemDef
+		{
+			rect 260 173.333 232 24 2 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.701961 0.701961 0.729412 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 260 123.333
+			decoration 
+			type 0
+			align 0
+			textAlign 8
+			textAlignX 0
+			textAlignY -2
+			textScale 0.35
+			textStyle 3
+			textFont 3
+			feeder 0
+			visible 1
+			exp text ( "@" + tablelookup( "mp/awardTable.csv" , 1 , getplayerdatasplitscreen( 1 , "round" , "awards" , 0 , "award" ) , 4 )  )
+			visible when ( getplayerdatasplitscreen( 1 , "round" , "awardCount" ) && ( 1 < splitscreenplayercount( ) )  )
+		}
+		itemDef
+		{
+			rect -1280 212.333 4096 8 2 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin -1280 162.333
+			background xpbar_stencilbase
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( ( 1 < splitscreenplayercount( ) )  )
+		}
+		itemDef
+		{
+			rect 49 212.333 446.5 8 2 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.5
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 49 162.333
+			background summary_xpbar_shadow
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( ( 1 < splitscreenplayercount( ) )  )
+		}
+		itemDef
+		{
+			rect 49 212.333 446.5 8 2 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 49 162.333
+			background summary_xpbar
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( ( 1 < splitscreenplayercount( ) )  )
+		}
+		itemDef
+		{
+			rect 49 212.333 446.5 8 2 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 49 162.333
+			background summary_xpbar_solid
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( ( 1 < splitscreenplayercount( ) )  )
+			exp   ( ( ( 42 + 5 ) + 2 ) - 446.500000 * ( 1 - ( min ( getplayerdatasplitscreen( 1 , "experience" ) - tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdatasplitscreen( 1 , "experience" ) ) , 2 ) ) / ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdatasplitscreen( 1 , "experience" ) ) , 7 ) - tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdatasplitscreen( 1 , "experience" ) ) , 2 ) ) , 0.999900 ) * min max ( milliseconds( ) - localvarint( "popup_summary_time_start" ) ) / 500 , 0 ) , 1 ) ) )  )
+		}
+		itemDef
+		{
+			rect 49 212.333 446.5 8 2 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 49 162.333
+			background xpbar_xpfill
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( ( 1 < splitscreenplayercount( ) )  )
+			exp   ( ( ( 42 + 5 ) + 2 ) - 446.500000 * ( 1 - ( min ( getplayerdatasplitscreen( 1 , "experience" ) - tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdatasplitscreen( 1 , "experience" ) ) , 2 ) ) / ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdatasplitscreen( 1 , "experience" ) ) , 7 ) - tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdatasplitscreen( 1 , "experience" ) ) , 2 ) ) , 0.999900 ) * min max ( milliseconds( ) - localvarint( "popup_summary_time_start" ) ) / 500 , 0 ) , 1 ) ) )  )
+		}
+		itemDef
+		{
+			rect 49 212.333 446.5 8 2 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.5
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 49 162.333
+			background summary_xpbar_shadow
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( ( 1 < splitscreenplayercount( ) )  )
+		}
+		itemDef
+		{
+			rect 49 194.333 20 20 2 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 49 144.333
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( tablelookup( "mp/rankIconTable.csv" , 0 , levelforexperience( getplayerdatasplitscreen( 1 , "experience" ) ) , getplayerdatasplitscreen( 1 , "prestige" ) + 1 )  )
+			visible when ( ( 1 < splitscreenplayercount( ) )  )
+		}
+		itemDef
+		{
+			rect 69 194.333 16 20 2 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.701961 0.701961 0.729412 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 69 144.333
+			decoration 
+			type 0
+			align 0
+			textAlign 9
+			textAlignX 0
+			textAlignY 0
+			textScale 0.375
+			textStyle 7
+			textFont 3
+			feeder 0
+			visible 1
+			exp text ( tablelookup( "mp/ranktable.csv" , 0 , levelforexperience( getplayerdatasplitscreen( 1 , "experience" ) ) , 14 )  )
+			visible when ( ( 1 < splitscreenplayercount( ) )  )
+		}
+		itemDef
+		{
+			rect 459.5 194.333 20 20 2 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 459.5 144.333
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( tablelookup( "mp/rankIconTable.csv" , 0 , ( levelforexperience( getplayerdatasplitscreen( 1 , "experience" ) ) + 1 ) , getplayerdatasplitscreen( 1 , "prestige" ) + 1 )  )
+			visible when ( levelforexperience( getplayerdatasplitscreen( 1 , "experience" ) ) < int tablelookup( "mp/rankTable.csv" , 0 , "maxrank" , 1 ) ) && ( 1 < splitscreenplayercount( ) )  )
+		}
+		itemDef
+		{
+			rect 479.5 194.333 16 20 2 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.701961 0.701961 0.729412 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 479.5 144.333
+			decoration 
+			type 0
+			align 0
+			textAlign 9
+			textAlignX 0
+			textAlignY 0
+			textScale 0.375
+			textStyle 7
+			textFont 3
+			feeder 0
+			visible 1
+			exp text ( tablelookup( "mp/ranktable.csv" , 0 , ( levelforexperience( getplayerdatasplitscreen( 1 , "experience" ) ) + 1 ) , 14 )  )
+			visible when ( levelforexperience( getplayerdatasplitscreen( 1 , "experience" ) ) < int tablelookup( "mp/rankTable.csv" , 0 , "maxrank" , 1 ) ) && ( 1 < splitscreenplayercount( ) )  )
+		}
+		itemDef
+		{
+			rect 49 194.333 446.5 20 2 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 0.498039 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 49 144.333
+			decoration 
+			type 0
+			align 0
+			textAlign 1
+			textAlignX 0
+			textAlignY 18
+			textScale 0.3333
+			textStyle 3
+			textFont 10
+			feeder 0
+			visible 1
+			exp text ( locstring( "@MPUI_X_SLASH_Y_XP" , int ( getplayerdatasplitscreen( 1 , "experience" ) - tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdatasplitscreen( 1 , "experience" ) ) , 2 ) ) * min max ( milliseconds( ) - localvarint( "popup_summary_time_start" ) ) / 500 , 0 ) , 1 ) ) , int tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdatasplitscreen( 1 , "experience" ) ) , 7 ) - tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdatasplitscreen( 1 , "experience" ) ) , 2 ) ) )  )
+			visible when ( levelforexperience( getplayerdatasplitscreen( 1 , "experience" ) ) < int tablelookup( "mp/rankTable.csv" , 0 , "maxrank" , 1 ) ) && ( 1 < splitscreenplayercount( ) )  )
+		}
+		itemDef
+		{
+			rect 0 50 450 48 2 1
+			style 3
+			border 1
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 1
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0.75
+			outlineColor 0 0 0 0
+			origin 0 0
+			background cardtitle_248x48
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( ( 2 < splitscreenplayercount( ) ) && ( getplayercardinfo( 0 , 1 , 2 ) != 0 )  )
+			exp   ( ( ( 42 + 5 ) )  )
+			exp   ( ( ( ( 28 ) ) + ( ( 71.333000 + 0 ) * 2 ) )  )
+		}
+		itemDef
+		{
+			rect 0 50 160 32 2 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 1 , 2 ) , 2 )  )
+			visible when ( ( 2 < splitscreenplayercount( ) ) && ( getplayercardinfo( 0 , 1 , 2 ) != 0 )  )
+			exp   ( ( ( 42 + 5 ) )  )
+			exp   ( ( ( ( 28 ) ) + ( ( 71.333000 + 0 ) * 2 ) ) - 2  )
+		}
+		itemDef
+		{
+			rect 0 50 160 32 2 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 9
+			textAlignX 0
+			textAlignY 0
+			textScale 0.375
+			textStyle 8
+			textFont 3
+			feeder 0
+			visible 1
+			exp text ( "@" + tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 1 , 2 ) , 1 )  )
+			visible when ( ( 2 < splitscreenplayercount( ) ) && ( getplayercardinfo( 0 , 1 , 2 ) != 0 )  )
+			exp   ( ( ( 42 + 5 ) )  )
+			exp   ( ( ( ( 28 ) ) + ( ( 71.333000 + 0 ) * 2 ) ) - 2  )
+			exp   ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 1 , 2 ) , 3 )  )
+			exp   ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 1 , 2 ) , 4 )  )
+			exp   ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 1 , 2 ) , 5 )  )
+		}
+		itemDef
+		{
+			rect 0 50 160 18 2 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 4
+			textAlignX 8
+			textAlignY 0
+			textScale 0.3333
+			textStyle 8
+			textFont 10
+			feeder 0
+			visible 1
+			exp text ( getplayercardinfo( 8 , 1 , 2 )  )
+			visible when ( ( 2 < splitscreenplayercount( ) ) && ( getplayercardinfo( 0 , 1 , 2 ) != 0 )  )
+			exp   ( ( ( 42 + 5 ) )  )
+			exp   ( ( ( ( ( 28 ) ) + ( ( 71.333000 + 0 ) * 2 ) ) ) + 28  )
+		}
+		itemDef
+		{
+			rect 0 50 48 48 2 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( tablelookupbyrow( "mp/cardIconTable.csv" , getplayercardinfo( 2 , 1 , 2 ) , 1 )  )
+			visible when ( ( 2 < splitscreenplayercount( ) ) && ( getplayercardinfo( 0 , 1 , 2 ) != 0 )  )
+			exp   ( ( ( ( 42 + 5 ) ) ) + 158  )
+			exp   ( ( ( ( ( 28 ) ) + ( ( 71.333000 + 0 ) * 2 ) ) )  )
+		}
+		itemDef
+		{
+			rect 260 220.666 232 24 2 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 260 170.666
+			decoration 
+			type 0
+			align 0
+			textAlign 10
+			textAlignX -2
+			textAlignY 2
+			textScale 0.35
+			textStyle 3
+			textFont 3
+			feeder 0
+			visible 1
+			exp text ( locstring( "@MPUI_SCORE_PRE_N" , getplayerdatasplitscreen( 2 , "round" , "score" ) )  )
+			visible when ( ( 2 < splitscreenplayercount( ) )  )
+		}
+		itemDef
+		{
+			rect 260 225.666 18 18 2 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 260 175.666
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( tablelookup( "mp/awardTable.csv" , 1 , getplayerdatasplitscreen( 2 , "round" , "awards" , 0 , "award" ) , 2 )  )
+			visible when ( getplayerdatasplitscreen( 2 , "round" , "awardCount" ) && ( 2 < splitscreenplayercount( ) )  )
+		}
+		itemDef
+		{
+			rect 260 220.666 232 24 2 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 0.8 0.4 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 260 170.666
+			decoration 
+			type 0
+			align 0
+			textAlign 8
+			textAlignX 20
+			textAlignY 2
+			textScale 0.35
+			textStyle 3
+			textFont 3
+			feeder 0
+			visible 1
+			exp text ( "@" + tablelookup( "mp/awardTable.csv" , 1 , getplayerdatasplitscreen( 2 , "round" , "awards" , 0 , "award" ) , 3 )  )
+			visible when ( getplayerdatasplitscreen( 2 , "round" , "awardCount" ) && ( 2 < splitscreenplayercount( ) )  )
+		}
+		itemDef
+		{
+			rect 260 244.666 232 24 2 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.701961 0.701961 0.729412 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 260 194.666
+			decoration 
+			type 0
+			align 0
+			textAlign 8
+			textAlignX 0
+			textAlignY -2
+			textScale 0.35
+			textStyle 3
+			textFont 3
+			feeder 0
+			visible 1
+			exp text ( "@" + tablelookup( "mp/awardTable.csv" , 1 , getplayerdatasplitscreen( 2 , "round" , "awards" , 0 , "award" ) , 4 )  )
+			visible when ( getplayerdatasplitscreen( 2 , "round" , "awardCount" ) && ( 2 < splitscreenplayercount( ) )  )
+		}
+		itemDef
+		{
+			rect -1280 283.666 4096 8 2 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin -1280 233.666
+			background xpbar_stencilbase
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( ( 2 < splitscreenplayercount( ) )  )
+		}
+		itemDef
+		{
+			rect 49 283.666 446.5 8 2 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.5
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 49 233.666
+			background summary_xpbar_shadow
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( ( 2 < splitscreenplayercount( ) )  )
+		}
+		itemDef
+		{
+			rect 49 283.666 446.5 8 2 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 49 233.666
+			background summary_xpbar
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( ( 2 < splitscreenplayercount( ) )  )
+		}
+		itemDef
+		{
+			rect 49 283.666 446.5 8 2 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 49 233.666
+			background summary_xpbar_solid
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( ( 2 < splitscreenplayercount( ) )  )
+			exp   ( ( ( 42 + 5 ) + 2 ) - 446.500000 * ( 1 - ( min ( getplayerdatasplitscreen( 2 , "experience" ) - tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdatasplitscreen( 2 , "experience" ) ) , 2 ) ) / ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdatasplitscreen( 2 , "experience" ) ) , 7 ) - tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdatasplitscreen( 2 , "experience" ) ) , 2 ) ) , 0.999900 ) * min max ( milliseconds( ) - localvarint( "popup_summary_time_start" ) ) / 500 , 0 ) , 1 ) ) )  )
+		}
+		itemDef
+		{
+			rect 49 283.666 446.5 8 2 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 49 233.666
+			background xpbar_xpfill
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( ( 2 < splitscreenplayercount( ) )  )
+			exp   ( ( ( 42 + 5 ) + 2 ) - 446.500000 * ( 1 - ( min ( getplayerdatasplitscreen( 2 , "experience" ) - tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdatasplitscreen( 2 , "experience" ) ) , 2 ) ) / ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdatasplitscreen( 2 , "experience" ) ) , 7 ) - tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdatasplitscreen( 2 , "experience" ) ) , 2 ) ) , 0.999900 ) * min max ( milliseconds( ) - localvarint( "popup_summary_time_start" ) ) / 500 , 0 ) , 1 ) ) )  )
+		}
+		itemDef
+		{
+			rect 49 283.666 446.5 8 2 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.5
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 49 233.666
+			background summary_xpbar_shadow
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( ( 2 < splitscreenplayercount( ) )  )
+		}
+		itemDef
+		{
+			rect 49 265.666 20 20 2 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 49 215.666
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( tablelookup( "mp/rankIconTable.csv" , 0 , levelforexperience( getplayerdatasplitscreen( 2 , "experience" ) ) , getplayerdatasplitscreen( 2 , "prestige" ) + 1 )  )
+			visible when ( ( 2 < splitscreenplayercount( ) )  )
+		}
+		itemDef
+		{
+			rect 69 265.666 16 20 2 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.701961 0.701961 0.729412 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 69 215.666
+			decoration 
+			type 0
+			align 0
+			textAlign 9
+			textAlignX 0
+			textAlignY 0
+			textScale 0.375
+			textStyle 7
+			textFont 3
+			feeder 0
+			visible 1
+			exp text ( tablelookup( "mp/ranktable.csv" , 0 , levelforexperience( getplayerdatasplitscreen( 2 , "experience" ) ) , 14 )  )
+			visible when ( ( 2 < splitscreenplayercount( ) )  )
+		}
+		itemDef
+		{
+			rect 459.5 265.666 20 20 2 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 459.5 215.666
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( tablelookup( "mp/rankIconTable.csv" , 0 , ( levelforexperience( getplayerdatasplitscreen( 2 , "experience" ) ) + 1 ) , getplayerdatasplitscreen( 2 , "prestige" ) + 1 )  )
+			visible when ( levelforexperience( getplayerdatasplitscreen( 2 , "experience" ) ) < int tablelookup( "mp/rankTable.csv" , 0 , "maxrank" , 1 ) ) && ( 2 < splitscreenplayercount( ) )  )
+		}
+		itemDef
+		{
+			rect 479.5 265.666 16 20 2 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.701961 0.701961 0.729412 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 479.5 215.666
+			decoration 
+			type 0
+			align 0
+			textAlign 9
+			textAlignX 0
+			textAlignY 0
+			textScale 0.375
+			textStyle 7
+			textFont 3
+			feeder 0
+			visible 1
+			exp text ( tablelookup( "mp/ranktable.csv" , 0 , ( levelforexperience( getplayerdatasplitscreen( 2 , "experience" ) ) + 1 ) , 14 )  )
+			visible when ( levelforexperience( getplayerdatasplitscreen( 2 , "experience" ) ) < int tablelookup( "mp/rankTable.csv" , 0 , "maxrank" , 1 ) ) && ( 2 < splitscreenplayercount( ) )  )
+		}
+		itemDef
+		{
+			rect 49 265.666 446.5 20 2 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 0.498039 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 49 215.666
+			decoration 
+			type 0
+			align 0
+			textAlign 1
+			textAlignX 0
+			textAlignY 18
+			textScale 0.3333
+			textStyle 3
+			textFont 10
+			feeder 0
+			visible 1
+			exp text ( locstring( "@MPUI_X_SLASH_Y_XP" , int ( getplayerdatasplitscreen( 2 , "experience" ) - tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdatasplitscreen( 2 , "experience" ) ) , 2 ) ) * min max ( milliseconds( ) - localvarint( "popup_summary_time_start" ) ) / 500 , 0 ) , 1 ) ) , int tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdatasplitscreen( 2 , "experience" ) ) , 7 ) - tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdatasplitscreen( 2 , "experience" ) ) , 2 ) ) )  )
+			visible when ( levelforexperience( getplayerdatasplitscreen( 2 , "experience" ) ) < int tablelookup( "mp/rankTable.csv" , 0 , "maxrank" , 1 ) ) && ( 2 < splitscreenplayercount( ) )  )
+		}
+		itemDef
+		{
+			rect 0 50 450 48 2 1
+			style 3
+			border 1
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 1
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0.75
+			outlineColor 0 0 0 0
+			origin 0 0
+			background cardtitle_248x48
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( ( 3 < splitscreenplayercount( ) ) && ( getplayercardinfo( 0 , 1 , 3 ) != 0 )  )
+			exp   ( ( ( 42 + 5 ) )  )
+			exp   ( ( ( ( 28 ) ) + ( ( 71.333000 + 0 ) * 3 ) )  )
+		}
+		itemDef
+		{
+			rect 0 50 160 32 2 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 1 , 3 ) , 2 )  )
+			visible when ( ( 3 < splitscreenplayercount( ) ) && ( getplayercardinfo( 0 , 1 , 3 ) != 0 )  )
+			exp   ( ( ( 42 + 5 ) )  )
+			exp   ( ( ( ( 28 ) ) + ( ( 71.333000 + 0 ) * 3 ) ) - 2  )
+		}
+		itemDef
+		{
+			rect 0 50 160 32 2 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 9
+			textAlignX 0
+			textAlignY 0
+			textScale 0.375
+			textStyle 8
+			textFont 3
+			feeder 0
+			visible 1
+			exp text ( "@" + tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 1 , 3 ) , 1 )  )
+			visible when ( ( 3 < splitscreenplayercount( ) ) && ( getplayercardinfo( 0 , 1 , 3 ) != 0 )  )
+			exp   ( ( ( 42 + 5 ) )  )
+			exp   ( ( ( ( 28 ) ) + ( ( 71.333000 + 0 ) * 3 ) ) - 2  )
+			exp   ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 1 , 3 ) , 3 )  )
+			exp   ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 1 , 3 ) , 4 )  )
+			exp   ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 1 , 3 ) , 5 )  )
+		}
+		itemDef
+		{
+			rect 0 50 160 18 2 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 4
+			textAlignX 8
+			textAlignY 0
+			textScale 0.3333
+			textStyle 8
+			textFont 10
+			feeder 0
+			visible 1
+			exp text ( getplayercardinfo( 8 , 1 , 3 )  )
+			visible when ( ( 3 < splitscreenplayercount( ) ) && ( getplayercardinfo( 0 , 1 , 3 ) != 0 )  )
+			exp   ( ( ( 42 + 5 ) )  )
+			exp   ( ( ( ( ( 28 ) ) + ( ( 71.333000 + 0 ) * 3 ) ) ) + 28  )
+		}
+		itemDef
+		{
+			rect 0 50 48 48 2 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( tablelookupbyrow( "mp/cardIconTable.csv" , getplayercardinfo( 2 , 1 , 3 ) , 1 )  )
+			visible when ( ( 3 < splitscreenplayercount( ) ) && ( getplayercardinfo( 0 , 1 , 3 ) != 0 )  )
+			exp   ( ( ( ( 42 + 5 ) ) ) + 158  )
+			exp   ( ( ( ( ( 28 ) ) + ( ( 71.333000 + 0 ) * 3 ) ) )  )
+		}
+		itemDef
+		{
+			rect 260 291.999 232 24 2 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 260 241.999
+			decoration 
+			type 0
+			align 0
+			textAlign 10
+			textAlignX -2
+			textAlignY 2
+			textScale 0.35
+			textStyle 3
+			textFont 3
+			feeder 0
+			visible 1
+			exp text ( locstring( "@MPUI_SCORE_PRE_N" , getplayerdatasplitscreen( 3 , "round" , "score" ) )  )
+			visible when ( ( 3 < splitscreenplayercount( ) )  )
+		}
+		itemDef
+		{
+			rect 260 296.999 18 18 2 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 260 246.999
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( tablelookup( "mp/awardTable.csv" , 1 , getplayerdatasplitscreen( 3 , "round" , "awards" , 0 , "award" ) , 2 )  )
+			visible when ( getplayerdatasplitscreen( 3 , "round" , "awardCount" ) && ( 3 < splitscreenplayercount( ) )  )
+		}
+		itemDef
+		{
+			rect 260 291.999 232 24 2 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 0.8 0.4 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 260 241.999
+			decoration 
+			type 0
+			align 0
+			textAlign 8
+			textAlignX 20
+			textAlignY 2
+			textScale 0.35
+			textStyle 3
+			textFont 3
+			feeder 0
+			visible 1
+			exp text ( "@" + tablelookup( "mp/awardTable.csv" , 1 , getplayerdatasplitscreen( 3 , "round" , "awards" , 0 , "award" ) , 3 )  )
+			visible when ( getplayerdatasplitscreen( 3 , "round" , "awardCount" ) && ( 3 < splitscreenplayercount( ) )  )
+		}
+		itemDef
+		{
+			rect 260 315.999 232 24 2 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.701961 0.701961 0.729412 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 260 265.999
+			decoration 
+			type 0
+			align 0
+			textAlign 8
+			textAlignX 0
+			textAlignY -2
+			textScale 0.35
+			textStyle 3
+			textFont 3
+			feeder 0
+			visible 1
+			exp text ( "@" + tablelookup( "mp/awardTable.csv" , 1 , getplayerdatasplitscreen( 3 , "round" , "awards" , 0 , "award" ) , 4 )  )
+			visible when ( getplayerdatasplitscreen( 3 , "round" , "awardCount" ) && ( 3 < splitscreenplayercount( ) )  )
+		}
+		itemDef
+		{
+			rect -1280 354.999 4096 8 2 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin -1280 304.999
+			background xpbar_stencilbase
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( ( 3 < splitscreenplayercount( ) )  )
+		}
+		itemDef
+		{
+			rect 49 354.999 446.5 8 2 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.5
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 49 304.999
+			background summary_xpbar_shadow
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( ( 3 < splitscreenplayercount( ) )  )
+		}
+		itemDef
+		{
+			rect 49 354.999 446.5 8 2 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 49 304.999
+			background summary_xpbar
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( ( 3 < splitscreenplayercount( ) )  )
+		}
+		itemDef
+		{
+			rect 49 354.999 446.5 8 2 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 49 304.999
+			background summary_xpbar_solid
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( ( 3 < splitscreenplayercount( ) )  )
+			exp   ( ( ( 42 + 5 ) + 2 ) - 446.500000 * ( 1 - ( min ( getplayerdatasplitscreen( 3 , "experience" ) - tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdatasplitscreen( 3 , "experience" ) ) , 2 ) ) / ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdatasplitscreen( 3 , "experience" ) ) , 7 ) - tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdatasplitscreen( 3 , "experience" ) ) , 2 ) ) , 0.999900 ) * min max ( milliseconds( ) - localvarint( "popup_summary_time_start" ) ) / 500 , 0 ) , 1 ) ) )  )
+		}
+		itemDef
+		{
+			rect 49 354.999 446.5 8 2 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 49 304.999
+			background xpbar_xpfill
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( ( 3 < splitscreenplayercount( ) )  )
+			exp   ( ( ( 42 + 5 ) + 2 ) - 446.500000 * ( 1 - ( min ( getplayerdatasplitscreen( 3 , "experience" ) - tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdatasplitscreen( 3 , "experience" ) ) , 2 ) ) / ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdatasplitscreen( 3 , "experience" ) ) , 7 ) - tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdatasplitscreen( 3 , "experience" ) ) , 2 ) ) , 0.999900 ) * min max ( milliseconds( ) - localvarint( "popup_summary_time_start" ) ) / 500 , 0 ) , 1 ) ) )  )
+		}
+		itemDef
+		{
+			rect 49 354.999 446.5 8 2 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.5
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 49 304.999
+			background summary_xpbar_shadow
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( ( 3 < splitscreenplayercount( ) )  )
+		}
+		itemDef
+		{
+			rect 49 336.999 20 20 2 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 49 286.999
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( tablelookup( "mp/rankIconTable.csv" , 0 , levelforexperience( getplayerdatasplitscreen( 3 , "experience" ) ) , getplayerdatasplitscreen( 3 , "prestige" ) + 1 )  )
+			visible when ( ( 3 < splitscreenplayercount( ) )  )
+		}
+		itemDef
+		{
+			rect 69 336.999 16 20 2 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.701961 0.701961 0.729412 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 69 286.999
+			decoration 
+			type 0
+			align 0
+			textAlign 9
+			textAlignX 0
+			textAlignY 0
+			textScale 0.375
+			textStyle 7
+			textFont 3
+			feeder 0
+			visible 1
+			exp text ( tablelookup( "mp/ranktable.csv" , 0 , levelforexperience( getplayerdatasplitscreen( 3 , "experience" ) ) , 14 )  )
+			visible when ( ( 3 < splitscreenplayercount( ) )  )
+		}
+		itemDef
+		{
+			rect 459.5 336.999 20 20 2 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 459.5 286.999
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( tablelookup( "mp/rankIconTable.csv" , 0 , ( levelforexperience( getplayerdatasplitscreen( 3 , "experience" ) ) + 1 ) , getplayerdatasplitscreen( 3 , "prestige" ) + 1 )  )
+			visible when ( levelforexperience( getplayerdatasplitscreen( 3 , "experience" ) ) < int tablelookup( "mp/rankTable.csv" , 0 , "maxrank" , 1 ) ) && ( 3 < splitscreenplayercount( ) )  )
+		}
+		itemDef
+		{
+			rect 479.5 336.999 16 20 2 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.701961 0.701961 0.729412 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 479.5 286.999
+			decoration 
+			type 0
+			align 0
+			textAlign 9
+			textAlignX 0
+			textAlignY 0
+			textScale 0.375
+			textStyle 7
+			textFont 3
+			feeder 0
+			visible 1
+			exp text ( tablelookup( "mp/ranktable.csv" , 0 , ( levelforexperience( getplayerdatasplitscreen( 3 , "experience" ) ) + 1 ) , 14 )  )
+			visible when ( levelforexperience( getplayerdatasplitscreen( 3 , "experience" ) ) < int tablelookup( "mp/rankTable.csv" , 0 , "maxrank" , 1 ) ) && ( 3 < splitscreenplayercount( ) )  )
+		}
+		itemDef
+		{
+			rect 49 336.999 446.5 20 2 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 0.498039 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 49 286.999
+			decoration 
+			type 0
+			align 0
+			textAlign 1
+			textAlignX 0
+			textAlignY 18
+			textScale 0.3333
+			textStyle 3
+			textFont 10
+			feeder 0
+			visible 1
+			exp text ( locstring( "@MPUI_X_SLASH_Y_XP" , int ( getplayerdatasplitscreen( 3 , "experience" ) - tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdatasplitscreen( 3 , "experience" ) ) , 2 ) ) * min max ( milliseconds( ) - localvarint( "popup_summary_time_start" ) ) / 500 , 0 ) , 1 ) ) , int tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdatasplitscreen( 3 , "experience" ) ) , 7 ) - tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdatasplitscreen( 3 , "experience" ) ) , 2 ) ) )  )
+			visible when ( levelforexperience( getplayerdatasplitscreen( 3 , "experience" ) ) < int tablelookup( "mp/rankTable.csv" , 0 , "maxrank" , 1 ) ) && ( 3 < splitscreenplayercount( ) )  )
+		}
+	}
+}

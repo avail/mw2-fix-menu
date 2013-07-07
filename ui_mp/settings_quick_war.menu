@@ -1,0 +1,2239 @@
+{
+	menuDef
+	{
+		name settings_quick_war
+		fullscreen 1
+		rect 0 0 640 480
+		style 1
+		border 0
+		ownerdraw 0
+		ownerdrawFlag 0
+		borderSize 0
+		foreColor 1 1 1 1
+		backColor 0 0 0 0
+		borderColor 0 0 0 0
+		outlineColor 0 0 0 0
+		soundLoop music_mainmenu_mp
+		fadeCycle 0
+		fadeClamp 0
+		fadeAmount 0
+		fadeInAmount 0
+		blurWorld 0
+		onOpen
+		{
+			"focusFirst";
+		}
+		onESC
+		{
+			"close" "settings_quick_war";
+		}
+		focusColor 1 1 1 1
+		itemDef
+		{
+			rect 0 0 640 480 4 4
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background mw2_main_background
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+		}
+		itemDef
+		{
+			rect 0 0 1708 480
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.5
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background mw2_main_cloud_overlay
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp   ( ( 0 - 107 ) - ( ( float( milliseconds( ) % 60000 ) / 60000 ) * ( 854 ) )  )
+		}
+		itemDef
+		{
+			rect 0 0 -1708 -480
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.5
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background mw2_main_cloud_overlay
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp   ( ( - 107 + 854 ) + ( ( float( milliseconds( ) % 50000 ) / 50000 ) * ( 854 ) )  )
+		}
+		itemDef
+		{
+			rect 0 0 640 480 4 4
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background mockup_bg_glow
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp   ( ( ( sin milliseconds( ) / 1500 ) + 1 ) * 0.250000 ) + 0.250000  )
+		}
+		itemDef
+		{
+			rect 0 0 640 480 4 4
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background mockup_bg_glow
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp   ( ( ( sin milliseconds( ) / 480 ) + 1 ) * 0.250000 ) + 0.250000  )
+		}
+		itemDef
+		{
+			rect 0 0 0 28 2 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 5
+			textAlignX 5
+			textAlignY 0
+			textScale 0.5
+			textStyle 0
+			textFont 9
+			feeder 0
+			visible 1
+			exp text ( "@MENU_TEAM_DEATHMATCH"  )
+		}
+		itemDef
+		{
+			rect 0 28 640 162 4 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.15
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background white
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+		}
+		itemDef
+		{
+			rect -32 -4 32 32 4 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0 0 0 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background drop_shadow_tl
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1  )
+		}
+		itemDef
+		{
+			rect 0 -4 640 32 4 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0 0 0 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background drop_shadow_t
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1  )
+		}
+		itemDef
+		{
+			rect 640 -4 32 32 4 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0 0 0 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background drop_shadow_tr
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1  )
+		}
+		itemDef
+		{
+			rect 640 28 32 162 4 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0 0 0 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background drop_shadow_r
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1  )
+		}
+		itemDef
+		{
+			rect 640 190 32 32 4 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0 0 0 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background drop_shadow_br
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1  )
+		}
+		itemDef
+		{
+			rect 0 190 640 32 4 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0 0 0 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background drop_shadow_b
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1  )
+		}
+		itemDef
+		{
+			rect -32 190 32 32 4 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0 0 0 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background drop_shadow_bl
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1  )
+		}
+		itemDef
+		{
+			rect -32 28 32 162 4 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0 0 0 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background drop_shadow_l
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1  )
+		}
+		itemDef
+		{
+			rect 0 226 640 144 4 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.15
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background white
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+		}
+		itemDef
+		{
+			rect -32 194 32 32 4 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0 0 0 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background drop_shadow_tl
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1  )
+		}
+		itemDef
+		{
+			rect 0 194 640 32 4 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0 0 0 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background drop_shadow_t
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1  )
+		}
+		itemDef
+		{
+			rect 640 194 32 32 4 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0 0 0 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background drop_shadow_tr
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1  )
+		}
+		itemDef
+		{
+			rect 640 226 32 144 4 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0 0 0 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background drop_shadow_r
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1  )
+		}
+		itemDef
+		{
+			rect 640 370 32 32 4 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0 0 0 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background drop_shadow_br
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1  )
+		}
+		itemDef
+		{
+			rect 0 370 640 32 4 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0 0 0 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background drop_shadow_b
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1  )
+		}
+		itemDef
+		{
+			rect -32 370 32 32 4 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0 0 0 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background drop_shadow_bl
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1  )
+		}
+		itemDef
+		{
+			rect -32 226 32 144 4 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0 0 0 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background drop_shadow_l
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1  )
+		}
+		itemDef
+		{
+			rect -272 28 160 18 2 1
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 6
+			textAlignX -32
+			textAlignY 0
+			textScale 0.3333
+			textStyle 0
+			textFont 9
+			feeder 0
+			visible 1
+			exp text ( "@MPUI_GAME_RULES"  )
+		}
+		itemDef
+		{
+			name sidenav_button_1
+			rect -272 46 260 18 2 1
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background menu_rules_selection_bar
+			execKeyInt 31
+			{
+				"setfocus" "sidenav_button_20";
+			}
+			execKeyInt 23
+			{
+				"setfocus" "sidenav_button_20";
+			}
+			group mw2_button
+			type 1
+			align 0
+			textAlign 4
+			textAlignX 0
+			textAlignY -2
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			text "@MPUI_RULES_TIME_LIMIT"
+			visible 1
+			onFocus
+			{
+				"play" "mouse_over";
+				if ( dvarstring(static)( 2 ) != "mp"  )
+				{
+					"setItemColor" "mw2_button" "backcolor" 0 0 0 0;
+				}
+				"setItemColor" "self" "backcolor" 0 0 0 1;
+				setLocalVarBool ui_menuAButton 1;
+				setLocalVarFloat ui_popupYPos 0.000000;
+			}
+			leaveFocus
+			{
+				"setItemColor" "self" "backcolor" 0 0 0 "0.0";
+				setLocalVarString ui_hint_text "@NULL_EMPTY"  );
+				setLocalVarBool ui_menuAButton 1;
+			}
+			action
+			{
+				"play" "mouse_click";
+				"open" "settings_quick_war_@MPUI_RULES_TIME_LIMIT";
+				"play" "mouse_click";
+			}
+			dvar scr_war_timelimit
+		}
+		itemDef
+		{
+			rect -272 46 272 18 2 1
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.65
+			backColor 1 1 1 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background white
+			decoration 
+			type 12
+			align 0
+			textAlign 4
+			textAlignX 160
+			textAlignY -2
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			visible 1
+			dvar scr_war_timelimit
+		}
+		itemDef
+		{
+			name sidenav_button_2
+			rect -272 64 260 18 2 1
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background menu_rules_selection_bar
+			execKeyInt 31
+			{
+				"setfocus" "sidenav_button_21";
+			}
+			execKeyInt 23
+			{
+				"setfocus" "sidenav_button_21";
+			}
+			group mw2_button
+			type 1
+			align 0
+			textAlign 4
+			textAlignX 0
+			textAlignY -2
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			text "@MPUI_RULES_SCORE_LIMIT"
+			visible 1
+			onFocus
+			{
+				"play" "mouse_over";
+				if ( dvarstring(static)( 2 ) != "mp"  )
+				{
+					"setItemColor" "mw2_button" "backcolor" 0 0 0 0;
+				}
+				"setItemColor" "self" "backcolor" 0 0 0 1;
+				setLocalVarBool ui_menuAButton 1;
+				setLocalVarFloat ui_popupYPos 0.000000;
+			}
+			leaveFocus
+			{
+				"setItemColor" "self" "backcolor" 0 0 0 "0.0";
+				setLocalVarString ui_hint_text "@NULL_EMPTY"  );
+				setLocalVarBool ui_menuAButton 1;
+			}
+			action
+			{
+				"play" "mouse_click";
+				"open" "settings_quick_war_@MPUI_RULES_SCORE_LIMIT";
+				"play" "mouse_click";
+			}
+			dvar scr_war_scorelimit
+		}
+		itemDef
+		{
+			rect -272 64 272 18 2 1
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.65
+			backColor 1 1 1 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background white
+			decoration 
+			type 12
+			align 0
+			textAlign 4
+			textAlignX 160
+			textAlignY -2
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			visible 1
+			dvar scr_war_scorelimit
+		}
+		itemDef
+		{
+			rect -272 226 160 18 2 1
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 6
+			textAlignX -32
+			textAlignY 0
+			textScale 0.3333
+			textStyle 0
+			textFont 9
+			feeder 0
+			visible 1
+			exp text ( "@MPUI_RULES_TEAM_OPTIONS"  )
+		}
+		itemDef
+		{
+			name sidenav_button_12
+			rect -272 244 260 18 2 1
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background menu_rules_selection_bar
+			execKeyInt 31
+			{
+				"setfocus" "sidenav_button_31";
+			}
+			execKeyInt 23
+			{
+				"setfocus" "sidenav_button_31";
+			}
+			group mw2_button
+			type 1
+			align 0
+			textAlign 4
+			textAlignX 0
+			textAlignY -2
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			text "@MPUI_RULES_SPECTATING"
+			visible 1
+			onFocus
+			{
+				"play" "mouse_over";
+				if ( dvarstring(static)( 2 ) != "mp"  )
+				{
+					"setItemColor" "mw2_button" "backcolor" 0 0 0 0;
+				}
+				"setItemColor" "self" "backcolor" 0 0 0 1;
+				setLocalVarBool ui_menuAButton 1;
+				setLocalVarFloat ui_popupYPos 0.000000;
+			}
+			leaveFocus
+			{
+				"setItemColor" "self" "backcolor" 0 0 0 "0.0";
+				setLocalVarString ui_hint_text "@NULL_EMPTY"  );
+				setLocalVarBool ui_menuAButton 1;
+			}
+			action
+			{
+				"play" "mouse_click";
+				"open" "settings_quick_war_@MPUI_RULES_SPECTATING";
+				"play" "mouse_click";
+			}
+			dvar scr_game_spectatetype
+		}
+		itemDef
+		{
+			rect -272 244 272 18 2 1
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.65
+			backColor 1 1 1 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background white
+			decoration 
+			type 12
+			align 0
+			textAlign 4
+			textAlignX 160
+			textAlignY -2
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			visible 1
+			dvar scr_game_spectatetype
+		}
+		itemDef
+		{
+			name sidenav_button_13
+			rect -272 262 260 18 2 1
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background menu_rules_selection_bar
+			execKeyInt 31
+			{
+				"setfocus" "sidenav_button_32";
+			}
+			execKeyInt 23
+			{
+				"setfocus" "sidenav_button_32";
+			}
+			group mw2_button
+			type 1
+			align 0
+			textAlign 4
+			textAlignX 0
+			textAlignY -2
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			text "@MPUI_RULES_WAVE_DELAY"
+			visible 1
+			onFocus
+			{
+				"play" "mouse_over";
+				if ( dvarstring(static)( 2 ) != "mp"  )
+				{
+					"setItemColor" "mw2_button" "backcolor" 0 0 0 0;
+				}
+				"setItemColor" "self" "backcolor" 0 0 0 1;
+				setLocalVarBool ui_menuAButton 1;
+				setLocalVarFloat ui_popupYPos 0.000000;
+			}
+			leaveFocus
+			{
+				"setItemColor" "self" "backcolor" 0 0 0 "0.0";
+				setLocalVarString ui_hint_text "@NULL_EMPTY"  );
+				setLocalVarBool ui_menuAButton 1;
+			}
+			action
+			{
+				"play" "mouse_click";
+				"open" "settings_quick_war_@MPUI_RULES_WAVE_DELAY";
+				"play" "mouse_click";
+			}
+			dvar scr_war_waverespawndelay
+		}
+		itemDef
+		{
+			rect -272 262 272 18 2 1
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.65
+			backColor 1 1 1 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background white
+			decoration 
+			type 12
+			align 0
+			textAlign 4
+			textAlignX 160
+			textAlignY -2
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			visible 1
+			dvar scr_war_waverespawndelay
+		}
+		itemDef
+		{
+			name sidenav_button_14
+			rect -272 280 260 18 2 1
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background menu_rules_selection_bar
+			execKeyInt 31
+			{
+				"setfocus" "sidenav_button_33";
+			}
+			execKeyInt 23
+			{
+				"setfocus" "sidenav_button_33";
+			}
+			group mw2_button
+			type 1
+			align 0
+			textAlign 4
+			textAlignX 0
+			textAlignY -2
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			text "@MPUI_RULES_FORCE_RESPAWN"
+			visible 1
+			onFocus
+			{
+				"play" "mouse_over";
+				if ( dvarstring(static)( 2 ) != "mp"  )
+				{
+					"setItemColor" "mw2_button" "backcolor" 0 0 0 0;
+				}
+				"setItemColor" "self" "backcolor" 0 0 0 1;
+				setLocalVarBool ui_menuAButton 1;
+				setLocalVarFloat ui_popupYPos 0.000000;
+			}
+			leaveFocus
+			{
+				"setItemColor" "self" "backcolor" 0 0 0 "0.0";
+				setLocalVarString ui_hint_text "@NULL_EMPTY"  );
+				setLocalVarBool ui_menuAButton 1;
+			}
+			action
+			{
+				"play" "mouse_click";
+				"exec" "toggle scr_player_forcerespawn 0 1";
+				"play" "mouse_click";
+			}
+			dvar scr_player_forcerespawn
+		}
+		itemDef
+		{
+			rect -272 280 272 18 2 1
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.65
+			backColor 1 1 1 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background white
+			decoration 
+			type 12
+			align 0
+			textAlign 4
+			textAlignX 160
+			textAlignY -2
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			visible 1
+			dvar scr_player_forcerespawn
+		}
+		itemDef
+		{
+			name sidenav_button_16
+			rect -272 298 260 18 2 1
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background menu_rules_selection_bar
+			execKeyInt 31
+			{
+				"setfocus" "sidenav_button_35";
+			}
+			execKeyInt 23
+			{
+				"setfocus" "sidenav_button_35";
+			}
+			group mw2_button
+			type 1
+			align 0
+			textAlign 4
+			textAlignX 0
+			textAlignY -2
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			text "@MPUI_RULES_FRIENDLY_FIRE"
+			visible 1
+			onFocus
+			{
+				"play" "mouse_over";
+				if ( dvarstring(static)( 2 ) != "mp"  )
+				{
+					"setItemColor" "mw2_button" "backcolor" 0 0 0 0;
+				}
+				"setItemColor" "self" "backcolor" 0 0 0 1;
+				setLocalVarBool ui_menuAButton 1;
+				setLocalVarFloat ui_popupYPos 0.000000;
+			}
+			leaveFocus
+			{
+				"setItemColor" "self" "backcolor" 0 0 0 "0.0";
+				setLocalVarString ui_hint_text "@NULL_EMPTY"  );
+				setLocalVarBool ui_menuAButton 1;
+			}
+			action
+			{
+				"play" "mouse_click";
+				"open" "settings_quick_war_@MPUI_RULES_FRIENDLY_FIRE";
+				"play" "mouse_click";
+			}
+			dvar scr_team_fftype
+		}
+		itemDef
+		{
+			rect -272 298 272 18 2 1
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.65
+			backColor 1 1 1 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background white
+			decoration 
+			type 12
+			align 0
+			textAlign 4
+			textAlignX 160
+			textAlignY -2
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			visible 1
+			dvar scr_team_fftype
+		}
+		itemDef
+		{
+			rect 0 28 160 18 2 1
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 6
+			textAlignX -32
+			textAlignY 0
+			textScale 0.3333
+			textStyle 0
+			textFont 9
+			feeder 0
+			visible 1
+			exp text ( "@MPUI_RULES_PLAYER_OPTIONS"  )
+		}
+		itemDef
+		{
+			name sidenav_button_20
+			rect 0 46 260 18 2 1
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background menu_rules_selection_bar
+			execKeyInt 30
+			{
+				"setfocus" "sidenav_button_1";
+			}
+			execKeyInt 22
+			{
+				"setfocus" "sidenav_button_1";
+			}
+			group mw2_button
+			type 1
+			align 0
+			textAlign 4
+			textAlignX 0
+			textAlignY -2
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			text "@MPUI_RULES_NUMBER_OF_LIVES"
+			visible 1
+			onFocus
+			{
+				"play" "mouse_over";
+				if ( dvarstring(static)( 2 ) != "mp"  )
+				{
+					"setItemColor" "mw2_button" "backcolor" 0 0 0 0;
+				}
+				"setItemColor" "self" "backcolor" 0 0 0 1;
+				setLocalVarBool ui_menuAButton 1;
+				setLocalVarFloat ui_popupYPos 0.000000;
+			}
+			leaveFocus
+			{
+				"setItemColor" "self" "backcolor" 0 0 0 "0.0";
+				setLocalVarString ui_hint_text "@NULL_EMPTY"  );
+				setLocalVarBool ui_menuAButton 1;
+			}
+			action
+			{
+				"play" "mouse_click";
+				"open" "settings_quick_war_@MPUI_RULES_NUMBER_OF_LIVES";
+				"play" "mouse_click";
+			}
+			dvar scr_war_numlives
+		}
+		itemDef
+		{
+			rect 0 46 272 18 2 1
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.65
+			backColor 1 1 1 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background white
+			decoration 
+			type 12
+			align 0
+			textAlign 4
+			textAlignX 160
+			textAlignY -2
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			visible 1
+			dvar scr_war_numlives
+		}
+		itemDef
+		{
+			name sidenav_button_21
+			rect 0 64 260 18 2 1
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background menu_rules_selection_bar
+			execKeyInt 30
+			{
+				"setfocus" "sidenav_button_2";
+			}
+			execKeyInt 22
+			{
+				"setfocus" "sidenav_button_2";
+			}
+			group mw2_button
+			type 1
+			align 0
+			textAlign 4
+			textAlignX 0
+			textAlignY -2
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			text "@MPUI_RULES_RESPAWN_DELAY"
+			visible 1
+			onFocus
+			{
+				"play" "mouse_over";
+				if ( dvarstring(static)( 2 ) != "mp"  )
+				{
+					"setItemColor" "mw2_button" "backcolor" 0 0 0 0;
+				}
+				"setItemColor" "self" "backcolor" 0 0 0 1;
+				setLocalVarBool ui_menuAButton 1;
+				setLocalVarFloat ui_popupYPos 0.000000;
+			}
+			leaveFocus
+			{
+				"setItemColor" "self" "backcolor" 0 0 0 "0.0";
+				setLocalVarString ui_hint_text "@NULL_EMPTY"  );
+				setLocalVarBool ui_menuAButton 1;
+			}
+			action
+			{
+				"play" "mouse_click";
+				"open" "settings_quick_war_@MPUI_RULES_RESPAWN_DELAY";
+				"play" "mouse_click";
+			}
+			dvar scr_war_playerrespawndelay
+		}
+		itemDef
+		{
+			rect 0 64 272 18 2 1
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.65
+			backColor 1 1 1 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background white
+			decoration 
+			type 12
+			align 0
+			textAlign 4
+			textAlignX 160
+			textAlignY -2
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			visible 1
+			dvar scr_war_playerrespawndelay
+		}
+		itemDef
+		{
+			name sidenav_button_22
+			rect 0 82 260 18 2 1
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background menu_rules_selection_bar
+			execKeyInt 30
+			{
+				"setfocus" "sidenav_button_3";
+			}
+			execKeyInt 22
+			{
+				"setfocus" "sidenav_button_3";
+			}
+			group mw2_button
+			type 1
+			align 0
+			textAlign 4
+			textAlignX 0
+			textAlignY -2
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			text "@MPUI_RULES_MAX_HEALTH"
+			visible 1
+			onFocus
+			{
+				"play" "mouse_over";
+				if ( dvarstring(static)( 2 ) != "mp"  )
+				{
+					"setItemColor" "mw2_button" "backcolor" 0 0 0 0;
+				}
+				"setItemColor" "self" "backcolor" 0 0 0 1;
+				setLocalVarBool ui_menuAButton 1;
+				setLocalVarFloat ui_popupYPos 0.000000;
+			}
+			leaveFocus
+			{
+				"setItemColor" "self" "backcolor" 0 0 0 "0.0";
+				setLocalVarString ui_hint_text "@NULL_EMPTY"  );
+				setLocalVarBool ui_menuAButton 1;
+			}
+			action
+			{
+				"play" "mouse_click";
+				"open" "settings_quick_war_@MPUI_RULES_MAX_HEALTH";
+				"play" "mouse_click";
+			}
+			dvar scr_player_maxhealth
+		}
+		itemDef
+		{
+			rect 0 82 272 18 2 1
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.65
+			backColor 1 1 1 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background white
+			decoration 
+			type 12
+			align 0
+			textAlign 4
+			textAlignX 160
+			textAlignY -2
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			visible 1
+			dvar scr_player_maxhealth
+		}
+		itemDef
+		{
+			name sidenav_button_23
+			rect 0 100 260 18 2 1
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background menu_rules_selection_bar
+			execKeyInt 30
+			{
+				"setfocus" "sidenav_button_4";
+			}
+			execKeyInt 22
+			{
+				"setfocus" "sidenav_button_4";
+			}
+			group mw2_button
+			type 1
+			align 0
+			textAlign 4
+			textAlignX 0
+			textAlignY -2
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			text "@MPUI_RULES_HEALTH_REGEN"
+			visible 1
+			onFocus
+			{
+				"play" "mouse_over";
+				if ( dvarstring(static)( 2 ) != "mp"  )
+				{
+					"setItemColor" "mw2_button" "backcolor" 0 0 0 0;
+				}
+				"setItemColor" "self" "backcolor" 0 0 0 1;
+				setLocalVarBool ui_menuAButton 1;
+				setLocalVarFloat ui_popupYPos 0.000000;
+			}
+			leaveFocus
+			{
+				"setItemColor" "self" "backcolor" 0 0 0 "0.0";
+				setLocalVarString ui_hint_text "@NULL_EMPTY"  );
+				setLocalVarBool ui_menuAButton 1;
+			}
+			action
+			{
+				"play" "mouse_click";
+				"open" "settings_quick_war_@MPUI_RULES_HEALTH_REGEN";
+				"play" "mouse_click";
+			}
+			dvar scr_player_healthregentime
+		}
+		itemDef
+		{
+			rect 0 100 272 18 2 1
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.65
+			backColor 1 1 1 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background white
+			decoration 
+			type 12
+			align 0
+			textAlign 4
+			textAlignX 160
+			textAlignY -2
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			visible 1
+			dvar scr_player_healthregentime
+		}
+		itemDef
+		{
+			name sidenav_button_24
+			rect 0 118 260 18 2 1
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background menu_rules_selection_bar
+			execKeyInt 30
+			{
+				"setfocus" "sidenav_button_5";
+			}
+			execKeyInt 22
+			{
+				"setfocus" "sidenav_button_5";
+			}
+			group mw2_button
+			type 1
+			align 0
+			textAlign 4
+			textAlignX 0
+			textAlignY -2
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			text "@MPUI_RULES_KILLCAM"
+			visible 1
+			onFocus
+			{
+				"play" "mouse_over";
+				if ( dvarstring(static)( 2 ) != "mp"  )
+				{
+					"setItemColor" "mw2_button" "backcolor" 0 0 0 0;
+				}
+				"setItemColor" "self" "backcolor" 0 0 0 1;
+				setLocalVarBool ui_menuAButton 1;
+				setLocalVarFloat ui_popupYPos 0.000000;
+			}
+			leaveFocus
+			{
+				"setItemColor" "self" "backcolor" 0 0 0 "0.0";
+				setLocalVarString ui_hint_text "@NULL_EMPTY"  );
+				setLocalVarBool ui_menuAButton 1;
+			}
+			action
+			{
+				"play" "mouse_click";
+				"exec" "toggle scr_game_allowkillcam 0 1";
+				"play" "mouse_click";
+			}
+			dvar scr_game_allowkillcam
+		}
+		itemDef
+		{
+			rect 0 118 272 18 2 1
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.65
+			backColor 1 1 1 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background white
+			decoration 
+			type 12
+			align 0
+			textAlign 4
+			textAlignX 160
+			textAlignY -2
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			visible 1
+			dvar scr_game_allowkillcam
+		}
+		itemDef
+		{
+			rect 0 226 160 18 2 1
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 6
+			textAlignX -32
+			textAlignY 0
+			textScale 0.3333
+			textStyle 0
+			textFont 9
+			feeder 0
+			visible 1
+			exp text ( "@MPUI_RULES_GAMEPLAY_OPTIONS"  )
+		}
+		itemDef
+		{
+			name sidenav_button_31
+			rect 0 244 260 18 2 1
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background menu_rules_selection_bar
+			execKeyInt 30
+			{
+				"setfocus" "sidenav_button_12";
+			}
+			execKeyInt 22
+			{
+				"setfocus" "sidenav_button_12";
+			}
+			group mw2_button
+			type 1
+			align 0
+			textAlign 4
+			textAlignX 0
+			textAlignY -2
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			text "@MPUI_RULES_HEADSHOTS_ONLY"
+			visible 1
+			onFocus
+			{
+				"play" "mouse_over";
+				if ( dvarstring(static)( 2 ) != "mp"  )
+				{
+					"setItemColor" "mw2_button" "backcolor" 0 0 0 0;
+				}
+				"setItemColor" "self" "backcolor" 0 0 0 1;
+				setLocalVarBool ui_menuAButton 1;
+				setLocalVarFloat ui_popupYPos 0.000000;
+			}
+			leaveFocus
+			{
+				"setItemColor" "self" "backcolor" 0 0 0 "0.0";
+				setLocalVarString ui_hint_text "@NULL_EMPTY"  );
+				setLocalVarBool ui_menuAButton 1;
+			}
+			action
+			{
+				"play" "mouse_click";
+				"exec" "toggle scr_game_onlyheadshots 0 1";
+				"play" "mouse_click";
+			}
+			dvar scr_game_onlyheadshots
+		}
+		itemDef
+		{
+			rect 0 244 272 18 2 1
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.65
+			backColor 1 1 1 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background white
+			decoration 
+			type 12
+			align 0
+			textAlign 4
+			textAlignX 160
+			textAlignY -2
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			visible 1
+			dvar scr_game_onlyheadshots
+		}
+		itemDef
+		{
+			name sidenav_button_32
+			rect 0 262 260 18 2 1
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background menu_rules_selection_bar
+			execKeyInt 30
+			{
+				"setfocus" "sidenav_button_13";
+			}
+			execKeyInt 22
+			{
+				"setfocus" "sidenav_button_13";
+			}
+			group mw2_button
+			type 1
+			align 0
+			textAlign 4
+			textAlignX 0
+			textAlignY -2
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			text "@MPUI_RULES_PERKS"
+			visible 1
+			onFocus
+			{
+				"play" "mouse_over";
+				if ( dvarstring(static)( 2 ) != "mp"  )
+				{
+					"setItemColor" "mw2_button" "backcolor" 0 0 0 0;
+				}
+				"setItemColor" "self" "backcolor" 0 0 0 1;
+				setLocalVarBool ui_menuAButton 1;
+				setLocalVarFloat ui_popupYPos 0.000000;
+			}
+			leaveFocus
+			{
+				"setItemColor" "self" "backcolor" 0 0 0 "0.0";
+				setLocalVarString ui_hint_text "@NULL_EMPTY"  );
+				setLocalVarBool ui_menuAButton 1;
+			}
+			action
+			{
+				"play" "mouse_click";
+				"exec" "toggle scr_game_perks 0 1";
+				"play" "mouse_click";
+			}
+			dvar scr_game_perks
+		}
+		itemDef
+		{
+			rect 0 262 272 18 2 1
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.65
+			backColor 1 1 1 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background white
+			decoration 
+			type 12
+			align 0
+			textAlign 4
+			textAlignX 160
+			textAlignY -2
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			visible 1
+			dvar scr_game_perks
+		}
+		itemDef
+		{
+			name sidenav_button_33
+			rect 0 280 260 18 2 1
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background menu_rules_selection_bar
+			execKeyInt 30
+			{
+				"setfocus" "sidenav_button_14";
+			}
+			execKeyInt 22
+			{
+				"setfocus" "sidenav_button_14";
+			}
+			group mw2_button
+			type 1
+			align 0
+			textAlign 4
+			textAlignX 0
+			textAlignY -2
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			text "@MPUI_RULES_KILLSTREAK_REWARDS"
+			visible 1
+			onFocus
+			{
+				"play" "mouse_over";
+				if ( dvarstring(static)( 2 ) != "mp"  )
+				{
+					"setItemColor" "mw2_button" "backcolor" 0 0 0 0;
+				}
+				"setItemColor" "self" "backcolor" 0 0 0 1;
+				setLocalVarBool ui_menuAButton 1;
+				setLocalVarFloat ui_popupYPos 0.000000;
+			}
+			leaveFocus
+			{
+				"setItemColor" "self" "backcolor" 0 0 0 "0.0";
+				setLocalVarString ui_hint_text "@NULL_EMPTY"  );
+				setLocalVarBool ui_menuAButton 1;
+			}
+			action
+			{
+				"play" "mouse_click";
+				"exec" "toggle scr_game_hardpoints 0 1";
+				"play" "mouse_click";
+			}
+			dvar scr_game_hardpoints
+		}
+		itemDef
+		{
+			rect 0 280 272 18 2 1
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.65
+			backColor 1 1 1 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background white
+			decoration 
+			type 12
+			align 0
+			textAlign 4
+			textAlignX 160
+			textAlignY -2
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			visible 1
+			dvar scr_game_hardpoints
+		}
+		itemDef
+		{
+			name sidenav_button_34
+			rect 0 298 260 18 2 1
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background menu_rules_selection_bar
+			execKeyInt 30
+			{
+				"setfocus" "sidenav_button_15";
+			}
+			execKeyInt 22
+			{
+				"setfocus" "sidenav_button_15";
+			}
+			group mw2_button
+			type 1
+			align 0
+			textAlign 4
+			textAlignX 0
+			textAlignY -2
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			text "@MPUI_RULES_HARDCORE"
+			visible 1
+			onFocus
+			{
+				"play" "mouse_over";
+				if ( dvarstring(static)( 2 ) != "mp"  )
+				{
+					"setItemColor" "mw2_button" "backcolor" 0 0 0 0;
+				}
+				"setItemColor" "self" "backcolor" 0 0 0 1;
+				setLocalVarBool ui_menuAButton 1;
+				setLocalVarFloat ui_popupYPos 0.000000;
+			}
+			leaveFocus
+			{
+				"setItemColor" "self" "backcolor" 0 0 0 "0.0";
+				setLocalVarString ui_hint_text "@NULL_EMPTY"  );
+				setLocalVarBool ui_menuAButton 1;
+			}
+			action
+			{
+				"play" "mouse_click";
+				"execNow" "toggle g_hardcore 0 1";
+				"play" "mouse_click";
+				"execNowOnDvarIntValue" "g_hardcore" 0 "exec hardcore_disable.cfg";
+				"execNowOnDvarIntValue" "g_hardcore" 1 "exec hardcore_settings.cfg";
+			}
+			dvar g_hardcore
+		}
+		itemDef
+		{
+			rect 0 298 272 18 2 1
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.65
+			backColor 1 1 1 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background white
+			decoration 
+			type 12
+			align 0
+			textAlign 4
+			textAlignX 160
+			textAlignY -2
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			visible 1
+			dvar g_hardcore
+		}
+		itemDef
+		{
+			name sidenav_button_35
+			rect 0 316 260 18 2 1
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background menu_rules_selection_bar
+			execKeyInt 30
+			{
+				"setfocus" "sidenav_button_16";
+			}
+			execKeyInt 22
+			{
+				"setfocus" "sidenav_button_16";
+			}
+			group mw2_button
+			type 1
+			align 0
+			textAlign 4
+			textAlignX 0
+			textAlignY -2
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			text "@MPUI_RULES_CAMERA"
+			visible 1
+			onFocus
+			{
+				"play" "mouse_over";
+				if ( dvarstring(static)( 2 ) != "mp"  )
+				{
+					"setItemColor" "mw2_button" "backcolor" 0 0 0 0;
+				}
+				"setItemColor" "self" "backcolor" 0 0 0 1;
+				setLocalVarBool ui_menuAButton 1;
+				setLocalVarFloat ui_popupYPos 0.000000;
+			}
+			leaveFocus
+			{
+				"setItemColor" "self" "backcolor" 0 0 0 "0.0";
+				setLocalVarString ui_hint_text "@NULL_EMPTY"  );
+				setLocalVarBool ui_menuAButton 1;
+			}
+			action
+			{
+				"play" "mouse_click";
+				"exec" "toggle scr_thirdperson 0 1";
+				"play" "mouse_click";
+			}
+			dvar scr_thirdperson
+		}
+		itemDef
+		{
+			rect 0 316 272 18 2 1
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.65
+			backColor 1 1 1 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background white
+			decoration 
+			type 12
+			align 0
+			textAlign 4
+			textAlignX 160
+			textAlignY -2
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			visible 1
+			dvar scr_thirdperson
+		}
+		itemDef
+		{
+			rect 0 0 144 18 2 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 10
+			textAlignX 0
+			textAlignY -1
+			textScale 0.28
+			textStyle 0
+			textFont 1
+			feeder 0
+			visible 1
+			visible when ( !localvarbool( "ui_hideSelectButton" )  )
+			exp   ( getfocuseditemx( )  )
+			exp   ( getfocuseditemy( )  )
+		}
+		itemDef
+		{
+			rect -64 -20 336 20 1 3
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background menu_button_selection_bar
+			group mw2_button
+			type 1
+			align 0
+			textAlign 6
+			textAlignX -60
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			text "@PLATFORM_BACK_CAPS"
+			visible 1
+			onFocus
+			{
+				"play" "mouse_over";
+				if ( dvarstring(static)( 2 ) != "mp"  )
+				{
+					"setItemColor" "mw2_button" "backcolor" 0 0 0 0;
+				}
+				"setItemColor" "self" "backcolor" 0 0 0 1;
+				setLocalVarBool ui_menuAButton 1;
+			}
+			leaveFocus
+			{
+				"setItemColor" "self" "backcolor" 0 0 0 "0.0";
+				setLocalVarString ui_hint_text "@NULL_EMPTY"  );
+				setLocalVarBool ui_menuAButton 1;
+			}
+			action
+			{
+				"play" "mouse_click";
+				"play" "mouse_click";
+				"escape" "self";
+			}
+			visible when ( "@PLATFORM_BACK_CAPS" == "@PLATFORM_BACK_CAPS"  )
+		}
+		itemDef
+		{
+			rect -64 -20 336 20 1 3
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background menu_button_selection_bar
+			group mw2_button
+			type 1
+			align 0
+			textAlign 6
+			textAlignX -60
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			text "@PLATFORM_BACK_CAPS"
+			visible 1
+			onFocus
+			{
+				"play" "mouse_over";
+				if ( dvarstring(static)( 2 ) != "mp"  )
+				{
+					"setItemColor" "mw2_button" "backcolor" 0 0 0 0;
+				}
+				"setItemColor" "self" "backcolor" 0 0 0 1;
+				setLocalVarBool ui_menuAButton 1;
+			}
+			leaveFocus
+			{
+				"setItemColor" "self" "backcolor" 0 0 0 "0.0";
+				setLocalVarString ui_hint_text "@NULL_EMPTY"  );
+				setLocalVarBool ui_menuAButton 1;
+			}
+			action
+			{
+				"play" "mouse_click";
+				"play" "mouse_click";
+				"open" "popup_summary";
+			}
+			visible when ( "@PLATFORM_BACK_CAPS" == "@PLATFORM_GAME_SUMMARY_CAPS"  )
+		}
+	}
+}
