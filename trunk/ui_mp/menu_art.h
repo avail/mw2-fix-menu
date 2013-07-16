@@ -2,31 +2,42 @@
 
 // define work here.
 
-#define CHOICE_X_START			0
-#define CHOICE_Y_START			28				// pretty much standard, where you want the defined button to start.
-#define CHOICE_X_SPACING		250
-#define CHOICE_Y_SPACING		20
-#define CHOICE_Y_COUNT			20
-#define CHOICE_SIZE_X			344 			// text x axis
-#define CHOICE_SIZE_Y			20  			// y axis button size
-#define	CHOICE_CAPTION_OFFSET 	0 				// button image size
-#define CHOICE_SEP_SPACE(i) 	0
+#define CHOICE_X_START				0
+#define CHOICE_Y_START				28	// pretty much standard, where you want the defined button to start.
+#define CHOICE_X_SPACING			250
+#define CHOICE_Y_SPACING			20
+#define CHOICE_Y_COUNT				20
+#define CHOICE_SIZE_X				344	// text x axis
+#define CHOICE_SIZE_Y				20	// y axis button size
+#define	CHOICE_CAPTION_OFFSET 		0	// button image size
 
-//  232 28 344 20 1 1
-//	CHOICE_ORIGIN( itemIndex ) ( CHOICE_SIZE_X + CHOICE_DVAR_WIDTH_OFFSET ) CHOICE_SIZE_Y 0 0
+#define CHOICE_SEP_OFFSET_X			0
+#define CHOICE_SEP_OFFSET_Y			0
+#define CHOICE_SEP_WIDTH			130
+
+#if !defined( CHOICE_SEP_1 ) || !defined( CHOICE_SEP_SPACING )
+#define CHOICE_SEP_TOTAL_SPACING( itemIndex )	0
+#elif !defined( CHOICE_SEP_2 )
+#define CHOICE_SEP_TOTAL_SPACING( itemIndex )	( ( itemIndex <= CHOICE_SEP_1 ) ? 0 : CHOICE_SEP_SPACING )
+#elif !defined( CHOICE_SEP_3 )
+#define CHOICE_SEP_TOTAL_SPACING( itemIndex )	( ( itemIndex <= CHOICE_SEP_1 ) ? 0 : ( ( itemIndex <= CHOICE_SEP_2 ) ? CHOICE_SEP_SPACING : CHOICE_SEP_SPACING * 2 ) )
+#else
+#define CHOICE_SEP_TOTAL_SPACING( itemIndex )	( ( itemIndex <= CHOICE_SEP_1 ) ? 0 : ( ( itemIndex <= CHOICE_SEP_2 ) ? CHOICE_SEP_SPACING : ( ( itemIndex <= CHOICE_SEP_3 ) ? CHOICE_SEP_SPACING * 2 : CHOICE_SEP_SPACING * 3 ) ) )
+#endif
+
+#define CHOICE_SEP_OFFSET(i)		CHOICE_ORIGIN(i) 216 1 1 1
 
 #define CHOICE_ROW( itemIndex )		( ( itemIndex - 1 ) % CHOICE_Y_COUNT )
 #define CHOICE_COL( itemIndex )		( ( itemIndex - 1 - ( ( itemIndex - 1 ) % CHOICE_Y_COUNT ) ) / CHOICE_Y_COUNT )
 
 #define CHOICE_X( itemIndex ) 		( CHOICE_X_START + CHOICE_X_SPACING * CHOICE_COL( itemIndex ) )
-#define CHOICE_Y( itemIndex ) 		( CHOICE_Y_START + CHOICE_Y_SPACING * CHOICE_ROW( itemIndex ) + CHOICE_SEP_SPACE( itemIndex ) )
+#define CHOICE_Y( itemIndex ) 		( CHOICE_Y_START + CHOICE_Y_SPACING * CHOICE_ROW( itemIndex ) + CHOICE_SEP_TOTAL_SPACING( itemIndex ) )
 
 #define CHOICE_ORIGIN( itemIndex )	CHOICE_X( itemIndex ) CHOICE_Y( itemIndex )
 
-#define CHOICE_RECT(i)				 -64 ( 28 +( i * 20 ) ) 336 20 1 1
-#define CHOICE_SEP_OFFSET(i)		 0 ( 28 +( i * 20 ) ) 216 1 1 1
+#define CHOICE_RECT(i)				CHOICE_ORIGIN(i) 320 20 28 1 1
 
-#define TITLE_RECT( x, y )			 x y 344 28 1 1
+#define TITLE_RECT( x, y )			x y 344 28 1 1
 
 // menu code work here.
 
@@ -75,6 +86,23 @@
 			textScale 0.55 \
 			visible visArg \
 		}
+/*		
+// needs fixing before used as it is broken and im lazy :p
+#define CHOICE_SEPARATOR_ADV( itemIndex ) \
+		CHOICE_SEPARATOR_VIS_ADV( itemIndex, 1 )
+
+#define CHOICE_SEPARATOR_VIS_ADV( itemIndex, visArg ) \
+		itemDef \
+		{ \
+			rect CHOICE_ORIGIN( itemIndex ) \
+			style 3 \
+			foreColor 1 1 1 0.65 \
+			background "gradient_fadein" \
+			decoration \
+			textScale 0.55 \
+			visible visArg \
+		}	
+*/		
 #define CHOICE_BUTTON( itemIndex, textArg, actionArg ) \
 		CHOICE_BUTTON_VIS( itemIndex, textArg, actionArg, 1 )
 
@@ -111,8 +139,42 @@
 			} \
 			visible visArg \
 		}
+#define CHOICE_BUTTON_ADV( itemIndex, textArg, actionArg ) \
+		CHOICE_BUTTON_VIS_ADV( itemIndex, textArg, actionArg, 1 )
 
-#define CHOICE_BUTTON_VIS_ADV( itemIndex, textArg, actionArg, visArg, vis ) \
+#define CHOICE_BUTTON_VIS_ADV( itemIndex, textArg, actionArg, visArg ) \
+		itemDef \
+		{ \
+			rect CHOICE_ORIGIN( itemIndex ) ( CHOICE_SIZE_X + CHOICE_CAPTION_OFFSET ) CHOICE_SIZE_Y 0 0 \
+			style 1 \
+			foreColor COLOR_FOCUS \
+			background "menu_setting_selection_bar" \
+			type 1 \
+			textAlign 4 \
+			textAlignX 180 \
+			textScale 0.375 \
+			textFont 3 \
+			text textArg \
+			onFocus \
+			{ \
+				play "mouse_over"; \
+				setItemColor self "backcolor" 0 0 0 1; \
+			} \
+			leaveFocus \
+			{ \
+				setItemColor self "backcolor" 0 0 0 0; \
+			} \
+			action \
+			{ \
+				play "mouse_click"; \
+				actionArg \
+			} \
+			visible visArg \
+		}
+#define CHOICE_BUTTON_NOHI( itemIndex, textArg, actionArg ) \
+		CHOICE_BUTTON_VIS_NOHI( itemIndex, textArg, actionArg, 1 )
+		
+#define CHOICE_BUTTON_VIS_NOHI( itemIndex, textArg, actionArg, visArg ) \
 		itemDef \
 		{ \
 			rect CHOICE_RECT( itemIndex ) \
@@ -125,34 +187,28 @@
 			textAlignX -60 \
 			textScale 0.375 \
 			textFont 3 \
-			text textArg \
+			exp text ( textArg ); \
 			onFocus \
 			{ \
-				play mouse_over; \
-				setItemColor self backcolor 0 0 0 1; \
-				setLocalVarBool "ui_menuAButton" ( 1 ); \
-				setLocalVarFloat "ui_popupYPos" ( getfocuseditemy( ) ); \
+				play "mouse_over"; \
+				setItemColor self backColor 0 0 0 1; \
+				setLocalVarBool ui_menuAButton ( 1 ); \
 			} \
 			leaveFocus \
 			{ \
-				setItemColor self backcolor 0 0 0 0.0; \
-				setLocalVarBool "ui_menuAButton" ( 0 ); \
+				setItemColor self backColor 0 0 0 0.0; \
+				setLocalVarBool ui_menuAButton ( 0 ); \
 			} \
 			action \
 			{ \
-				play mouse_click; \
+				play "mouse_click"; \
 				actionArg \
 			} \
 			visible visArg \
-			vis \
-		}	
+		}
 /*	
 // will be worked on later as > vis < i do not know of	
 #define CHOICE_BUTTON_FOCUS_VIS_ADV( itemIndex, textArg, actionArg, onFocusArg, leaveFocusArg, visArg, vis ) \
-
-#define CHOICE_BUTTON_NOHI( itemIndex, textArg, actionArg ) \
-		CHOICE_BUTTON_VIS_NOHI( itemIndex, textArg, actionArg, 1 )
-#define CHOICE_BUTTON_VIS_NOHI( itemIndex, textArg, actionArg, visArg )
 
 #define CHOICE_BUTTON_FOCUS( itemIndex, textArg, actionArg, onFocusArg, leaveFocusArg ) \
 		CHOICE_BUTTON_FOCUS_VIS( itemIndex, textArg, actionArg, onFocusArg, leaveFocusArg, 1 )
@@ -270,7 +326,7 @@
 		CHOICE_DVARSTRINGLIST_VIS( itemIndex, textArg, dvarArg, strListArg, actionArg, 1 )
 
 #define CHOICE_DVARSTRINGLIST_VIS( itemIndex, textArg, dvarArg, strListArg, actionArg, visArg ) \
-		CHOICE_CAPTION( itemIndex, textArg ) \
+		CHOICE_CAPTION_VIS( itemIndex, textArg, visArg ) \
 		itemDef \
 		{ \
 			rect CHOICE_ORIGIN( itemIndex ) ( CHOICE_SIZE_X + CHOICE_CAPTION_OFFSET ) CHOICE_SIZE_Y 0 0 \
@@ -418,9 +474,7 @@
 		itemDef \
 		{ \
 			rect CHOICE_ORIGIN( itemIndex ) ( CHOICE_SIZE_X + CHOICE_CAPTION_OFFSET ) CHOICE_SIZE_Y 0 0 \
-			style 1 \
 			foreColor COLOR_FOCUS \
-			background "menu_setting_selection_bar" \
 			type 10 \
 			textAlign 4 \
 			textAlignX 180 \
@@ -550,6 +604,47 @@
 		} \
 		action \
 		{ \
+			play "mouse_click"; \
+			actionArg \
+		}
+#define CHOICE_BACK( textArg, actionArg ) \
+		CHOICE_BACK_VIS( textArg, actionArg, 1 )
+
+#define CHOICE_BACK_VIS( textArg, actionArg, visArg ) \
+		itemDef \
+		{ \
+			rect -64 -20 336 20 1 3 \
+			style 1 \
+			foreColor 1 1 1 1 \
+			background "menu_button_selection_bar" \
+			group "mw2_button" \
+			type 1 \
+			textAlign 6 \
+			textAlignX -60 \
+			textScale 0.375 \
+			textFont 3 \
+			text textArg \
+			visible visArg \
+			onFocus \
+			{ \
+				play "mouse_over"; \
+				if ( dvarString( "gameMode" ) != "mp"  ) \
+				{ \
+					setItemColor mw2_button "backColor" 0 0 0 0; \
+				} \
+				setItemColor self "backColor" 0 0 0 1; \
+				setLocalVarBool "ui_menuAButton" ( 1 ); \
+			} \
+			leaveFocus \
+			{ \
+				setItemColor self "backColor" 0 0 0 "0.0"; \
+				setLocalVarBool "ui_menuAButton" ( 0 ); \
+			} \
+			action \
+			{ \
 				play "mouse_click"; \
-				actionArg \
-		}	
+				actionArg; \
+			} \
+			visible when ( "@PLATFORM_BACK_CAPS" == "@PLATFORM_BACK_CAPS"  ) \
+		}
+		
