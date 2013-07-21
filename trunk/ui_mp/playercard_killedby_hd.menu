@@ -8,8 +8,10 @@
 		visible when ( ( milliseconds( ) - localvarint( "ui_show_killedBy" ) < 4000 || ( inkillcam( ) ) ) )
 		exp rect y ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_show_killedBy" ) ) / 150 ) , 1 ) , 0 ) * ( 180 ) ) )
 		//exp rect y ( 0 )
+		
 		#include "ui_mp/playercard.inc"
 		PLAYERCARD(7, 0, 9, 10, -137, -80)
+		
 		itemDef
 		{
 			rect 0 0 208 20 9 10

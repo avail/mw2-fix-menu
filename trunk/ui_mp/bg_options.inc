@@ -1,3 +1,4 @@
+#ifdef BG1
 		itemDef
 		{
 			rect -427 -240 854 480 2 2
@@ -22,27 +23,25 @@
 		}
 		itemDef
 		{
-			rect 0 0 1708 480
+			rect -875.258 0 1708 480 0 0
 			style 3
-			foreColor 1 1 1 0.5
-			background "mw2_main_cloud_overlay"
-			decoration 
-			textScale 0.55
+			decoration
 			visible 1
-			visible when ( dvarInt( "cl_ingame" ) != 1 );  )
-			exp rect x ( ( 0 - 107 ) - ( ( float( milliseconds( ) % 60000 ) / 60000 ) * ( 854 ) )  )
+			forecolor 1 1 1 0.5
+			background "mw2_main_cloud_overlay"
+			textscale 0.55
+			exp rect x ( ( 0 - 107 ) - ( ( float( milliseconds( ) % 60000 ) / 60000 ) * ( 854 ) ) )
 		}
 		itemDef
 		{
-			rect 0 0 -1708 -480
+			rect -893.09 0 -1708 -480 0 0
 			style 3
-			foreColor 1 1 1 0.5
-			background "mw2_main_cloud_overlay"
-			decoration 
-			textScale 0.55
+			decoration
 			visible 1
-			visible when ( dvarInt( "cl_ingame" ) != 1 );  )
-			exp rect x ( ( - 107 + 854 ) + ( ( float( milliseconds( ) % 50000 ) / 50000 ) * ( 854 ) )  )
+			forecolor 1 1 1 0.5
+			background "mw2_main_cloud_overlay"
+			textscale 0.55
+			exp rect x ( ( - 107 + 854 ) + ( ( float( milliseconds( ) % 50000 ) / 50000 ) * ( 854 ) ) )
 		}
 		itemDef
 		{
@@ -111,8 +110,8 @@
 			visible 1
 			visible when ( ( dvarInt( "cl_ingame" ) != 1 );  )
 		}
-/*	
-#ifndef EXTRA_SETTINGS
+#endif
+#ifdef BG2
 		itemDef
 		{
 			rect 0 0 640 480 4 4
@@ -125,32 +124,32 @@
 		}
 		itemDef
 		{
-			rect 0 0 1708 480
+			rect -875.258 0 1708 480 0 0
 			style 3
-			foreColor 1 1 1 0.5
-			background mw2_main_cloud_overlay
-			decoration 
-			textScale 0.55
+			decoration
 			visible 1
-			exp rect x ( ( 0 - 107 ) - ( ( float( milliseconds( ) % 60000 ) / 60000 ) * ( 854 ) )  )
+			forecolor 1 1 1 0.5
+			background "mw2_main_cloud_overlay"
+			textscale 0.55
+			exp rect x ( ( 0 - 107 ) - ( ( float( milliseconds( ) % 60000 ) / 60000 ) * ( 854 ) ) )
 		}
 		itemDef
 		{
-			rect 0 0 -1708 -480
+			rect -893.09 0 -1708 -480 0 0
 			style 3
-			foreColor 1 1 1 0.5
-			background mw2_main_cloud_overlay
-			decoration 
-			textScale 0.55
+			decoration
 			visible 1
-			exp rect x ( ( - 107 + 854 ) + ( ( float( milliseconds( ) % 50000 ) / 50000 ) * ( 854 ) )  )
+			forecolor 1 1 1 0.5
+			background "mw2_main_cloud_overlay"
+			textscale 0.55
+			exp rect x ( ( - 107 + 854 ) + ( ( float( milliseconds( ) % 50000 ) / 50000 ) * ( 854 ) ) )
 		}
 		itemDef
 		{
 			rect -427 -240 854 480 2 2
 			style 3
 			foreColor 1 1 1 1
-			background mw2_main_mp_image
+			background "mw2_main_mp_image"
 			decoration 
 			textScale 0.55
 			visible 1
@@ -161,7 +160,7 @@
 			rect 0 0 640 480 4 4
 			style 3
 			foreColor 1 1 1 0
-			background mockup_bg_glow
+			background "mockup_bg_glow"
 			decoration 
 			textScale 0.55
 			visible 1
@@ -172,11 +171,10 @@
 			rect 0 0 640 480 4 4
 			style 3
 			foreColor 1 1 1 0
-			background mockup_bg_glow
+			background "mockup_bg_glow"
 			decoration 
 			textScale 0.55
 			visible 1
 			exp forecolor a ( ( ( sin milliseconds( ) / 480 ) + 1 ) * 0.250000 ) + 0.250000  )
 		}
 #endif
-*/
