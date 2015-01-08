@@ -1,5 +1,3 @@
-//	PLAYERCARD2(0, 1, 3, 1, -274, 18)
-// -1004 -564 1708 960 2 2
 #define POPMENU( nameArg, X, Y, Z ) \
 		name nameArg \
    		fullscreen 0 \

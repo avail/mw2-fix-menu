@@ -117,7 +117,7 @@
 			rect 0 0 640 480 4 4
 			style 3
 			foreColor 0 0 0 1
-			background black
+			background "black"
 			decoration 
 			textScale 0.55
 			visible 1
