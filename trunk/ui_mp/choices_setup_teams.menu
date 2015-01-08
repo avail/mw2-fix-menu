@@ -1,7 +1,9 @@
 #define TEAM_IS_SPECTATOR		( localVarString( "ui_team" ) == "spectator" ) )
-#define TEAM_IS_OPFOR			( localVarString( "ui_team" ) == "opfor" ) )
-#define TEAM_IS_MARINES			( localVarString( "ui_team" ) == "marines" ) )
+#define TEAM_IS_AXIS			( localVarString( "ui_team" ) == "opfor" ) )
+#define TEAM_IS_ALLIES			( localVarString( "ui_team" ) == "marines" ) )
 
 #define TEAM_IS_NONE			( localVarString( "ui_team" ) == "" ) )
 
-#define MARINES_DISABLED       	( localVarString( "ui_team" ) == "marines" ) || ( localVarString( "ui_team" ) == "opfor" ) ) || !( 1 ) )
+#define ALLIES_DISABLED       	( localVarString( "ui_team" ) == "marines" ) || ( localVarString( "ui_team" ) == "opfor" ) ) || !( 1 ) )
+
+#define DISABLED_ON_LIVEMATCH	( dvarBool( "ui_allow_teamchange" ) && ( !dvarBool( "onlinegame" ) || dvarBool( "xblive_privatematch" ) ) ) )
