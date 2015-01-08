@@ -1,8 +1,21 @@
+#include "ui/menudef.h"
+ 
+#define NOT_SPECTATING ( !spectatingClient() )
+       
+#define TEAM_IS_TIED ( team( "score" ) == otherteam( score ) )
+#define TEAM_IS_WINNING ( team( "score" ) > otherteam( score ) )
+#define TEAM_IS_LOSING ( team( "score" ) < otherteam( score ) )
+
+// At ui_bomb_timer 0, regular timer shows up next to the scoreboard.
+// At ui_bomb_timer 1, the briefcase being shown with countdown timer.
+// At ui_bomb_timer 2 and 3, the briefcase shows up for no reason seems to be unused...
+// At ui_bomb_timer 4, the briefcase is hidden and the Nuke Material + Nuke Timer should be showing.
+
 {
 	menuDef
 	{
 		name "scorebar_hd"
-		rect 0 -20 640 480 8 8
+		rect 0 0 640 480 8 8
 		visible 1
 		forecolor 1 1 1 1
 		visible when ( ( ( ! ( ui_active( ) ) ) && ( ! ( dvarbool( "g_hardcore" ) ) ) && ( ! ( flashbanged( ) ) ) && ( ! ( ( weaponname( ) == "killstreak_ac130_mp" ) || ( weaponname( ) == "killstreak_helicopter_minigun_mp" ) || ( weaponname( ) == "killstreak_predator_missile_mp" ) || ( ( weaponname( ) == "ac130_105mm_mp" ) || ( weaponname( ) == "ac130_40mm_mp" ) || ( weaponname( ) == "ac130_25mm_mp" ) ) || ( adsjavelin( ) ) || ( weaponname( ) == "heli_remote_mp" ) || missilecam( ) ) ) && ( !isempjammed( ) ) && ( ! ( dvarint( "scr_gameended" ) ) ) ) && !inkillcam( ) && ! ( selecting_location( ) ) )
@@ -196,7 +209,7 @@
 		{
 			rect 112 6 100 30 8 8
 			decoration
-			visible 1
+			visible 0
 			forecolor 1 0.55 0.55 1
 			textfont 10
 			textalign 4
@@ -209,7 +222,7 @@
 		{
 			rect 112 6 100 30 8 8
 			decoration
-			visible 1
+			visible 0
 			forecolor 1 1 1 1
 			textfont 10
 			textalign 4
@@ -222,7 +235,7 @@
 		{
 			rect 112 6 100 30 8 8
 			decoration
-			visible 1
+			visible 0
 			forecolor 0.63 0.86 0.6 1
 			textfont 10
 			textalign 4
@@ -235,7 +248,7 @@
 		{
 			rect 112 6 100 30 8 8
 			decoration
-			visible 1
+			visible 0
 			forecolor 1 0.55 0.55 1
 			textfont 10
 			textalign 4
@@ -244,25 +257,26 @@
 			visible when ( ( team( "name" ) != "TEAM_SPECTATOR" ) && ( dvarstring( "ui_danger_team" ) == "contested" ) )
 			exp text ( "@MENU_CONTESTED" )
 		}
-		itemDef
+		itemDef //The regular timer.
 		{
 			rect 5.33333 -58.6667 54.6667 54.6667 8 10
 			decoration
-			visible 1
+			visible 0
 			forecolor 1 1 1 1
 			textfont 10
 			textalign 13
 			textaligny -58
 			textscale 0.3333
 			textstyle 8
-			visible when ( ( int( timeleft( ) - ( ( dvarint( "ui_timelimit" ) ) ) * 0.5 * 60 * ( ( dvarint( "ui_halftime" ) ) && ( timeleft( ) + 1 > ( ( dvarint( "ui_timelimit" ) ) ) * 60 * 0.5 ) ) ) ) ) ) >= 60 && !dvarint( "ui_bomb_timer" ) )
+			disabled when ( ( dvarint( "ui_bomb_timer" ) == 1 ) || ( dvarint( "ui_bomb_timer" ) == 4 ) + ( ( dvarint( "ui_bomb_timer" ) > 0 ) ) )
+			visible when ( ( timeLeft( ) >= 60 && !dvarBool( ui_bomb_timer ) ) )
 			exp text ( secondsascountdown( ( int( timeleft( ) - ( ( dvarint( "ui_timelimit" ) ) ) * 0.5 * 60 * ( ( dvarint( "ui_halftime" ) ) && ( timeleft( ) + 1 > ( ( dvarint( "ui_timelimit" ) ) ) * 60 * 0.5 ) ) ) ) ) ) ) )
 		}
-		itemDef
+		itemDef //The Orange timer
 		{
 			rect 5.33333 -58.6667 54.6667 54.6667 8 10
 			decoration
-			visible 1
+			visible 0
 			forecolor 0.85 0.5 0 1
 			glowColor 0.75 0.55 0 1
 			textfont 10
@@ -270,14 +284,15 @@
 			textaligny -58
 			textscale 0.3333
 			textstyle 8
-			visible when ( ( int( timeleft( ) - ( ( dvarint( "ui_timelimit" ) ) ) * 0.5 * 60 * ( ( dvarint( "ui_halftime" ) ) && ( timeleft( ) + 1 > ( ( dvarint( "ui_timelimit" ) ) ) * 60 * 0.5 ) ) ) ) ) ) >= 30 && ( int( timeleft( ) - ( ( dvarint( "ui_timelimit" ) ) ) * 0.5 * 60 * ( ( dvarint( "ui_halftime" ) ) && ( timeleft( ) + 1 > ( ( dvarint( "ui_timelimit" ) ) ) * 60 * 0.5 ) ) ) ) ) ) < 60 && !dvarint( "ui_bomb_timer" ) )
+			disabled when ( ( dvarint( "ui_bomb_timer" ) == 1 ) || ( dvarint( "ui_bomb_timer" ) == 4 ) + ( ( dvarint( "ui_bomb_timer" ) > 0 ) ) )
+			visible when ( ( timeLeft( ) >= 30 && timeLeft( ) < 60 && !dvarBool( ui_bomb_timer ) ) )
 			exp text ( secondsascountdown( ( int( timeleft( ) - ( ( dvarint( "ui_timelimit" ) ) ) * 0.5 * 60 * ( ( dvarint( "ui_halftime" ) ) && ( timeleft( ) + 1 > ( ( dvarint( "ui_timelimit" ) ) ) * 60 * 0.5 ) ) ) ) ) ) ) )
 		}
-		itemDef
+		itemDef //The Red Timer
 		{
 			rect 5.33333 -58.6667 54.6667 54.6667 8 10
 			decoration
-			visible 1
+			visible 0
 			forecolor 0.85 0.4 0.4 1
 			glowColor 1 0.25 0 1
 			textfont 10
@@ -285,14 +300,15 @@
 			textaligny -58
 			textscale 0.3333
 			textstyle 8
-			visible when ( ( int( timeleft( ) - ( ( dvarint( "ui_timelimit" ) ) ) * 0.5 * 60 * ( ( dvarint( "ui_halftime" ) ) && ( timeleft( ) + 1 > ( ( dvarint( "ui_timelimit" ) ) ) * 60 * 0.5 ) ) ) ) ) ) >= 0 && ( int( timeleft( ) - ( ( dvarint( "ui_timelimit" ) ) ) * 0.5 * 60 * ( ( dvarint( "ui_halftime" ) ) && ( timeleft( ) + 1 > ( ( dvarint( "ui_timelimit" ) ) ) * 60 * 0.5 ) ) ) ) ) ) < 30 && !dvarint( "ui_bomb_timer" ) )
+			disabled when ( ( dvarint( "ui_bomb_timer" ) == 1 ) || ( dvarint( "ui_bomb_timer" ) == 4 ) + ( ( dvarint( "ui_bomb_timer" ) > 0 ) ) )
+			visible when ( ( timeLeft( ) >= 0 && timeLeft( ) < 30 && !dvarBool( ui_bomb_timer ) ) )
 			exp text ( secondsascountdown( ( int( timeleft( ) - ( ( dvarint( "ui_timelimit" ) ) ) * 0.5 * 60 * ( ( dvarint( "ui_halftime" ) ) && ( timeleft( ) + 1 > ( ( dvarint( "ui_timelimit" ) ) ) * 60 * 0.5 ) ) ) ) ) ) ) + "." + ( 9 - int( ( milliseconds( ) / 100 ) % 10 ) ) )
 		}
 		itemDef
 		{
 			rect 112 22 100 30 8 8
 			decoration
-			visible 1
+			visible 0
 			forecolor 1 1 1 1
 			glowColor 1 0.25 0 1
 			textfont 10
@@ -346,37 +362,38 @@
 		{
 			rect 65.3333 -44.6667 0.666667 0.666667 8 10
 			decoration
-			visible 1
+			visible 0
 			forecolor 0.4 1 0.4 1
 			textfont 10
 			textscale 0.3333
 			textstyle 6
 			text "@MPUI_WINNING_CAPS"
-			visible when ( ( team( "name" ) != "TEAM_SPECTATOR" ) && ( ( ( ( team( "score" ) * ( ! ( ( team( "name" ) ) == "TEAM_FREE" ) ) ) + ( ( player( "score" ) ) * ( ( team( "name" ) ) == "TEAM_FREE" ) ) ) > ( ( otherteam( "score" ) * ( ! ( ( team( "name" ) ) == "TEAM_FREE" ) ) ) + ( ( ( ( ( player( "score" ) ) == ( scoreatrank( 1 ) ) ) * ( scoreatrank( 2 ) ) ) + ( ( ( player( "score" ) ) != ( scoreatrank( 1 ) ) ) * ( scoreatrank( 1 ) ) ) ) * ( ( team( "name" ) ) == "TEAM_FREE" ) ) ) && ( team( "name" ) ) != "TEAM_FREE" ) || ( ( player( "score" ) ) == ( scoreatrank( 1 ) ) && ( scoreatrank( 1 ) ) != ( scoreatrank( 2 ) ) && ( team( "name" ) ) == "TEAM_FREE" ) ) && ( ( ( milliseconds( ) % 30000 ) > 4000 && ( milliseconds( ) % 30000 ) < 30000 ) || ( ( int( timeleft( ) - ( ( dvarint( "ui_timelimit" ) ) ) * 0.5 * 60 * ( ( dvarint( "ui_halftime" ) ) && ( timeleft( ) + 1 > ( ( dvarint( "ui_timelimit" ) ) ) * 60 * 0.5 ) ) ) ) ) ) >= 0 && ( int( timeleft( ) - ( ( dvarint( "ui_timelimit" ) ) ) * 0.5 * 60 * ( ( dvarint( "ui_halftime" ) ) && ( timeleft( ) + 1 > ( ( dvarint( "ui_timelimit" ) ) ) * 60 * 0.5 ) ) ) ) ) ) <= 60 ) ) )
-		}
+			visible	when( TEAM_IS_WINNING && ( ( milliseconds( ) % 30000 ) > 4000 && ( milliseconds( ) % 30000 ) < 30000 ) )
+
+			}
 		itemDef
 		{
 			rect 65.3333 -44.6667 0.666667 0.666667 8 10
 			decoration
-			visible 1
+			visible 0
 			forecolor 1 0.4 0.4 1
 			textfont 10
 			textscale 0.3333
 			textstyle 6
 			text "@MPUI_LOSING_CAPS"
-			visible when ( ( team( "name" ) != "TEAM_SPECTATOR" ) && ( ( ( ( team( "score" ) * ( ! ( ( team( "name" ) ) == "TEAM_FREE" ) ) ) + ( ( player( "score" ) ) * ( ( team( "name" ) ) == "TEAM_FREE" ) ) ) < ( ( otherteam( "score" ) * ( ! ( ( team( "name" ) ) == "TEAM_FREE" ) ) ) + ( ( ( ( ( player( "score" ) ) == ( scoreatrank( 1 ) ) ) * ( scoreatrank( 2 ) ) ) + ( ( ( player( "score" ) ) != ( scoreatrank( 1 ) ) ) * ( scoreatrank( 1 ) ) ) ) * ( ( team( "name" ) ) == "TEAM_FREE" ) ) ) && ( team( "name" ) ) != "TEAM_FREE" ) || ( ( player( "score" ) ) != ( scoreatrank( 1 ) ) && ( team( "name" ) ) == "TEAM_FREE" ) ) && ( ( ( milliseconds( ) % 30000 ) > 4000 && ( milliseconds( ) % 30000 ) < 30000 ) || ( ( int( timeleft( ) - ( ( dvarint( "ui_timelimit" ) ) ) * 0.5 * 60 * ( ( dvarint( "ui_halftime" ) ) && ( timeleft( ) + 1 > ( ( dvarint( "ui_timelimit" ) ) ) * 60 * 0.5 ) ) ) ) ) ) >= 0 && ( int( timeleft( ) - ( ( dvarint( "ui_timelimit" ) ) ) * 0.5 * 60 * ( ( dvarint( "ui_halftime" ) ) && ( timeleft( ) + 1 > ( ( dvarint( "ui_timelimit" ) ) ) * 60 * 0.5 ) ) ) ) ) ) <= 60 ) ) )
+			visible when( TEAM_IS_LOSING && ( ( milliseconds( ) % 30000 ) > 4000 && ( milliseconds( ) % 30000 ) < 30000 ) )
 		}
 		itemDef
 		{
 			rect 65.3333 -44.6667 0.666667 0.666667 8 10
 			decoration
-			visible 1
+			visible 0
 			forecolor 1 1 0.5 1
 			textfont 10
 			textscale 0.3333
 			textstyle 6
 			text "@MPUI_TIED_CAPS"
-			visible when ( ( team( "name" ) != "TEAM_SPECTATOR" ) && ( ( ( ( team( "score" ) * ( ! ( ( team( "name" ) ) == "TEAM_FREE" ) ) ) + ( ( player( "score" ) ) * ( ( team( "name" ) ) == "TEAM_FREE" ) ) ) == ( ( otherteam( "score" ) * ( ! ( ( team( "name" ) ) == "TEAM_FREE" ) ) ) + ( ( ( ( ( player( "score" ) ) == ( scoreatrank( 1 ) ) ) * ( scoreatrank( 2 ) ) ) + ( ( ( player( "score" ) ) != ( scoreatrank( 1 ) ) ) * ( scoreatrank( 1 ) ) ) ) * ( ( team( "name" ) ) == "TEAM_FREE" ) ) ) && ( team( "name" ) ) != "TEAM_FREE" ) || ( ( player( "score" ) ) == ( scoreatrank( 1 ) ) && ( scoreatrank( 1 ) ) == ( scoreatrank( 2 ) ) && ( team( "name" ) ) == "TEAM_FREE" ) ) && ( ( ( milliseconds( ) % 30000 ) > 4000 && ( milliseconds( ) % 30000 ) < 30000 ) || ( ( int( timeleft( ) - ( ( dvarint( "ui_timelimit" ) ) ) * 0.5 * 60 * ( ( dvarint( "ui_halftime" ) ) && ( timeleft( ) + 1 > ( ( dvarint( "ui_timelimit" ) ) ) * 60 * 0.5 ) ) ) ) ) ) >= 0 && ( int( timeleft( ) - ( ( dvarint( "ui_timelimit" ) ) ) * 0.5 * 60 * ( ( dvarint( "ui_halftime" ) ) && ( timeleft( ) + 1 > ( ( dvarint( "ui_timelimit" ) ) ) * 60 * 0.5 ) ) ) ) ) ) <= 60 ) ) )
+			visible when( TEAM_IS_TIED && ( ( milliseconds( ) % 30000 ) > 4000 && ( milliseconds( ) % 30000 ) < 30000 ) )
 		}
 		itemDef
 		{

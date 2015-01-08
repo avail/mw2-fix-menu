@@ -1,6 +1,7 @@
 {
 	menuDef
 	{
+	{
 		name "killcam_fullscreen"
 		rect 0 0 640 480 4 4
 		visible 1
