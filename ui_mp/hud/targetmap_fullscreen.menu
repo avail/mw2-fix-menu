@@ -1,6 +1,7 @@
 {
 	menuDef
 	{
+	{
 		name "targetmap_fullscreen"
 		rect 0 0 0 0 0 0
 		visible 1
